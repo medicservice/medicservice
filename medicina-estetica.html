@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Medicina Estetica — Medic Service Oristano</title>
+<meta name="description" content="Medicina estetica a Oristano: 16 trattamenti per viso, corpo, laser e anti-aging, sempre eseguiti da un medico. Prenota la tua consulenza.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@300;400;500&family=DM+Serif+Display:ital@0;1&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-screen-label="Medicina Estetica">
+
+<!-- ===== HEADER ===== -->
+<header class="site-header">
+  <div class="container nav">
+    <a class="nav__logo" href="index.html"><img src="assets/logo-horizontal.svg" alt="Medic Service"></a>
+    <nav class="nav__links">
+      <a href="index.html">Home</a>
+      <a href="index.html#aree" class="active">Specialità</a>
+      <a href="medici.html">I Medici</a>
+      <a href="index.html#struttura">La Struttura</a>
+    </nav>
+    <div class="nav__cta">
+      <a class="nav__tel" href="tel:0783211136"><i data-lucide="phone"></i><span class="num">0783 211136</span></a>
+      <a class="btn btn--donna" href="https://www.miodottore.it/strutture/medic-service-oristano" target="_blank" rel="noopener">Prenota</a>
+      <button class="nav__burger" data-open-drawer aria-label="Menu"><i data-lucide="menu"></i></button>
+    </div>
+  </div>
+</header>
+
+<!-- ===== AREA HERO ===== -->
+<section class="section--tight" style="padding-top:40px;background:linear-gradient(180deg,#fff, #ECF5FC)">
+  <div class="container">
+    <nav class="breadcrumb" style="margin-bottom:30px">
+      <a href="index.html">Home</a><i data-lucide="chevron-right"></i>
+      <a href="index.html#aree">Specialità</a><i data-lucide="chevron-right"></i>
+      <span class="cur">Medicina Estetica</span>
+    </nav>
+    <div class="split" style="gap:48px">
+      <div>
+        <span class="eyebrow" style="color:var(--donna-dk)"><span class="num">04</span> Medicina Estetica</span>
+        <h1 class="h1" style="color:var(--navy);margin:18px 0 20px">Bellezza naturale, mani esperte.</h1>
+        <p class="lead">Ogni trattamento è eseguito da un medico, dopo una consulenza che parte dal tuo viso e dai tuoi obiettivi — mai da un listino. Niente eccessi: solo risultati armonici, sicuri e graduali.</p>
+        <p class="muted" style="margin-top:18px;font-size:16.5px">Filler, tossina botulinica, biorivitalizzazione, laser e anti-aging: 16 trattamenti riuniti in quattro percorsi chiari. Ti spieghiamo cosa è indicato per te, cosa aspettarti e in quanto tempo.</p>
+        <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:30px">
+          <a class="btn btn--donna btn--lg" href="https://www.miodottore.it/strutture/medic-service-oristano" target="_blank" rel="noopener"><i data-lucide="calendar-check"></i> Prenota consulenza</a>
+          <a class="btn btn--outline btn--lg" href="#trattamenti">Vedi i trattamenti</a>
+        </div>
+      </div>
+      <div class="figure"><img src="assets/photos/MS-33.jpg" alt="Ambienti Medic Service"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MEDICI DELL'AREA ===== -->
+<section class="section--tight">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow" style="color:var(--donna-dk)">Il team</span>
+      <h2 class="h2" style="color:var(--navy)">I medici estetici.</h2>
+      <p>I nostri professionisti esperti di medicina estetica.</p>
+    </div>
+    <div class="docs reveal" id="est-docs" style="margin-top:38px"></div>
+  </div>
+</section>
+
+<!-- ===== TRATTAMENTI ===== -->
+<section class="section bg-tint" id="trattamenti">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow" style="color:var(--donna-dk)">I trattamenti</span>
+      <h2 class="h2">16 trattamenti, 4 obiettivi.</h2>
+      <p>Scegli il percorso: viso, corpo, laser o anti-aging. Per ciascuno trovi cosa risolve, quando è indicato e cosa aspettarti.</p>
+    </div>
+
+    <div class="tabs reveal" style="margin:36px 0 40px">
+      <button class="tab active" data-cat="all">Tutti</button>
+      <button class="tab" data-cat="viso"><span class="num">05</span> Viso</button>
+      <button class="tab" data-cat="corpo"><span class="num">04</span> Corpo</button>
+      <button class="tab" data-cat="laser"><span class="num">04</span> Laser</button>
+      <button class="tab" data-cat="anti"><span class="num">03</span> Anti-aging</button>
+    </div>
+
+    <div class="treat-grid">
+      <!-- VISO -->
+      <article class="treat-card reveal" data-cat="viso">
+        <div class="treat-card__cat">Viso</div>
+        <h3>Filler labbra</h3>
+        <p class="treat-card__desc">Acido ialuronico per ridefinire volume e contorno delle labbra, mantenendo un effetto morbido e naturale.</p>
+        <div class="treat-meta">
+          <div class="treat-meta__row"><i data-lucide="target"></i><span><b>Indicato per</b> labbra sottili, asimmetrie, perdita di definizione.</span></div>
+          <div class="treat-meta__row"><i data-lucide="clock"></i><span><b>Cosa aspettarti</b> 30 min, risultato immediato, durata 6–9 mesi.</span></div>
+        </div>
+      </article>
+
+      <article class="treat-card reveal" data-cat="viso">
+        <div class="treat-card__cat">Viso</div>
+        <h3>Filler zigomi e contorni</h3>
+        <p class="treat-card__desc">Ridona struttura e sostegno al terzo medio del viso, correggendo il rilassamento legato all'età.</p>
+        <div class="treat-meta">
+          <div class="treat-meta__row"><i data-lucide="target"></i><span><b>Indicato per</b> svuotamento zigomi, solco naso-genieno.</span></div>
+          <div class="treat-meta__row"><i data-lucide="clock"></i><span><b>Cosa aspettarti</b> 40 min, lieve gonfiore 1–2 giorni.</span></div>
+        </div>
+      </article>
+
+      <article class="treat-card reveal" data-cat="viso">
+        <div class="treat-card__cat">Viso</div>
+        <h3>Tossina botulinica</h3>
+        <p class="treat-card__desc">Rilassa la muscolatura responsabile delle rughe d'espressione di fronte, glabella e contorno occhi.</p>
+        <div class="treat-meta">
+          <div class="treat-meta__row"><i data-lucide="target"></i><span><b>Indicato per</b> rughe dinamiche, "zampe di gallina".</span></div>
+          <div class="treat-meta__row"><i data-lucide="clock"></i><span><b>Cosa aspettarti</b> 20 min, effetto in 4–7 giorni, durata ~4 mesi.</span></div>
+        </div>
+      </article>
+
+      <article class="treat-card reveal" data-cat="viso">
+        <div class="treat-card__cat">Viso</div>
+        <h3>Biorivitalizzazione</h3>
+        <p class="treat-card__desc">Microiniezioni di acido ialuronico e vitamine per idratare in profondità e ridare luminosità alla pelle.</p>
+        <div class="treat-meta">
+          <div class="treat-meta__row"><i data-lucide="target"></i><span><b>Indicato per</b> pelle spenta, disidratata, primi segni.</span></div>
+          <div class="treat-meta__row"><i data-lucide="clock"></i><span><b>Cosa aspettarti</b> ciclo di 3 sedute, nessun fermo sociale.</span></div>
+        </div>
+      </article>
+
+      <article class="treat-card reveal" data-cat="viso">
+        <div class="treat-card__cat">Viso</div>
+        <h3>Skinbooster</h3>
+        <p class="treat-card__desc">Acido ialuronico a bassa densità per migliorare elasticità, tono e qualità complessiva della pelle.</p>
+        <div class="treat-meta">
+          <div class="treat-meta__row"><i data-lucide="target"></i><span><b>Indicato per</b> viso, collo, décolleté, dorso delle mani.</span></div>
+          <div class="treat-meta__row"><i data-lucide="clock"></i><span><b>Cosa aspettarti</b> 30 min, risultati progressivi in 3–4 settimane.</span></div>
+        </div>
+      </article>
+
+      <!-- CORPO -->
+      <article class="treat-card reveal" data-cat="corpo">
+        <div class="treat-card__cat">Corpo</div>
+        <h3>Mesoterapia</h3>
+        <p class="treat-card__desc">Microiniezioni mirate di principi attivi per contrastare adiposità localizzate e ritenzione.</p>
+        <div class="treat-meta">
+          <div class="treat-meta__row"><i data-lucide="target"></i><span><b>Indicato per</b> cosce, addome, fianchi.</span></div>
+          <div class="treat-meta__row"><i data-lucide="clock"></i><span><b>Cosa aspettarti</b> ciclo personalizzato, sedute settimanali.</span></div>
+        </div>
+      </article>
+
+      <article class="treat-card reveal" data-cat="corpo">
+        <div class="treat-card__cat">Corpo</div>
+        <h3>Inestetismi della cellulite</h3>
+        <p class="treat-card__desc">Protocollo combinato per migliorare microcircolo e aspetto a "buccia d'arancia" della pelle.</p>
+        <div class="treat-meta">
+          <div class="treat-meta__row"><i data-lucide="target"></i><span><b>Indicato per</b> cellulite edematosa e fibrosa.</span></div>
+          <div class="treat-meta__row"><i data-lucide="clock"></i><span><b>Cosa aspettarti</b> valutazione iniziale, percorso a sedute.</span></div>
+        </div>
+      </article>
+
+      <article class="treat-card reveal" data-cat="corpo">
+        <div class="treat-card__cat">Corpo</div>
+        <h3>Biostimolazione corpo</h3>
+        <p class="treat-card__desc">Stimola la produzione di collagene per migliorare tono e compattezza nelle zone rilassate.</p>
+        <div class="treat-meta">
+          <div class="treat-meta__row"><i data-lucide="target"></i><span><b>Indicato per</b> braccia, addome, interno coscia.</span></div>
+          <div class="treat-meta__row"><i data-lucide="clock"></i><span><b>Cosa aspettarti</b> risultati graduali, mantenimento periodico.</span></div>
+        </div>
+      </article>
+
+      <article class="treat-card reveal" data-cat="corpo">
+        <div class="treat-card__cat">Corpo</div>
+        <h3>Rimodellamento non chirurgico</h3>
+        <p class="treat-card__desc">Trattamenti per ridefinire i profili del corpo senza intervento, con tempi di recupero minimi.</p>
+        <div class="treat-meta">
+          <div class="treat-meta__row"><i data-lucide="target"></i><span><b>Indicato per</b> adiposità localizzate resistenti.</span></div>
+          <div class="treat-meta__row"><i data-lucide="clock"></i><span><b>Cosa aspettarti</b> nessun ricovero, ripresa immediata.</span></div>
+        </div>
+      </article>
+
+      <!-- LASER -->
+      <article class="treat-card reveal" data-cat="laser">
+        <div class="treat-card__cat">Laser</div>
+        <h3>Epilazione laser</h3>
+        <p class="treat-card__desc">Riduzione permanente e progressiva della peluria, con tecnologia adatta a ogni fototipo.</p>
+        <div class="treat-meta">
+          <div class="treat-meta__row"><i data-lucide="target"></i><span><b>Indicato per</b> viso e corpo, uomo e donna.</span></div>
+          <div class="treat-meta__row"><i data-lucide="clock"></i><span><b>Cosa aspettarti</b> ciclo di sedute distanziate, indolore.</span></div>
+        </div>
+      </article>
+
+      <article class="treat-card reveal" data-cat="laser">
+        <div class="treat-card__cat">Laser</div>
+        <h3>Laser vascolare</h3>
+        <p class="treat-card__desc">Tratta capillari e couperose del viso e delle gambe in modo selettivo e non invasivo.</p>
+        <div class="treat-meta">
+          <div class="treat-meta__row"><i data-lucide="target"></i><span><b>Indicato per</b> couperose, teleangectasie, rossori.</span></div>
+          <div class="treat-meta__row"><i data-lucide="clock"></i><span><b>Cosa aspettarti</b> 15–30 min, lieve arrossamento transitorio.</span></div>
+        </div>
+      </article>
+
+      <article class="treat-card reveal" data-cat="laser">
+        <div class="treat-card__cat">Laser</div>
+        <h3>Fotoringiovanimento</h3>
+        <p class="treat-card__desc">Stimola il rinnovamento cutaneo migliorando texture, pori e luminosità del viso.</p>
+        <div class="treat-meta">
+          <div class="treat-meta__row"><i data-lucide="target"></i><span><b>Indicato per</b> pelle segnata da sole e tempo.</span></div>
+          <div class="treat-meta__row"><i data-lucide="clock"></i><span><b>Cosa aspettarti</b> ciclo di sedute, pelle più uniforme.</span></div>
+        </div>
+      </article>
+
+      <article class="treat-card reveal" data-cat="laser">
+        <div class="treat-card__cat">Laser</div>
+        <h3>Rimozione macchie</h3>
+        <p class="treat-card__desc">Schiarisce e attenua le discromie da sole ed età, restituendo un incarnato omogeneo.</p>
+        <div class="treat-meta">
+          <div class="treat-meta__row"><i data-lucide="target"></i><span><b>Indicato per</b> macchie solari, lentigo, melasma.</span></div>
+          <div class="treat-meta__row"><i data-lucide="clock"></i><span><b>Cosa aspettarti</b> valutazione della macchia, 1+ sedute.</span></div>
+        </div>
+      </article>
+
+      <!-- ANTI-AGING -->
+      <article class="treat-card reveal" data-cat="anti">
+        <div class="treat-card__cat">Anti-aging</div>
+        <h3>Peeling chimico</h3>
+        <p class="treat-card__desc">Esfoliazione controllata per rinnovare la pelle, attenuare macchie e segni superficiali.</p>
+        <div class="treat-meta">
+          <div class="treat-meta__row"><i data-lucide="target"></i><span><b>Indicato per</b> pelle spenta, discromie, acne lieve.</span></div>
+          <div class="treat-meta__row"><i data-lucide="clock"></i><span><b>Cosa aspettarti</b> intensità modulabile, breve desquamazione.</span></div>
+        </div>
+      </article>
+
+      <article class="treat-card reveal" data-cat="anti">
+        <div class="treat-card__cat">Anti-aging</div>
+        <h3>Fili di trazione</h3>
+        <p class="treat-card__desc">Lifting non chirurgico con fili riassorbibili per ridefinire l'ovale e contrastare il rilassamento.</p>
+        <div class="treat-meta">
+          <div class="treat-meta__row"><i data-lucide="target"></i><span><b>Indicato per</b> rilassamento di guance e ovale del viso.</span></div>
+          <div class="treat-meta__row"><i data-lucide="clock"></i><span><b>Cosa aspettarti</b> 45 min, effetto immediato e progressivo.</span></div>
+        </div>
+      </article>
+
+      <article class="treat-card reveal" data-cat="anti">
+        <div class="treat-card__cat">Anti-aging</div>
+        <h3>PRP viso</h3>
+        <p class="treat-card__desc">Plasma ricco di piastrine dal tuo stesso sangue, per rigenerare e rivitalizzare la pelle in modo naturale.</p>
+        <div class="treat-meta">
+          <div class="treat-meta__row"><i data-lucide="target"></i><span><b>Indicato per</b> pelle stanca, opaca, primi cedimenti.</span></div>
+          <div class="treat-meta__row"><i data-lucide="clock"></i><span><b>Cosa aspettarti</b> ciclo di 3 sedute, 100% biocompatibile.</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BEFORE / AFTER ===== -->
+<section class="section">
+  <div class="container">
+    <div class="sec-head reveal" style="margin-bottom:44px">
+      <span class="eyebrow" style="color:var(--donna-dk)">Risultati reali</span>
+      <h2 class="h2">Il prima e il dopo, senza filtri.</h2>
+      <p>Trascina il cursore per vedere la differenza. Tutte le immagini sono pubblicate solo con consenso scritto del paziente.</p>
+    </div>
+    <div class="ba-wrap reveal">
+      <div class="ba">
+        <div class="ba__img ba__before"><img src="assets/photos/filler-prima.png" alt="Labbra prima del filler"></div>
+        <div class="ba__img ba__after"><img src="assets/photos/filler-dopo.png" alt="Labbra dopo il filler"></div>
+        <span class="ba__tag ba__tag--before">Prima</span>
+        <span class="ba__tag ba__tag--after">Dopo</span>
+        <div class="ba__handle"><span class="ba__grip"><i data-lucide="chevrons-left-right"></i></span></div>
+        <input class="ba__range" type="range" min="0" max="100" value="50" aria-label="Confronto prima e dopo">
+      </div>
+      <div>
+        <h3 class="h3" style="color:var(--navy);margin-bottom:16px">Filler labbra — risultato naturale</h3>
+        <p class="muted" style="font-size:16.5px;margin-bottom:22px">Un esempio di come lavoriamo: volume calibrato, contorno definito, espressione invariata. Nessun "effetto rifatto", solo equilibrio.</p>
+        <ul class="cura-list" style="grid-template-columns:1fr">
+          <li><i data-lucide="check"></i> Consulenza medica preliminare obbligatoria</li>
+          <li><i data-lucide="check"></i> Prodotti certificati e tracciabili</li>
+          <li><i data-lucide="check"></i> Foto di controllo a ogni step del percorso</li>
+        </ul>
+        <a class="btn btn--donna btn--lg" href="https://www.miodottore.it/strutture/medic-service-oristano" target="_blank" rel="noopener" style="margin-top:28px"><i data-lucide="calendar-check"></i> Prenota la tua consulenza</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="section bg-tint">
+  <div class="container">
+    <div class="sec-head reveal" style="margin-bottom:36px">
+      <span class="eyebrow" style="color:var(--donna-dk)">Domande frequenti</span>
+      <h2 class="h2">I dubbi più comuni, chiariti.</h2>
+    </div>
+    <div class="faq reveal">
+      <div class="faq-item">
+        <button class="faq-q">I trattamenti fanno male? <i data-lucide="plus"></i></button>
+        <div class="faq-a"><div class="faq-a__inner">La maggior parte dei trattamenti è ben tollerata. Dove serve usiamo anestesia topica in crema o prodotti con anestetico incorporato, così il fastidio resta minimo. Te lo spieghiamo nel dettaglio durante la consulenza.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Si vede subito il risultato? <i data-lucide="plus"></i></button>
+        <div class="faq-a"><div class="faq-a__inner">Dipende dal trattamento: i filler danno un effetto immediato, la tossina botulinica agisce in 4–7 giorni, mentre biorivitalizzazione e laser lavorano in modo progressivo nell'arco di qualche settimana. In consulenza ti diciamo tempi realistici, mai promesse.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Chi esegue i trattamenti? <i data-lucide="plus"></i></button>
+        <div class="faq-a"><div class="faq-a__inner">Sempre e solo un medico. La medicina estetica è un atto medico: ogni trattamento è preceduto da una valutazione clinica e da un consenso informato. Da noi non esistono trattamenti "da listino" senza visita.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA BAND ===== -->
+<section class="ctaband" style="background:var(--donna-dk)">
+  <div class="ctaband__bg"><img src="assets/monogram-white.svg" alt=""></div>
+  <div class="container ctaband__inner">
+    <div>
+      <h2>Parliamo dei tuoi obiettivi.</h2>
+      <p>La prima consulenza è il momento più importante. Prenotala — decidiamo insieme, senza fretta.</p>
+    </div>
+    <div class="ctaband__actions">
+      <a class="btn btn--primary btn--lg" href="https://www.miodottore.it/strutture/medic-service-oristano" target="_blank" rel="noopener" style="background:#fff;color:var(--donna-dk);border-color:#fff"><i data-lucide="calendar-check"></i> Prenota consulenza</a>
+      <a class="btn btn--ghost-light btn--lg" href="tel:0783211136"><i data-lucide="phone"></i> <span class="num">0783 211136</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <img src="assets/logo-horizontal-white.svg" alt="Medic Service">
+        <p>Centro medico polispecialistico nel cuore di Oristano. Cura chiara, professionale, vicina.</p>
+        <div class="footer__contact">
+          <a href="https://maps.app.goo.gl/DD7feputJqxw9w6r8" target="_blank" rel="noopener"><i data-lucide="map-pin"></i> Piazza Tharros 57, Oristano</a>
+          <a href="tel:0783211136"><i data-lucide="phone"></i> <span class="num">0783 211136</span></a>
+          <a href="mailto:info@medicservice.it"><i data-lucide="mail"></i> info@medicservice.it</a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Specialità</h4>
+        <ul>
+          <li><a href="index.html#aree" data-book data-area="visite">Visite Specialistiche</a></li>
+          <li><a href="index.html#aree" data-book data-area="diagnostica">Diagnostica per Immagini</a></li>
+          <li><a href="index.html#aree" data-book data-area="chirurgia">Chirurgia Day Surgery</a></li>
+          <li><a href="medicina-estetica.html">Medicina Estetica</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Il centro</h4>
+        <ul>
+          <li><a href="#">Chi siamo</a></li>
+          <li><a href="medici.html">I medici</a></li>
+          <li><a href="index.html#struttura">La struttura</a></li>
+          <li><a href="#">Lavora con noi</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Supporto</h4>
+        <ul>
+          <li><a href="#">Come prenotare</a></li>
+          <li><a href="#">Blog / Salute</a></li>
+          <li><a href="#">Contatti</a></li>
+          <li><a href="#">Privacy &amp; Cookie</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 Medic Service — Centro Polispecialistico, Oristano</span>
+      <span class="num">P.IVA 01234567890</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== MOBILE STICKY BAR ===== -->
+<nav class="mobilebar">
+  <a class="mobilebar__book" style="background:var(--donna-dk)" href="https://www.miodottore.it/strutture/medic-service-oristano" target="_blank" rel="noopener"><i data-lucide="calendar-check"></i> Prenota</a>
+  <a class="mobilebar__call" href="tel:0783211136"><i data-lucide="phone"></i> <span class="num">0783 211136</span></a>
+</nav>
+
+<!-- ===== MOBILE DRAWER ===== -->
+<div class="drawer">
+  <div class="drawer__scrim"></div>
+  <div class="drawer__panel">
+    <button class="drawer__close" data-close-drawer aria-label="Chiudi"><i data-lucide="x"></i></button>
+    <a href="index.html">Home</a>
+    <a href="index.html#aree">Specialità</a>
+    <a href="medici.html">I Medici</a>
+    <a href="index.html#struttura">La Struttura</a>
+    <a href="medicina-estetica.html">Medicina Estetica</a>
+    <a class="btn btn--donna btn--block" href="https://www.miodottore.it/strutture/medic-service-oristano" target="_blank" rel="noopener" style="margin-top:20px" data-close-drawer>Prenota consulenza</a>
+  </div>
+</div>
+
+<!-- ===== BOOKING MODAL ===== -->
+<div class="modal" aria-modal="true" role="dialog">
+  <div class="modal__scrim"></div>
+  <div class="modal__box">
+    <button class="modal__close" data-close-modal aria-label="Chiudi"><i data-lucide="x"></i></button>
+    <div class="stepper"><span class="stepper__dot"></span><span class="stepper__dot"></span><span class="stepper__dot"></span></div>
+    <div class="modal__step" data-step="1">
+      <h3>Di cosa hai bisogno?</h3>
+      <p>Scegli l'area. Ti mostriamo subito i medici disponibili.</p>
+      <div class="opt-grid">
+        <button class="opt" data-area="visite"><i data-lucide="stethoscope"></i><span>Visite Specialistiche</span></button>
+        <button class="opt" data-area="diagnostica"><i data-lucide="scan-line"></i><span>Diagnostica</span></button>
+        <button class="opt" data-area="chirurgia"><i data-lucide="syringe"></i><span>Chirurgia</span></button>
+        <button class="opt" data-area="estetica"><i data-lucide="sparkles"></i><span>Medicina Estetica</span></button>
+      </div>
+    </div>
+    <div class="modal__step" data-step="2" hidden>
+      <h3>Scegli il medico</h3>
+      <p><span class="area-name"></span> — seleziona con chi vuoi prenotare.</p>
+      <div class="opt-grid"></div>
+      <button class="modal__back" data-back="1"><i data-lucide="arrow-left"></i> Cambia area</button>
+    </div>
+    <div class="modal__step" data-step="3" hidden>
+      <h3>Scegli data e ora</h3>
+      <p>Prossima disponibilità con <b class="medico-name"></b>. Giovedì 11 giugno 2026.</p>
+      <div class="slots">
+        <button class="slot">09:00</button><button class="slot">09:30</button><button class="slot">10:15</button>
+        <button class="slot">11:00</button><button class="slot">15:30</button><button class="slot">16:45</button>
+      </div>
+      <button class="btn btn--primary btn--block confirm" style="margin-top:22px" disabled>Conferma appuntamento</button>
+      <div class="miodottore"><i data-lucide="shield-check"></i> Prenotazione gestita con <b>MioDottore.it</b> — resti su medicservice.it</div>
+      <button class="modal__back" data-back="2"><i data-lucide="arrow-left"></i> Cambia medico</button>
+    </div>
+    <div class="modal__step" data-step="4" hidden>
+      <div class="modal__success">
+        <span class="check"><i data-lucide="check"></i></span>
+        <h3>Appuntamento richiesto!</h3>
+        <p class="recap" style="font-weight:700;color:var(--navy)"></p>
+        <p>Riceverai conferma via SMS ed email. A presto in Piazza Tharros.</p>
+        <button class="btn btn--primary" data-close-modal style="margin-top:8px">Perfetto, chiudi</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/lucide@0.408.0/dist/umd/lucide.min.js"></script>
+<script src="image-slot.js"></script>
+<script src="site.js"></script>
+
+<!-- ===== CARD MEDICI ESTETICI ===== -->
+<script>
+(function () {
+  const grid = document.getElementById("est-docs");
+  if (!grid) return;
+  const MIO = "https://www.miodottore.it/strutture/medic-service-oristano";
+  const DOCS = [
+    {surname:"Monni",   display:"Dr. Nicola Monni",  spec:"Medicina estetica"},
+    {surname:"Paderi",  display:"Dr.ssa Valentina Paderi", spec:"Medicina estetica"}
+  ];
+  DOCS.forEach((d) => {
+    const a = document.createElement("a");
+    a.className = "doc-card reveal";
+    a.href = MIO;
+    a.target = "_blank";
+    a.rel = "noopener";
+    a.innerHTML =
+      '<div class="doc-card__photo"><image-slot id="est-doc-' + d.surname.toLowerCase() +
+        '" placeholder="Ritratto ' + d.display + '" shape="rect"' +
+        (d.surname === "Paderi" ? ' src="assets/photos/paderi.webp"' : "") + '></image-slot></div>' +
+      '<div class="doc-card__body">' +
+        '<div class="doc-card__spec">' + d.spec + '</div>' +
+        '<div class="doc-card__name">' + d.display + '</div>' +
+        '<span class="doc-card__link">Prenota <i data-lucide="arrow-right"></i></span>' +
+      '</div>';
+    grid.appendChild(a);
+  });
+  if (window.lucide) lucide.createIcons();
+  // site.js avvia l'osservatore reveal prima che queste card esistano, quindi
+  // le rendo visibili qui con un fade-in garantito (sul frame successivo).
+  requestAnimationFrame(() => {
+    grid.querySelectorAll(".reveal").forEach((el) => el.classList.add("in"));
+  });
+})();
+</script>
+</body>
+</html>

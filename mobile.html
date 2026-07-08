@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Medic Service — Versione Mobile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@300;400;500&family=DM+Serif+Display&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0E334F; --brand:#2D99DA; --brand-dk:#1F7FBC; --grey:#939599;
+    --g700:#5C5E62; --line:#E4E5E7; --pale:#C9E2F4;
+    --sans:"Montserrat",system-ui,-apple-system,sans-serif; --num:"Chivo Mono",monospace;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;}
+  body{
+    font-family:var(--sans); color:var(--navy);
+    background:#EAEEF2;
+    background-image:radial-gradient(circle at 1px 1px, rgba(14,51,79,.06) 1px, transparent 0);
+    background-size:26px 26px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .page-head{ max-width:1240px; margin:0 auto; padding:56px 32px 18px; }
+  .page-head .eyebrow{ display:inline-flex; align-items:center; gap:10px; font-weight:800; font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:var(--brand-dk); }
+  .page-head .eyebrow .num{ font-family:var(--num); font-weight:400; color:var(--grey); }
+  .page-head h1{ font-family:"DM Serif Display",Georgia,serif; font-weight:700; font-size:clamp(32px,4vw,50px); letter-spacing:-.012em; margin:14px 0 14px; color:var(--navy); line-height:1.04; }
+  .page-head p{ max-width:640px; font-size:17px; line-height:1.6; color:var(--g700); margin:0; }
+  .page-head .logo{ height:30px; margin-bottom:26px; }
+  .legend{ display:flex; flex-wrap:wrap; gap:10px 22px; margin-top:24px; }
+  .legend span{ display:inline-flex; align-items:center; gap:9px; font-size:13.5px; font-weight:600; color:var(--navy); background:#fff; border:1px solid var(--line); border-radius:999px; padding:9px 16px; }
+  .legend svg{ width:16px; height:16px; color:var(--brand); }
+  .toolbar{ max-width:1240px; margin:0 auto; padding:8px 32px 0; display:flex; gap:10px; flex-wrap:wrap; }
+  .toolbar a{ font-size:13.5px; font-weight:700; color:var(--brand-dk); text-decoration:none; border:1.5px solid var(--line); background:#fff; border-radius:8px; padding:9px 16px; }
+  .toolbar a:hover{ border-color:var(--brand); }
+
+  .rail{ display:flex; gap:64px; align-items:flex-start; padding:40px 48px 80px; overflow-x:auto; scroll-snap-type:x proximity; }
+  .rail::-webkit-scrollbar{ height:10px; }
+  .rail::-webkit-scrollbar-thumb{ background:#c3ccd4; border-radius:10px; }
+  .phone-col{ flex:none; scroll-snap-align:center; display:flex; flex-direction:column; align-items:center; }
+  .phone-cap{ text-align:center; margin-bottom:22px; }
+  .phone-cap .n{ font-family:var(--num); font-weight:300; font-size:30px; color:var(--brand); line-height:1; }
+  .phone-cap h2{ font-family:"DM Serif Display",Georgia,serif; font-weight:700; font-size:23px; margin:6px 0 4px; color:var(--navy); letter-spacing:-.005em; }
+  .phone-cap p{ font-size:13.5px; color:var(--g700); margin:0; max-width:300px; }
+  .screen-frame{ width:100%; height:100%; border:0; display:block; background:#fff; }
+  .screen-top{ height:54px; background:#fff; }
+  .hint{ display:flex; align-items:center; justify-content:center; gap:9px; font-size:13px; font-weight:600; color:var(--g700); margin-top:18px; }
+  .hint svg{ width:16px; height:16px; color:var(--brand); }
+  @media (max-width:560px){
+    .page-head{ padding:36px 20px 12px; }
+    .rail{ padding:32px 20px 64px; gap:40px; }
+  }
+</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/lucide@0.408.0/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+
+<div class="page-head">
+  <img class="logo" src="assets/logo-horizontal.svg" alt="Medic Service">
+  <span class="eyebrow"><span class="num">02</span> Restyling Web 2026 · Mobile</span>
+  <h1>La versione mobile.</h1>
+  <p>Oltre il 70% dei pazienti arriva da telefono. Ecco le tre pagine pensate per lo smartphone: header compatto, barra fissa <strong>Prenota / Chiama</strong> sempre visibile, e il funnel di prenotazione a portata di pollice. È la stessa codebase del desktop, con layout adattivo — la versione desktop resta invariata.</p>
+  <div class="legend">
+    <span><i data-lucide="smartphone"></i> Barra fissa Prenota + Chiama</span>
+    <span><i data-lucide="menu"></i> Menu a tendina (5 voci)</span>
+    <span><i data-lucide="calendar-check"></i> Funnel MioDottore in 3 step</span>
+    <span><i data-lucide="hand"></i> Schede touch, tap target ≥ 44px</span>
+  </div>
+</div>
+<div class="toolbar">
+  <a href="index.html" target="_blank" rel="noopener">↗ Apri Home (desktop)</a>
+  <a href="medicina-estetica.html" target="_blank" rel="noopener">↗ Apri Medicina Estetica</a>
+  <a href="medici/usai.html" target="_blank" rel="noopener">↗ Apri Scheda Medico</a>
+</div>
+
+<div id="root"></div>
+
+<script type="text/babel" src="ios-frame.jsx"></script>
+<script type="text/babel">
+const { useState } = React;
+
+const SCREENS = [
+  { n:"01", title:"Home", desc:"Hero, le 4 aree, i medici, recensioni — e la barra Prenota fissa in basso.", src:"index.html" },
+  { n:"02", title:"Medicina Estetica", desc:"16 trattamenti filtrabili per obiettivo, before/after e FAQ.", src:"medicina-estetica.html" },
+  { n:"03", title:"Scheda Medico", desc:"Dott. Usai: percorso, prestazioni, orari e Prenota dedicato.", src:"medici/usai.html" },
+];
+
+const W = 390, H = 820, TOP = 54;
+
+function Phone({ n, title, desc, src }) {
+  return (
+    <div className="phone-col">
+      <div className="phone-cap">
+        <div className="n">{n}</div>
+        <h2>{title}</h2>
+        <p>{desc}</p>
+      </div>
+      <IOSDevice width={W} height={H}>
+        <div style={{ height:"100%" }}>
+          <div className="screen-top" />
+          <iframe
+            className="screen-frame"
+            src={src}
+            title={title}
+            style={{ height: H - TOP }}
+            loading="eager"
+            scrolling="yes"
+          />
+        </div>
+      </IOSDevice>
+      <div className="hint"><i data-lucide="move-horizontal"></i> Scorri dentro al telefono</div>
+    </div>
+  );
+}
+
+function App(){
+  return (
+    <div className="rail">
+      {SCREENS.map(s => <Phone key={s.title} {...s} />)}
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+setTimeout(() => window.lucide && window.lucide.createIcons(), 60);
+</script>
+</body>
+</html>

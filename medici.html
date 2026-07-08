@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>I Medici — Medic Service Oristano</title>
+<meta name="description" content="Tutti i medici di Medic Service a Oristano: visite specialistiche, chirurgia day surgery, medicina estetica e diagnostica per immagini. Filtra per categoria e prenota online.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@300;400;500&family=DM+Serif+Display:ital@0;1&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-screen-label="I Medici">
+
+<!-- ===== HEADER ===== -->
+<header class="site-header">
+  <div class="container nav">
+    <a class="nav__logo" href="index.html"><img src="assets/logo-horizontal.svg" alt="Medic Service"></a>
+    <nav class="nav__links">
+      <a href="index.html">Home</a>
+      <a href="index.html#aree">Specialità</a>
+      <a href="medici.html" class="active">I Medici</a>
+      <a href="index.html#struttura">La Struttura</a>
+    </nav>
+    <div class="nav__cta">
+      <a class="nav__tel" href="tel:0783211136"><i data-lucide="phone"></i><span class="num">0783 211136</span></a>
+      <a class="btn btn--primary" href="https://www.miodottore.it/strutture/medic-service-oristano" target="_blank" rel="noopener">Prenota</a>
+      <button class="nav__burger" data-open-drawer aria-label="Menu"><i data-lucide="menu"></i></button>
+    </div>
+  </div>
+</header>
+
+<!-- ===== PAGE HEAD + FILTERS ===== -->
+<section class="section--tight" style="padding-top:36px;padding-bottom:0">
+  <div class="container">
+    <nav class="breadcrumb" style="margin-bottom:28px">
+      <a href="index.html">Home</a><i data-lucide="chevron-right"></i>
+      <span class="cur">I Medici</span>
+    </nav>
+    <div class="sec-head">
+      <span class="eyebrow"><span class="num">·</span> Il team medico</span>
+      <h1 class="h1" style="margin-top:14px">I nostri medici.</h1>
+      <p style="margin-top:16px">Oltre 45 specialisti in un unico centro. Filtra per area, trova chi cerchi e prenota la visita in pochi tap — i medici sono in ordine alfabetico per cognome.</p>
+    </div>
+
+    <div class="med-toolbar">
+      <div class="med-filters" id="med-filters">
+        <button class="med-filter active" data-cat="all">Tutti <span class="cnt num"></span></button>
+        <button class="med-filter" data-cat="visite">Visite Specialistiche <span class="cnt num"></span></button>
+        <button class="med-filter" data-cat="diagnostica">Diagnostica per Immagini <span class="cnt num"></span></button>
+        <button class="med-filter" data-cat="chirurgia">Chirurgia Day Surgery <span class="cnt num"></span></button>
+        <button class="med-filter" data-cat="estetica">Medicina Estetica <span class="cnt num"></span></button>
+      </div>
+      <div class="med-count" id="med-count"></div>
+    </div>
+
+    <!-- Sotto-filtri specialità: visibili solo nell'area "Visite Specialistiche" -->
+    <div class="med-subfilter" id="med-subfilter" hidden>
+      <div class="med-subfilter__lbl">Filtra per specialità</div>
+      <div class="med-subfilter__search">
+        <i data-lucide="search"></i>
+        <input type="text" id="spec-search" placeholder="Scrivi una specialità (es. cardiologia)…" autocomplete="off">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GRID ===== -->
+<section class="section" style="padding-top:36px">
+  <div class="container">
+    <div class="medici-grid" id="medici-grid"></div>
+    <div class="med-empty" id="med-empty" hidden>Nessun medico in questa categoria.</div>
+    <div class="med-loadmore">
+      <button class="btn btn--outline btn--lg" id="med-loadmore"><i data-lucide="plus"></i> Mostra altri medici</button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA BAND ===== -->
+<section class="ctaband">
+  <div class="ctaband__bg"><img src="assets/monogram-white.svg" alt=""></div>
+  <div class="container ctaband__inner">
+    <div>
+      <h2>Non sai quale specialista ti serve?</h2>
+      <p>Chiamaci: il nostro staff ti indirizza al medico giusto.</p>
+    </div>
+    <div class="ctaband__actions">
+      <a class="btn btn--primary btn--lg" href="https://www.miodottore.it/strutture/medic-service-oristano" target="_blank" rel="noopener"><i data-lucide="calendar-check"></i> Prenota online</a>
+      <a class="btn btn--ghost-light btn--lg" href="tel:0783211136"><i data-lucide="phone"></i> <span class="num">0783 211136</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <img src="assets/logo-horizontal-white.svg" alt="Medic Service">
+        <p>Centro medico polispecialistico nel cuore di Oristano. Cura chiara, professionale, vicina.</p>
+        <div class="footer__contact">
+          <a href="https://maps.app.goo.gl/DD7feputJqxw9w6r8" target="_blank" rel="noopener"><i data-lucide="map-pin"></i> Piazza Tharros 57, Oristano</a>
+          <a href="tel:0783211136"><i data-lucide="phone"></i> <span class="num">0783 211136</span></a>
+          <a href="mailto:info@medicservice.it"><i data-lucide="mail"></i> info@medicservice.it</a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Specialità</h4>
+        <ul>
+          <li><a href="medici.html?cat=visite">Visite Specialistiche</a></li>
+          <li><a href="medici.html?cat=diagnostica">Diagnostica per Immagini</a></li>
+          <li><a href="medici.html?cat=chirurgia">Chirurgia Day Surgery</a></li>
+          <li><a href="medicina-estetica.html">Medicina Estetica</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Il centro</h4>
+        <ul>
+          <li><a href="#">Chi siamo</a></li>
+          <li><a href="medici.html">I medici</a></li>
+          <li><a href="index.html#struttura">La struttura</a></li>
+          <li><a href="#">Lavora con noi</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Supporto</h4>
+        <ul>
+          <li><a href="#">Come prenotare</a></li>
+          <li><a href="#">Blog / Salute</a></li>
+          <li><a href="#">Contatti</a></li>
+          <li><a href="#">Privacy &amp; Cookie</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 Medic Service — Centro Polispecialistico, Oristano</span>
+      <span class="num">P.IVA 01234567890</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== MOBILE STICKY BAR ===== -->
+<nav class="mobilebar">
+  <a class="mobilebar__book" data-book><i data-lucide="calendar-check"></i> Prenota</a>
+  <a class="mobilebar__call" href="tel:0783211136"><i data-lucide="phone"></i> <span class="num">0783 211136</span></a>
+</nav>
+
+<!-- ===== MOBILE DRAWER ===== -->
+<div class="drawer">
+  <div class="drawer__scrim"></div>
+  <div class="drawer__panel">
+    <button class="drawer__close" data-close-drawer aria-label="Chiudi"><i data-lucide="x"></i></button>
+    <a href="index.html">Home</a>
+    <a href="index.html#aree">Specialità</a>
+    <a href="medici.html">I Medici</a>
+    <a href="index.html#struttura">La Struttura</a>
+    <a href="medicina-estetica.html">Medicina Estetica</a>
+    <button class="btn btn--primary btn--block" data-book style="margin-top:20px" data-close-drawer>Prenota online</button>
+  </div>
+</div>
+
+<!-- ===== BOOKING MODAL ===== -->
+<div class="modal" aria-modal="true" role="dialog">
+  <div class="modal__scrim"></div>
+  <div class="modal__box">
+    <button class="modal__close" data-close-modal aria-label="Chiudi"><i data-lucide="x"></i></button>
+    <div class="stepper"><span class="stepper__dot"></span><span class="stepper__dot"></span><span class="stepper__dot"></span></div>
+    <div class="modal__step" data-step="1">
+      <h3>Di cosa hai bisogno?</h3>
+      <p>Scegli l'area. Ti mostriamo subito i medici disponibili.</p>
+      <div class="opt-grid">
+        <button class="opt" data-area="visite"><i data-lucide="stethoscope"></i><span>Visite Specialistiche</span></button>
+        <button class="opt" data-area="diagnostica"><i data-lucide="scan-line"></i><span>Diagnostica</span></button>
+        <button class="opt" data-area="chirurgia"><i data-lucide="syringe"></i><span>Chirurgia</span></button>
+        <button class="opt" data-area="estetica"><i data-lucide="sparkles"></i><span>Medicina Estetica</span></button>
+      </div>
+    </div>
+    <div class="modal__step" data-step="2" hidden>
+      <h3>Scegli il medico</h3>
+      <p><span class="area-name"></span> — seleziona con chi vuoi prenotare.</p>
+      <div class="opt-grid"></div>
+      <button class="modal__back" data-back="1"><i data-lucide="arrow-left"></i> Cambia area</button>
+    </div>
+    <div class="modal__step" data-step="3" hidden>
+      <h3>Scegli data e ora</h3>
+      <p>Prossima disponibilità con <b class="medico-name"></b>. Giovedì 11 giugno 2026.</p>
+      <div class="slots">
+        <button class="slot">09:00</button><button class="slot">09:30</button><button class="slot">10:15</button>
+        <button class="slot">11:00</button><button class="slot">15:30</button><button class="slot">16:45</button>
+      </div>
+      <button class="btn btn--primary btn--block confirm" style="margin-top:22px" disabled>Conferma appuntamento</button>
+      <div class="miodottore"><i data-lucide="shield-check"></i> Prenotazione gestita con <b>MioDottore.it</b> — resti su medicservice.it</div>
+      <button class="modal__back" data-back="2"><i data-lucide="arrow-left"></i> Cambia medico</button>
+    </div>
+    <div class="modal__step" data-step="4" hidden>
+      <div class="modal__success">
+        <span class="check"><i data-lucide="check"></i></span>
+        <h3>Appuntamento richiesto!</h3>
+        <p class="recap" style="font-weight:700;color:var(--navy)"></p>
+        <p>Riceverai conferma via SMS ed email. A presto in Piazza Tharros.</p>
+        <button class="btn btn--primary" data-close-modal style="margin-top:8px">Perfetto, chiudi</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== DOCTOR DATA ===== -->
+<script type="application/json" id="medici-data">
+[{"surname":"Barbiero","display":"Dr. Tommaso Barbiero","specs":["Neurologia","Elettromiografia"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Cabras","display":"Dr. Sergio Cabras","specs":["Allergologia","Diabetologia","Immunologia"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Cabula","display":"Dr.ssa Rosanna Cabula","specs":["Endocrinologia"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Caddeo","display":"Dr.ssa Valentina Caddeo","specs":["Pedagogia"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Cadeddu","display":"Dr. Augusto Cadeddu","specs":["Dermatologia","Tricologia"],"cats":["visite","estetica"],"catLabels":["Visite Specialistiche","Medicina Estetica"]},
+{"surname":"Canu","display":"Dr. Mario Canu","specs":["Otorinolaringoiatria"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Capitta","display":"Dr. Gian Marco Capitta","specs":["Chiropratica"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Carta","display":"Dr. Bruno Carta","specs":["Otorinolaringoiatria"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"CartaGabriele","display":"Dr. Gabriele Carta","specs":["Medicina sportiva"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Casula","display":"Dr. Paolo Casula","specs":["Ematologia"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Cherchi","display":"Dr.ssa Federica Cherchi","specs":["Geriatria"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Concas","display":"Dr. Adriano Concas","specs":["Fisioterapia"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Corona","display":"Dr. Paolo Corona","specs":["Chirurgia generale"],"cats":["chirurgia"],"catLabels":["Chirurgia Day Surgery"]},
+{"surname":"Diana","display":"Dr.ssa Francesca Diana","specs":["Senologia"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Fadda","display":"Dr.ssa Francesca Fadda","specs":["Fisiatria"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Falco","display":"Dr. Alessandro Falco","specs":["Dermatologia"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Fornero","display":"Dr.ssa Valentina Fornero","specs":["Reumatologia"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Franceschi","display":"Dr. Fabrizio Franceschi","specs":["Terapia del dolore"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Humaidan","display":"Dr. Kais Humaidan","specs":["Elettromiografia","Neurologia"],"cats":["diagnostica","visite"],"catLabels":["Diagnostica per Immagini","Visite Specialistiche"]},
+{"surname":"Loi","display":"Op. Manuela Loi","specs":["Dermopigmentazione"],"cats":["estetica"],"catLabels":["Medicina Estetica"]},
+{"surname":"Maleddu","display":"Dr.ssa Alessandra Maleddu","specs":["Oncologia"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Manconi","display":"Dr.ssa Anna Rita Manconi","specs":["Reumatologia"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Melis","display":"Dr. Daniele Melis","specs":["Dermatologia","Tricologia"],"cats":["visite","estetica"],"catLabels":["Visite Specialistiche","Medicina Estetica"]},
+{"surname":"Mirai","display":"Dr.ssa Sara Mirai","specs":["Nutrizione"],"cats":["estetica"],"catLabels":["Medicina Estetica"]},
+{"surname":"Monni","display":"Dr. Nicola Monni","specs":["Medicina estetica"],"cats":["estetica"],"catLabels":["Medicina Estetica"]},
+{"surname":"Mura","display":"Dr. Pierpaolo Mura","specs":["Ortopedia","Traumatologia"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Murru","display":"Dr. Luca Murru","specs":["Oculistica"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Onali","display":"Dr. Sebastiano Onali","specs":["Gastroenterologia"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Oppo","display":"Dr. Giuseppe Oppo","specs":["Pneumologia"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Paderi","display":"Dr.ssa Valentina Paderi","specs":["Medicina estetica"],"cats":["estetica"],"catLabels":["Medicina Estetica"]},
+{"surname":"Paschina","display":"Dr. Carlo Paschina","specs":["Medicina legale"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Pibi","display":"Dr. Pierluigi Pibi","specs":["Andrologia","Urologia"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Picciau","display":"Dr. Maurizio Picciau","specs":["Radiologia"],"cats":["diagnostica"],"catLabels":["Diagnostica per Immagini"]},
+{"surname":"Pilloni","display":"Dr.ssa Monica Pilloni","specs":["Ginecologia"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Pintor","display":"Dr.ssa Valentina Pintor","specs":["Logopedia"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Piras","display":"Dr. Valentino Piras","specs":["Oculistica"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Pitzalis","display":"Dr. Gianfranco Pitzalis","specs":["Psichiatria"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Polizzi","display":"Dr. Leonardo Polizzi","specs":["Neurochirurgia"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Putzu","display":"Dr. Giovanni Antioco Putzu","specs":["Neurologia","Elettromiografia"],"cats":["diagnostica","visite"],"catLabels":["Diagnostica per Immagini","Visite Specialistiche"]},
+{"surname":"Rocca","display":"Dr. Alessio Rocca","specs":["Ginecologia"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Russo","display":"Dr. Michele Russo","specs":["Fisiatria"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Salfi","display":"Dott. Salfi","specs":["Flebologia","Proctologia"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Sanna","display":"Dr. Guido Sanna","specs":["Gastroenterologia"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Serpi","display":"Dr. Vladimiro Serpi","specs":["Oculistica"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Spiga","display":"Dr. Mauro Spiga","specs":["Ortopedia"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Trincas","display":"Dr. Efisio Trincas","specs":["Gastroenterologia"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Usai","display":"Dott. Nicola Usai","specs":["Cardiologia"],"cats":["visite"],"catLabels":["Visite Specialistiche"],"mioUrl":"https://www.miodottore.it/nicola-usai/cardiologo/oristano"}]
+</script>
+
+<!-- ===== RENDER + FILTER (runs before site.js so booking binds to all cards) ===== -->
+<script>
+(function () {
+  const DATA = JSON.parse(document.getElementById("medici-data").textContent);
+  const grid = document.getElementById("medici-grid");
+  const filters = document.getElementById("med-filters");
+  const countEl = document.getElementById("med-count");
+  const loadBtn = document.getElementById("med-loadmore");
+  const emptyEl = document.getElementById("med-empty");
+
+  const STEP = 8;       // cards revealed per "load more"
+  const START = 12;     // initial visible cards (3 righe da 4)
+  let activeCat = "all";
+  let specQuery = "";   // testo/specialità selezionata
+  let shown = START;
+  // categorie che mostrano la buca di ricerca per specialità
+  const SEARCHABLE = ["visite", "diagnostica", "chirurgia", "estetica"];
+
+  const subfilter = document.getElementById("med-subfilter");
+  const specSearch = document.getElementById("spec-search");
+
+  // build all cards once (alphabetical — DATA already sorted by surname)
+  DATA.forEach((d) => {
+    const card = document.createElement("a");
+    card.className = "med-card";
+    card.href = "medici/" + d.surname.toLowerCase() + ".html";
+    card.dataset.cats = d.cats.join(" ");
+    card.dataset.specs = d.specs.join("|").toLowerCase();
+    card.innerHTML =
+      '<div class="med-card__photo"><image-slot id="med-' + d.surname.toLowerCase() +
+        '" placeholder="Ritratto ' + d.display + '" shape="rect"' +
+        (d.surname === "Usai" ? ' src="assets/photos/usai.webp"' : d.surname === "Cabula" ? ' src="assets/photos/Cabula.webp"' : d.surname === "Cadeddu" ? ' src="assets/photos/Cadeddu.webp"' : d.surname === "Canu" ? ' src="assets/photos/Canu.webp"' : d.surname === "CartaGabriele" ? ' src="assets/photos/gabrielecarta.webp"' : d.surname === "Carta" ? ' src="assets/photos/brunocarta.webp"' : d.surname === "Corona" ? ' src="assets/photos/corona.webp"' : d.surname === "Diana" ? ' src="assets/photos/diana.webp"' : d.surname === "Oppo" ? ' src="assets/photos/oppo.webp"' : d.surname === "Paderi" ? ' src="assets/photos/paderi.webp"' : d.surname === "Pibi" ? ' src="assets/photos/pibi.webp"' : d.surname === "Picciau" ? ' src="assets/photos/picciau.webp"' : d.surname === "Pintor" ? ' src="assets/photos/pintor.webp"' : d.surname === "Pitzalis" ? ' src="assets/photos/pitzalis.webp"' : d.surname === "Salfi" ? ' src="assets/photos/salfi.webp"' : "") + '></image-slot></div>' +
+      '<div class="med-card__body">' +
+        '<div class="med-card__cat">' + d.catLabels.join(" · ") + '</div>' +
+        '<h3 class="med-card__name">' + d.display + '</h3>' +
+        '<div class="med-card__spec">' + d.specs.join(" · ") + '</div>' +
+        '<div class="med-card__actions"><button class="btn btn--primary btn--sm med-card__book" data-mio="' +
+          (d.mioUrl || "https://www.miodottore.it/strutture/medic-service-oristano") +
+          '"><i data-lucide="calendar-check"></i> Prenota ora</button></div>' +
+      '</div>';
+    // il bottone apre MioDottore in una nuova scheda, senza seguire il link alla scheda interna
+    card.querySelector(".med-card__book").addEventListener("click", (e) => {
+      e.preventDefault(); e.stopPropagation();
+      window.open(e.currentTarget.dataset.mio, "_blank", "noopener");
+    });
+    grid.appendChild(card);
+  });
+
+  function update() {
+    subfilter.hidden = !SEARCHABLE.includes(activeCat);
+    const cards = Array.from(grid.children);
+    const matches = cards.filter((c) => {
+      if (activeCat !== "all" && !c.dataset.cats.split(" ").includes(activeCat)) return false;
+      if (SEARCHABLE.includes(activeCat) && specQuery) {
+        return c.dataset.specs.split("|").some((s) => s.includes(specQuery.toLowerCase()));
+      }
+      return true;
+    });
+    cards.forEach((c) => (c.style.display = "none"));
+    matches.slice(0, shown).forEach((c) => (c.style.display = ""));
+    const total = matches.length;
+    countEl.innerHTML = "<b>" + total + "</b> medic" + (total === 1 ? "o" : "i");
+    emptyEl.hidden = total > 0;
+    if (shown < total) {
+      loadBtn.style.display = "";
+      loadBtn.innerHTML = '<i data-lucide="plus"></i> Mostra altri medici (' + (total - shown) + ")";
+      if (window.lucide) window.lucide.createIcons({ nameAttr: "data-lucide" });
+    } else {
+      loadBtn.style.display = "none";
+    }
+    // update filter counts
+    filters.querySelectorAll(".med-filter").forEach((f) => {
+      const cat = f.dataset.cat;
+      const n = cat === "all" ? DATA.length : DATA.filter((d) => d.cats.includes(cat)).length;
+      f.querySelector(".cnt").textContent = n;
+    });
+  }
+
+  filters.addEventListener("click", (e) => {
+    const btn = e.target.closest(".med-filter");
+    if (!btn) return;
+    filters.querySelectorAll(".med-filter").forEach((f) => f.classList.remove("active"));
+    btn.classList.add("active");
+    activeCat = btn.dataset.cat;
+    if (!SEARCHABLE.includes(activeCat)) { specQuery = ""; specSearch.value = ""; }
+    shown = START;
+    update();
+  });
+
+  loadBtn.addEventListener("click", () => { shown += STEP; update(); });
+
+  // casella di ricerca specialità (testo libero)
+  specSearch.addEventListener("input", (e) => { specQuery = e.target.value.trim(); shown = START; update(); });
+
+  // deep-link es. medici.html?cat=visite&spec=cardiologia
+  const params = new URLSearchParams(location.search);
+  const urlCat = params.get("cat");
+  if (urlCat) {
+    const t = filters.querySelector('.med-filter[data-cat="' + urlCat + '"]');
+    if (t) { filters.querySelectorAll(".med-filter").forEach((f) => f.classList.remove("active")); t.classList.add("active"); activeCat = urlCat; }
+  }
+  const urlSpec = params.get("spec");
+  if (urlSpec && SEARCHABLE.includes(activeCat)) { specQuery = urlSpec.toLowerCase(); specSearch.value = urlSpec; }
+
+  update();
+})();
+</script>
+
+<script src="https://unpkg.com/lucide@0.408.0/dist/umd/lucide.min.js"></script>
+<script src="image-slot.js"></script>
+<script src="site.js"></script>
+</body>
+</html>

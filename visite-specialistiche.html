@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prenota una Visita Specialistica — Medic Service Oristano</title>
+<meta name="description" content="Prenota la tua visita specialistica a Medic Service, Oristano. Scegli la specialità, poi il medico, infine data e ora — in pochi passaggi, anche se non sai ancora il nome dello specialista.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@300;400;500&family=DM+Serif+Display:ital@0;1&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* ===== Funnel — specifico per questa pagina, costruito sui token del brand ===== */
+  .funnel-intro { padding-top: 36px; padding-bottom: 0; }
+  .funnel-wrap { padding-top: 28px; padding-bottom: 100px; }
+
+  /* Tutto il funnel è centrato */
+  .funnel-intro .breadcrumb { justify-content: center; }
+  .funnel-intro .sec-head { margin-inline: auto; text-align: center; }
+
+  /* Barra sticky unica: stepper + riepilogo + intestazione del passo */
+  .funnel-sticky {
+    position: sticky; top: 76px; z-index: 40;
+    background: #fff;
+    padding: 24px 0 22px;
+    margin-bottom: 34px;
+  }
+  /* Quando la barra è agganciata in alto, la linea degli step si riduce del 20% */
+  .funnel-sticky .fstepper { transition: transform .25s var(--ease), margin-bottom .25s var(--ease); transform-origin: top center; }
+  .funnel-sticky.is-stuck { padding-top: 16px; }
+  .funnel-sticky.is-stuck .fstepper { transform: scale(.9); margin-bottom: 6px; }
+  .funnel-sticky::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: var(--line);
+  }
+  .fhead { display: none; text-align: center; max-width: 720px; margin: 0 auto; }
+  .fhead.active { display: block; }
+  .fhead .eyebrow { margin-bottom: 12px; }
+  .fhead h2 { color: var(--navy); font-size: clamp(24px, 2.6vw, 32px); }
+  .fhead p { margin: 12px auto 0; color: var(--g700); font-size: 17px; max-width: 640px; }
+
+  /* Stepper orizzontale (centrato) */
+  .fstepper { display: flex; align-items: flex-start; gap: 0; margin: 0 auto 22px; max-width: 720px; }
+  .fstep { display: flex; flex-direction: column; align-items: center; gap: 10px; flex: 1; position: relative; text-align: center; }
+  .fstep::after {
+    content: ""; position: absolute; top: 19px; left: 50%; width: 100%; height: 2px;
+    background: var(--g150); z-index: 0;
+  }
+  .fstep:last-child::after { display: none; }
+  .fstep.done::after { background: var(--brand); }
+  .fstep__dot {
+    width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center;
+    background: #fff; border: 2px solid var(--g300); color: var(--g700);
+    font-family: var(--num); font-weight: 500; font-size: 16px; position: relative; z-index: 1;
+    transition: all .2s var(--ease);
+  }
+  .fstep.active .fstep__dot { border-color: var(--brand); background: var(--brand); color: #fff; }
+  .fstep.done .fstep__dot { border-color: var(--brand); background: var(--brand); color: #fff; }
+  .fstep.done .fstep__dot svg { width: 18px; height: 18px; }
+  .fstep__label { font-size: 13px; font-weight: 700; color: var(--g700); letter-spacing: .01em; line-height: 1.3; }
+  .fstep.active .fstep__label, .fstep.done .fstep__label { color: var(--navy); }
+  .fstep.clickable { cursor: pointer; }
+
+  /* Riepilogo scelte (chips) */
+  .fsummary { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 22px; }
+  .fsummary:empty { display: none; margin: 0; }
+  .fchip {
+    display: inline-flex; align-items: center; gap: 10px; padding: 9px 9px 9px 16px;
+    border-radius: 999px; background: var(--blue-pale); color: var(--navy);
+    font-weight: 700; font-size: 14px; border: 1.5px solid transparent;
+  }
+  .fchip__k { font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--brand-dk); font-weight: 800; }
+  .fchip__edit {
+    background: #fff; border: 0; width: 26px; height: 26px; border-radius: 50%;
+    display: grid; place-items: center; color: var(--brand-dk); cursor: pointer;
+  }
+  .fchip__edit svg { width: 14px; height: 14px; }
+
+  /* Pannelli */
+  .fpanel { display: none; }
+  .fpanel.active { display: block; animation: fpanelIn .35s var(--ease) both; }
+  @keyframes fpanelIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+  .fpanel__head { margin: 0 auto 30px; text-align: center; }
+  .fpanel__head .eyebrow { margin-bottom: 14px; }
+  .fpanel__head h2 { color: var(--navy); }
+  .fpanel__head p { margin: 14px auto 0; color: var(--g700); font-size: 18px; max-width: 640px; }
+
+  /* Ricerca specialità */
+  .fsearch { position: relative; max-width: 460px; margin: 20px auto 0; }
+  .fsearch input {
+    width: 100%; padding: 15px 18px 15px 48px; border: 1.5px solid var(--g300);
+    border-radius: var(--r-sm); font-family: var(--sans); font-size: 16px; color: var(--navy);
+    background: #fff; transition: border-color .15s var(--ease);
+  }
+  .fsearch input:focus { outline: none; border-color: var(--brand); }
+  .fsearch svg { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); width: 20px; height: 20px; color: var(--grey); }
+
+  /* Griglia specialità — tile centrate */
+  .spec-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; max-width: 1100px; margin-inline: auto; }
+  .spec-opt {
+    display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px;
+    padding: 30px 18px; background: #fff;
+    border: 1.5px solid var(--line); border-radius: var(--r-md);
+    transition: all .18s var(--ease); cursor: pointer; position: relative;
+  }
+  .spec-opt:hover { border-color: var(--brand); box-shadow: var(--shadow-sm); transform: translateY(-3px); }
+  .spec-opt__icon { color: var(--brand); display: grid; place-items: center; }
+  .spec-opt__icon svg { width: 42px; height: 42px; }
+  .spec-opt:hover .spec-opt__icon { color: var(--brand-dk); }
+  .spec-opt__txt { display: block; }
+  .spec-opt__name { font-weight: 700; font-size: 17px; color: var(--navy); line-height: 1.25; }
+  .spec-opt__count {
+    display: block; margin-top: 9px; font-size: 12px; font-weight: 800;
+    letter-spacing: .08em; text-transform: uppercase; color: var(--brand);
+  }
+  .spec-opt__match {
+    display: inline-flex; align-items: center; gap: 6px; justify-content: center;
+    margin-top: 12px; padding: 5px 11px; border-radius: 999px;
+    background: var(--blue-pale); color: var(--brand-dk);
+    font-size: 12px; font-weight: 700; line-height: 1.25; text-align: center;
+  }
+  .spec-opt__match svg { width: 13px; height: 13px; flex: none; }
+
+  /* Griglia medici (step 2) */
+  .fmedici-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; max-width: 980px; margin-inline: auto; }
+  a.med-card { text-decoration: none; color: inherit; }
+  .fmed-actions { margin-top: auto; padding-top: 16px; }
+  .fmed-actions .btn { width: 100%; justify-content: center; }
+  .fmed-link { display: inline-flex; align-items: center; gap: 7px; font-weight: 700; font-size: 14px; color: var(--brand-dk); }
+  .fmed-link svg { width: 16px; height: 16px; color: var(--brand); transition: transform .2s var(--ease); }
+  .med-card:hover .fmed-link svg { transform: translateX(3px); }
+  .fno-match { padding: 40px 0; color: var(--g700); font-size: 17px; }
+
+  /* Step 3 — data e ora */
+  .fbooking { display: grid; grid-template-columns: 1.1fr .9fr; gap: 40px; align-items: start; max-width: 980px; margin-inline: auto; text-align: left; }
+  .fbooking__aside {
+    border: 1.5px solid var(--line); border-radius: var(--r-md); padding: 26px; background: var(--g075);
+    position: sticky; top: 96px;
+  }
+  .fbooking__aside h4 { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--brand-dk); }
+  .fbk-row { display: flex; gap: 14px; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--line); }
+  .fbk-row:last-child { border-bottom: 0; }
+  .fbk-row__ph { width: 56px; height: 56px; border-radius: var(--r-sm); overflow: hidden; background: var(--blue-pale); flex: none; }
+  .fbk-row__ph image-slot { width: 100%; height: 100%; }
+  .fbk-row__k { font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--grey); font-weight: 800; }
+  .fbk-row__v { font-size: 16px; font-weight: 700; color: var(--navy); margin-top: 2px; line-height: 1.2; }
+  .fdate-label { font-weight: 700; color: var(--navy); font-size: 16px; margin: 4px 0 16px; }
+  .fday-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 22px; }
+  .fday {
+    padding: 10px 16px; border-radius: 999px; border: 1.5px solid var(--g300); background: #fff;
+    font-weight: 700; font-size: 13.5px; color: var(--g700); cursor: pointer; transition: all .15s var(--ease);
+  }
+  .fday:hover { border-color: var(--brand); color: var(--brand-dk); }
+  .fday.sel { background: var(--navy); border-color: var(--navy); color: #fff; }
+  .fday small { display: block; font-family: var(--num); font-weight: 400; font-size: 11px; opacity: .7; }
+
+  /* Step 4 — esito */
+  .fsuccess { max-width: 560px; margin: 0 auto; text-align: center; padding: 30px 0; }
+  .fsuccess .check { width: 84px; height: 84px; border-radius: 50%; background: #E6F6EE; color: #2Fae6b; display: grid; place-items: center; margin: 0 auto 24px; }
+  .fsuccess .check svg { width: 44px; height: 44px; }
+  .fsuccess h2 { color: var(--navy); }
+  .fsuccess__recap { margin: 18px auto 8px; padding: 18px 22px; background: var(--g075); border-radius: var(--r-md); border: 1px solid var(--line); display: inline-block; }
+  .fsuccess__recap b { color: var(--navy); }
+  .fsuccess__actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 28px; }
+
+  .fback { background: none; border: 0; color: var(--g700); font-weight: 700; font-size: 14px; display: flex; justify-content: center; align-items: center; gap: 7px; margin: 30px auto 0; cursor: pointer; }
+  .fback svg { width: 16px; height: 16px; }
+
+  @media (max-width: 1000px) {
+    .spec-grid { grid-template-columns: repeat(2, 1fr); }
+    .fmedici-grid { grid-template-columns: repeat(2, 1fr); }
+    .fbooking { grid-template-columns: 1fr; }
+    .fbooking__aside { position: static; }
+  }
+  @media (max-width: 560px) {
+    .spec-grid { grid-template-columns: 1fr; }
+    .fmedici-grid { grid-template-columns: 1fr; }
+    .fstep__label { font-size: 11px; }
+  }
+</style>
+</head>
+<body data-screen-label="Funnel Visite Specialistiche">
+
+<!-- ===== HEADER ===== -->
+<header class="site-header">
+  <div class="container nav">
+    <a class="nav__logo" href="index.html"><img src="assets/logo-horizontal.svg" alt="Medic Service"></a>
+    <nav class="nav__links">
+      <a href="index.html">Home</a>
+      <a href="index.html#aree" class="active">Specialità</a>
+      <a href="medici.html">I Medici</a>
+      <a href="index.html#struttura">La Struttura</a>
+    </nav>
+    <div class="nav__cta">
+      <a class="nav__tel" href="tel:0783211136"><i data-lucide="phone"></i><span class="num">0783 211136</span></a>
+      <a class="btn btn--primary" href="https://www.miodottore.it/strutture/medic-service-oristano" target="_blank" rel="noopener">Prenota</a>
+      <button class="nav__burger" data-open-drawer aria-label="Menu"><i data-lucide="menu"></i></button>
+    </div>
+  </div>
+</header>
+
+<!-- ===== INTRO ===== -->
+<section class="section--tight funnel-intro">
+  <div class="container">
+    <nav class="breadcrumb" style="margin-bottom:26px">
+      <a href="index.html">Home</a><i data-lucide="chevron-right"></i>
+      <span class="cur">Visite Specialistiche</span>
+    </nav>
+    <div class="sec-head">
+      <span class="eyebrow"><span class="num">01</span> Visite Specialistiche</span>
+      <h1 class="h1" style="margin-top:14px">Prenota in due passi.</h1>
+      <p style="margin-top:16px">Non serve sapere il nome del medico. Scegli prima la <b>specialità</b> che ti serve, poi <b>scegli il medico</b> e prenoti dalla sua scheda.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FUNNEL ===== -->
+<section class="funnel-wrap">
+  <div class="container">
+
+    <!-- Barra sticky: stepper + riepilogo + intestazione del passo (sezione unica) -->
+    <div class="funnel-sticky" id="funnel-sticky">
+      <div class="fstepper" id="fstepper">
+        <div class="fstep" data-go="1"><span class="fstep__dot">1</span><span class="fstep__label">Scegli la specialità</span></div>
+        <div class="fstep" data-go="2"><span class="fstep__dot">2</span><span class="fstep__label">Scegli il medico</span></div>
+      </div>
+
+      <!-- Riepilogo scelte -->
+      <div class="fsummary" id="fsummary"></div>
+
+      <!-- Intestazioni dei passi (una sola visibile per volta) -->
+      <div class="fhead" data-head="1">
+        <span class="eyebrow">Passo 1 di 2</span>
+        <h2 class="h2">Di che specialista hai bisogno?</h2>
+        <p>Siamo in tanti. Facci sapere cosa stai cercando.</p>
+        <div class="fsearch">
+          <i data-lucide="search"></i>
+          <input type="text" id="fspec-search" placeholder="Cerca per specialità o patologia (es. ipertensione, mal di schiena)…" autocomplete="off">
+        </div>
+      </div>
+      <div class="fhead" data-head="2">
+        <span class="eyebrow">Passo 2 di 2</span>
+        <h2 class="h2">Scegli il medico</h2>
+        <p id="fmed-sub">Questi medici ricevono per la specialità selezionata.</p>
+      </div>
+      <div class="fhead" data-head="3">
+        <span class="eyebrow">Passo 3 di 3</span>
+        <h2 class="h2">Scegli data e ora</h2>
+        <p>Seleziona uno slot disponibile. Riceverai conferma via SMS ed email.</p>
+      </div>
+    </div>
+
+    <!-- STEP 1 — specialità -->
+    <div class="fpanel" data-panel="1">
+      <div class="spec-grid" id="fspec-grid"></div>
+      <p class="fno-match" id="fspec-empty" hidden>Nessuna specialità o patologia corrisponde alla ricerca. Prova con un altro termine, oppure <button class="link-btn" id="fspec-reset" style="background:none;border:0;color:var(--brand-dk);font-weight:700;cursor:pointer">vedi tutte le specialità</button>.</p>
+    </div>
+
+    <!-- STEP 2 — medico -->
+    <div class="fpanel" data-panel="2">
+      <div class="fmedici-grid" id="fmed-grid"></div>
+      <button class="fback" data-go="1"><i data-lucide="arrow-left"></i> Cambia specialità</button>
+    </div>
+
+    <!-- STEP 3 — data e ora -->
+    <div class="fpanel" data-panel="3">
+      <div class="fbooking">
+        <div>
+          <div class="fday-tabs" id="fday-tabs"></div>
+          <div class="fdate-label" id="fdate-label"></div>
+          <div class="slots" id="fslots"></div>
+          <button class="btn btn--primary btn--lg fconfirm" id="fconfirm" style="margin-top:26px" disabled><i data-lucide="calendar-check"></i> Conferma appuntamento</button>
+          <div class="miodottore" style="margin-top:18px"><i data-lucide="shield-check"></i> Prenotazione gestita con <b>MioDottore.it</b> — resti su medicservice.it</div>
+        </div>
+        <aside class="fbooking__aside">
+          <h4>Riepilogo</h4>
+          <div class="fbk-row">
+            <div class="fbk-row__ph" id="fbk-photo"></div>
+            <div>
+              <div class="fbk-row__k">Medico</div>
+              <div class="fbk-row__v" id="fbk-medico">—</div>
+            </div>
+          </div>
+          <div class="fbk-row">
+            <div>
+              <div class="fbk-row__k">Specialità</div>
+              <div class="fbk-row__v" id="fbk-spec">—</div>
+            </div>
+          </div>
+          <div class="fbk-row">
+            <div>
+              <div class="fbk-row__k">Quando</div>
+              <div class="fbk-row__v" id="fbk-when">Da selezionare</div>
+            </div>
+          </div>
+        </aside>
+      </div>
+      <button class="fback" data-go="2"><i data-lucide="arrow-left"></i> Cambia medico</button>
+    </div>
+
+    <!-- STEP 4 — esito -->
+    <div class="fpanel" data-panel="4">
+      <div class="fsuccess">
+        <span class="check"><i data-lucide="check"></i></span>
+        <h2 class="h2">Appuntamento richiesto!</h2>
+        <div class="fsuccess__recap" id="fsuccess-recap"></div>
+        <p class="muted" style="margin-top:14px">Riceverai conferma via SMS ed email. A presto in Piazza Tharros 57, Oristano.</p>
+        <div class="fsuccess__actions">
+          <a class="btn btn--primary" href="index.html">Torna alla home</a>
+          <button class="btn btn--outline" id="frestart">Prenota un'altra visita</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== CTA BAND ===== -->
+<section class="ctaband">
+  <div class="ctaband__bg"><img src="assets/monogram-white.svg" alt=""></div>
+  <div class="container ctaband__inner">
+    <div>
+      <h2>Non sai quale specialista ti serve?</h2>
+      <p>Chiamaci: il nostro staff ti indirizza al medico giusto.</p>
+    </div>
+    <div class="ctaband__actions">
+      <a class="btn btn--ghost-light btn--lg" href="tel:0783211136"><i data-lucide="phone"></i> <span class="num">0783 211136</span></a>
+      <a class="btn btn--primary btn--lg" href="medici.html"><i data-lucide="users"></i> Vedi tutti i medici</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <img src="assets/logo-horizontal-white.svg" alt="Medic Service">
+        <p>Centro medico polispecialistico nel cuore di Oristano. Cura chiara, professionale, vicina.</p>
+        <div class="footer__contact">
+          <a href="https://maps.app.goo.gl/DD7feputJqxw9w6r8" target="_blank" rel="noopener"><i data-lucide="map-pin"></i> Piazza Tharros 57, Oristano</a>
+          <a href="tel:0783211136"><i data-lucide="phone"></i> <span class="num">0783 211136</span></a>
+          <a href="mailto:info@medicservice.it"><i data-lucide="mail"></i> info@medicservice.it</a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Specialità</h4>
+        <ul>
+          <li><a href="visite-specialistiche.html">Visite Specialistiche</a></li>
+          <li><a href="medici.html?cat=diagnostica">Diagnostica per Immagini</a></li>
+          <li><a href="medici.html?cat=chirurgia">Chirurgia Day Surgery</a></li>
+          <li><a href="medicina-estetica.html">Medicina Estetica</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Il centro</h4>
+        <ul>
+          <li><a href="#">Chi siamo</a></li>
+          <li><a href="medici.html">I medici</a></li>
+          <li><a href="index.html#struttura">La struttura</a></li>
+          <li><a href="#">Lavora con noi</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Supporto</h4>
+        <ul>
+          <li><a href="#">Come prenotare</a></li>
+          <li><a href="#">Blog / Salute</a></li>
+          <li><a href="#">Contatti</a></li>
+          <li><a href="#">Privacy &amp; Cookie</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 Medic Service — Centro Polispecialistico, Oristano</span>
+      <span class="num">P.IVA 01234567890</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== MOBILE STICKY BAR ===== -->
+<nav class="mobilebar">
+  <a class="mobilebar__book" data-book><i data-lucide="calendar-check"></i> Prenota</a>
+  <a class="mobilebar__call" href="tel:0783211136"><i data-lucide="phone"></i> <span class="num">0783 211136</span></a>
+</nav>
+
+<!-- ===== MOBILE DRAWER ===== -->
+<div class="drawer">
+  <div class="drawer__scrim"></div>
+  <div class="drawer__panel">
+    <button class="drawer__close" data-close-drawer aria-label="Chiudi"><i data-lucide="x"></i></button>
+    <a href="index.html">Home</a>
+    <a href="index.html#aree">Specialità</a>
+    <a href="medici.html">I Medici</a>
+    <a href="index.html#struttura">La Struttura</a>
+    <a href="medicina-estetica.html">Medicina Estetica</a>
+    <button class="btn btn--primary btn--block" data-book style="margin-top:20px" data-close-drawer>Prenota online</button>
+  </div>
+</div>
+
+<!-- ===== BOOKING MODAL (per il CTA "Prenota" globale) ===== -->
+<div class="modal" aria-modal="true" role="dialog">
+  <div class="modal__scrim"></div>
+  <div class="modal__box">
+    <button class="modal__close" data-close-modal aria-label="Chiudi"><i data-lucide="x"></i></button>
+    <div class="stepper"><span class="stepper__dot"></span><span class="stepper__dot"></span><span class="stepper__dot"></span></div>
+    <div class="modal__step" data-step="1">
+      <h3>Di cosa hai bisogno?</h3>
+      <p>Scegli l'area. Ti mostriamo subito i medici disponibili.</p>
+      <div class="opt-grid">
+        <button class="opt" data-area="visite"><i data-lucide="stethoscope"></i><span>Visite Specialistiche</span></button>
+        <button class="opt" data-area="diagnostica"><i data-lucide="scan-line"></i><span>Diagnostica</span></button>
+        <button class="opt" data-area="chirurgia"><i data-lucide="syringe"></i><span>Chirurgia</span></button>
+        <button class="opt" data-area="estetica"><i data-lucide="sparkles"></i><span>Medicina Estetica</span></button>
+      </div>
+    </div>
+    <div class="modal__step" data-step="2" hidden>
+      <h3>Scegli il medico</h3>
+      <p><span class="area-name"></span> — seleziona con chi vuoi prenotare.</p>
+      <div class="opt-grid"></div>
+      <button class="modal__back" data-back="1"><i data-lucide="arrow-left"></i> Cambia area</button>
+    </div>
+    <div class="modal__step" data-step="3" hidden>
+      <h3>Scegli data e ora</h3>
+      <p>Prossima disponibilità con <b class="medico-name"></b>. Giovedì 11 giugno 2026.</p>
+      <div class="slots">
+        <button class="slot">09:00</button><button class="slot">09:30</button><button class="slot">10:15</button>
+        <button class="slot">11:00</button><button class="slot">15:30</button><button class="slot">16:45</button>
+      </div>
+      <button class="btn btn--primary btn--block confirm" style="margin-top:22px" disabled>Conferma appuntamento</button>
+      <div class="miodottore"><i data-lucide="shield-check"></i> Prenotazione gestita con <b>MioDottore.it</b> — resti su medicservice.it</div>
+      <button class="modal__back" data-back="2"><i data-lucide="arrow-left"></i> Cambia medico</button>
+    </div>
+    <div class="modal__step" data-step="4" hidden>
+      <div class="modal__success">
+        <span class="check"><i data-lucide="check"></i></span>
+        <h3>Appuntamento richiesto!</h3>
+        <p class="recap" style="font-weight:700;color:var(--navy)"></p>
+        <p>Riceverai conferma via SMS ed email. A presto in Piazza Tharros.</p>
+        <button class="btn btn--primary" data-close-modal style="margin-top:8px">Perfetto, chiudi</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== DOCTOR DATA ===== -->
+<script type="application/json" id="roster">
+[{"surname":"Barbiero","display":"Dr. Tommaso Barbiero","specs":["Neurologia","Elettromiografia"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Cabras","display":"Dr. Sergio Cabras","specs":["Allergologia","Diabetologia","Immunologia"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Cabula","display":"Dr.ssa Rosanna Cabula","specs":["Endocrinologia"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Caddeo","display":"Dr.ssa Valentina Caddeo","specs":["Pedagogia"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Cadeddu","display":"Dr. Augusto Cadeddu","specs":["Dermatologia","Tricologia"],"cats":["visite","estetica"],"catLabels":["Visite Specialistiche","Medicina Estetica"]},
+{"surname":"Canu","display":"Dr. Mario Canu","specs":["Otorinolaringoiatria"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Capitta","display":"Dr. Gian Marco Capitta","specs":["Chiropratica"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Carta","display":"Dr. Bruno Carta","specs":["Otorinolaringoiatria"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"CartaGabriele","display":"Dr. Gabriele Carta","specs":["Medicina sportiva"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Casula","display":"Dr. Paolo Casula","specs":["Ematologia"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Cherchi","display":"Dr.ssa Federica Cherchi","specs":["Geriatria"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Concas","display":"Dr. Adriano Concas","specs":["Fisioterapia"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Corona","display":"Dr. Paolo Corona","specs":["Chirurgia generale"],"cats":["chirurgia"],"catLabels":["Chirurgia Day Surgery"]},
+{"surname":"Diana","display":"Dr.ssa Francesca Diana","specs":["Senologia"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Fadda","display":"Dr.ssa Francesca Fadda","specs":["Fisiatria"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Falco","display":"Dr. Alessandro Falco","specs":["Dermatologia"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Fornero","display":"Dr.ssa Valentina Fornero","specs":["Reumatologia"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Franceschi","display":"Dr. Fabrizio Franceschi","specs":["Terapia del dolore"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Humaidan","display":"Dr. Kais Humaidan","specs":["Elettromiografia","Neurologia"],"cats":["diagnostica","visite"],"catLabels":["Diagnostica per Immagini","Visite Specialistiche"]},
+{"surname":"Loi","display":"Op. Manuela Loi","specs":["Dermopigmentazione"],"cats":["estetica"],"catLabels":["Medicina Estetica"]},
+{"surname":"Maleddu","display":"Dr.ssa Alessandra Maleddu","specs":["Oncologia"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Manconi","display":"Dr.ssa Anna Rita Manconi","specs":["Reumatologia"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Melis","display":"Dr. Daniele Melis","specs":["Dermatologia","Tricologia"],"cats":["visite","estetica"],"catLabels":["Visite Specialistiche","Medicina Estetica"]},
+{"surname":"Mirai","display":"Dr.ssa Sara Mirai","specs":["Nutrizione"],"cats":["estetica"],"catLabels":["Medicina Estetica"]},
+{"surname":"Monni","display":"Dr. Nicola Monni","specs":["Medicina estetica"],"cats":["estetica"],"catLabels":["Medicina Estetica"]},
+{"surname":"Mura","display":"Dr. Pierpaolo Mura","specs":["Ortopedia","Traumatologia"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Murru","display":"Dr. Luca Murru","specs":["Oculistica"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Onali","display":"Dr. Sebastiano Onali","specs":["Gastroenterologia"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Oppo","display":"Dr. Giuseppe Oppo","specs":["Pneumologia"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Paderi","display":"Dr.ssa Valentina Paderi","specs":["Medicina estetica"],"cats":["estetica"],"catLabels":["Medicina Estetica"]},
+{"surname":"Paschina","display":"Dr. Carlo Paschina","specs":["Medicina legale"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Pibi","display":"Dr. Pierluigi Pibi","specs":["Andrologia","Urologia"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Picciau","display":"Dr. Maurizio Picciau","specs":["Radiologia"],"cats":["diagnostica"],"catLabels":["Diagnostica per Immagini"]},
+{"surname":"Pilloni","display":"Dr.ssa Monica Pilloni","specs":["Ginecologia"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Pintor","display":"Dr.ssa Valentina Pintor","specs":["Logopedia"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Piras","display":"Dr. Valentino Piras","specs":["Oculistica"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Pitzalis","display":"Dr. Gianfranco Pitzalis","specs":["Psichiatria"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Polizzi","display":"Dr. Leonardo Polizzi","specs":["Neurochirurgia"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Putzu","display":"Dr. Giovanni Antioco Putzu","specs":["Neurologia","Elettromiografia"],"cats":["diagnostica","visite"],"catLabels":["Diagnostica per Immagini","Visite Specialistiche"]},
+{"surname":"Rocca","display":"Dr. Alessio Rocca","specs":["Ginecologia"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Russo","display":"Dr. Michele Russo","specs":["Fisiatria"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Salfi","display":"Dott. Salfi","specs":["Flebologia","Proctologia"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Sanna","display":"Dr. Guido Sanna","specs":["Gastroenterologia"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Serpi","display":"Dr. Vladimiro Serpi","specs":["Oculistica"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Spiga","display":"Dr. Mauro Spiga","specs":["Ortopedia"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Trincas","display":"Dr. Efisio Trincas","specs":["Gastroenterologia"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
+{"surname":"Usai","display":"Dott. Nicola Usai","specs":["Cardiologia"],"cats":["visite"],"catLabels":["Visite Specialistiche"]}]
+</script>
+
+<!-- ===== FUNNEL LOGIC ===== -->
+<script src="anatomy-icons.js?v=8"></script>
+<script>
+(function () {
+  const ALL = JSON.parse(document.getElementById("roster").textContent);
+  // solo i medici dell'area Visite Specialistiche
+  const DOCS = ALL.filter((d) => d.cats.includes("visite"));
+
+  // mappa specialità -> medici
+  const specMap = {};
+  DOCS.forEach((d) => d.specs.forEach((s) => {
+    (specMap[s] = specMap[s] || []).push(d);
+  }));
+  const SPECS = Object.keys(specMap).sort((a, b) => a.localeCompare(b, "it"));
+
+  const DAYS = [
+    { lbl: "Gio", d: "11 giu", full: "Giovedì 11 giugno 2026", slots: ["09:00", "09:30", "10:15", "11:00", "12:00", "15:30", "16:45", "17:30"] },
+    { lbl: "Ven", d: "12 giu", full: "Venerdì 12 giugno 2026", slots: ["08:30", "10:00", "11:45", "14:00", "15:15", "16:00"] },
+    { lbl: "Lun", d: "15 giu", full: "Lunedì 15 giugno 2026", slots: ["09:15", "10:30", "11:30", "16:30", "17:15"] },
+  ];
+
+  // Patologie/condizioni trattate per specialità (placeholder plausibili — da rivedere).
+  // Alimentano la ricerca al Passo 1: cercando una patologia si trova la specialità giusta.
+  const PATOLOGIE = {
+    "Allergologia": ["Rinite allergica", "Asma allergica", "Allergie alimentari", "Orticaria", "Dermatite allergica", "Allergia ai farmaci", "Allergia agli acari", "Reazioni a punture di insetti"],
+    "Andrologia": ["Disfunzione erettile", "Infertilità maschile", "Varicocele", "Eiaculazione precoce", "Ipogonadismo", "Prostatite"],
+    "Flebologia": ["Vene varicose", "Insufficienza venosa", "Trombosi venosa", "Gonfiore alle gambe", "Arteriopatia periferica", "Linfedema"],
+    "Cardiologia": ["Ipertensione arteriosa", "Aritmie e fibrillazione atriale", "Scompenso cardiaco", "Cardiopatia ischemica", "Valvulopatie", "Dislipidemie (colesterolo)", "Soffi cardiaci", "Sincope e palpitazioni"],
+    "Chiropratica": ["Mal di schiena", "Cervicalgia", "Lombalgia", "Ernia del disco", "Sciatalgia", "Mal di testa tensivo", "Postura scorretta"],
+    "Dermatologia": ["Acne", "Psoriasi", "Dermatite", "Eczema", "Nei e melanoma", "Verruche", "Dermatite seborroica", "Micosi della pelle", "Orticaria"],
+    "Diabetologia": ["Diabete tipo 1", "Diabete tipo 2", "Prediabete", "Glicemia alta", "Diabete gestazionale", "Piede diabetico"],
+    "Elettromiografia": ["Sindrome del tunnel carpale", "Neuropatie periferiche", "Sciatalgia", "Debolezza muscolare", "Formicolii agli arti"],
+    "Ematologia": ["Anemia", "Carenza di ferro", "Piastrinopenia", "Disturbi della coagulazione", "Linfomi", "Leucemie"],
+    "Endocrinologia": ["Disturbi della tiroide", "Ipotiroidismo", "Ipertiroidismo", "Noduli tiroidei", "Disturbi surrenali", "Osteoporosi", "Squilibri ormonali"],
+    "Fisiatria": ["Dolore muscolare", "Riabilitazione post-trauma", "Lombalgia", "Esiti di ictus", "Rieducazione motoria", "Dolore articolare"],
+    "Fisioterapia": ["Mal di schiena", "Riabilitazione post-operatoria", "Distorsioni", "Tendiniti", "Cervicalgia", "Recupero motorio", "Dolore alla spalla"],
+    "Gastroenterologia": ["Reflusso gastroesofageo", "Gastrite", "Colon irritabile", "Stitichezza", "Morbo di Crohn", "Colite", "Calcoli biliari", "Intolleranze alimentari"],
+    "Geriatria": ["Demenza e Alzheimer", "Fragilità dell'anziano", "Osteoporosi", "Disturbi della memoria", "Polipatologia", "Cadute ricorrenti"],
+    "Ginecologia": ["Disturbi mestruali", "Menopausa", "Endometriosi", "Infezioni vaginali", "Cisti ovariche", "Fibromi uterini", "Contraccezione", "Controllo in gravidanza"],
+    "Immunologia": ["Malattie autoimmuni", "Immunodeficienze", "Allergie", "Infezioni ricorrenti", "Lupus"],
+    "Logopedia": ["Disturbi del linguaggio", "Balbuzie", "Disfagia", "Disturbi della voce", "Difficoltà di apprendimento", "Afasia post-ictus"],
+    "Medicina legale": ["Valutazione del danno", "Invalidità civile", "Idoneità", "Perizie medico-legali", "Risarcimento danni"],
+    "Neurochirurgia": ["Ernia del disco", "Tumori cerebrali", "Stenosi vertebrale", "Nevralgie", "Traumi cranici", "Idrocefalo"],
+    "Neurologia": ["Mal di testa ed emicrania", "Epilessia", "Parkinson", "Sclerosi multipla", "Vertigini", "Disturbi della memoria", "Neuropatie", "Ictus"],
+    "Oculistica": ["Cataratta", "Glaucoma", "Miopia e difetti visivi", "Maculopatia", "Congiuntivite", "Occhio secco", "Controllo della vista"],
+    "Oncologia": ["Tumori", "Prevenzione oncologica", "Follow-up oncologico", "Noduli sospetti", "Terapie oncologiche"],
+    "Ortopedia": ["Artrosi", "Mal di schiena", "Ernia del disco", "Lesioni del menisco", "Fratture", "Dolore al ginocchio", "Dolore alla spalla", "Tunnel carpale"],
+    "Otorinolaringoiatria": ["Sinusite", "Otite", "Vertigini", "Russamento e apnee", "Abbassamento di voce", "Acufeni", "Mal di gola ricorrente", "Polipi nasali"],
+    "Pedagogia": ["Disturbi dell'apprendimento", "Dislessia", "Difficoltà scolastiche", "Disturbi dell'attenzione", "Sostegno educativo"],
+    "Pneumologia": ["Asma", "BPCO", "Apnee notturne", "Tosse cronica", "Bronchite", "Allergie respiratorie", "Difficoltà respiratorie"],
+    "Proctologia": ["Emorroidi", "Ragadi anali", "Fistole", "Stitichezza", "Prolasso rettale", "Sangue nelle feci"],
+    "Psichiatria": ["Ansia", "Depressione", "Attacchi di panico", "Disturbi del sonno", "Disturbo bipolare", "Stress", "Disturbi alimentari"],
+    "Reumatologia": ["Artrite reumatoide", "Artrosi", "Fibromialgia", "Lupus", "Gotta", "Osteoporosi", "Dolori articolari diffusi"],
+    "Senologia": ["Noduli al seno", "Prevenzione del tumore al seno", "Controllo senologico", "Mastopatia", "Dolore al seno"],
+    "Terapia del dolore": ["Dolore cronico", "Mal di schiena cronico", "Nevralgie", "Dolore oncologico", "Cefalee croniche", "Fibromialgia"],
+    "Traumatologia": ["Fratture", "Distorsioni", "Lussazioni", "Traumi sportivi", "Lesioni muscolari", "Strappi"],
+    "Tricologia": ["Caduta dei capelli", "Alopecia", "Diradamento", "Forfora", "Cuoio capelluto irritato"],
+    "Urologia": ["Calcoli renali", "Infezioni urinarie", "Prostata ingrossata", "Incontinenza", "Sangue nelle urine", "Disfunzione erettile", "Cistite"],
+  };
+
+  // normalizza per confronto: minuscole + rimuove accenti
+  const norm = (str) => (str || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+  const state = { spec: null, doctor: null, day: 0, slot: null, maxStep: 1 };
+
+  const $ = (s) => document.querySelector(s);
+  const panels = document.querySelectorAll(".fpanel");
+  const fsteps = document.querySelectorAll("#fstepper .fstep");
+  const icons = () => { if (window.lucide) window.lucide.createIcons({ nameAttr: "data-lucide" }); };
+
+  function goStep(n) {
+    if (n > state.maxStep) return;
+    panels.forEach((p) => p.classList.toggle("active", +p.dataset.panel === n));
+    document.querySelectorAll(".fhead").forEach((h) => h.classList.toggle("active", +h.dataset.head === n));
+    const sticky = document.getElementById("funnel-sticky");
+    if (sticky) sticky.style.display = (n >= 4) ? "none" : "";
+    fsteps.forEach((s) => {
+      const i = +s.dataset.go;
+      s.classList.toggle("active", i === n);
+      s.classList.toggle("done", i < n && i <= state.maxStep);
+      s.classList.toggle("clickable", i <= state.maxStep && i !== n);
+      const dot = s.querySelector(".fstep__dot");
+      dot.innerHTML = (i < n) ? '<i data-lucide="check"></i>' : i;
+    });
+    renderSummary(n);
+    icons();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  /* ---- riepilogo chips ---- */
+  function renderSummary(curStep) {
+    const wrap = $("#fsummary");
+    wrap.innerHTML = "";
+    if (curStep === 1) return;
+    if (state.spec) wrap.appendChild(makeChip("Specialità", state.spec, 1));
+    if (state.doctor && curStep >= 3) wrap.appendChild(makeChip("Medico", state.doctor.display, 2));
+  }
+  function makeChip(k, v, backTo) {
+    const c = document.createElement("div");
+    c.className = "fchip";
+    c.innerHTML = '<span class="fchip__k">' + k + '</span><span>' + v + '</span>' +
+      '<button class="fchip__edit" title="Modifica"><i data-lucide="pencil"></i></button>';
+    c.querySelector(".fchip__edit").addEventListener("click", () => goStep(backTo));
+    return c;
+  }
+
+  /* ---- STEP 1: specialità ---- */
+  function renderSpecs(filter) {
+    const grid = $("#fspec-grid");
+    const q = norm(filter);
+    // ogni specialità: match per nome OPPURE per patologia trattata
+    const results = SPECS.map((s) => {
+      const nameMatch = !q || norm(s).includes(q);
+      const matched = (q && !nameMatch)
+        ? (PATOLOGIE[s] || []).filter((p) => norm(p).includes(q))
+        : [];
+      return { s, nameMatch, matched };
+    }).filter((r) => !q || r.nameMatch || r.matched.length);
+    grid.innerHTML = "";
+    results.forEach(({ s, matched }) => {
+      const n = specMap[s].length;
+      const b = document.createElement("button");
+      b.className = "spec-opt";
+      let inner =
+        '<span class="spec-opt__icon">' + (window.specIcon ? window.specIcon(s) : '<i data-lucide="stethoscope"></i>') + '</span>' +
+        '<span class="spec-opt__txt"><span class="spec-opt__name">' + s + '</span>' +
+        '<span class="spec-opt__count">' + n + (n === 1 ? " specialista" : " specialisti") + '</span>';
+      if (matched.length) {
+        const shown = matched.slice(0, 2).join(", ") + (matched.length > 2 ? "…" : "");
+        inner += '<span class="spec-opt__match"><i data-lucide="check"></i> ' + shown + '</span>';
+      }
+      inner += '</span>';
+      b.innerHTML = inner;
+      b.addEventListener("click", () => selectSpec(s));
+      grid.appendChild(b);
+    });
+    $("#fspec-empty").hidden = results.length > 0;
+    icons();
+  }
+  function selectSpec(s) {
+    state.spec = s;
+    state.doctor = null;
+    state.slot = null;
+    state.maxStep = 2;
+    renderDoctors();
+    goStep(2);
+  }
+
+  /* ---- STEP 2: medici ---- */
+  function renderDoctors() {
+    const grid = $("#fmed-grid");
+    $("#fmed-sub").textContent = "Specialisti in " + state.spec + " — apri la scheda per conoscerli e prenotare.";
+    grid.innerHTML = "";
+    specMap[state.spec].forEach((d) => {
+      const card = document.createElement("a");
+      card.className = "med-card";
+      card.href = "medici/" + d.surname.toLowerCase() + ".html";
+      card.innerHTML =
+        '<div class="med-card__photo"><image-slot id="vs-' + d.surname.toLowerCase() +
+          '" placeholder="Ritratto ' + d.display + '" shape="rect"' +
+          (d.surname === "Usai" ? ' src="assets/photos/usai.webp"' : d.surname === "Cabula" ? ' src="assets/photos/Cabula.webp"' : d.surname === "Cadeddu" ? ' src="assets/photos/Cadeddu.webp"' : d.surname === "Canu" ? ' src="assets/photos/Canu.webp"' : d.surname === "CartaGabriele" ? ' src="assets/photos/gabrielecarta.webp"' : d.surname === "Carta" ? ' src="assets/photos/brunocarta.webp"' : d.surname === "Corona" ? ' src="assets/photos/corona.webp"' : d.surname === "Diana" ? ' src="assets/photos/diana.webp"' : d.surname === "Oppo" ? ' src="assets/photos/oppo.webp"' : d.surname === "Paderi" ? ' src="assets/photos/paderi.webp"' : d.surname === "Pibi" ? ' src="assets/photos/pibi.webp"' : d.surname === "Picciau" ? ' src="assets/photos/picciau.webp"' : d.surname === "Pintor" ? ' src="assets/photos/pintor.webp"' : d.surname === "Pitzalis" ? ' src="assets/photos/pitzalis.webp"' : d.surname === "Salfi" ? ' src="assets/photos/salfi.webp"' : "") + '></image-slot></div>' +
+        '<div class="med-card__body">' +
+          '<div class="med-card__cat">' + state.spec + '</div>' +
+          '<h3 class="med-card__name">' + d.display + '</h3>' +
+          '<div class="med-card__spec">' + d.specs.join(" · ") + '</div>' +
+          '<div class="fmed-actions"><span class="fmed-link">Vedi scheda e prenota <i data-lucide="arrow-right"></i></span></div>' +
+        '</div>';
+      grid.appendChild(card);
+    });
+    icons();
+  }
+  function selectDoctor(d) {
+    state.doctor = d;
+    state.slot = null;
+    state.maxStep = 3;
+    fillBooking();
+    goStep(3);
+  }
+
+  /* ---- STEP 3: data e ora ---- */
+  function fillBooking() {
+    $("#fbk-medico").textContent = state.doctor.display;
+    $("#fbk-spec").textContent = state.spec;
+    $("#fbk-when").textContent = "Da selezionare";
+    $("#fbk-photo").innerHTML = '<image-slot id="vs-' + state.doctor.surname.toLowerCase() +
+      '" placeholder="Ritratto" shape="rect"></image-slot>';
+    $("#fconfirm").disabled = true;
+
+    const tabs = $("#fday-tabs");
+    tabs.innerHTML = "";
+    DAYS.forEach((day, i) => {
+      const b = document.createElement("button");
+      b.className = "fday" + (i === state.day ? " sel" : "");
+      b.innerHTML = day.lbl + "<small>" + day.d + "</small>";
+      b.addEventListener("click", () => { state.day = i; state.slot = null; renderSlots(); $("#fconfirm").disabled = true; $("#fbk-when").textContent = "Da selezionare"; tabs.querySelectorAll(".fday").forEach((x) => x.classList.remove("sel")); b.classList.add("sel"); });
+      tabs.appendChild(b);
+    });
+    renderSlots();
+  }
+  function renderSlots() {
+    const day = DAYS[state.day];
+    $("#fdate-label").textContent = day.full;
+    const wrap = $("#fslots");
+    wrap.innerHTML = "";
+    day.slots.forEach((t) => {
+      const b = document.createElement("button");
+      b.className = "slot";
+      b.textContent = t;
+      b.addEventListener("click", () => {
+        wrap.querySelectorAll(".slot").forEach((x) => x.classList.remove("sel"));
+        b.classList.add("sel");
+        state.slot = t;
+        $("#fconfirm").disabled = false;
+        $("#fbk-when").textContent = day.lbl + " " + day.d + " · " + t;
+      });
+      wrap.appendChild(b);
+    });
+  }
+
+  /* ---- STEP 4 ---- */
+  function confirmBooking() {
+    const day = DAYS[state.day];
+    $("#fsuccess-recap").innerHTML =
+      '<b>' + state.doctor.display + '</b> — ' + state.spec + '<br>' +
+      '<span class="num">' + day.full + ' · ore ' + state.slot + '</span>';
+    state.maxStep = 4;
+    goStep(4);
+  }
+  function restart() {
+    state.spec = null; state.doctor = null; state.slot = null; state.day = 0; state.maxStep = 1;
+    renderSpecs("");
+    $("#fspec-search").value = "";
+    goStep(1);
+  }
+
+  /* ---- bindings ---- */
+  document.querySelectorAll("[data-go]").forEach((el) =>
+    el.addEventListener("click", () => { const n = +el.dataset.go; if (n <= state.maxStep) goStep(n); }));
+  $("#fspec-search").addEventListener("input", (e) => renderSpecs(e.target.value));
+  $("#fspec-reset").addEventListener("click", () => { $("#fspec-search").value = ""; renderSpecs(""); });
+  $("#fconfirm").addEventListener("click", confirmBooking);
+  $("#frestart").addEventListener("click", restart);
+
+  // init
+  renderSpecs("");
+  goStep(1);
+
+  // riduce lo stepper del 20% quando la barra è agganciata in alto
+  const fsticky = document.getElementById("funnel-sticky");
+  const onFunnelScroll = () => {
+    if (!fsticky || fsticky.style.display === "none") return;
+    fsticky.classList.toggle("is-stuck", fsticky.getBoundingClientRect().top <= 77);
+  };
+  window.addEventListener("scroll", onFunnelScroll, { passive: true });
+  onFunnelScroll();
+})();
+</script>
+
+<script src="https://unpkg.com/lucide@0.408.0/dist/umd/lucide.min.js"></script>
+<script src="image-slot.js"></script>
+<script src="site.js"></script>
+</body>
+</html>

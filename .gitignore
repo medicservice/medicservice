@@ -1,0 +1,12 @@
+# Health Icons npm extract (rigenera con: npm pack healthicons && tar -xzf healthicons-*.tgz)
+package/
+healthicons-*.tgz
+
+# macOS / cache locale
+.DS_Store
+.thumbnail/
+
+# Materiali di lavoro (non necessari al sito live)
+_ds/
+screenshots/
+uploads/

@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La Struttura — Medic Service Oristano</title>
+<meta name="description" content="La sede Medic Service in Piazza Tharros 57, Oristano: spazi ampi e luminosi, lucernai, accettazione dedicata e ambienti accessibili, pensati attorno al paziente.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@300;400;500&family=DM+Serif+Display:ital@0;1&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=2">
+<style>
+  /* ===== Pagina Struttura — costruita sui token del brand ===== */
+  .feat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+  .feat-card {
+    background: #fff; border: 1px solid var(--line); border-radius: var(--r-md);
+    padding: 30px 26px 32px; display: flex; flex-direction: column; gap: 14px;
+  }
+  .feat-card__ico {
+    width: 52px; height: 52px; border-radius: var(--r-sm); display: grid; place-items: center;
+    background: var(--blue-pale); color: var(--brand-dk);
+  }
+  .feat-card__ico svg { width: 26px; height: 26px; }
+  .feat-card h3 { font-size: 19px; color: var(--navy); line-height: 1.15; }
+  .feat-card p { color: var(--g700); font-size: 15px; line-height: 1.55; }
+
+  /* Riquadro "Dove siamo" */
+  .info-list { display: flex; flex-direction: column; gap: 4px; margin-top: 26px; }
+  .info-row { display: flex; gap: 16px; align-items: flex-start; padding: 18px 0; border-bottom: 1px solid var(--line); }
+  .info-row:last-child { border-bottom: 0; }
+  .info-row__ico { width: 24px; height: 24px; color: var(--brand); flex: none; margin-top: 2px; }
+  .info-row__ico svg { width: 24px; height: 24px; }
+  .info-row__lbl { font-weight: 700; color: var(--navy); font-size: 13px; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 4px; }
+  .info-row__val { color: var(--g700); font-size: 16px; line-height: 1.5; }
+  .info-row__val a:hover { color: var(--brand-dk); }
+  .hours-line { display: flex; justify-content: space-between; gap: 24px; max-width: 320px; }
+  .hours-line b { color: var(--navy); font-weight: 600; }
+
+  @media (max-width: 980px) { .feat-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .feat-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body data-screen-label="La Struttura">
+
+<!-- ===== HEADER ===== -->
+<header class="site-header">
+  <div class="container nav">
+    <a class="nav__logo" href="index.html"><img src="assets/logo-horizontal.svg" alt="Medic Service"></a>
+    <nav class="nav__links">
+      <a href="index.html">Home</a>
+      <a href="index.html#aree">Specialità</a>
+      <a href="medici.html">I Medici</a>
+      <a href="struttura.html" class="active">La Struttura</a>
+    </nav>
+    <div class="nav__cta">
+      <a class="nav__tel" href="tel:0783211136"><i data-lucide="phone"></i><span class="num">0783 211136</span></a>
+      <a class="btn btn--primary" href="https://www.miodottore.it/strutture/medic-service-oristano" target="_blank" rel="noopener">Prenota</a>
+      <button class="nav__burger" data-open-drawer aria-label="Menu"><i data-lucide="menu"></i></button>
+    </div>
+  </div>
+</header>
+
+<!-- ===== HERO / INTRO ===== -->
+<section class="section--tight" style="padding-top:40px;background:linear-gradient(180deg,#fff,#ECF5FC)">
+  <div class="container">
+    <nav class="breadcrumb" style="margin-bottom:30px">
+      <a href="index.html">Home</a><i data-lucide="chevron-right"></i>
+      <span class="cur">La Struttura</span>
+    </nav>
+    <div class="split" style="gap:56px">
+      <div>
+        <span class="eyebrow eyebrow--line">La nostra sede · Oristano</span>
+        <h1 class="h1" style="color:var(--navy);margin:18px 0 20px">Al centro di Oristano</h1>
+        <p class="lead">In Piazza Tharros 57, nel cuore di Oristano, abbiamo costruito un centro medico pensato attorno alla persona: spazi ampi, luce naturale e un'accoglienza che mette a proprio agio fin dal primo passo.</p>
+        <p class="muted" style="margin-top:18px;font-size:16.5px;max-width:560px">Tutte le aree — visite, diagnostica, chirurgia e medicina estetica — sono riunite su un unico piano, accessibile e facile da percorrere. Niente attese impersonali: ambienti curati, sedute comode e personale dedicato a ogni fase del tuo percorso.</p>
+        <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:30px">
+          <a class="btn btn--primary btn--lg" href="https://www.miodottore.it/strutture/medic-service-oristano" target="_blank" rel="noopener"><i data-lucide="calendar-check"></i> Prenota la tua visita</a>
+          <a class="btn btn--outline btn--lg" href="#dove-siamo"><i data-lucide="map-pin"></i> Dove siamo</a>
+        </div>
+      </div>
+      <div class="figure" style="aspect-ratio:4/3"><img src="assets/photos/MS-34.jpg" alt="Reception Medic Service con tre postazioni di accettazione"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STATS ===== -->
+<section class="container" aria-label="La struttura in numeri">
+  <div class="stats">
+    <div class="stat reveal"><div class="stat__num">24<span>+</span></div><div class="stat__label">Specialità in sede</div></div>
+    <div class="stat reveal"><div class="stat__num">03</div><div class="stat__label">Postazioni di accettazione</div></div>
+    <div class="stat reveal"><div class="stat__num">60<span>h</span></div><div class="stat__label">Aperti a settimana</div></div>
+    <div class="stat reveal"><div class="stat__num">100<span>%</span></div><div class="stat__label">Piano terra, accessibile</div></div>
+  </div>
+</section>
+
+<!-- ===== FEATURES ===== -->
+<section class="section">
+  <div class="container">
+    <div class="sec-head reveal" style="margin-bottom:44px">
+      <span class="eyebrow">Pensata attorno al paziente</span>
+      <h2 class="h2">Ogni dettaglio ha una ragione.</h2>
+      <p>Dalla luce all'accessibilità, ogni scelta progettuale nasce per rendere la tua visita più semplice, serena e sicura.</p>
+    </div>
+    <div class="feat-grid">
+      <article class="feat-card reveal">
+        <span class="feat-card__ico"><i data-lucide="sun"></i></span>
+        <h3>Luce naturale</h3>
+        <p>Ampi lucernai portano luce naturale tutto il giorno: ambienti chiari, mai opprimenti, che rendono l'attesa più leggera.</p>
+      </article>
+      <article class="feat-card reveal">
+        <span class="feat-card__ico"><i data-lucide="accessibility"></i></span>
+        <h3>Tutto su un piano</h3>
+        <p>Ingresso a livello strada e percorsi ampi, senza barriere architettoniche: la struttura è interamente accessibile.</p>
+      </article>
+      <article class="feat-card reveal">
+        <span class="feat-card__ico"><i data-lucide="users"></i></span>
+        <h3>Accoglienza dedicata</h3>
+        <p>Tre postazioni di accettazione riducono le attese e ti seguono in ogni fase, dall'arrivo al saldo della prestazione.</p>
+      </article>
+      <article class="feat-card reveal">
+        <span class="feat-card__ico"><i data-lucide="shield-check"></i></span>
+        <h3>Igiene e sicurezza</h3>
+        <p>Superfici facili da sanificare, ambienti dedicati e protocolli rigorosi: la sicurezza è parte del progetto, non un'aggiunta.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GALLERY ===== -->
+<section class="section bg-tint">
+  <div class="container">
+    <div class="head-row">
+      <div class="sec-head reveal" style="margin-bottom:0">
+        <span class="eyebrow">Gli ambienti</span>
+        <h2 class="h2">Fai un giro prima di venire.</h2>
+      </div>
+      <a class="btn btn--primary reveal" href="https://www.miodottore.it/strutture/medic-service-oristano" target="_blank" rel="noopener"><i data-lucide="calendar-check"></i> Prenota la tua visita</a>
+    </div>
+    <div class="struttura-grid reveal">
+      <div class="struttura-tile struttura-tile--tall">
+        <img src="assets/photos/MS-38.jpg" alt="Sala d'attesa luminosa">
+        <div class="struttura-tile__cap">Spazi ampi e luminosi, studiati per il tuo comfort.</div>
+      </div>
+      <div class="struttura-tile">
+        <img src="assets/photos/MS-23.jpg" alt="Lucernai">
+        <div class="struttura-tile__cap">I lucernai: luce naturale tutto il giorno.</div>
+      </div>
+      <div class="struttura-tile">
+        <img src="assets/photos/MS-34.jpg" alt="Reception con tre postazioni">
+        <div class="struttura-tile__cap">Tre postazioni di accettazione.</div>
+      </div>
+      <div class="struttura-tile">
+        <img src="assets/photos/MS-33.jpg" alt="Area relax sala d'attesa">
+        <div class="struttura-tile__cap">Sedute morbide e verde vero.</div>
+      </div>
+      <div class="struttura-tile">
+        <img src="assets/photos/MS-40.jpg" alt="Corridoio con opere d'arte">
+        <div class="struttura-tile__cap">Un percorso curato in ogni dettaglio.</div>
+      </div>
+      <div class="struttura-tile">
+        <img src="assets/photos/MS-4.jpg" alt="Ingresso con parete in legno e piante">
+        <div class="struttura-tile__cap">L'ingresso: accogliente fin dalla soglia.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DOVE SIAMO ===== -->
+<section class="section" id="dove-siamo">
+  <div class="container">
+    <div class="split" style="gap:56px">
+      <div class="figure" style="aspect-ratio:4/3"><img src="assets/photos/MS.jpg" alt="Ingresso Medic Service in Piazza Tharros 57, Oristano"></div>
+      <div>
+        <span class="eyebrow">Dove siamo</span>
+        <h2 class="h2" style="color:var(--navy);margin:14px 0 8px">In Piazza Tharros, a Oristano.</h2>
+        <p class="muted" style="font-size:16.5px;max-width:520px;margin-top:14px">Siamo in centro, comodi da raggiungere a piedi e con parcheggi nelle vicinanze. L'ingresso è a livello strada, segnalato dall'insegna Medic Service.</p>
+        <div class="info-list">
+          <div class="info-row">
+            <span class="info-row__ico"><i data-lucide="map-pin"></i></span>
+            <div>
+              <div class="info-row__lbl">Indirizzo</div>
+              <div class="info-row__val"><a href="https://maps.app.goo.gl/DD7feputJqxw9w6r8" target="_blank" rel="noopener">Piazza Tharros 57, 09170 Oristano (OR)</a></div>
+            </div>
+          </div>
+          <div class="info-row">
+            <span class="info-row__ico"><i data-lucide="clock"></i></span>
+            <div>
+              <div class="info-row__lbl">Orari di apertura</div>
+              <div class="info-row__val" style="margin-top:8px">
+                <div class="hours-line"><span>Lunedì – Venerdì</span><b class="num">8:00 – 20:00</b></div>
+                <div class="hours-line"><span>Sabato</span><b>su appuntamento</b></div>
+                <div class="hours-line"><span>Domenica</span><b>chiuso</b></div>
+              </div>
+            </div>
+          </div>
+          <div class="info-row">
+            <span class="info-row__ico"><i data-lucide="phone"></i></span>
+            <div>
+              <div class="info-row__lbl">Contatti</div>
+              <div class="info-row__val">
+                <a href="tel:0783211136" class="num">0783 211136</a><br>
+                <a href="mailto:info@medicservice.it">info@medicservice.it</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:30px">
+          <a class="btn btn--primary btn--lg" href="https://maps.app.goo.gl/DD7feputJqxw9w6r8" target="_blank" rel="noopener"><i data-lucide="navigation"></i> Apri in Maps</a>
+          <a class="btn btn--outline btn--lg" href="tel:0783211136"><i data-lucide="phone"></i> Chiama il centro</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA BAND ===== -->
+<section class="ctaband">
+  <div class="ctaband__bg"><img src="assets/monogram-white.svg" alt=""></div>
+  <div class="container ctaband__inner">
+    <div>
+      <h2>Ti aspettiamo in Piazza Tharros.</h2>
+      <p>Prenota online in meno di un minuto, oppure chiamaci: pensiamo a tutto noi.</p>
+    </div>
+    <div class="ctaband__actions">
+      <a class="btn btn--primary btn--lg" href="https://www.miodottore.it/strutture/medic-service-oristano" target="_blank" rel="noopener"><i data-lucide="calendar-check"></i> Prenota la tua visita</a>
+      <a class="btn btn--ghost-light btn--lg" href="tel:0783211136"><i data-lucide="phone"></i> <span class="num">0783 211136</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <img src="assets/logo-horizontal-white.svg" alt="Medic Service">
+        <p>Centro medico polispecialistico nel cuore di Oristano. Cura chiara, professionale, vicina.</p>
+        <div class="footer__contact">
+          <a href="https://maps.app.goo.gl/DD7feputJqxw9w6r8" target="_blank" rel="noopener"><i data-lucide="map-pin"></i> Piazza Tharros 57, Oristano</a>
+          <a href="tel:0783211136"><i data-lucide="phone"></i> <span class="num">0783 211136</span></a>
+          <a href="mailto:info@medicservice.it"><i data-lucide="mail"></i> info@medicservice.it</a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Specialità</h4>
+        <ul>
+          <li><a href="visite-specialistiche.html">Visite Specialistiche</a></li>
+          <li><a href="diagnostica.html">Diagnostica per Immagini</a></li>
+          <li><a href="chirurgia.html">Chirurgia Day Surgery</a></li>
+          <li><a href="medicina-estetica.html">Medicina Estetica</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Il centro</h4>
+        <ul>
+          <li><a href="#">Chi siamo</a></li>
+          <li><a href="medici.html">I medici</a></li>
+          <li><a href="struttura.html">La struttura</a></li>
+          <li><a href="#">Lavora con noi</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Supporto</h4>
+        <ul>
+          <li><a href="#">Come prenotare</a></li>
+          <li><a href="#">Blog / Salute</a></li>
+          <li><a href="#">Contatti</a></li>
+          <li><a href="#">Privacy &amp; Cookie</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 Medic Service — Centro Polispecialistico, Oristano</span>
+      <span class="num">P.IVA 01234567890</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== MOBILE STICKY BAR ===== -->
+<nav class="mobilebar">
+  <a class="mobilebar__book" href="https://www.miodottore.it/strutture/medic-service-oristano" target="_blank" rel="noopener"><i data-lucide="calendar-check"></i> Prenota la tua visita</a>
+  <a class="mobilebar__call" href="tel:0783211136"><i data-lucide="phone"></i> <span class="num">0783 211136</span></a>
+</nav>
+
+<!-- ===== MOBILE DRAWER ===== -->
+<div class="drawer">
+  <div class="drawer__scrim"></div>
+  <div class="drawer__panel">
+    <button class="drawer__close" data-close-drawer aria-label="Chiudi"><i data-lucide="x"></i></button>
+    <a href="index.html">Home</a>
+    <a href="index.html#aree">Specialità</a>
+    <a href="medici.html">I Medici</a>
+    <a href="struttura.html">La Struttura</a>
+    <a href="medicina-estetica.html">Medicina Estetica</a>
+    <a class="btn btn--primary btn--block" href="https://www.miodottore.it/strutture/medic-service-oristano" target="_blank" rel="noopener" style="margin-top:20px" data-close-drawer>Prenota la tua visita</a>
+  </div>
+</div>
+
+<!-- ===== BOOKING MODAL ===== -->
+<div class="modal" aria-modal="true" role="dialog">
+  <div class="modal__scrim"></div>
+  <div class="modal__box">
+    <button class="modal__close" data-close-modal aria-label="Chiudi"><i data-lucide="x"></i></button>
+    <div class="stepper"><span class="stepper__dot"></span><span class="stepper__dot"></span><span class="stepper__dot"></span></div>
+    <div class="modal__step" data-step="1">
+      <h3>Di cosa hai bisogno?</h3>
+      <p>Scegli l'area. Ti mostriamo subito i medici disponibili.</p>
+      <div class="opt-grid">
+        <button class="opt" data-area="visite"><i data-lucide="stethoscope"></i><span>Visite Specialistiche</span></button>
+        <button class="opt" data-area="diagnostica"><i data-lucide="scan-line"></i><span>Diagnostica</span></button>
+        <button class="opt" data-area="chirurgia"><i data-lucide="syringe"></i><span>Chirurgia</span></button>
+        <button class="opt" data-area="estetica"><i data-lucide="sparkles"></i><span>Medicina Estetica</span></button>
+      </div>
+    </div>
+    <div class="modal__step" data-step="2" hidden>
+      <h3>Scegli il medico</h3>
+      <p><span class="area-name"></span> — seleziona con chi vuoi prenotare.</p>
+      <div class="opt-grid"></div>
+      <button class="modal__back" data-back="1"><i data-lucide="arrow-left"></i> Cambia area</button>
+    </div>
+    <div class="modal__step" data-step="3" hidden>
+      <h3>Scegli data e ora</h3>
+      <p>Prossima disponibilità con <b class="medico-name"></b>. Giovedì 11 giugno 2026.</p>
+      <div class="slots">
+        <button class="slot">09:00</button><button class="slot">09:30</button><button class="slot">10:15</button>
+        <button class="slot">11:00</button><button class="slot">15:30</button><button class="slot">16:45</button>
+      </div>
+      <button class="btn btn--primary btn--block confirm" style="margin-top:22px" disabled>Conferma appuntamento</button>
+      <div class="miodottore"><i data-lucide="shield-check"></i> Prenotazione gestita con <b>MioDottore.it</b> — resti su medicservice.it</div>
+      <button class="modal__back" data-back="2"><i data-lucide="arrow-left"></i> Cambia medico</button>
+    </div>
+    <div class="modal__step" data-step="4" hidden>
+      <div class="modal__success">
+        <span class="check"><i data-lucide="check"></i></span>
+        <h3>Appuntamento richiesto!</h3>
+        <p class="recap" style="font-weight:700;color:var(--navy)"></p>
+        <p>Riceverai conferma via SMS ed email. A presto in Piazza Tharros.</p>
+        <button class="btn btn--primary" data-close-modal style="margin-top:8px">Perfetto, chiudi</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/lucide@0.408.0/dist/umd/lucide.min.js"></script>
+<script src="image-slot.js"></script>
+<script src="site.js"></script>
+</body>
+</html>

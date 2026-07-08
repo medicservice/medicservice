@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<style data-omelette-print-defaults>
+@media print {
+  @page { margin: 0.5in; }
+  h1, h2, h3, h4, h5, h6 { break-after: avoid; }
+  figure, table, pre, blockquote, img, svg, tr, [class~="card" i] { break-inside: avoid; }
+  img, svg { max-width: 100%; }
+  p { orphans: 3; widows: 3; }
+}
+</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Medicina Estetica — Medic Service Oristano</title>
+<meta name="description" content="Medicina estetica a Oristano: 16 trattamenti per viso, corpo, laser e anti-aging, sempre eseguiti da un medico. Prenota la tua consulenza.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@300;400;500&family=DM+Serif+Display:ital@0;1&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-screen-label="Medicina Estetica">
+
+<!-- ===== HEADER ===== -->
+<header class="site-header">
+  <div class="container nav">
+    <a class="nav__logo" href="index.html"><img src="assets/logo-horizontal.svg" alt="Medic Service"></a>
+    <nav class="nav__links">
+      <a href="index.html">Home</a>
+      <a href="index.html#aree" class="active">Specialità</a>
+      <a href="medici.html">I Medici</a>
+      <a href="index.html#struttura">La Struttura</a>
+    </nav>
+    <div class="nav__cta">
+      <a class="nav__tel" href="tel:0783211136"><i data-lucide="phone"></i><span class="num">0783 211136</span></a>
+      <a class="btn btn--donna" href="https://www.miodottore.it/strutture/medic-service-oristano" target="_blank" rel="noopener">Prenota</a>
+      <button class="nav__burger" data-open-drawer aria-label="Menu"><i data-lucide="menu"></i></button>
+    </div>
+  </div>
+</header>
+
+<!-- ===== AREA HERO ===== -->
+<section class="section--tight" style="padding-top:40px;background:linear-gradient(180deg,#fff, #ECF5FC)">
+  <div class="container">
+    <nav class="breadcrumb" style="margin-bottom:30px">
+      <a href="index.html">Home</a><i data-lucide="chevron-right"></i>
+      <a href="index.html#aree">Specialità</a><i data-lucide="chevron-right"></i>
+      <span class="cur">Medicina Estetica</span>
+    </nav>
+    <div class="split" style="gap:48px">
+      <div>
+        <span class="eyebrow" style="color:var(--donna-dk)"><span class="num">04</span> Medicina Estetica</span>
+        <h1 class="h1" style="color:var(--navy);margin:18px 0 20px">Bellezza naturale, mani esperte.</h1>
+        <p class="lead">Ogni trattamento è eseguito da un medico, dopo una consulenza che parte dal tuo viso e dai tuoi obiettivi — mai da un listino. Niente eccessi: solo risultati armonici, sicuri e graduali.</p>
+        <p class="muted" style="margin-top:18px;font-size:16.5px">Filler, tossina botulinica, biorivitalizzazione, laser e anti-aging: 16 trattamenti riuniti in quattro percorsi chiari. Ti spieghiamo cosa è indicato per te, cosa aspettarti e in quanto tempo.</p>
+        <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:30px">
+          <a class="btn btn--donna btn--lg" href="https://www.miodottore.it/strutture/medic-service-oristano" target="_blank" rel="noopener"><i data-lucide="calendar-check"></i> Prenota consulenza</a>
+          <a class="btn btn--outline btn--lg" href="#trattamenti">Vedi i trattamenti</a>
+        </div>
+      </div>
+      <div class="figure"><img src="assets/photos/MS-33.jpg" alt="Ambienti Medic Service"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MEDICI DELL'AREA ===== -->
+<section class="section--tight">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow" style="color:var(--donna-dk)">Il team</span>
+      <h2 class="h2" style="color:var(--navy)">I medici estetici.</h2>
+      <p>I nostri professionisti esperti di medicina estetica.</p>
+    </div>
+    <div class="docs reveal" id="est-docs" style="margin-top:38px"></div>
+  </div>
+</section>
+
+<!-- ===== TRATTAMENTI ===== -->
+<section class="section bg-tint" id="trattamenti">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow" style="color:var(--donna-dk)">I trattamenti</span>
+      <h2 class="h2">16 trattamenti, 4 obiettivi.</h2>
+      <p>Scegli il percorso: viso, corpo, laser o anti-aging. Per ciascuno trovi cosa risolve, quando è indicato e cosa aspettarti.</p>
+    </div>
+
+    <div class="tabs reveal" style="margin:36px 0 40px">
+      <button class="tab active" data-cat="all">Tutti</button>
+      <button class="tab" data-cat="viso"><span class="num">05</span> Viso</button>
+      <button class="tab" data-cat="corpo"><span class="num">04</span> Corpo</button>
+      <button class="tab" data-cat="laser"><span class="num">04</span> Laser</button>
+      <button class="tab" data-cat="anti"><span class="num">03</span> Anti-aging</button>
+    </div>
+
+    <div class="treat-grid">
+      <!-- VISO -->
+      <article class="treat-card reveal" data-cat="viso">
+        <div class="treat-card__cat">Viso</div>
+        <h3>Filler labbra</h3>
+        <p class="treat-card__desc">Acido ialuronico per ridefinire volume e contorno delle labbra, mantenendo un effetto morbido e naturale.</p>
+        <div class="treat-meta">
+          <div class="treat-meta__row"><i data-lucide="target"></i><span><b>Indicato per</b> labbra sottili, asimmetrie, perdita di definizione.</span></div>
+          <div class="treat-meta__row"><i data-lucide="clock"></i><span><b>Cosa aspettarti</b> 30 min, risultato immediato, durata 6–9 mesi.</span></div>
+        </div>
+      </article>
+
+      <article class="treat-card reveal" data-cat="viso">
+        <div class="treat-card__cat">Viso</div>
+        <h3>Filler zigomi e contorni</h3>
+        <p class="treat-card__desc">Ridona struttura e sostegno al terzo medio del viso, correggendo il rilassamento legato all'età.</p>
+        <div class="treat-meta">
+          <div class="treat-meta__row"><i data-lucide="target"></i><span><b>Indicato per</b> svuotamento zigomi, solco naso-genieno.</span></div>
+          <div class="treat-meta__row"><i data-lucide="clock"></i><span><b>Cosa aspettarti</b> 40 min, lieve gonfiore 1–2 giorni.</span></div>
+        </div>
+      </article>
+
+      <article class="treat-card reveal" data-cat="viso">
+        <div class="treat-card__cat">Viso</div>
+        <h3>Tossina botulinica</h3>
+        <p class="treat-card__desc">Rilassa la muscolatura responsabile delle rughe d'espressione di fronte, glabella e contorno occhi.</p>
+        <div class="treat-meta">
+          <div class="treat-meta__row"><i data-lucide="target"></i><span><b>Indicato per</b> rughe dinamiche, "zampe di gallina".</span></div>
+          <div class="treat-meta__row"><i data-lucide="clock"></i><span><b>Cosa aspettarti</b> 20 min, effetto in 4–7 giorni, durata ~4 mesi.</span></div>
+        </div>
+      </article>
+
+      <article class="treat-card reveal" data-cat="viso">
+        <div class="treat-card__cat">Viso</div>
+        <h3>Biorivitalizzazione</h3>
+        <p class="treat-card__desc">Microiniezioni di acido ialuronico e vitamine per idratare in profondità e ridare luminosità alla pelle.</p>
+        <div class="treat-meta">
+          <div class="treat-meta__row"><i data-lucide="target"></i><span><b>Indicato per</b> pelle spenta, disidratata, primi segni.</span></div>
+          <div class="treat-meta__row"><i data-lucide="clock"></i><span><b>Cosa aspettarti</b> ciclo di 3 sedute, nessun fermo sociale.</span></div>
+        </div>
+      </article>
+
+      <article class="treat-card reveal" data-cat="viso">
+        <div class="treat-card__cat">Viso</div>
+        <h3>Skinbooster</h3>
+        <p class="treat-card__desc">Acido ialuronico a bassa densità per migliorare elasticità, tono e qualità complessiva della pelle.</p>
+        <div class="treat-meta">
+          <div class="treat-meta__row"><i data-lucide="target"></i><span><b>Indicato per</b> viso, collo, décolleté, dorso delle mani.</span></div>
+          <div class="treat-meta__row"><i data-lucide="clock"></i><span><b>Cosa aspettarti</b> 30 min, risultati progressivi in 3–4 settimane.</span></div>
+        </div>
+      </article>
+
+      <!-- CORPO -->
+      <article class="treat-card reveal" data-cat="corpo">
+        <div class="treat-card__cat">Corpo</div>
+        <h3>Mesoterapia</h3>
+        <p class="treat-card__desc">Microiniezioni mirate di principi attivi per contrastare adiposità localizzate e ritenzione.</p>
+        <div class="treat-meta">
+          <div class="treat-meta__row"><i data-lucide="target"></i><span><b>Indicato per</b> cosce, addome, fianchi.</span></div>
+          <div class="treat-meta__row"><i data-lucide="clock"></i><span><b>Cosa aspettarti</b> ciclo personalizzato, sedute settimanali.</span></div>
+        </div>
+      </article>
+
+      <article class="treat-card reveal" data-cat="corpo">
+        <div class="treat-card__cat">Corpo</div>
+        <h3>Inestetismi della cellulite</h3>
+        <p class="treat-card__desc">Protocollo combinato per migliorare microcircolo e aspetto a "buccia d'arancia" della pelle.</p>
+        <div class="treat-meta">
+          <div class="treat-meta__row"><i data-lucide="target"></i><span><b>Indicato per</b> cellulite edematosa e fibrosa.</span></div>
+          <div class="treat-meta__row"><i data-lucide="clock"></i><span><b>Cosa aspettarti</b> valutazione iniziale, percorso a sedute.</span></div>
+        </div>
+      </article>
+
+      <article class="treat-card reveal" data-cat="corpo">
+        <div class="treat-card__cat">Corpo</div>
+        <h3>Biostimolazione corpo</h3>
+        <p class="treat-card__desc">Stimola la produzione di collagene per migliorare tono e compattezza nelle zone rilassate.</p>
+        <div class="treat-meta">
+          <div class="treat-meta__row"><i data-lucide="target"></i><span><b>Indicato per</b> braccia, addome, interno coscia.</span></div>
+          <div class="treat-meta__row"><i data-lucide="clock"></i><span><b>Cosa aspettarti</b> risultati graduali, mantenimento periodico.</span></div>
+        </div>
+      </article>
+
+      <article class="treat-card reveal" data-cat="corpo">
+        <div class="treat-card__cat">Corpo</div>
+        <h3>Rimodellamento non chirurgico</h3>
+        <p class="treat-card__desc">Trattamenti per ridefinire i profili del corpo senza intervento, con tempi di recupero minimi.</p>
+        <div class="treat-meta">
+          <div class="treat-meta__row"><i data-lucide="target"></i><span><b>Indicato per</b> adiposità localizzate resistenti.</span></div>
+          <div class="treat-meta__row"><i data-lucide="clock"></i><span><b>Cosa aspettarti</b> nessun ricovero, ripresa immediata.</span></div>
+        </div>
+      </article>
+
+      <!-- LASER -->
+      <article class="treat-card reveal" data-cat="laser">
+        <div class="treat-card__cat">Laser</div>
+        <h3>Epilazione laser</h3>
+        <p class="treat-card__desc">Riduzione permanente e progressiva della peluria, con tecnologia adatta a ogni fototipo.</p>
+        <div class="treat-meta">
+          <div class="treat-meta__row"><i data-lucide="target"></i><span><b>Indicato per</b> viso e corpo, uomo e donna.</span></div>
+          <div class="treat-meta__row"><i data-lucide="clock"></i><span><b>Cosa aspettarti</b> ciclo di sedute distanziate, indolore.</span></div>
+        </div>
+      </article>
+
+      <article class="treat-card reveal" data-cat="laser">
+        <div class="treat-card__cat">Laser</div>
+        <h3>Laser vascolare</h3>
+        <p class="treat-card__desc">Tratta capillari e couperose del viso e delle gambe in modo selettivo e non invasivo.</p>
+        <div class="treat-meta">
+          <div class="treat-meta__row"><i data-lucide="target"></i><span><b>Indicato per</b> couperose, teleangectasie, rossori.</span></div>
+          <div class="treat-meta__row"><i data-lucide="clock"></i><span><b>Cosa aspettarti</b> 15–30 min, lieve arrossamento transitorio.</span></div>
+        </div>
+      </article>
+
+      <article class="treat-card reveal" data-cat="laser">
+        <div class="treat-card__cat">Laser</div>
+        <h3>Fotoringiovanimento</h3>
+        <p class="treat-card__desc">Stimola il rinnovamento cutaneo migliorando texture, pori e luminosità del viso.</p>
+        <div class="treat-meta">
+          <div class="treat-meta__row"><i data-lucide="target"></i><span><b>Indicato per</b> pelle segnata da sole e tempo.</span></div>
+          <div class="treat-meta__row"><i data-lucide="clock"></i><span><b>Cosa aspettarti</b> ciclo di sedute, pelle più uniforme.</span></div>
+        </div>
+      </article>
+
+      <article class="treat-card reveal" data-cat="laser">
+        <div class="treat-card__cat">Laser</div>
+        <h3>Rimozione macchie</h3>
+        <p class="treat-card__desc">Schiarisce e attenua le discromie da sole ed età, restituendo un incarnato omogeneo.</p>
+        <div class="treat-meta">
+          <div class="treat-meta__row"><i data-lucide="target"></i><span><b>Indicato per</b> macchie solari, lentigo, melasma.</span></div>
+          <div class="treat-meta__row"><i data-lucide="clock"></i><span><b>Cosa aspettarti</b> valutazione della macchia, 1+ sedute.</span></div>
+        </div>
+      </article>
+
+      <!-- ANTI-AGING -->
+      <article class="treat-card reveal" data-cat="anti">
+        <div class="treat-card__cat">Anti-aging</div>
+        <h3>Peeling chimico</h3>
+        <p class="treat-card__desc">Esfoliazione controllata per rinnovare la pelle, attenuare macchie e segni superficiali.</p>
+        <div class="treat-meta">
+          <div class="treat-meta__row"><i data-lucide="target"></i><span><b>Indicato per</b> pelle spenta, discromie, acne lieve.</span></div>
+          <div class="treat-meta__row"><i data-lucide="clock"></i><span><b>Cosa aspettarti</b> intensità modulabile, breve desquamazione.</span></div>
+        </div>
+      </article>
+
+      <article class="treat-card reveal" data-cat="anti">
+        <div class="treat-card__cat">Anti-aging</div>
+        <h3>Fili di trazione</h3>
+        <p class="treat-card__desc">Lifting non chirurgico con fili riassorbibili per ridefinire l'ovale e contrastare il rilassamento.</p>
+        <div class="treat-meta">
+          <div class="treat-meta__row"><i data-lucide="target"></i><span><b>Indicato per</b> rilassamento di guance e ovale del viso.</span></div>
+          <div class="treat-meta__row"><i data-lucide="clock"></i><span><b>Cosa aspettarti</b> 45 min, effetto immediato e progressivo.</span></div>
+        </div>
+      </article>
+
+      <article class="treat-card reveal" data-cat="anti">
+        <div class="treat-card__cat">Anti-aging</div>
+        <h3>PRP viso</h3>
+        <p class="treat-card__desc">Plasma ricco di piastrine dal tuo stesso sangue, per rigenerare e rivitalizzare la pelle in modo naturale.</p>
+        <div class="treat-meta">
+          <div class="treat-meta__row"><i data-lucide="target"></i><span><b>Indicato per</b> pelle stanca, opaca, primi cedimenti.</span></div>
+          <div class="treat-meta__row"><i data-lucide="clock"></i><span><b>Cosa aspettarti</b> ciclo di 3 sedute, 100% biocompatibile.</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BEFORE / AFTER ===== -->
+<section class="section">
+  <div class="container">
+    <div class="sec-head reveal" style="margin-bottom:44px">
+      <span class="eyebrow" style="color:var(--donna-dk)">Risultati reali</span>
+      <h2 class="h2">Il prima e il dopo, senza filtri.</h2>
+      <p>Trascina il cursore per vedere la differenza. Tutte le immagini sono pubblicate solo con consenso scritto del paziente.</p>
+    </div>
+    <div class="ba-wrap reveal">
+      <div class="ba">
+        <div class="ba__img ba__before"><img src="assets/photos/filler-prima.png" alt="Labbra prima del filler"></div>
+        <div class="ba__img ba__after"><img src="assets/photos/filler-dopo.png" alt="Labbra dopo il filler"></div>
+        <span class="ba__tag ba__tag--before">Prima</span>
+        <span class="ba__tag ba__tag--after">Dopo</span>
+        <div class="ba__handle"><span class="ba__grip"><i data-lucide="chevrons-left-right"></i></span></div>
+        <input class="ba__range" type="range" min="0" max="100" value="50" aria-label="Confronto prima e dopo">
+      </div>
+      <div>
+        <h3 class="h3" style="color:var(--navy);margin-bottom:16px">Filler labbra — risultato naturale</h3>
+        <p class="muted" style="font-size:16.5px;margin-bottom:22px">Un esempio di come lavoriamo: volume calibrato, contorno definito, espressione invariata. Nessun "effetto rifatto", solo equilibrio.</p>
+        <ul class="cura-list" style="grid-template-columns:1fr">
+          <li><i data-lucide="check"></i> Consulenza medica preliminare obbligatoria</li>
+          <li><i data-lucide="check"></i> Prodotti certificati e tracciabili</li>
+          <li><i data-lucide="check"></i> Foto di controllo a ogni step del percorso</li>
+        </ul>
+        <a class="btn btn--donna btn--lg" href="https://www.miodottore.it/strutture/medic-service-oristano" target="_blank" rel="noopener" style="margin-top:28px"><i data-lucide="calendar-check"></i> Prenota la tua consulenza</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="section bg-tint">
+  <div class="container">
+    <div class="sec-head reveal" style="margin-bottom:36px">
+      <span class="eyebrow" style="color:var(--donna-dk)">Domande frequenti</span>
+      <h2 class="h2">I dubbi più comuni, chiariti.</h2>
+    </div>
+    <div class="faq reveal">
+      <div class="faq-item">
+        <button class="faq-q">I trattamenti fanno male? <i data-lucide="plus"></i></button>
+        <div class="faq-a"><div class="faq-a__inner">La maggior parte dei trattamenti è ben tollerata. Dove serve usiamo anestesia topica in crema o prodotti con anestetico incorporato, così il fastidio resta minimo. Te lo spieghiamo nel dettaglio durante la consulenza.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Si vede subito il risultato? <i data-lucide="plus"></i></button>
+        <div class="faq-a"><div class="faq-a__inner">Dipende dal trattamento: i filler danno un effetto immediato, la tossina botulinica agisce in 4–7 giorni, mentre biorivitalizzazione e laser lavorano in modo progressivo nell'arco di qualche settimana. In consulenza ti diciamo tempi realistici, mai promesse.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Chi esegue i trattamenti? <i data-lucide="plus"></i></button>
+        <div class="faq-a"><div class="faq-a__inner">Sempre e solo un medico. La medicina estetica è un atto medico: ogni trattamento è preceduto da una valutazione clinica e da un consenso informato. Da noi non esistono trattamenti "da listino" senza visita.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA BAND ===== -->
+<section class="ctaband" style="background:var(--donna-dk)">
+  <div class="ctaband__bg"><img src="assets/monogram-white.svg" alt=""></div>
+  <div class="container ctaband__inner">
+    <div>
+      <h2>Parliamo dei tuoi obiettivi.</h2>
+      <p>La prima consulenza è il momento più importante. Prenotala — decidiamo insieme, senza fretta.</p>
+    </div>
+    <div class="ctaband__actions">
+      <a class="btn btn--primary btn--lg" href="https://www.miodottore.it/strutture/medic-service-oristano" target="_blank" rel="noopener" style="background:#fff;color:var(--donna-dk);border-color:#fff"><i data-lucide="calendar-check"></i> Prenota consulenza</a>
+      <a class="btn btn--ghost-light btn--lg" href="tel:0783211136"><i data-lucide="phone"></i> <span class="num">0783 211136</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <img src="assets/logo-horizontal-white.svg" alt="Medic Service">
+        <p>Centro medico polispecialistico nel cuore di Oristano. Cura chiara, professionale, vicina.</p>
+        <div class="footer__contact">
+          <a href="https://maps.app.goo.gl/DD7feputJqxw9w6r8" target="_blank" rel="noopener"><i data-lucide="map-pin"></i> Piazza Tharros 57, Oristano</a>
+          <a href="tel:0783211136"><i data-lucide="phone"></i> <span class="num">0783 211136</span></a>
+          <a href="mailto:info@medicservice.it"><i data-lucide="mail"></i> info@medicservice.it</a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Specialità</h4>
+        <ul>
+          <li><a href="index.html#aree" data-book data-area="visite">Visite Specialistiche</a></li>
+          <li><a href="index.html#aree" data-book data-area="diagnostica">Diagnostica per Immagini</a></li>
+          <li><a href="index.html#aree" data-book data-area="chirurgia">Chirurgia Day Surgery</a></li>
+          <li><a href="medicina-estetica.html">Medicina Estetica</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Il centro</h4>
+        <ul>
+          <li><a href="#">Chi siamo</a></li>
+          <li><a href="medici.html">I medici</a></li>
+          <li><a href="index.html#struttura">La struttura</a></li>
+          <li><a href="#">Lavora con noi</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Supporto</h4>
+        <ul>
+          <li><a href="#">Come prenotare</a></li>
+          <li><a href="#">Blog / Salute</a></li>
+          <li><a href="#">Contatti</a></li>
+          <li><a href="#">Privacy &amp; Cookie</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 Medic Service — Centro Polispecialistico, Oristano</span>
+      <span class="num">P.IVA 01234567890</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== MOBILE STICKY BAR ===== -->
+<nav class="mobilebar">
+  <a class="mobilebar__book" style="background:var(--donna-dk)" href="https://www.miodottore.it/strutture/medic-service-oristano" target="_blank" rel="noopener"><i data-lucide="calendar-check"></i> Prenota</a>
+  <a class="mobilebar__call" href="tel:0783211136"><i data-lucide="phone"></i> <span class="num">0783 211136</span></a>
+</nav>
+
+<!-- ===== MOBILE DRAWER ===== -->
+<div class="drawer">
+  <div class="drawer__scrim"></div>
+  <div class="drawer__panel">
+    <button class="drawer__close" data-close-drawer aria-label="Chiudi"><i data-lucide="x"></i></button>
+    <a href="index.html">Home</a>
+    <a href="index.html#aree">Specialità</a>
+    <a href="medici.html">I Medici</a>
+    <a href="index.html#struttura">La Struttura</a>
+    <a href="medicina-estetica.html">Medicina Estetica</a>
+    <a class="btn btn--donna btn--block" href="https://www.miodottore.it/strutture/medic-service-oristano" target="_blank" rel="noopener" style="margin-top:20px" data-close-drawer>Prenota consulenza</a>
+  </div>
+</div>
+
+<!-- ===== BOOKING MODAL ===== -->
+<div class="modal" aria-modal="true" role="dialog">
+  <div class="modal__scrim"></div>
+  <div class="modal__box">
+    <button class="modal__close" data-close-modal aria-label="Chiudi"><i data-lucide="x"></i></button>
+    <div class="stepper"><span class="stepper__dot"></span><span class="stepper__dot"></span><span class="stepper__dot"></span></div>
+    <div class="modal__step" data-step="1">
+      <h3>Di cosa hai bisogno?</h3>
+      <p>Scegli l'area. Ti mostriamo subito i medici disponibili.</p>
+      <div class="opt-grid">
+        <button class="opt" data-area="visite"><i data-lucide="stethoscope"></i><span>Visite Specialistiche</span></button>
+        <button class="opt" data-area="diagnostica"><i data-lucide="scan-line"></i><span>Diagnostica</span></button>
+        <button class="opt" data-area="chirurgia"><i data-lucide="syringe"></i><span>Chirurgia</span></button>
+        <button class="opt" data-area="estetica"><i data-lucide="sparkles"></i><span>Medicina Estetica</span></button>
+      </div>
+    </div>
+    <div class="modal__step" data-step="2" hidden>
+      <h3>Scegli il medico</h3>
+      <p><span class="area-name"></span> — seleziona con chi vuoi prenotare.</p>
+      <div class="opt-grid"></div>
+      <button class="modal__back" data-back="1"><i data-lucide="arrow-left"></i> Cambia area</button>
+    </div>
+    <div class="modal__step" data-step="3" hidden>
+      <h3>Scegli data e ora</h3>
+      <p>Prossima disponibilità con <b class="medico-name"></b>. Giovedì 11 giugno 2026.</p>
+      <div class="slots">
+        <button class="slot">09:00</button><button class="slot">09:30</button><button class="slot">10:15</button>
+        <button class="slot">11:00</button><button class="slot">15:30</button><button class="slot">16:45</button>
+      </div>
+      <button class="btn btn--primary btn--block confirm" style="margin-top:22px" disabled>Conferma appuntamento</button>
+      <div class="miodottore"><i data-lucide="shield-check"></i> Prenotazione gestita con <b>MioDottore.it</b> — resti su medicservice.it</div>
+      <button class="modal__back" data-back="2"><i data-lucide="arrow-left"></i> Cambia medico</button>
+    </div>
+    <div class="modal__step" data-step="4" hidden>
+      <div class="modal__success">
+        <span class="check"><i data-lucide="check"></i></span>
+        <h3>Appuntamento richiesto!</h3>
+        <p class="recap" style="font-weight:700;color:var(--navy)"></p>
+        <p>Riceverai conferma via SMS ed email. A presto in Piazza Tharros.</p>
+        <button class="btn btn--primary" data-close-modal style="margin-top:8px">Perfetto, chiudi</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/lucide@0.408.0/dist/umd/lucide.min.js"></script>
+<script src="image-slot.js"></script>
+<script src="site.js"></script>
+
+<!-- ===== CARD MEDICI ESTETICI ===== -->
+<script>
+(function () {
+  const grid = document.getElementById("est-docs");
+  if (!grid) return;
+  const MIO = "https://www.miodottore.it/strutture/medic-service-oristano";
+  const DOCS = [
+    {surname:"Monni",   display:"Dr. Nicola Monni",  spec:"Medicina estetica"},
+    {surname:"Paderi",  display:"Dr.ssa Valentina Paderi", spec:"Medicina estetica"}
+  ];
+  DOCS.forEach((d) => {
+    const a = document.createElement("a");
+    a.className = "doc-card reveal";
+    a.href = MIO;
+    a.target = "_blank";
+    a.rel = "noopener";
+    a.innerHTML =
+      '<div class="doc-card__photo"><image-slot id="est-doc-' + d.surname.toLowerCase() +
+        '" placeholder="Ritratto ' + d.display + '" shape="rect"' +
+        (d.surname === "Paderi" ? ' src="assets/photos/paderi.webp"' : "") + '></image-slot></div>' +
+      '<div class="doc-card__body">' +
+        '<div class="doc-card__spec">' + d.spec + '</div>' +
+        '<div class="doc-card__name">' + d.display + '</div>' +
+        '<span class="doc-card__link">Prenota <i data-lucide="arrow-right"></i></span>' +
+      '</div>';
+    grid.appendChild(a);
+  });
+  if (window.lucide) lucide.createIcons();
+  // site.js avvia l'osservatore reveal prima che queste card esistano, quindi
+  // le rendo visibili qui con un fade-in garantito (sul frame successivo).
+  requestAnimationFrame(() => {
+    grid.querySelectorAll(".reveal").forEach((el) => el.classList.add("in"));
+  });
+})();
+</script>
+<script>
+(async () => {
+  if (!document.title || !document.title.trim()) document.title = "medicina-estetica";
+  // Prepend so page-supplied @page / break rules (deck-stage's margin:0,
+  // author CSS) keep source-order precedence over the baseline.
+  const baseCss = document.createElement('style');
+  baseCss.textContent = "@media print {\n  figure, table { break-inside: avoid; }\n  *, *::before, *::after {\n    print-color-adjust: exact; -webkit-print-color-adjust: exact;\n    backdrop-filter: none !important; -webkit-backdrop-filter: none !important;\n    animation-delay: -99s !important; animation-duration: .001s !important;\n    animation-iteration-count: 1 !important; animation-fill-mode: both !important;\n    animation-play-state: running !important; transition-duration: 0s !important;\n  }\n}";
+  document.head.prepend(baseCss);
+  if (document.readyState === 'loading') {
+    await new Promise((r) => document.addEventListener('DOMContentLoaded', r, { once: true }));
+  }
+  let ds = document.querySelector('deck-stage');
+  // whenDefined never resolves when nothing registers the element, so only
+  // await it when a <deck-stage> tag exists (and race a timeout regardless).
+  if (ds && !customElements.get('deck-stage')) {
+    try {
+      await Promise.race([
+        customElements.whenDefined('deck-stage'),
+        new Promise((r) => setTimeout(r, 3000)),
+      ]);
+    } catch (e) {}
+    ds = document.querySelector('deck-stage');
+  }
+  // dc-runtime assigns window.DCLogic at init and mounts into #dc-root on
+  // DOMContentLoaded; settle on that subtree so React has rendered before
+  // print(). Non-DC pages fall through to weighing body.
+  const isDc = !ds && 'DCLogic' in window;
+  const settleRoot = ds || (isDc ? document.getElementById('dc-root') : null) || document.body;
+  if (settleRoot) {
+    // Weigh only content children — skip script/style/template so inline
+    // Babel/CSS doesn't register as stable "content" before the framework
+    // has mounted anything.
+    const MEDIA = 'img,svg,canvas,video,picture,iframe,embed,object';
+    const weigh = () => {
+      let text = 0, media = 0;
+      for (const c of settleRoot.children) {
+        const t = c.tagName;
+        if (t === 'SCRIPT' || t === 'STYLE' || t === 'TEMPLATE') continue;
+        text += (c.textContent || '').trim().length;
+        media += c.querySelectorAll(MEDIA).length + (c.matches(MEDIA) ? 1 : 0);
+      }
+      return text + media * 100;
+    };
+    // "Non-zero and stable" alone is not sufficient to mean rendered: generic
+    // body can carry a static shell while async main content is pending, and
+    // #dc-root can carry the root DC's static text while child refs are still
+    // .sc-placeholder boxes. Gate generic on readyState 'complete', and never
+    // accept stability while a dc-runtime placeholder is present.
+    const isGeneric = settleRoot === document.body;
+    const deadline = Date.now() + 15000;
+    let last = -1, stable = 0;
+    while (Date.now() < deadline) {
+      const n = weigh();
+      const ready =
+        (!isGeneric || document.readyState === 'complete') &&
+        !settleRoot.querySelector('.sc-placeholder');
+      if (n > 0 && n === last && ready) { if (++stable >= 2) break; } else { stable = 0; }
+      last = n;
+      await new Promise((r) => setTimeout(r, 250));
+    }
+  }
+  // Reveal content gated on scroll or visibility before printing. Lazy <img>,
+  // IntersectionObserver fade-ins, and collapsed <details> don't render while
+  // off-screen, so a long page would print with them blank or closed. Open
+  // every <details>, force native-lazy images eager, and scroll the document
+  // through its full height to trip lazy-load + IO; then wait (bounded) for the
+  // newly-triggered images. Inert for deck-stage (slides aren't scroll-gated).
+  try {
+    for (const d of document.querySelectorAll('details')) d.open = true;
+    for (const img of document.querySelectorAll('img[loading="lazy"]'))
+      img.loading = 'eager';
+    const scroller = document.scrollingElement || document.documentElement;
+    const full = Math.max(scroller.scrollHeight, document.body.scrollHeight);
+    const step = window.innerHeight || 800;
+    for (let y = 0; y <= full; y += step) {
+      window.scrollTo(0, y);
+      await new Promise((r) => requestAnimationFrame(r));
+    }
+    window.scrollTo(0, 0);
+    await Promise.race([
+      Promise.all(
+        [...document.images].map((img) =>
+          img.complete
+            ? null
+            : new Promise((res) => {
+                img.addEventListener('load', res, { once: true });
+                img.addEventListener('error', res, { once: true });
+              })
+        )
+      ),
+      new Promise((r) => setTimeout(r, 4000)),
+    ]);
+  } catch (e) {}
+  try { await document.fonts.ready; } catch (e) {}
+  // Jump every animation to its end state so print() never captures a slide
+  // mid-entrance. Ordering matters: the 0s-transition style must be live
+  // BEFORE data-deck-active is set so attribute-keyed transitions don't
+  // start a (now-0s) run from the pre-active base.
+  const st = document.createElement('style');
+  st.textContent = '*,*::before,*::after{animation-delay:-99s !important;animation-duration:.001s !important;animation-iteration-count:1 !important;animation-fill-mode:both !important;animation-play-state:running !important;transition-duration:0s !important}';
+  document.head.appendChild(st);
+  for (const d of document.querySelectorAll('deck-stage')) {
+    for (const c of d.children) {
+      const t = c.tagName;
+      if (t === 'SCRIPT' || t === 'STYLE' || t === 'TEMPLATE') continue;
+      c.setAttribute('data-deck-active', '');
+    }
+  }
+  // Re-append deck-stage's @page last so no author @page can add a margin and
+  // spill each full-bleed slide onto two sheets. Backstop for old copies.
+  if (ds) {
+    let pg = document.getElementById('deck-stage-print-page');
+    if (!pg) {
+      pg = document.createElement('style');
+      pg.textContent = '@page{size:' + (+ds.getAttribute('width') || 1920) +
+        'px ' + (+ds.getAttribute('height') || 1080) + 'px;margin:0}';
+    }
+    document.body.appendChild(pg);
+  }
+  try {
+    const sweep = () => {
+      for (const a of document.getAnimations()) {
+        try { a.finish(); } catch (e) {
+          try { a.currentTime = (a.effect && a.effect.getComputedTiming().duration) || 0; a.pause(); } catch (e2) {}
+        }
+      }
+    };
+    sweep();
+    await new Promise((r) => requestAnimationFrame(r));
+    sweep();
+    await new Promise((r) => requestAnimationFrame(r));
+  } catch (e) {}
+  // Size the PDF page to the rendered design unless the file opted into
+  // standard paper via @page{size:letter|A4|…}. Decks own their own @page.
+  var __m = null;
+  try { __m = (() => {
+  var docEl = document.documentElement;
+  var doc = { width: docEl.scrollWidth, height: docEl.scrollHeight };
+
+  var ds = document.querySelector('deck-stage');
+  if (ds) {
+    var dw = Number(ds.getAttribute('width')) || 1920;
+    var dh = Number(ds.getAttribute('height')) || 1080;
+    var n = typeof ds.length === 'number' ? ds.length : ds.children.length;
+    var idx = typeof ds.index === 'number' ? ds.index : 0;
+    var frames = [];
+    for (var i = 0; i < n; i++) frames.push({ left: 0, top: 0, width: dw, height: dh });
+    return { kind: 'deck', doc: doc, frames: frames,
+      authored: frames.map(function(){return{width:true,height:true}}),
+      deck: { width: dw, height: dh, slideCount: n, index: idx },
+      signals: { paperPage: false, pxPage: false } };
+  }
+
+  var paperPage = false, pxPage = false;
+  var eachRule = function (fn) {
+    for (var s = 0; s < document.styleSheets.length; s++) {
+      var rs; try { rs = document.styleSheets[s].cssRules; } catch (e) { continue; }
+      for (var r = 0; r < rs.length; r++) {
+        fn(rs[r]);
+        if (rs[r].cssRules) for (var n = 0; n < rs[r].cssRules.length; n++) fn(rs[r].cssRules[n]);
+      }
+    }
+  };
+  eachRule(function (r) {
+    if (r.type !== 6) return;
+    var m = /\bsize\s*:\s*([^;}]+)/i.exec(r.cssText || '');
+    if (!m) return;
+    if (/\b(letter|a[3-5]|legal|ledger)\b/i.test(m[1])) paperPage = true;
+    if (/\d+(?:\.\d+)?px\b/i.test(m[1])) pxPage = true;
+  });
+  var signals = { paperPage: paperPage, pxPage: pxPage };
+
+  if (paperPage) {
+    return { kind: 'paper-doc', doc: doc, signals: signals,
+      frames: [{ left: 0, top: 0, width: doc.width, height: doc.height }],
+      authored: [{ width: false, height: false }] };
+  }
+
+  var pxVal = function (v) {
+    var m = /^(\d+(?:\.\d+)?)px$/.exec(v || ''); return m ? +m[1] : 0;
+  };
+  var authoredPx = function (el, prop) {
+    if (pxVal(el.style[prop])) return true;
+    var attr = el.getAttribute(prop);
+    if (attr && /^\d+$/.test(attr)) return true;
+    var hit = false;
+    eachRule(function (r) {
+      if (hit || r.type !== 1 || !r.style) return;
+      try { if (el.matches(r.selectorText) && pxVal(r.style[prop])) hit = true; } catch (e) {}
+    });
+    return hit;
+  };
+
+  var el = document.body;
+  for (;;) {
+    var kids = [];
+    for (var c = 0; c < el.children.length; c++) {
+      var t = el.children[c].tagName;
+      if (t !== 'SCRIPT' && t !== 'STYLE' && t !== 'TEMPLATE') kids.push(el.children[c]);
+    }
+    if (kids.length !== 1 || !(kids[0] instanceof HTMLElement)) break;
+    el.setAttribute('data-om-frame-wrap', '');
+    el = kids[0];
+    if (authoredPx(el, 'width')) break;
+  }
+
+  var sx = window.scrollX || 0, sy = window.scrollY || 0;
+  var rectOf = function (e) {
+    var r = e.getBoundingClientRect();
+    var oy; try { oy = getComputedStyle(e).overflowY; } catch (err) {}
+    var h = oy === 'visible' ? Math.max(r.height, e.scrollHeight || 0) : r.height;
+    return { left: r.left + sx, top: r.top + sy, width: r.width, height: h };
+  };
+
+  // Multi-frame: ≥2 visible non-fixed children, each with authored px width
+  // AND height, all within ±2px of each other. Off unless the page opts in
+  // via data-om-multi-frame on the stop element — guards against card grids
+  // and pricing tables that match the geometry but aren't separate canvases.
+  if (el.hasAttribute('data-om-multi-frame')) {
+    var cands = [];
+    for (var k = 0; k < el.children.length; k++) {
+      var ch = el.children[k];
+      var cs; try { cs = getComputedStyle(ch); } catch (e) { continue; }
+      if (cs.display === 'none' || cs.visibility === 'hidden' || cs.position === 'fixed') continue;
+      var rc = rectOf(ch);
+      if (rc.width < 2 || rc.height < 2) continue;
+      if (!authoredPx(ch, 'width') || !authoredPx(ch, 'height')) continue;
+      cands.push(rc);
+    }
+    if (cands.length >= 2) {
+      var w0 = cands[0].width, h0 = cands[0].height, ok = true;
+      for (var q = 1; q < cands.length; q++)
+        if (Math.abs(cands[q].width - w0) > 2 || Math.abs(cands[q].height - h0) > 2) ok = false;
+      if (ok) return { kind: 'multi-frame', doc: doc, signals: signals,
+        frames: cands, authored: cands.map(function(){return{width:true,height:true}}) };
+    }
+  }
+
+  return { kind: 'single-canvas', doc: doc, signals: signals,
+    frames: [rectOf(el)],
+    authored: [{ width: authoredPx(el, 'width'), height: authoredPx(el, 'height') }] };
+})(); } catch (e) {}
+  var frame = null;
+  if (__m && __m.kind === 'single-canvas') {
+    var f = __m.frames && __m.frames[0];
+    if (f && f.width >= 200 && f.height >= 200) {
+      frame = f;
+      var fst = document.createElement('style');
+      fst.textContent = '@media print{@page{size:' + f.width + 'px ' + f.height +
+        'px;margin:0}html,body,[data-om-frame-wrap]{padding:0!important;' +
+        'margin:0!important;background:none!important}}';
+      document.body.appendChild(fst);
+    }
+  }
+  // Relax break-inside on oversized elements. An element taller than a
+  // printable page can't honor break-inside: avoid — browsers either overflow
+  // it or push it whole to the next page, leaving a blank gap, then break it
+  // anyway at an arbitrary point. After the final layout (content revealed,
+  // animations jumped), find elements taller than a page that still compute
+  // break-inside: avoid and reset them to auto, so the browser breaks them at
+  // their children's boundaries instead (children keep their own avoid). PAGE_PX
+  // is a conservative portrait estimate at 96 CSS px/in — Letter/A4 usable
+  // height minus our 0.5in margins — so only clearly-oversized elements are
+  // touched and under-page elements still stay whole. Skipped for decks (slides
+  // are sized to the page) and for fixed-size canvases (frame set, or an author
+  // px-based @page) — runs as before for flowing docs on letter/A4.
+  try {
+    if (!ds && !frame && !(__m && __m.signals && __m.signals.pxPage)) {
+      const PAGE_PX = 1024;
+      // Our print defaults add a real @page margin only when the source has
+      // no @page of its own; computed style can't tell us (it reports screen
+      // media), so read the injected rule directly.
+      const defaults = document.querySelector('style[data-omelette-print-defaults]');
+      const pageInset = /@page\s*\{[^}]*margin/.test(defaults ? defaults.textContent || '' : '');
+      const SEL = 'section,article,figure,table,pre,blockquote,[class~="card" i],[class~="page" i],[class~="sheet" i]';
+      for (const el of document.body.querySelectorAll(SEL)) {
+        if (el instanceof HTMLElement && el.offsetHeight > PAGE_PX) {
+          el.setAttribute('data-om-oversized', '');
+          // Fake-paged docs simulate sheets with over-tall break-after:page
+          // boxes; honoring the break spills half-blank pages and ends a
+          // colored box mid-sheet. Flow them, and (only when we own the page
+          // inset) drop the redundant padding/background via the rule below.
+          const cs = getComputedStyle(el);
+          if (cs.breakAfter === 'page' || cs.pageBreakAfter === 'always') {
+            el.setAttribute('data-om-fakepage', '');
+          }
+        }
+      }
+      const ost = document.createElement('style');
+      ost.textContent = '@media print{' +
+        '[data-om-oversized]{break-inside:auto !important;page-break-inside:auto !important}' +
+        '[data-om-fakepage]{break-after:auto !important;page-break-after:auto !important}' +
+        (pageInset ? '[data-om-fakepage]{padding:0 !important;background:none !important}' : '') +
+        '}';
+      document.head.appendChild(ost);
+    }
+  } catch (e) {}
+  // macOS Preview renders Skia-PDF Luminosity soft-masks as opaque grey boxes;
+  // swap the CSS that triggers them for Preview-safe forms.
+  try {
+    for (const el of document.body.querySelectorAll('*')) {
+      const cs = getComputedStyle(el);
+
+      if (cs.boxShadow !== 'none' && cs.filter === 'none') {
+        const outs = [], kept = [];
+        for (const s of cs.boxShadow.split(/,(?![^(]*[)])/)) {
+          const t = s.trim();
+          const m = t.match(/^(rgba?[(][^)]+[)]) (-?[0-9.]+px) (-?[0-9.]+px) ([0-9.]+px) -?[0-9.]+px$/);
+          if (m && parseFloat(m[4]) > 0) outs.push('drop-shadow(' + m[2] + ' ' + m[3] + ' ' + m[4] + ' ' + m[1] + ')');
+          else kept.push(t);
+        }
+        if (outs.length) {
+          el.style.setProperty('filter', outs.join(' '), 'important');
+          el.style.setProperty('box-shadow', kept.join(', ') || 'none', 'important');
+        }
+      }
+
+      const mask = cs.maskImage && cs.maskImage !== 'none' ? cs.maskImage : cs.webkitMaskImage;
+      if (mask && mask !== 'none' && cs.filter === 'none') el.style.setProperty('filter', 'opacity(1)', 'important');
+    }
+  } catch (e) {}
+  setTimeout(() => { try { window.print(); } catch (e) {} }, 200);
+})();
+</script>
+</body>
+</html>
