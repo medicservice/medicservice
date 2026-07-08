@@ -578,8 +578,11 @@ p { margin: 0; }
   .med-card { flex-direction: row; align-items: center; }
   .med-card:hover { transform: none; }
   .med-card__photo {
-    width: 84px; max-width: 84px; flex: none;
-    aspect-ratio: 1; height: 84px; max-height: 84px;
+    width: 76px; max-width: 76px; flex: none;
+    aspect-ratio: 4 / 5;
+    height: auto;
+    max-height: none;
+    align-self: center;
   }
   .med-card__body { padding: 12px 14px; min-width: 0; flex: 1; justify-content: center; }
   .med-card__cat { font-size: 9.5px; }
@@ -619,7 +622,7 @@ p { margin: 0; }
   .doc-hero__photo { max-width: 100%; }
   .doc-cta { width: 100%; }
   .doc-cta .btn { width: 100%; justify-content: center; }
-  .med-card__photo { width: 72px; max-width: 72px; height: 72px; max-height: 72px; }
+  .med-card__photo { width: 68px; max-width: 68px; aspect-ratio: 4 / 5; height: auto; max-height: none; }
   .med-card__body { padding: 10px 12px; }
   .med-card__name { font-size: 14px; }
   .med-card__spec { font-size: 12px; -webkit-line-clamp: 2; }
