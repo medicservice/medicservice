@@ -559,7 +559,13 @@ p { margin: 0; }
   .struttura-tile { aspect-ratio: 16/10; }
   .split, .ba-wrap { grid-template-columns: 1fr; gap: 32px; }
   .doc-hero { grid-template-columns: 1fr; }
-  .doc-hero__photo { max-width: 320px; }
+  .doc-hero__photo {
+    aspect-ratio: 1;
+    width: 100%;
+    max-width: min(100%, 360px);
+    max-height: none;
+    margin-inline: auto;
+  }
   .doc-hero__photo,
   .med-card__photo,
   .doc-card__photo { pointer-events: none; }
@@ -610,7 +616,7 @@ p { margin: 0; }
   .ctaband__actions { width: 100%; flex-direction: column; }
   .ctaband__actions .btn { width: 100%; justify-content: center; }
   /* doctor profile */
-  .doc-hero__photo { max-width: 100%; max-height: min(52vw, 280px); aspect-ratio: 4/5; }
+  .doc-hero__photo { max-width: 100%; }
   .doc-cta { width: 100%; }
   .doc-cta .btn { width: 100%; justify-content: center; }
   .med-card__photo { width: 72px; max-width: 72px; height: 72px; max-height: 72px; }
