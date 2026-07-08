@@ -281,7 +281,7 @@ p { margin: 0; }
 .med-card { border: 1px solid var(--line); border-radius: var(--r-md); overflow: hidden; background: #fff; transition: all .22s var(--ease); display: flex; flex-direction: column; }
 .med-card:hover { box-shadow: var(--shadow); transform: translateY(-3px); }
 .med-card__photo { aspect-ratio: 4/5; width: 100%; background: var(--blue-pale); position: relative; }
-.med-card__photo image-slot { width: 100%; height: 100%; touch-action: pan-y; }
+.med-card__photo image-slot { width: 100%; height: 100%; }
 .med-card__body { padding: 18px 20px 20px; display: flex; flex-direction: column; flex: 1; }
 .med-card__cat { font-weight: 800; font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--brand-dk); }
 .med-card__name { font-size: 19px; font-weight: 700; color: var(--navy); margin: 7px 0 5px; line-height: 1.15; }
@@ -438,7 +438,7 @@ p { margin: 0; }
 /* ---------------- scheda medico ---------------- */
 .doc-hero { display: grid; grid-template-columns: 420px 1fr; gap: 56px; align-items: start; }
 .doc-hero__photo { border-radius: var(--r-lg); overflow: hidden; background: var(--blue-pale); aspect-ratio: 4/5; box-shadow: var(--shadow); }
-.doc-hero__photo image-slot { width: 100%; height: 100%; touch-action: pan-y; }
+.doc-hero__photo image-slot { width: 100%; height: 100%; }
 .doc-hero__spec { color: var(--brand); }
 .doc-hero__spec svg { width: 18px; height: 18px; flex: none; }
 .doc-hero h1 { font-family: var(--display); font-weight: 700; font-size: clamp(36px, 4vw, 54px); letter-spacing: -.012em; line-height: 1.05; color: var(--navy); margin: 16px 0 10px; }
@@ -560,10 +560,32 @@ p { margin: 0; }
   .split, .ba-wrap { grid-template-columns: 1fr; gap: 32px; }
   .doc-hero { grid-template-columns: 1fr; }
   .doc-hero__photo { max-width: 320px; }
+  .doc-hero__photo,
+  .med-card__photo,
+  .doc-card__photo { pointer-events: none; }
+  image-slot:not([data-editable]) { pointer-events: none; }
   .cura-list { grid-template-columns: 1fr; }
   .hero__inner { grid-template-columns: 1fr; }
   .hero__play { display: none; }
   .opt-grid { grid-template-columns: 1fr; }
+  /* med cards — compatte su tutti i viewport mobile/tablet */
+  .med-card { flex-direction: row; align-items: center; }
+  .med-card:hover { transform: none; }
+  .med-card__photo {
+    width: 84px; max-width: 84px; flex: none;
+    aspect-ratio: 1; height: 84px; max-height: 84px;
+  }
+  .med-card__body { padding: 12px 14px; min-width: 0; flex: 1; justify-content: center; }
+  .med-card__cat { font-size: 9.5px; }
+  .med-card__name { font-size: 15px; margin: 2px 0 3px; line-height: 1.2; }
+  .med-card__spec {
+    font-size: 12.5px; line-height: 1.3;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  }
+  .med-card__actions,
+  .fmed-actions { padding-top: 6px; margin-top: 0; }
+  .fmed-link { font-size: 12px; gap: 5px; }
+  .fmedici-grid { gap: 12px; }
 }
 @media (max-width: 560px) {
   .container { padding-inline: 20px; }
@@ -588,22 +610,14 @@ p { margin: 0; }
   .ctaband__actions { width: 100%; flex-direction: column; }
   .ctaband__actions .btn { width: 100%; justify-content: center; }
   /* doctor profile */
-  .doc-hero__photo { max-width: 100%; }
+  .doc-hero__photo { max-width: 100%; max-height: min(52vw, 280px); aspect-ratio: 4/5; }
   .doc-cta { width: 100%; }
   .doc-cta .btn { width: 100%; justify-content: center; }
-  /* med cards — layout compatto orizzontale nel funnel e in elenco medici */
-  .med-card { flex-direction: row; align-items: stretch; }
-  .med-card__photo {
-    width: 108px; max-width: 108px; flex: none;
-    aspect-ratio: 3 / 4; min-height: 0;
-  }
-  .med-card__body { padding: 14px 16px 14px; min-width: 0; justify-content: center; }
-  .med-card__cat { font-size: 9.5px; }
-  .med-card__name { font-size: 16px; margin: 4px 0 3px; }
-  .med-card__spec { font-size: 13px; line-height: 1.35; }
-  .med-card__actions,
-  .fmed-actions { padding-top: 10px; margin-top: 0; }
-  .fmed-link { font-size: 13px; }
+  .med-card__photo { width: 72px; max-width: 72px; height: 72px; max-height: 72px; }
+  .med-card__body { padding: 10px 12px; }
+  .med-card__name { font-size: 14px; }
+  .med-card__spec { font-size: 12px; -webkit-line-clamp: 2; }
+  .fmed-actions { padding-top: 4px; }
   /* estetica */
   .tabs { gap: 8px; }
   .tab { padding: 10px 16px; font-size: 13px; }
