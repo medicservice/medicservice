@@ -443,7 +443,6 @@
 (function () {
   const grid = document.getElementById("est-docs");
   if (!grid) return;
-  const MIO = "https://www.miodottore.it/strutture/medic-service-oristano";
   const DOCS = [
     {surname:"Monni",   display:"Dr. Nicola Monni",  spec:"Medicina estetica"},
     {surname:"Paderi",  display:"Dr.ssa Valentina Paderi", spec:"Medicina estetica"}
@@ -451,9 +450,7 @@
   DOCS.forEach((d) => {
     const a = document.createElement("a");
     a.className = "doc-card reveal";
-    a.href = MIO;
-    a.target = "_blank";
-    a.rel = "noopener";
+    a.href = "medici/" + d.surname.toLowerCase() + ".html";
     a.innerHTML =
       '<div class="doc-card__photo"><image-slot id="est-doc-' + d.surname.toLowerCase() +
         '" placeholder="Ritratto ' + d.display + '" shape="rect"' +
@@ -461,7 +458,7 @@
       '<div class="doc-card__body">' +
         '<div class="doc-card__spec">' + d.spec + '</div>' +
         '<div class="doc-card__name">' + d.display + '</div>' +
-        '<span class="doc-card__link">Prenota <i data-lucide="arrow-right"></i></span>' +
+        '<span class="doc-card__link">Scopri <i data-lucide="arrow-right"></i></span>' +
       '</div>';
     grid.appendChild(a);
   });
