@@ -153,17 +153,6 @@
     show(1);
   }
 
-  /* ---- doctor page: hero photo — quadrata e intera su mobile ---- */
-  const heroPhotos = document.querySelectorAll(".doc-hero__photo image-slot");
-  if (heroPhotos.length) {
-    const mq = window.matchMedia("(max-width: 860px)");
-    const syncHeroPhotoFit = () => {
-      heroPhotos.forEach((el) => el.setAttribute("fit", mq.matches ? "contain" : "cover"));
-    };
-    syncHeroPhotoFit();
-    mq.addEventListener("change", syncHeroPhotoFit);
-  }
-
   /* ---- doctor page: health icon in hero eyebrow ---- */
   const heroSpec = document.getElementById("heroSpecIcon");
   if (heroSpec && window.specIcon) {
