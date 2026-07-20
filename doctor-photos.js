@@ -16,6 +16,13 @@
     Pitzalis: "pitzalis.webp",
     Salfi: "salfi.webp",
     Trincas: "Trincas.webp",
+    Concas: "concas.webp",
+    Fornero: "fornero.webp",
+    Humaidan: "humaidan.webp",
+    Maleddu: "maleddu.webp",
+    Melis: "melis.webp",
+    Monni: "monni.webp",
+    Mirai: "mirai.webp",
   };
 
   function isFemaleDoctor(display) {
