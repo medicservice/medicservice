@@ -256,6 +256,7 @@
 </script>
 
 <!-- ===== RENDER + FILTER (runs before site.js so booking binds to all cards) ===== -->
+<script src="doctor-photos.js?v=1"></script>
 <script>
 (function () {
   const DATA = JSON.parse(document.getElementById("medici-data").textContent);
@@ -285,8 +286,7 @@
     card.dataset.specs = d.specs.join("|").toLowerCase();
     card.innerHTML =
       '<div class="med-card__photo"><image-slot id="med-' + d.surname.toLowerCase() +
-        '" placeholder="Ritratto ' + d.display + '" shape="rect"' +
-        (d.surname === "Usai" ? ' src="assets/photos/usai.webp"' : d.surname === "Cabula" ? ' src="assets/photos/Cabula.webp"' : d.surname === "Cadeddu" ? ' src="assets/photos/Cadeddu.webp"' : d.surname === "Canu" ? ' src="assets/photos/Canu.webp"' : d.surname === "CartaGabriele" ? ' src="assets/photos/gabrielecarta.webp"' : d.surname === "Carta" ? ' src="assets/photos/brunocarta.webp"' : d.surname === "Corona" ? ' src="assets/photos/corona.webp"' : d.surname === "Diana" ? ' src="assets/photos/diana.webp"' : d.surname === "Oppo" ? ' src="assets/photos/oppo.webp"' : d.surname === "Paderi" ? ' src="assets/photos/paderi.webp"' : d.surname === "Pibi" ? ' src="assets/photos/pibi.webp"' : d.surname === "Picciau" ? ' src="assets/photos/picciau.webp"' : d.surname === "Pintor" ? ' src="assets/photos/pintor.webp"' : d.surname === "Pitzalis" ? ' src="assets/photos/pitzalis.webp"' : d.surname === "Salfi" ? ' src="assets/photos/salfi.webp"' : "") + '></image-slot></div>' +
+        '" placeholder="" shape="rect" src="' + doctorPhotoSrc(d.surname, d.display) + '"></image-slot></div>' +
       '<div class="med-card__body">' +
         '<div class="med-card__cat">' + d.catLabels.join(" · ") + '</div>' +
         '<h3 class="med-card__name">' + d.display + '</h3>' +

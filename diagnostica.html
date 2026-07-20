@@ -495,6 +495,7 @@
 
 <!-- ===== FUNNEL LOGIC ===== -->
 <script src="anatomy-icons.js?v=8"></script>
+<script src="doctor-photos.js?v=1"></script>
 <script>
 (function () {
   const ALL = JSON.parse(document.getElementById("roster").textContent);
@@ -620,7 +621,7 @@
       card.href = "medici/" + d.surname.toLowerCase() + ".html";
       card.innerHTML =
         '<div class="med-card__photo"><image-slot id="dg-' + d.surname.toLowerCase() +
-          '" placeholder="Ritratto ' + d.display + '" shape="rect"></image-slot></div>' +
+          '" placeholder="" shape="rect" src="' + doctorPhotoSrc(d.surname, d.display) + '"></image-slot></div>' +
         '<div class="med-card__body">' +
           '<div class="med-card__cat">' + state.spec + '</div>' +
           '<h3 class="med-card__name">' + d.display + '</h3>' +
