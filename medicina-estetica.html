@@ -349,16 +349,6 @@
           <li><a href="#">Chi siamo</a></li>
           <li><a href="medici.html">I medici</a></li>
           <li><a href="index.html#struttura">La struttura</a></li>
-          <li><a href="#">Lavora con noi</a></li>
-        </ul>
-      </div>
-      <div class="footer__col">
-        <h4>Supporto</h4>
-        <ul>
-          <li><a href="#">Come prenotare</a></li>
-          <li><a href="#">Blog / Salute</a></li>
-          <li><a href="#">Contatti</a></li>
-          <li><a href="#">Privacy &amp; Cookie</a></li>
         </ul>
       </div>
     </div>
@@ -437,6 +427,7 @@
 
 <script src="https://unpkg.com/lucide@0.408.0/dist/umd/lucide.min.js"></script>
 <script src="image-slot.js"></script>
+<script src="doctor-photos.js"></script>
 <script src="site.js?v=3"></script>
 
 <!-- ===== CARD MEDICI ESTETICI ===== -->
@@ -445,17 +436,21 @@
   const grid = document.getElementById("est-docs");
   if (!grid) return;
   const DOCS = [
-    {surname:"Monni",   display:"Dr. Nicola Monni",  spec:"Medicina estetica"},
-    {surname:"Paderi",  display:"Dr.ssa Valentina Paderi", spec:"Medicina estetica"}
+    { surname: "Cadeddu", display: "Dr. Augusto Cadeddu", spec: "Dermatologia · Tricologia" },
+    { surname: "Loi", display: "Op. Manuela Loi", spec: "Dermopigmentazione" },
+    { surname: "Melis", display: "Dr. Daniele Melis", spec: "Dermatologia · Tricologia" },
+    { surname: "Mirai", display: "Dr.ssa Sara Mirai", spec: "Nutrizione" },
+    { surname: "Monni", display: "Dr. Nicola Monni", spec: "Chirurgia plastica · Medicina estetica" },
+    { surname: "Paderi", display: "Dr.ssa Valentina Paderi", spec: "Chirurgia plastica · Medicina estetica" },
   ];
   DOCS.forEach((d) => {
+    const photo = window.doctorPhotoSrc(d.surname, d.display);
     const a = document.createElement("a");
     a.className = "doc-card reveal";
     a.href = "medici/" + d.surname.toLowerCase() + ".html";
     a.innerHTML =
       '<div class="doc-card__photo"><image-slot id="est-doc-' + d.surname.toLowerCase() +
-        '" placeholder="Ritratto ' + d.display + '" shape="rect"' +
-        (d.surname === "Paderi" ? ' src="assets/photos/paderi.webp"' : "") + '></image-slot></div>' +
+        '" placeholder="Ritratto ' + d.display + '" shape="rect" src="' + photo + '"></image-slot></div>' +
       '<div class="doc-card__body">' +
         '<div class="doc-card__spec">' + d.spec + '</div>' +
         '<div class="doc-card__name">' + d.display + '</div>' +
@@ -464,8 +459,6 @@
     grid.appendChild(a);
   });
   if (window.lucide) lucide.createIcons();
-  // site.js avvia l'osservatore reveal prima che queste card esistano, quindi
-  // le rendo visibili qui con un fade-in garantito (sul frame successivo).
   requestAnimationFrame(() => {
     grid.querySelectorAll(".reveal").forEach((el) => el.classList.add("in"));
   });

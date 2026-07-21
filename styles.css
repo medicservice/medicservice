@@ -356,7 +356,7 @@ p { margin: 0; }
 
 /* ---------------- footer ---------------- */
 .footer { background: var(--navy); color: #fff; padding: 72px 0 36px; }
-.footer__top { display: grid; grid-template-columns: 1.4fr repeat(3, 1fr); gap: 40px; }
+.footer__top { display: grid; grid-template-columns: 1.4fr repeat(2, 1fr); gap: 40px; }
 .footer__brand img { height: 30px; }
 .footer__brand p { margin-top: 18px; font-size: 14.5px; line-height: 1.6; color: rgba(255,255,255,.6); max-width: 280px; }
 .footer__contact { margin-top: 22px; display: flex; flex-direction: column; gap: 10px; font-size: 14.5px; color: rgba(255,255,255,.82); }
