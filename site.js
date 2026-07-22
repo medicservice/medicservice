@@ -12,11 +12,18 @@
 
   /* ---- mobile drawer ---- */
   const drawer = document.querySelector(".drawer");
+  const closeDrawer = () => drawer && drawer.classList.remove("open");
   document.querySelectorAll("[data-open-drawer]").forEach((b) =>
     b.addEventListener("click", () => drawer && drawer.classList.add("open")));
   document.querySelectorAll("[data-close-drawer]").forEach((b) =>
-    b.addEventListener("click", () => drawer && drawer.classList.remove("open")));
-  if (drawer) drawer.querySelector(".drawer__scrim")?.addEventListener("click", () => drawer.classList.remove("open"));
+    b.addEventListener("click", closeDrawer));
+  if (drawer) {
+    drawer.querySelector(".drawer__scrim")?.addEventListener("click", closeDrawer);
+    drawer.querySelector(".drawer__panel")?.addEventListener("click", (e) => {
+      const link = e.target.closest("a[href]");
+      if (link) closeDrawer();
+    });
+  }
 
   /* ---- FAQ accordion ---- */
   document.querySelectorAll(".faq-item").forEach((item) => {
