@@ -2,6 +2,7 @@
   var PHOTOS = {
     Usai: "usai.webp",
     Cabula: "Cabula.webp",
+    Cabras: "Cabras.webp",
     Cadeddu: "Cadeddu.webp",
     Canu: "Canu.webp",
     CartaGabriele: "gabrielecarta.webp",
