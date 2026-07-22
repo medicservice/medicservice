@@ -256,7 +256,7 @@ p { margin: 0; }
 .med-count { font-size: 14.5px; font-weight: 600; color: var(--g700); }
 .med-count b { color: var(--navy); font-family: var(--num); font-weight: 400; }
 
-/* sotto-filtri specialità (area Visite) */
+/* sotto-filtri specializzazioni (area Visite) */
 .med-subfilter { margin: 2px 0 30px; padding: 22px 24px; border: 1.5px solid var(--line); border-radius: var(--r-md); background: var(--g075); }
 .med-subfilter[hidden] { display: none; }
 .med-subfilter__lbl { font-weight: 800; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--brand-dk); margin-bottom: 14px; }

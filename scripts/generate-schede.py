@@ -111,7 +111,7 @@ def render_page(doc: dict) -> str:
     display = doc["display"]
     specs = doc["specs"]
     primary = specs[0]
-    mio = doc.get("mioUrl", DEFAULT_MIO)
+    mio = DEFAULT_MIO
     tags = "".join(f'<span class="doc-tag">{s}</span>\n          ' for s in specs[:4])
     cura = "".join(
         f'<li><i data-lucide="check"></i> Visita e consulenza in {s}</li>\n            '
@@ -133,7 +133,7 @@ def render_page(doc: dict) -> str:
 
     intro = (
         f"{display} riceve presso Medic Service a Oristano. "
-        f"Specialità: {', '.join(specs)}. "
+        f"Specializzazioni: {', '.join(specs)}. "
         "La scheda completa con percorso formativo, prestazioni e recensioni sarà pubblicata a breve."
     )
 
@@ -143,7 +143,7 @@ def render_page(doc: dict) -> str:
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{display} — {primary} a Oristano | Medic Service</title>
-<meta name="description" content="{display}, {title_spec} a Oristano presso Medic Service. Scopri specialità e prenota online la tua visita.">
+<meta name="description" content="{display}, {title_spec} a Oristano presso Medic Service. Scopri specializzazioni e prenota online la tua visita.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@300;400;500&family=DM+Serif+Display:ital@0;1&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500&display=swap" rel="stylesheet">
@@ -156,7 +156,7 @@ def render_page(doc: dict) -> str:
     <a class="nav__logo" href="../index.html"><img src="../assets/logo-horizontal.svg" alt="Medic Service"></a>
     <nav class="nav__links">
       <a href="../index.html">Home</a>
-      <a href="../index.html#aree">Specialità</a>
+      <a href="../index.html#aree">Specializzazioni</a>
       <a href="../medici.html" class="active">I Medici</a>
       <a href="../index.html#struttura">La Struttura</a>
     </nav>
@@ -247,7 +247,7 @@ def render_page(doc: dict) -> str:
       <div>
         <div class="reveal">
           <span class="eyebrow"><span class="num">03</span> Aree di competenza</span>
-          <h2 class="h2" style="color:var(--navy);margin:16px 0 18px">Specialità e ambiti.</h2>
+          <h2 class="h2" style="color:var(--navy);margin:16px 0 18px">Specializzazioni e ambiti.</h2>
           <p class="muted" style="font-size:16px;max-width:620px;margin-bottom:26px">Elenco indicativo in attesa di approvazione definitiva.</p>
           <div class="doc-tags">
             {patologie}
@@ -285,7 +285,7 @@ def render_page(doc: dict) -> str:
         </div>
       </div>
       <div class="footer__col">
-        <h4>Specialità</h4>
+        <h4>Specializzazioni</h4>
         <ul>
           <li><a href="../index.html#aree">Visite Specialistiche</a></li>
           <li><a href="../index.html#aree">Diagnostica per Immagini</a></li>
@@ -319,7 +319,7 @@ def render_page(doc: dict) -> str:
   <div class="drawer__panel">
     <button class="drawer__close" data-close-drawer aria-label="Chiudi"><i data-lucide="x"></i></button>
     <a href="../index.html">Home</a>
-    <a href="../index.html#aree">Specialità</a>
+    <a href="../index.html#aree">Specializzazioni</a>
     <a href="../medici.html">I Medici</a>
     <a href="../index.html#struttura">La Struttura</a>
     <a href="../medicina-estetica.html">Medicina Estetica</a>

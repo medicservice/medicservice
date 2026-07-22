@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Prenota una Visita di Diagnostica per Immagini — Medic Service Oristano</title>
-<meta name="description" content="Prenota la tua diagnostica per immagini a Medic Service, Oristano. Scegli la specialità, poi il medico, e prenoti dalla sua scheda — in pochi passaggi, anche cercando per patologia.">
+<meta name="description" content="Prenota la tua diagnostica per immagini a Medic Service, Oristano. Scegli la specializzazioni, poi il medico, e prenoti dalla sua scheda — in pochi passaggi, anche cercando per patologia.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@300;400;500&family=DM+Serif+Display:ital@0;1&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500&display=swap" rel="stylesheet">
@@ -84,7 +84,7 @@
   .fpanel__head h2 { color: var(--navy); }
   .fpanel__head p { margin: 14px auto 0; color: var(--g700); font-size: 18px; max-width: 640px; }
 
-  /* Ricerca specialità */
+  /* Ricerca specializzazioni */
   .fsearch { position: relative; max-width: 460px; margin: 20px auto 0; }
   .fsearch input {
     width: 100%; padding: 15px 18px 15px 48px; border: 1.5px solid var(--g300);
@@ -94,7 +94,7 @@
   .fsearch input:focus { outline: none; border-color: var(--brand); }
   .fsearch svg { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); width: 20px; height: 20px; color: var(--grey); }
 
-  /* Griglia specialità — tile centrate */
+  /* Griglia specializzazioni — tile centrate */
   .spec-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; max-width: 1100px; margin-inline: auto; }
   .spec-opt {
     display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px;
@@ -186,7 +186,7 @@
     <a class="nav__logo" href="index.html"><img src="assets/logo-horizontal.svg" alt="Medic Service"></a>
     <nav class="nav__links">
       <a href="index.html">Home</a>
-      <a href="index.html#aree" class="active">Specialità</a>
+      <a href="index.html#aree" class="active">Specializzazioni</a>
       <a href="medici.html">I Medici</a>
       <a href="index.html#struttura">La Struttura</a>
     </nav>
@@ -208,7 +208,7 @@
     <div class="sec-head">
       <span class="eyebrow"><span class="num">02</span> Diagnostica per Immagini</span>
       <h1 class="h1" style="margin-top:14px">Prenota in due passi.</h1>
-      <p style="margin-top:16px">Non serve sapere il nome del medico. Scegli prima la <b>specialità</b> che ti serve, poi <b>scegli il medico</b> e prenoti dalla sua scheda.</p>
+      <p style="margin-top:16px">Non serve sapere il nome del medico. Scegli prima la <b>specializzazioni</b> che ti serve, poi <b>scegli il medico</b> e prenoti dalla sua scheda.</p>
     </div>
   </div>
 </section>
@@ -220,7 +220,7 @@
     <!-- Barra sticky: stepper + riepilogo + intestazione del passo (sezione unica) -->
     <div class="funnel-sticky" id="funnel-sticky">
       <div class="fstepper" id="fstepper">
-        <div class="fstep" data-go="1"><span class="fstep__dot">1</span><span class="fstep__label">Scegli la specialità</span></div>
+        <div class="fstep" data-go="1"><span class="fstep__dot">1</span><span class="fstep__label">Scegli la specializzazioni</span></div>
         <div class="fstep" data-go="2"><span class="fstep__dot">2</span><span class="fstep__label">Scegli il medico</span></div>
       </div>
 
@@ -234,13 +234,13 @@
         <p>Siamo in tanti. Facci sapere cosa stai cercando.</p>
         <div class="fsearch">
           <i data-lucide="search"></i>
-          <input type="text" id="fspec-search" placeholder="Cerca per specialità o patologia (es. radiologia, formicolii)…" autocomplete="off">
+          <input type="text" id="fspec-search" placeholder="Cerca per specializzazioni o patologia (es. radiologia, formicolii)…" autocomplete="off">
         </div>
       </div>
       <div class="fhead" data-head="2">
         <span class="eyebrow">Passo 2 di 2</span>
         <h2 class="h2">Scegli il medico</h2>
-        <p id="fmed-sub">Questi medici ricevono per la specialità selezionata.</p>
+        <p id="fmed-sub">Questi medici ricevono per la specializzazioni selezionata.</p>
       </div>
       <div class="fhead" data-head="3">
         <span class="eyebrow">Passo 3 di 3</span>
@@ -249,16 +249,16 @@
       </div>
     </div>
 
-    <!-- STEP 1 — specialità -->
+    <!-- STEP 1 — specializzazioni -->
     <div class="fpanel" data-panel="1">
       <div class="spec-grid" id="fspec-grid"></div>
-      <p class="fno-match" id="fspec-empty" hidden>Nessuna specialità o patologia corrisponde alla ricerca. Prova con un altro termine, oppure <button class="link-btn" id="fspec-reset" style="background:none;border:0;color:var(--brand-dk);font-weight:700;cursor:pointer">vedi tutte le specialità</button>.</p>
+      <p class="fno-match" id="fspec-empty" hidden>Nessuna specializzazioni o patologia corrisponde alla ricerca. Prova con un altro termine, oppure <button class="link-btn" id="fspec-reset" style="background:none;border:0;color:var(--brand-dk);font-weight:700;cursor:pointer">vedi tutte le specializzazioni</button>.</p>
     </div>
 
     <!-- STEP 2 — medico -->
     <div class="fpanel" data-panel="2">
       <div class="fmedici-grid" id="fmed-grid"></div>
-      <button class="fback" data-go="1"><i data-lucide="arrow-left"></i> Cambia specialità</button>
+      <button class="fback" data-go="1"><i data-lucide="arrow-left"></i> Cambia specializzazioni</button>
     </div>
 
     <!-- STEP 3 — data e ora -->
@@ -282,7 +282,7 @@
           </div>
           <div class="fbk-row">
             <div>
-              <div class="fbk-row__k">Specialità</div>
+              <div class="fbk-row__k">Specializzazioni</div>
               <div class="fbk-row__v" id="fbk-spec">—</div>
             </div>
           </div>
@@ -343,7 +343,7 @@
         </div>
       </div>
       <div class="footer__col">
-        <h4>Specialità</h4>
+        <h4>Specializzazioni</h4>
         <ul>
           <li><a href="visite-specialistiche.html">Visite Specialistiche</a></li>
           <li><a href="medici.html?cat=diagnostica">Diagnostica per Immagini</a></li>
@@ -380,7 +380,7 @@
   <div class="drawer__panel">
     <button class="drawer__close" data-close-drawer aria-label="Chiudi"><i data-lucide="x"></i></button>
     <a href="index.html">Home</a>
-    <a href="index.html#aree">Specialità</a>
+    <a href="index.html#aree">Specializzazioni</a>
     <a href="medici.html">I Medici</a>
     <a href="index.html#struttura">La Struttura</a>
     <a href="medicina-estetica.html">Medicina Estetica</a>
@@ -494,7 +494,7 @@
   // solo i medici dell'area Diagnostica per Immagini
   const DOCS = ALL.filter((d) => d.cats.includes("diagnostica"));
 
-  // mappa specialità -> medici
+  // mappa specializzazioni -> medici
   const specMap = {};
   DOCS.forEach((d) => d.specs.forEach((s) => {
     (specMap[s] = specMap[s] || []).push(d);
@@ -507,8 +507,8 @@
     { lbl: "Lun", d: "15 giu", full: "Lunedì 15 giugno 2026", slots: ["09:15", "10:30", "11:30", "16:30", "17:15"] },
   ];
 
-  // Patologie/condizioni trattate per specialità (placeholder plausibili — da rivedere).
-  // Alimentano la ricerca al Passo 1: cercando una patologia si trova la specialità giusta.
+  // Patologie/condizioni trattate per specializzazioni (placeholder plausibili — da rivedere).
+  // Alimentano la ricerca al Passo 1: cercando una patologia si trova la specializzazioni giusta.
   const PATOLOGIE = {
     "Radiologia": ["Fratture", "Traumi ossei", "Artrosi", "Dolore osseo", "Controllo post-trauma", "Dolore articolare", "Patologie della colonna", "Sospette lesioni ossee"],
     "Senologia": ["Noduli al seno", "Prevenzione del tumore al seno", "Controllo senologico", "Mastopatia", "Dolore al seno"],
@@ -548,7 +548,7 @@
     const wrap = $("#fsummary");
     wrap.innerHTML = "";
     if (curStep === 1) return;
-    if (state.spec) wrap.appendChild(makeChip("Specialità", state.spec, 1));
+    if (state.spec) wrap.appendChild(makeChip("Specializzazioni", state.spec, 1));
     if (state.doctor && curStep >= 3) wrap.appendChild(makeChip("Medico", state.doctor.display, 2));
   }
   function makeChip(k, v, backTo) {
@@ -560,11 +560,11 @@
     return c;
   }
 
-  /* ---- STEP 1: specialità ---- */
+  /* ---- STEP 1: specializzazioni ---- */
   function renderSpecs(filter) {
     const grid = $("#fspec-grid");
     const q = norm(filter);
-    // ogni specialità: match per nome OPPURE per patologia trattata
+    // ogni specializzazioni: match per nome OPPURE per patologia trattata
     const results = SPECS.map((s) => {
       const nameMatch = !q || norm(s).includes(q);
       const matched = (q && !nameMatch)

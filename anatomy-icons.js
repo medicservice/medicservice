@@ -1,4 +1,4 @@
-/* Icone specialità — Health Icons (CC0) https://healthicons.org
+/* Icone specializzazioni — Health Icons (CC0) https://healthicons.org
    Outline 48px normalizzato. Generato da scripts/build-anatomy-icons.py */
 (function () {
   const ICONS = {

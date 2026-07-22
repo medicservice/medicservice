@@ -18,7 +18,7 @@
     <a class="nav__logo" href="index.html"><img src="assets/logo-horizontal.svg" alt="Medic Service"></a>
     <nav class="nav__links">
       <a href="index.html">Home</a>
-      <a href="index.html#aree">Specialità</a>
+      <a href="index.html#aree">Specializzazioni</a>
       <a href="medici.html" class="active">I Medici</a>
       <a href="index.html#struttura">La Struttura</a>
     </nav>
@@ -40,7 +40,7 @@
     <div class="sec-head">
       <span class="eyebrow"><span class="num">·</span> Il team medico</span>
       <h1 class="h1" style="margin-top:14px">I nostri medici.</h1>
-      <p style="margin-top:16px">Oltre 45 specialisti in un unico centro. Filtra per area, trova chi cerchi e prenota la visita in pochi tap — i medici sono in ordine alfabetico per cognome.</p>
+      <p style="margin-top:16px">Oltre 45 specialisti in un unico centro. Filtra per area, trova chi cerchi — i medici sono in ordine alfabetico per cognome.</p>
     </div>
 
     <div class="med-toolbar">
@@ -54,12 +54,12 @@
       <div class="med-count" id="med-count"></div>
     </div>
 
-    <!-- Sotto-filtri specialità: visibili solo nell'area "Visite Specialistiche" -->
+    <!-- Sotto-filtri specializzazioni: visibili solo nell'area "Visite Specialistiche" -->
     <div class="med-subfilter" id="med-subfilter" hidden>
-      <div class="med-subfilter__lbl">Filtra per specialità</div>
+      <div class="med-subfilter__lbl">Filtra per specializzazioni</div>
       <div class="med-subfilter__search">
         <i data-lucide="search"></i>
-        <input type="text" id="spec-search" placeholder="Scrivi una specialità (es. cardiologia)…" autocomplete="off">
+        <input type="text" id="spec-search" placeholder="Scrivi una specializzazioni (es. cardiologia)…" autocomplete="off">
       </div>
     </div>
   </div>
@@ -105,7 +105,7 @@
         </div>
       </div>
       <div class="footer__col">
-        <h4>Specialità</h4>
+        <h4>Specializzazioni</h4>
         <ul>
           <li><a href="medici.html?cat=visite">Visite Specialistiche</a></li>
           <li><a href="medici.html?cat=diagnostica">Diagnostica per Immagini</a></li>
@@ -142,7 +142,7 @@
   <div class="drawer__panel">
     <button class="drawer__close" data-close-drawer aria-label="Chiudi"><i data-lucide="x"></i></button>
     <a href="index.html">Home</a>
-    <a href="index.html#aree">Specialità</a>
+    <a href="index.html#aree">Specializzazioni</a>
     <a href="medici.html">I Medici</a>
     <a href="index.html#struttura">La Struttura</a>
     <a href="medicina-estetica.html">Medicina Estetica</a>
@@ -244,7 +244,7 @@
 {"surname":"Serpi","display":"Dr. Vladimiro Serpi","specs":["Oculistica"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
 {"surname":"Spiga","display":"Dr. Mauro Spiga","specs":["Ortopedia"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
 {"surname":"Trincas","display":"Dr. Efisio Trincas","specs":["Gastroenterologia"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
-{"surname":"Usai","display":"Dott. Nicola Usai","specs":["Cardiologia"],"cats":["visite"],"catLabels":["Visite Specialistiche"],"mioUrl":"https://www.miodottore.it/nicola-usai/cardiologo/oristano"}]
+{"surname":"Usai","display":"Dott. Nicola Usai","specs":["Cardiologia"],"cats":["visite"],"catLabels":["Visite Specialistiche"]}]
 </script>
 
 <!-- ===== RENDER + FILTER (runs before site.js so booking binds to all cards) ===== -->
@@ -261,9 +261,9 @@
   const STEP = 8;       // cards revealed per "load more"
   const START = 12;     // initial visible cards (3 righe da 4)
   let activeCat = "all";
-  let specQuery = "";   // testo/specialità selezionata
+  let specQuery = "";   // testo/specializzazioni selezionata
   let shown = START;
-  // categorie che mostrano la buca di ricerca per specialità
+  // categorie che mostrano la buca di ricerca per specializzazioni
   const SEARCHABLE = ["visite", "diagnostica", "chirurgia", "estetica"];
 
   const subfilter = document.getElementById("med-subfilter");
@@ -284,7 +284,7 @@
         '<h3 class="med-card__name">' + d.display + '</h3>' +
         '<div class="med-card__spec">' + d.specs.join(" · ") + '</div>' +
         '<div class="med-card__actions"><button class="btn btn--primary btn--sm med-card__book" data-mio="' +
-          (d.mioUrl || "https://www.miodottore.it/strutture/medic-service-oristano") +
+          "https://www.miodottore.it/strutture/medic-service-oristano" +
           '"><i data-lucide="calendar-check"></i> Prenota ora</button></div>' +
       '</div>';
     // il bottone apre MioDottore in una nuova scheda, senza seguire il link alla scheda interna
@@ -338,7 +338,7 @@
 
   loadBtn.addEventListener("click", () => { shown += STEP; update(); });
 
-  // casella di ricerca specialità (testo libero)
+  // casella di ricerca specializzazioni (testo libero)
   specSearch.addEventListener("input", (e) => { specQuery = e.target.value.trim(); shown = START; update(); });
 
   // deep-link es. medici.html?cat=visite&spec=cardiologia

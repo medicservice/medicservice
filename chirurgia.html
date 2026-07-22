@@ -84,7 +84,7 @@
   .fpanel__head h2 { color: var(--navy); }
   .fpanel__head p { margin: 14px auto 0; color: var(--g700); font-size: 18px; max-width: 640px; }
 
-  /* Ricerca specialità */
+  /* Ricerca specializzazioni */
   .fsearch { position: relative; max-width: 460px; margin: 20px auto 0; }
   .fsearch input {
     width: 100%; padding: 15px 18px 15px 48px; border: 1.5px solid var(--g300);
@@ -94,7 +94,7 @@
   .fsearch input:focus { outline: none; border-color: var(--brand); }
   .fsearch svg { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); width: 20px; height: 20px; color: var(--grey); }
 
-  /* Griglia specialità — tile centrate */
+  /* Griglia specializzazioni — tile centrate */
   .spec-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; max-width: 1100px; margin-inline: auto; }
   .spec-opt {
     display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px;
@@ -186,7 +186,7 @@
     <a class="nav__logo" href="index.html"><img src="assets/logo-horizontal.svg" alt="Medic Service"></a>
     <nav class="nav__links">
       <a href="index.html">Home</a>
-      <a href="index.html#aree" class="active">Specialità</a>
+      <a href="index.html#aree" class="active">Specializzazioni</a>
       <a href="medici.html">I Medici</a>
       <a href="index.html#struttura">La Struttura</a>
     </nav>
@@ -241,7 +241,7 @@
       <div class="fhead" data-head="2">
         <span class="eyebrow">Passo 2 di 3</span>
         <h2 class="h2">Scopri i medici</h2>
-        <p id="fmed-sub">Questi medici ricevono per la specialità selezionata.</p>
+        <p id="fmed-sub">Questi medici ricevono per la specializzazioni selezionata.</p>
       </div>
       <div class="fhead" data-head="3">
         <span class="eyebrow">Passo 3 di 3</span>
@@ -250,7 +250,7 @@
       </div>
     </div>
 
-    <!-- STEP 1 — specialità -->
+    <!-- STEP 1 — specializzazioni -->
     <div class="fpanel" data-panel="1">
       <div class="spec-grid" id="fspec-grid"></div>
       <p class="fno-match" id="fspec-empty" hidden>Nessun intervento o patologia corrisponde alla ricerca. Prova con un altro termine, oppure <button class="link-btn" id="fspec-reset" style="background:none;border:0;color:var(--brand-dk);font-weight:700;cursor:pointer">vedi tutti gli interventi</button>.</p>
@@ -283,7 +283,7 @@
           </div>
           <div class="fbk-row">
             <div>
-              <div class="fbk-row__k">Specialità</div>
+              <div class="fbk-row__k">Specializzazioni</div>
               <div class="fbk-row__v" id="fbk-spec">—</div>
             </div>
           </div>
@@ -344,7 +344,7 @@
         </div>
       </div>
       <div class="footer__col">
-        <h4>Specialità</h4>
+        <h4>Specializzazioni</h4>
         <ul>
           <li><a href="visite-specialistiche.html">Visite Specialistiche</a></li>
           <li><a href="medici.html?cat=diagnostica">Diagnostica per Immagini</a></li>
@@ -381,7 +381,7 @@
   <div class="drawer__panel">
     <button class="drawer__close" data-close-drawer aria-label="Chiudi"><i data-lucide="x"></i></button>
     <a href="index.html">Home</a>
-    <a href="index.html#aree">Specialità</a>
+    <a href="index.html#aree">Specializzazioni</a>
     <a href="medici.html">I Medici</a>
     <a href="index.html#struttura">La Struttura</a>
     <a href="medicina-estetica.html">Medicina Estetica</a>
@@ -495,7 +495,7 @@
   // solo i medici dell'area Chirurgia Day Surgery
   const DOCS = ALL.filter((d) => d.cats.includes("chirurgia"));
 
-  // mappa specialità -> medici
+  // mappa specializzazioni -> medici
   const specMap = {};
   DOCS.forEach((d) => d.specs.forEach((s) => {
     (specMap[s] = specMap[s] || []).push(d);
@@ -560,11 +560,11 @@
     return c;
   }
 
-  /* ---- STEP 1: specialità ---- */
+  /* ---- STEP 1: specializzazioni ---- */
   function renderSpecs(filter) {
     const grid = $("#fspec-grid");
     const q = norm(filter);
-    // ogni specialità: match per nome OPPURE per patologia trattata
+    // ogni specializzazioni: match per nome OPPURE per patologia trattata
     const results = SPECS.map((s) => {
       const nameMatch = !q || norm(s).includes(q);
       const matched = (q && !nameMatch)
