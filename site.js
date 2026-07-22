@@ -12,17 +12,51 @@
 
   /* ---- mobile drawer ---- */
   const drawer = document.querySelector(".drawer");
-  const closeDrawer = () => drawer && drawer.classList.remove("open");
+  let drawerScrollY = 0;
+  const openDrawer = () => {
+    if (!drawer) return;
+    drawerScrollY = window.scrollY;
+    drawer.classList.add("open");
+    document.body.style.overflow = "hidden";
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${drawerScrollY}px`;
+    document.body.style.width = "100%";
+  };
+  const closeDrawer = () => {
+    if (!drawer) return;
+    drawer.classList.remove("open");
+    document.body.style.overflow = "";
+    document.body.style.position = "";
+    document.body.style.top = "";
+    document.body.style.width = "";
+    window.scrollTo(0, drawerScrollY);
+  };
+  const samePage = (target) =>
+    target.origin === location.origin &&
+    target.pathname === location.pathname &&
+    target.search === location.search;
+
   document.querySelectorAll("[data-open-drawer]").forEach((b) =>
-    b.addEventListener("click", () => drawer && drawer.classList.add("open")));
+    b.addEventListener("click", openDrawer));
   document.querySelectorAll("[data-close-drawer]").forEach((b) =>
     b.addEventListener("click", closeDrawer));
   if (drawer) {
     drawer.querySelector(".drawer__scrim")?.addEventListener("click", closeDrawer);
-    drawer.querySelector(".drawer__panel")?.addEventListener("click", (e) => {
-      const link = e.target.closest("a[href]");
-      if (link) closeDrawer();
-    });
+    drawer.addEventListener("click", (e) => {
+      const link = e.target.closest(".drawer__panel a[href]");
+      if (!link) return;
+      closeDrawer();
+      const href = link.getAttribute("href") || "";
+      if (/^(tel:|mailto:|javascript:)/i.test(href)) return;
+      let target;
+      try { target = new URL(link.href); } catch { return; }
+      if (!samePage(target)) return;
+      e.preventDefault();
+      if (target.hash) {
+        if (location.hash !== target.hash) location.hash = target.hash;
+        else document.querySelector(target.hash)?.scrollIntoView({ behavior: "smooth" });
+      }
+    }, true);
   }
 
   /* ---- FAQ accordion ---- */

@@ -145,9 +145,9 @@ p { margin: 0; }
 /* mobile drawer */
 .drawer { position: fixed; inset: 0; z-index: 80; display: none; }
 .drawer.open { display: block; }
-.drawer__scrim { position: absolute; inset: 0; background: rgba(14,51,79,.4); }
+.drawer__scrim { position: absolute; inset: 0; background: rgba(14,51,79,.4); z-index: 0; }
 .drawer__panel {
-  position: absolute; top: 0; right: 0; height: 100%; width: min(82%, 360px);
+  position: absolute; top: 0; right: 0; height: 100%; width: min(82%, 360px); z-index: 1;
   background: #fff; padding: 28px 26px; display: flex; flex-direction: column; gap: 8px;
   box-shadow: -20px 0 60px -30px rgba(14,51,79,.6);
 }
