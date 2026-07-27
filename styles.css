@@ -368,6 +368,9 @@ p { margin: 0; }
 .footer__col a:hover { color: #fff; }
 .footer__bottom { border-top: 1px solid rgba(255,255,255,.14); margin-top: 52px; padding-top: 24px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 13px; color: rgba(255,255,255,.45); }
 .footer__bottom .num { font-family: var(--num); }
+.footer__legal { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.footer__legal a { color: rgba(255,255,255,.72); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.footer__legal a:hover { color: #fff; }
 
 /* ---------------- mobile sticky CTA bar ---------------- */
 .mobilebar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 70; display: none; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); box-shadow: 0 -12px 30px -20px rgba(14,51,79,.6); }
