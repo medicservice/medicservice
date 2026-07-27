@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
+<link rel="canonical" href="https://medicservice.it/">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Iubenda Cookie Solution -->
@@ -18,7 +19,7 @@ _iub.csLangConfiguration = {"it":{"cookiePolicyId":865793}};
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@300;400;500&family=DM+Serif+Display:ital@0;1&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=6">
+<link rel="stylesheet" href="/styles.css?v=6">
 <style>
   /* Lightbox struttura (solo home) */
   .struttura-tile { cursor: pointer; }
@@ -40,12 +41,12 @@ _iub.csLangConfiguration = {"it":{"cookiePolicyId":865793}};
 <!-- ===== HEADER ===== -->
 <header class="site-header">
   <div class="container nav">
-    <a class="nav__logo" href="index.html"><img src="assets/logo-horizontal.svg" alt="Medic Service"></a>
+    <a class="nav__logo" href="/"><img src="/assets/logo-horizontal.svg" alt="Medic Service"></a>
     <nav class="nav__links">
-      <a href="index.html" class="active">Home</a>
-      <a href="index.html#aree">Specializzazioni</a>
-      <a href="medici.html">I Medici</a>
-      <a href="struttura.html">La Struttura</a>
+      <a href="/" class="active">Home</a>
+      <a href="/#aree">Specializzazioni</a>
+      <a href="/medici/">I Medici</a>
+      <a href="/struttura/">La Struttura</a>
     </nav>
     <div class="nav__cta">
       <a class="nav__tel" href="tel:0783211136"><i data-lucide="phone"></i><span class="num">0783 211136</span></a>
@@ -57,7 +58,7 @@ _iub.csLangConfiguration = {"it":{"cookiePolicyId":865793}};
 
 <!-- ===== HERO ===== -->
 <section class="hero">
-  <div class="hero__media"><img src="assets/photos/MS-36.jpg" alt="Sala d'attesa Medic Service, Piazza Tharros Oristano"></div>
+  <div class="hero__media"><img src="/assets/photos/MS-36.jpg" alt="Sala d'attesa Medic Service, Piazza Tharros Oristano"></div>
   <div class="hero__scrim"></div>
   <div class="container hero__inner">
     <div class="hero__content">
@@ -69,7 +70,7 @@ _iub.csLangConfiguration = {"it":{"cookiePolicyId":865793}};
         <a class="btn btn--ghost-light btn--lg" href="tel:0783211136"><i data-lucide="phone"></i> Chiama ora</a>
       </div>
     </div>
-    <a class="hero__play" href="index.html#struttura">
+    <a class="hero__play" href="/#struttura">
       <span class="ring"><i data-lucide="play"></i></span>
       <span>Guarda<br>la struttura</span>
     </a>
@@ -95,28 +96,28 @@ _iub.csLangConfiguration = {"it":{"cookiePolicyId":865793}};
       <p>Quattro aree chiare, una per ogni domanda. Nessun menu da decifrare: scegli l'ambito e scopri il professionista giusto.</p>
     </div>
     <div class="areas" style="margin-top:48px">
-      <a class="area-card reveal" href="visite-specialistiche.html">
+      <a class="area-card reveal" href="/visite-specialistiche/">
         <span class="area-card__n">01</span>
         <span class="area-card__icon"><i data-lucide="stethoscope"></i></span>
         <h3>Visite Specialistiche</h3>
         <p>Cardiologia, allergologia, urologia, endocrinologia e molte altre. Lo specialista di fiducia, vicino a te.</p>
         <span class="link">Scopri l'area <i data-lucide="arrow-right"></i></span>
       </a>
-      <a class="area-card reveal" href="diagnostica.html">
+      <a class="area-card reveal" href="/diagnostica/">
         <span class="area-card__n">02</span>
         <span class="area-card__icon"><i data-lucide="scan-line"></i></span>
         <h3>Diagnostica per Immagini</h3>
         <p>Radiologia, ecografia, MOC-DEXA, TAC dentale e ORL, senologia. Referti rapidi, macchinari di ultima generazione.</p>
         <span class="link">Scopri l'area <i data-lucide="arrow-right"></i></span>
       </a>
-      <a class="area-card reveal" href="chirurgia.html">
+      <a class="area-card reveal" href="/chirurgia/">
         <span class="area-card__n">03</span>
         <span class="area-card__icon"><i data-lucide="syringe"></i></span>
         <h3>Chirurgia Day Surgery</h3>
         <p>Interventi ambulatoriali in giornata, in sala chirurgica dedicata. Entri ed esci lo stesso giorno, in sicurezza.</p>
         <span class="link">Scopri l'area <i data-lucide="arrow-right"></i></span>
       </a>
-      <a class="area-card reveal" href="medicina-estetica.html">
+      <a class="area-card reveal" href="/medicina-estetica/">
         <span class="area-card__n">04</span>
         <span class="area-card__icon"><i data-lucide="sparkles"></i></span>
         <h3>Medicina Estetica</h3>
@@ -135,7 +136,7 @@ _iub.csLangConfiguration = {"it":{"cookiePolicyId":865793}};
         <span class="eyebrow"><span class="num">02</span> Il team medico</span>
         <h2 class="h2">Conosci chi ti visiterà.</h2>
       </div>
-      <a class="btn btn--outline reveal" href="medici.html">Tutti i medici <i data-lucide="arrow-right"></i></a>
+      <a class="btn btn--outline reveal" href="/medici/">Tutti i medici <i data-lucide="arrow-right"></i></a>
     </div>
     <div class="docs" id="home-docs"></div>
   </div>
@@ -149,27 +150,27 @@ _iub.csLangConfiguration = {"it":{"cookiePolicyId":865793}};
         <span class="eyebrow"><span class="num">03</span> Piazza Tharros 57</span>
         <h2 class="h2">Qualità che si vede prima di entrare.</h2>
       </div>
-      <a class="btn btn--outline reveal" href="struttura.html">Scopri la struttura <i data-lucide="arrow-right"></i></a>
+      <a class="btn btn--outline reveal" href="/struttura/">Scopri la struttura <i data-lucide="arrow-right"></i></a>
     </div>
     <div class="struttura-grid reveal">
       <div class="struttura-tile struttura-tile--tall">
-        <img src="assets/photos/MS-38.jpg" alt="Sala d'attesa luminosa">
+        <img src="/assets/photos/MS-38.jpg" alt="Sala d'attesa luminosa">
         <div class="struttura-tile__cap">Spazi ampi e luminosi, studiati per il tuo comfort.</div>
       </div>
       <div class="struttura-tile">
-        <img src="assets/photos/MS-23.jpg" alt="Lucernai">
+        <img src="/assets/photos/MS-23.jpg" alt="Lucernai">
         <div class="struttura-tile__cap">Luce diffusa tutto il giorno.</div>
       </div>
       <div class="struttura-tile">
-        <img src="assets/photos/MS-15.jpg" alt="Reception e accettazione">
+        <img src="/assets/photos/MS-15.jpg" alt="Reception e accettazione">
         <div class="struttura-tile__cap">Tre postazioni di accettazione.</div>
       </div>
       <div class="struttura-tile">
-        <img src="assets/photos/MS-33.jpg" alt="Area relax sala d'attesa">
+        <img src="/assets/photos/MS-33.jpg" alt="Area relax sala d'attesa">
         <div class="struttura-tile__cap">Sedute morbide e verde vero.</div>
       </div>
       <div class="struttura-tile">
-        <img src="assets/photos/MS-40.jpg" alt="Corridoio con opere d'arte">
+        <img src="/assets/photos/MS-40.jpg" alt="Corridoio con opere d'arte">
         <div class="struttura-tile__cap">Un percorso curato in ogni dettaglio.</div>
       </div>
     </div>
@@ -245,7 +246,7 @@ _iub.csLangConfiguration = {"it":{"cookiePolicyId":865793}};
 
 <!-- ===== CTA BAND ===== -->
 <section class="ctaband">
-  <div class="ctaband__bg"><img src="assets/monogram-white.svg" alt=""></div>
+  <div class="ctaband__bg"><img src="/assets/monogram-white.svg" alt=""></div>
   <div class="container ctaband__inner">
     <div>
       <h2>Hai bisogno di uno specialista?</h2>
@@ -263,7 +264,7 @@ _iub.csLangConfiguration = {"it":{"cookiePolicyId":865793}};
   <div class="container">
     <div class="footer__top">
       <div class="footer__brand">
-        <img src="assets/logo-horizontal-white.svg" alt="Medic Service">
+        <img src="/assets/logo-horizontal-white.svg" alt="Medic Service">
         <p>Centro medico polispecialistico nel cuore di Oristano. Cura chiara, professionale, vicina.</p>
         <div class="footer__contact">
           <a href="https://maps.app.goo.gl/DD7feputJqxw9w6r8" target="_blank" rel="noopener"><i data-lucide="map-pin"></i> Piazza Tharros 57, Oristano</a>
@@ -274,17 +275,17 @@ _iub.csLangConfiguration = {"it":{"cookiePolicyId":865793}};
       <div class="footer__col">
         <h4>Specializzazioni</h4>
         <ul>
-          <li><a href="visite-specialistiche.html">Visite Specialistiche</a></li>
-          <li><a href="diagnostica.html">Diagnostica per Immagini</a></li>
-          <li><a href="chirurgia.html">Chirurgia Day Surgery</a></li>
-          <li><a href="medicina-estetica.html">Medicina Estetica</a></li>
+          <li><a href="/visite-specialistiche/">Visite Specialistiche</a></li>
+          <li><a href="/diagnostica/">Diagnostica per Immagini</a></li>
+          <li><a href="/chirurgia/">Chirurgia Day Surgery</a></li>
+          <li><a href="/medicina-estetica/">Medicina Estetica</a></li>
         </ul>
       </div>
       <div class="footer__col">
         <h4>Il centro</h4>
         <ul>
-          <li><a href="medici.html">I medici</a></li>
-          <li><a href="struttura.html">La struttura</a></li>
+          <li><a href="/medici/">I medici</a></li>
+          <li><a href="/struttura/">La struttura</a></li>
         </ul>
       </div>
     </div>
@@ -312,11 +313,11 @@ _iub.csLangConfiguration = {"it":{"cookiePolicyId":865793}};
   <div class="drawer__scrim"></div>
   <div class="drawer__panel">
     <button class="drawer__close" data-close-drawer aria-label="Chiudi"><i data-lucide="x"></i></button>
-    <a href="index.html">Home</a>
-    <a href="index.html#aree">Specializzazioni</a>
-    <a href="medici.html">I Medici</a>
-    <a href="struttura.html">La Struttura</a>
-    <a href="medicina-estetica.html">Medicina Estetica</a>
+    <a href="/">Home</a>
+    <a href="/#aree">Specializzazioni</a>
+    <a href="/medici/">I Medici</a>
+    <a href="/struttura/">La Struttura</a>
+    <a href="/medicina-estetica/">Medicina Estetica</a>
     <button class="btn btn--primary btn--block" data-book style="margin-top:20px" data-close-drawer>Prenota online</button>
   </div>
 </div>
@@ -421,7 +422,7 @@ _iub.csLangConfiguration = {"it":{"cookiePolicyId":865793}};
 {"surname":"Trincas","display":"Dr. Efisio Trincas","specs":["Gastroenterologia"],"cats":["visite"],"catLabels":["Visite Specialistiche"]},
 {"surname":"Usai","display":"Dott. Nicola Usai","specs":["Cardiologia"],"cats":["visite"],"catLabels":["Visite Specialistiche"]}]
 </script>
-<script src="doctor-photos.js?v=2"></script>
+<script src="/doctor-photos.js?v=2"></script>
 <script>
 (function () {
   const grid = document.getElementById("home-docs");
@@ -441,7 +442,7 @@ _iub.csLangConfiguration = {"it":{"cookiePolicyId":865793}};
     const first = d.display.replace(/^Dott\.?(ssa)?\s*/, "").split(" ")[0];
     const isF = /ssa/.test(d.display) || (!/Dott/.test(d.display) && /a$/i.test(first));
     const href = (d.cats.includes("estetica") && !d.cats.includes("visite"))
-      ? "medicina-estetica.html" : "medici/" + d.surname.toLowerCase() + ".html";
+      ? "/medicina-estetica/" : "/medici/" + d.surname.toLowerCase() + "/";
     const a = document.createElement("a");
     a.className = "doc-card reveal";
     a.href = href;
@@ -471,8 +472,8 @@ _iub.csLangConfiguration = {"it":{"cookiePolicyId":865793}};
 <script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
 
 <script src="https://unpkg.com/lucide@0.408.0/dist/umd/lucide.min.js"></script>
-<script src="image-slot.js?v=2"></script>
-<script src="site.js?v=5"></script>
+<script src="/image-slot.js?v=2"></script>
+<script src="/site.js?v=6"></script>
 
 <!-- ===== LIGHTBOX: foto struttura a grandezza originale ===== -->
 <script>

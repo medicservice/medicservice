@@ -6,7 +6,7 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-MEDICI_HTML = ROOT / "medici.html"
+MEDICI_HTML = ROOT / "medici" / "index.html"
 OUT_DIR = ROOT / "medici"
 
 DEFAULT_MIO = "https://www.miodottore.it/strutture/medic-service-oristano"
@@ -66,7 +66,7 @@ def load_medici():
     text = MEDICI_HTML.read_text(encoding="utf-8")
     match = re.search(r'<script type="application/json" id="medici-data">\s*(\[.*?\])\s*</script>', text, re.S)
     if not match:
-        raise SystemExit("medici-data JSON not found in medici.html")
+        raise SystemExit("medici-data JSON not found in medici/index.html")
     return json.loads(match.group(1))
 
 
@@ -101,7 +101,7 @@ def book_btn(display: str, surname: str) -> str:
 def photo_attrs(surname: str) -> tuple[str, str]:
     sid = slugify(surname)
     if surname == "Usai":
-        return ' src="../assets/photos/usai.webp"', f'placeholder="Ritratto professionale {surname}"'
+        return ' src="/assets/photos/usai.webp"', f'placeholder="Ritratto professionale {surname}"'
     return "", f'placeholder="Ritratto professionale — {surname}"'
 
 
@@ -156,18 +156,18 @@ _iub.csLangConfiguration = {{"it":{{"cookiePolicyId":865793}}}};
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@300;400;500&family=DM+Serif+Display:ital@0;1&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../styles.css?v=3">
+<link rel="stylesheet" href="/styles.css?v=3">
 </head>
 <body data-screen-label="Scheda Medico">
 
 <header class="site-header">
   <div class="container nav">
-    <a class="nav__logo" href="../index.html"><img src="../assets/logo-horizontal.svg" alt="Medic Service"></a>
+    <a class="nav__logo" href="/"><img src="/assets/logo-horizontal.svg" alt="Medic Service"></a>
     <nav class="nav__links">
-      <a href="../index.html">Home</a>
-      <a href="../index.html#aree">Specializzazioni</a>
-      <a href="../medici.html" class="active">I Medici</a>
-      <a href="../index.html#struttura">La Struttura</a>
+      <a href="/">Home</a>
+      <a href="/#aree">Specializzazioni</a>
+      <a href="/medici/" class="active">I Medici</a>
+      <a href="/#struttura">La Struttura</a>
     </nav>
     <div class="nav__cta">
       <a class="nav__tel" href="tel:0783211136"><i data-lucide="phone"></i><span class="num">0783 211136</span></a>
@@ -192,8 +192,8 @@ _iub.csLangConfiguration = {{"it":{{"cookiePolicyId":865793}}}};
 <section class="section--tight" id="docHero" style="padding-top:36px">
   <div class="container">
     <nav class="breadcrumb" style="margin-bottom:34px">
-      <a href="../index.html">Home</a><i data-lucide="chevron-right"></i>
-      <a href="../medici.html">I Medici</a><i data-lucide="chevron-right"></i>
+      <a href="/">Home</a><i data-lucide="chevron-right"></i>
+      <a href="/medici/">I Medici</a><i data-lucide="chevron-right"></i>
       <span class="cur">{display}</span>
     </nav>
     <div class="doc-hero">
@@ -268,7 +268,7 @@ _iub.csLangConfiguration = {{"it":{{"cookiePolicyId":865793}}}};
 </section>
 
 <section class="ctaband">
-  <div class="ctaband__bg"><img src="../assets/monogram-white.svg" alt=""></div>
+  <div class="ctaband__bg"><img src="/assets/monogram-white.svg" alt=""></div>
   <div class="container ctaband__inner">
     <div>
       <h2>Prenota la tua visita</h2>
@@ -285,7 +285,7 @@ _iub.csLangConfiguration = {{"it":{{"cookiePolicyId":865793}}}};
   <div class="container">
     <div class="footer__top">
       <div class="footer__brand">
-        <img src="../assets/logo-horizontal-white.svg" alt="Medic Service">
+        <img src="/assets/logo-horizontal-white.svg" alt="Medic Service">
         <p>Centro medico polispecialistico nel cuore di Oristano. Cura chiara, professionale, vicina.</p>
         <div class="footer__contact">
           <a href="https://maps.app.goo.gl/DD7feputJqxw9w6r8" target="_blank" rel="noopener"><i data-lucide="map-pin"></i> Piazza Tharros 57, Oristano</a>
@@ -296,17 +296,17 @@ _iub.csLangConfiguration = {{"it":{{"cookiePolicyId":865793}}}};
       <div class="footer__col">
         <h4>Specializzazioni</h4>
         <ul>
-          <li><a href="../index.html#aree">Visite Specialistiche</a></li>
-          <li><a href="../index.html#aree">Diagnostica per Immagini</a></li>
-          <li><a href="../index.html#aree">Chirurgia Day Surgery</a></li>
-          <li><a href="../medicina-estetica.html">Medicina Estetica</a></li>
+          <li><a href="/#aree">Visite Specialistiche</a></li>
+          <li><a href="/#aree">Diagnostica per Immagini</a></li>
+          <li><a href="/#aree">Chirurgia Day Surgery</a></li>
+          <li><a href="/medicina-estetica/">Medicina Estetica</a></li>
         </ul>
       </div>
       <div class="footer__col">
         <h4>Il centro</h4>
         <ul>
-          <li><a href="../medici.html">I medici</a></li>
-          <li><a href="../index.html#struttura">La struttura</a></li>
+          <li><a href="/medici/">I medici</a></li>
+          <li><a href="/#struttura">La struttura</a></li>
         </ul>
       </div>
     </div>
@@ -331,20 +331,20 @@ _iub.csLangConfiguration = {{"it":{{"cookiePolicyId":865793}}}};
   <div class="drawer__scrim"></div>
   <div class="drawer__panel">
     <button class="drawer__close" data-close-drawer aria-label="Chiudi"><i data-lucide="x"></i></button>
-    <a href="../index.html">Home</a>
-    <a href="../index.html#aree">Specializzazioni</a>
-    <a href="../medici.html">I Medici</a>
-    <a href="../index.html#struttura">La Struttura</a>
-    <a href="../medicina-estetica.html">Medicina Estetica</a>
+    <a href="/">Home</a>
+    <a href="/#aree">Specializzazioni</a>
+    <a href="/medici/">I Medici</a>
+    <a href="/#struttura">La Struttura</a>
+    <a href="/medicina-estetica/">Medicina Estetica</a>
     <button class="btn btn--primary btn--block" data-book data-medico="{display} — {primary}" style="margin-top:20px" data-close-drawer>Prenota online</button>
   </div>
 </div>
 
 <script type="text/javascript">(function (w,d) {{var loader = function () {{var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}}; if(w.addEventListener){{w.addEventListener("load", loader, false);}}else if(w.attachEvent){{w.attachEvent("onload", loader);}}else{{w.onload = loader;}}}})(window, document);</script>
 <script src="https://unpkg.com/lucide@0.408.0/dist/umd/lucide.min.js"></script>
-<script src="../anatomy-icons.js?v=8"></script>
-<script src="../image-slot.js"></script>
-<script src="../site.js"></script>
+<script src="/anatomy-icons.js?v=8"></script>
+<script src="/image-slot.js"></script>
+<script src="/site.js"></script>
 <script>
 (function () {{
   const hero = document.getElementById("heroCta");
@@ -371,9 +371,11 @@ def main():
     created = 0
     for doc in medici:
         slug = slugify(doc["surname"])
-        out = OUT_DIR / f"{slug}.html"
+        out_dir = OUT_DIR / slug
+        out = out_dir / "index.html"
         if slug == "usai":
             continue  # hand-crafted model page
+        out_dir.mkdir(parents=True, exist_ok=True)
         out.write_text(render_page(doc), encoding="utf-8")
         created += 1
     print(f"Generated {created} doctor pages in {OUT_DIR}")

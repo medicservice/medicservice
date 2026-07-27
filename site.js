@@ -31,9 +31,14 @@
     document.body.style.width = "";
     window.scrollTo(0, drawerScrollY);
   };
+  const normPath = (p) => {
+    let n = (p || "/").replace(/\/index\.html$/, "") || "/";
+    if (n.length > 1 && n.endsWith("/")) n = n.slice(0, -1);
+    return n;
+  };
   const samePage = (target) =>
     target.origin === location.origin &&
-    target.pathname === location.pathname &&
+    normPath(target.pathname) === normPath(location.pathname) &&
     target.search === location.search;
 
   document.querySelectorAll("[data-open-drawer]").forEach((b) =>

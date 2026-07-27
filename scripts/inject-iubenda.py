@@ -36,7 +36,7 @@ VIEWPORT = '<meta name="viewport" content="width=device-width, initial-scale=1">
 PIVA_FOOTER = '<span class="num">P.IVA 01234567890</span>'
 LUCIDE = '<script src="https://unpkg.com/lucide@0.408.0/dist/umd/lucide.min.js"></script>'
 
-SKIP = {"scheda-medico.html"}
+SKIP = {"scheda-medico/index.html"}
 
 
 def patch(path: Path) -> bool:
@@ -69,7 +69,8 @@ def patch(path: Path) -> bool:
 def main() -> None:
     updated = []
     for path in sorted(ROOT.rglob("*.html")):
-        if path.name in SKIP or "_ds/" in str(path):
+        rel = path.relative_to(ROOT).as_posix()
+        if rel in SKIP or "_ds/" in rel:
             continue
         if patch(path):
             updated.append(path.relative_to(ROOT))
