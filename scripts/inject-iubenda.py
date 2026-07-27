@@ -33,7 +33,7 @@ IUBENDA_LOADER = """
 
 MARKER = "_iub.csConfiguration"
 VIEWPORT = '<meta name="viewport" content="width=device-width, initial-scale=1">'
-PIVA_FOOTER = '<span class="num">P.IVA 01234567890</span>'
+PIVA_FOOTER = '<span class="num">P.IVA 01019170958</span>'
 LUCIDE = '<script src="https://unpkg.com/lucide@0.408.0/dist/umd/lucide.min.js"></script>'
 
 SKIP = {"scheda-medico/index.html"}
