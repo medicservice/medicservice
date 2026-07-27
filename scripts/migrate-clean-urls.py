@@ -67,15 +67,12 @@ def transform_content(text: str) -> str:
 
 
 def canonical_for(rel_path: Path) -> str:
-    if rel_path.name == "/":
-        parent = rel_path.parent
-        if parent == Path("."):
-            return f"{SITE}/"
-        return f"{SITE}/{parent.as_posix()}/"
-    stem = rel_path.stem
-    if stem == "index":
+    parts = rel_path.as_posix().split("/")
+    if parts and parts[-1] == "index.html":
+        parts = parts[:-1]
+    if not parts:
         return f"{SITE}/"
-    return f"{SITE}/{stem}/"
+    return f"{SITE}/{'/'.join(parts)}/"
 
 
 def inject_canonical(html: str, url: str) -> str:

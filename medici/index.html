@@ -263,7 +263,8 @@ _iub.csLangConfiguration = {"it":{"cookiePolicyId":865793}};
 </script>
 
 <!-- ===== RENDER + FILTER (runs before site.js so booking binds to all cards) ===== -->
-<script src="/doctor-photos.js?v=2"></script>
+<script src="/doctor-photos.js?v=3"></script>
+<script src="/image-slot.js?v=3"></script>
 <script>
 (function () {
   const DATA = JSON.parse(document.getElementById("medici-data").textContent);
@@ -288,7 +289,7 @@ _iub.csLangConfiguration = {"it":{"cookiePolicyId":865793}};
   DATA.forEach((d) => {
     const card = document.createElement("a");
     card.className = "med-card";
-    card.href = "medici/" + d.surname.toLowerCase() + ".html";
+    card.href = "/medici/" + d.surname.toLowerCase() + "/";
     card.dataset.cats = d.cats.join(" ");
     card.dataset.specs = d.specs.join("|").toLowerCase();
     card.innerHTML =
@@ -374,7 +375,6 @@ _iub.csLangConfiguration = {"it":{"cookiePolicyId":865793}};
 <script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
 
 <script src="https://unpkg.com/lucide@0.408.0/dist/umd/lucide.min.js"></script>
-<script src="/image-slot.js?v=2"></script>
 <script src="/site.js?v=6"></script>
 </body>
 </html>
