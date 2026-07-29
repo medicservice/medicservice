@@ -166,73 +166,6 @@ _iub.csLangConfiguration = {"it":{"cookiePolicyId":865793}};
   </div>
 </section>
 
-<!-- ===== RECENSIONI (carosello) ===== -->
-<section class="section bg-tint" id="recensioni">
-  <div class="container">
-    <div class="rev-head">
-      <div class="sec-head reveal" style="margin-bottom:0">
-        <span class="eyebrow">Dicono del Dott. Usai</span>
-        <h2 class="h2">Le recensioni dei pazienti.</h2>
-      </div>
-      <div class="rev-summary reveal">
-        <div class="rev-summary__score num">4,9</div>
-        <div>
-          <div class="stars" aria-label="5 stelle"><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i></div>
-          <div class="muted" style="font-size:14px;margin-top:6px">su <span class="num">128</span> recensioni verificate</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="rev-carousel reveal" data-carousel>
-      <div class="rev-viewport">
-        <div class="rev-track" data-track>
-          <div class="rev-slide">
-            <article class="review-card">
-              <div class="stars"><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i></div>
-              <p>"Il Dott. Usai mi segue per l'ipertensione da due anni. Spiega ogni esame con parole semplici e non ti fa mai sentire di fretta: esco sempre dalla visita con le idee chiare."</p>
-              <div class="review-card__who"><span class="review-card__av">MP</span><div><b>Marco P.</b><br><span>1 settimana fa</span></div></div>
-            </article>
-          </div>
-          <div class="rev-slide">
-            <article class="review-card">
-              <div class="stars"><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i></div>
-              <p>"Ho fatto un ecocardiogramma e una visita completa lo stesso giorno. Professionale e rassicurante, mi ha chiarito ogni dubbio sul referto con grande pazienza."</p>
-              <div class="review-card__who"><span class="review-card__av">AS</span><div><b>Anna S.</b><br><span>3 settimane fa</span></div></div>
-            </article>
-          </div>
-          <div class="rev-slide">
-            <article class="review-card">
-              <div class="stars"><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i></div>
-              <p>"Cardiologo puntuale, competente e davvero disponibile. Mi ha rilasciato il certificato di idoneità sportiva in giornata. Studio nuovo e personale gentilissimo."</p>
-              <div class="review-card__who"><span class="review-card__av">CF</span><div><b>Chiara F.</b><br><span>1 mese fa</span></div></div>
-            </article>
-          </div>
-          <div class="rev-slide">
-            <article class="review-card">
-              <div class="stars"><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i></div>
-              <p>"Visita accurata, mi ha dedicato tutto il tempo necessario senza farmi sentire un numero. Lo consiglio a chi cerca un cardiologo che ascolta davvero."</p>
-              <div class="review-card__who"><span class="review-card__av">RM</span><div><b>Roberto M.</b><br><span>1 mese fa</span></div></div>
-            </article>
-          </div>
-          <div class="rev-slide">
-            <article class="review-card">
-              <div class="stars"><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i></div>
-              <p>"Dopo anni di controlli sbrigativi altrove, ho finalmente trovato uno specialista che segue la prevenzione con serietà. Empatico e molto preparato."</p>
-              <div class="review-card__who"><span class="review-card__av">GL</span><div><b>Giuseppe L.</b><br><span>2 mesi fa</span></div></div>
-            </article>
-          </div>
-        </div>
-      </div>
-      <div class="rev-controls">
-        <button class="rev-nav" data-prev aria-label="Recensione precedente"><i data-lucide="chevron-left"></i></button>
-        <div class="rev-dots" data-dots></div>
-        <button class="rev-nav" data-next aria-label="Recensione successiva"><i data-lucide="chevron-right"></i></button>
-      </div>
-    </div>
-
-  </div>
-</section>
-
 <!-- ===== CTA BAND ===== -->
 <section class="ctaband">
   <div class="ctaband__bg"><img src="/assets/monogram-white.svg" alt=""></div>
@@ -378,49 +311,6 @@ _iub.csLangConfiguration = {"it":{"cookiePolicyId":865793}};
     });
   }, { rootMargin: "-76px 0px 0px 0px", threshold: 0 });
   io.observe(hero);
-})();
-</script>
-
-<!-- ===== CAROSELLO RECENSIONI ===== -->
-<script>
-(function () {
-  const root = document.querySelector("[data-carousel]");
-  if (!root) return;
-  const track = root.querySelector("[data-track]");
-  const slides = Array.from(track.children);
-  const dotsWrap = document.querySelector("[data-dots]");
-  let i = 0;
-
-  slides.forEach((_, idx) => {
-    const b = document.createElement("button");
-    b.className = "rev-dot" + (idx === 0 ? " active" : "");
-    b.setAttribute("aria-label", "Vai alla recensione " + (idx + 1));
-    b.addEventListener("click", () => go(idx, true));
-    dotsWrap.appendChild(b);
-  });
-  const dots = Array.from(dotsWrap.children);
-
-  function go(n, user) {
-    i = (n + slides.length) % slides.length;
-    track.style.transform = "translateX(" + (-i * 100) + "%)";
-    dots.forEach((d, k) => d.classList.toggle("active", k === i));
-    if (user) restart();
-  }
-
-  root.querySelector("[data-prev]").addEventListener("click", () => go(i - 1, true));
-  root.querySelector("[data-next]").addEventListener("click", () => go(i + 1, true));
-
-  // autoplay calmo, in pausa al passaggio del mouse, disattivo se l'utente preferisce meno movimento
-  let timer = null;
-  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  function start() { if (!reduce && !timer) timer = setInterval(() => go(i + 1), 6500); }
-  function stop() { if (timer) { clearInterval(timer); timer = null; } }
-  function restart() { stop(); start(); }
-  root.addEventListener("mouseenter", stop);
-  root.addEventListener("mouseleave", start);
-  root.addEventListener("focusin", stop);
-  root.addEventListener("focusout", start);
-  start();
 })();
 </script>
 </body>
