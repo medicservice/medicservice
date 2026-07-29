@@ -16,6 +16,7 @@
     Pintor: "pintor.webp",
     Pitzalis: "pitzalis.webp",
     Salfi: "salfi.webp",
+    Spiga: "spiga.webp",
     Trincas: "Trincas.webp",
     Concas: "concas.webp",
     Fornero: "fornero.webp",
