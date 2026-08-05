@@ -1,0 +1,37 @@
+{
+  "embedding": "extended_snippet_via_gtm_template",
+  "trigger": "Consent Initialization - All Pages",
+  "emitGtmEvents": true,
+  "csConfiguration": {
+    "askConsentAtCookiePolicyUpdate": true,
+    "countryDetection": true,
+    "emailMarketing": { "theme": "dark" },
+    "enableFadp": true,
+    "enableLgpd": true,
+    "enableUspr": true,
+    "lgpdAppliesGlobally": false,
+    "perPurposeConsent": true,
+    "siteId": 305777,
+    "whitelabel": false,
+    "cookiePolicyId": 865793,
+    "banner": {
+      "acceptButtonDisplay": true,
+      "closeButtonRejects": true,
+      "customizeButtonDisplay": true,
+      "explicitWithdrawal": true,
+      "fontSizeBody": "12px",
+      "listPurposes": true,
+      "logo": null,
+      "ownerName": "medicservice.it",
+      "position": "float-bottom-right",
+      "rejectButtonDisplay": true,
+      "showPurposesToggles": true,
+      "showTotalNumberOfProviders": true
+    }
+  },
+  "csLangConfiguration": {
+    "it": { "cookiePolicyId": 865793 }
+  },
+  "syncScript": "//cs.iubenda.com/sync/305777.js",
+  "gppStubScript": "//cdn.iubenda.com/cs/gpp/stub.js"
+}

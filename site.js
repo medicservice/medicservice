@@ -144,7 +144,7 @@
       visite: ["Dott. Nicola Usai — Cardiologo", "Dott.ssa Chiara Cabras — Endocrinologa", "Dr. Pierluigi Pibi — Andrologia"],
       diagnostica: ["Dr. Maurizio Picciau — Radiologia", "Dott.ssa Elena Serra — Senologia"],
       chirurgia: ["Dott. Antonio Melis — Chirurgo", "Dott.ssa Sara Loi — Anestesista"],
-      estetica: ["Dott.ssa Giulia Floris — Medico Estetico", "Dott. Nicola Usai — Medicina Estetica"],
+      estetica: ["Dr. Nicola Monni — Chirurgia plastica · Medicina estetica", "Dr.ssa Valentina Paderi — Chirurgia plastica · Medicina estetica"],
     };
 
     function fillStep2() {
