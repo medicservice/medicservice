@@ -323,7 +323,7 @@ _iub.csLangConfiguration = {{"it":{{"cookiePolicyId":865793}}}};
 </footer>
 
 <nav class="mobilebar">
-  <a class="mobilebar__book" data-book data-medico="{display} — {primary}"><i data-lucide="calendar-check"></i> Prenota</a>
+  <a class="mobilebar__book" href="https://www.miodottore.it/strutture/medic-service-oristano" target="_blank" rel="noopener"><i data-lucide="calendar-check"></i> Prenota</a>
   <a class="mobilebar__call" href="tel:0783211136"><i data-lucide="phone"></i> <span class="num">0783 211136</span></a>
 </nav>
 
@@ -336,7 +336,7 @@ _iub.csLangConfiguration = {{"it":{{"cookiePolicyId":865793}}}};
     <a href="/medici/">I Medici</a>
     <a href="/#struttura">La Struttura</a>
     <a href="/medicina-estetica/">Medicina Estetica</a>
-    <button class="btn btn--primary btn--block" data-book data-medico="{display} — {primary}" style="margin-top:20px" data-close-drawer>Prenota online</button>
+    <a class="btn btn--primary btn--block" href="https://www.miodottore.it/strutture/medic-service-oristano" target="_blank" rel="noopener" style="margin-top:20px" data-close-drawer>Prenota online</a>
   </div>
 </div>
 
