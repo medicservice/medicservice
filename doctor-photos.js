@@ -25,6 +25,7 @@
     Melis: "melis.webp",
     Monni: "monni.webp",
     Mirai: "mirai.webp",
+    Onali: "onali.webp",
   };
 
   function isFemaleDoctor(display) {
