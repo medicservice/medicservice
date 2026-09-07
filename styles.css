@@ -380,6 +380,13 @@ p { margin: 0; }
 .mobilebar__call { background: #fff; color: var(--navy); }
 .mobilebar__call .num { font-family: var(--num); font-size: 14px; }
 
+/* Iubenda privacy widget: sopra la mobilebar */
+@media (max-width: 860px) {
+  .iubenda-tp-btn {
+    bottom: 72px !important;
+  }
+}
+
 /* ---------------- breadcrumb ---------------- */
 .breadcrumb { display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 600; color: var(--g700); flex-wrap: wrap; }
 .breadcrumb a:hover { color: var(--brand-dk); }

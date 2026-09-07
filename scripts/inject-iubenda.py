@@ -8,12 +8,29 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 
-IUBENDA_HEAD = """
+CS_CONFIGURATION = (
+    '{"askConsentAtCookiePolicyUpdate":true,"countryDetection":true,'
+    '"emailMarketing":{"theme":"dark"},"enableFadp":true,"enableLgpd":true,'
+    '"enableUspr":true,"lgpdAppliesGlobally":false,"perPurposeConsent":true,'
+    '"siteId":305777,"whitelabel":false,"cookiePolicyId":865793,"lang":"it",'
+    '"googleConsentMode":"template","emitGtmEvents":true,'
+    '"floatingPreferencesButtonDisplay":"bottom-right",'
+    '"floatingPreferencesButtonRound":true,'
+    '"floatingPreferencesButtonHover":true,'
+    '"banner":{"acceptButtonDisplay":true,"closeButtonRejects":true,'
+    '"customizeButtonDisplay":true,"explicitWithdrawal":true,'
+    '"fontSizeBody":"12px","listPurposes":true,"logo":null,'
+    '"ownerName":"medicservice.it","position":"float-bottom-right",'
+    '"rejectButtonDisplay":true,"showPurposesToggles":true,'
+    '"showTotalNumberOfProviders":true}}'
+)
+
+IUBENDA_HEAD = f"""
 <!-- Iubenda Cookie Solution -->
 <script type="text/javascript">
 var _iub = _iub || [];
-_iub.csConfiguration = {"askConsentAtCookiePolicyUpdate":true,"countryDetection":true,"emailMarketing":{"theme":"dark"},"enableFadp":true,"enableLgpd":true,"enableUspr":true,"lgpdAppliesGlobally":false,"perPurposeConsent":true,"siteId":305777,"whitelabel":false,"cookiePolicyId":865793,"googleConsentMode":"template","emitGtmEvents":true,"banner":{"acceptButtonDisplay":true,"closeButtonRejects":true,"customizeButtonDisplay":true,"explicitWithdrawal":true,"fontSizeBody":"12px","listPurposes":true,"logo":null,"ownerName":"medicservice.it","position":"float-bottom-right","rejectButtonDisplay":true,"showPurposesToggles":true,"showTotalNumberOfProviders":true}};
-_iub.csLangConfiguration = {"it":{"cookiePolicyId":865793}};
+_iub.csConfiguration = {CS_CONFIGURATION};
+_iub.csLangConfiguration = {{"it":{{"cookiePolicyId":865793}}}};
 </script>
 <script type="text/javascript" src="//cs.iubenda.com/sync/305777.js"></script>
 <script type="text/javascript" src="//cdn.iubenda.com/cs/gpp/stub.js"></script>
@@ -42,6 +59,17 @@ SKIP = {"scheda-medico/index.html"}
 def patch(path: Path) -> bool:
     text = path.read_text(encoding="utf-8")
     changed = False
+
+    updated_config, n = re.subn(
+        r"_iub\.csConfiguration = \{.*?\};",
+        f"_iub.csConfiguration = {CS_CONFIGURATION};",
+        text,
+        count=1,
+        flags=re.S,
+    )
+    if n and updated_config != text:
+        text = updated_config
+        changed = True
 
     if VIEWPORT in text and MARKER not in text:
         text = text.replace(VIEWPORT, VIEWPORT + IUBENDA_HEAD, 1)
