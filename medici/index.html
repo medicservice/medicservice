@@ -299,28 +299,39 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   const subfilter = document.getElementById("med-subfilter");
   const specSearch = document.getElementById("spec-search");
 
+  // Medici senza widget embed: CTA Chiama ora (tel) invece di Prenota
+  const NO_EMBED = new Set(["caddeo", "capitta", "loi", "paschina"]);
+  const TEL_PRENOTA = "tel:0783211136";
+
   // build all cards once (alphabetical — DATA already sorted by surname)
   DATA.forEach((d) => {
+    const slug = d.surname.toLowerCase();
+    const profileHref = "/medici/" + slug + "/";
+    const noEmbed = NO_EMBED.has(slug);
+    const bookHref = noEmbed ? TEL_PRENOTA : profileHref + "#prenota";
+    const bookIcon = noEmbed ? "phone" : "calendar-check";
+    const bookLabel = noEmbed ? "Chiama ora" : "Prenota ora";
     const card = document.createElement("a");
     card.className = "med-card";
-    card.href = "/medici/" + d.surname.toLowerCase() + "/";
+    card.href = profileHref;
     card.dataset.cats = d.cats.join(" ");
     card.dataset.specs = d.specs.join("|").toLowerCase();
     card.innerHTML =
-      '<div class="med-card__photo"><image-slot id="med-' + d.surname.toLowerCase() +
+      '<div class="med-card__photo"><image-slot id="med-' + slug +
         '" placeholder="" shape="rect" src="' + doctorPhotoSrc(d.surname, d.display) + '"></image-slot></div>' +
       '<div class="med-card__body">' +
         '<div class="med-card__cat">' + d.catLabels.join(" · ") + '</div>' +
         '<h3 class="med-card__name">' + d.display + '</h3>' +
         '<div class="med-card__spec">' + d.specs.join(" · ") + '</div>' +
-        '<div class="med-card__actions"><button class="btn btn--primary btn--sm med-card__book" data-mio="' +
-          "https://www.miodottore.it/strutture/medic-service-oristano" +
-          '"><i data-lucide="calendar-check"></i> Prenota ora</button></div>' +
+        '<div class="med-card__actions"><button type="button" class="btn btn--primary btn--sm med-card__book" data-book-href="' +
+          bookHref +
+          '"><i data-lucide="' + bookIcon + '"></i> ' + bookLabel + '</button></div>' +
       '</div>';
-    // il bottone apre MioDottore in una nuova scheda, senza seguire il link alla scheda interna
+    // Prenota → #prenota in scheda; senza embed → Chiama ora (tel)
     card.querySelector(".med-card__book").addEventListener("click", (e) => {
-      e.preventDefault(); e.stopPropagation();
-      window.open(e.currentTarget.dataset.mio, "_blank", "noopener");
+      e.preventDefault();
+      e.stopPropagation();
+      window.location.href = e.currentTarget.dataset.bookHref;
     });
     grid.appendChild(card);
   });
