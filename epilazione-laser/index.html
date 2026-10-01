@@ -1,153 +1,556 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Epilazione laser a Oristano da Medic Service con DEKA Again Pro. Scopri come funziona il percorso e richiedi una valutazione personalizzata.">
-  <meta name="robots" content="noindex, nofollow">
-  <title>Epilazione laser a Oristano | Medic Service</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@400;500&family=DM+Serif+Display&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/styles.css">
-  <style>
-    .laser-page { overflow: clip; }
-    .laser-page .section { padding-block: clamp(64px, 8vw, 104px); }
-    .laser-hero { background: #eaf5fb; padding: clamp(42px, 6vw, 90px) 0; }
-    .laser-hero__grid { display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; gap: clamp(36px, 5vw, 72px); }
-    .laser-hero h1 { font-family: var(--display); font-size: clamp(43px, 5.6vw, 78px); font-weight: 400; line-height: 1.05; letter-spacing: -.025em; margin: 18px 0 24px; }
-    .laser-hero h1 em { color: var(--brand-dk); font-weight: 400; }
-    .laser-hero__copy { max-width: 590px; }
-    .laser-hero__copy .lead { color: var(--navy); }
-    .laser-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
-    .laser-hero__image { min-height: 460px; height: 100%; width: 100%; object-fit: cover; border-radius: 20px; box-shadow: var(--shadow); }
-    .laser-note { display: block; margin-top: 20px; color: var(--g700); font-size: 13px; line-height: 1.5; }
-    .laser-kicker { font: 500 12px var(--num); letter-spacing: .12em; text-transform: uppercase; color: var(--brand-dk); }
-    .laser-heading { max-width: 820px; margin-bottom: 42px; }
-    .laser-heading h2 { font-family: var(--display); font-size: clamp(34px, 4vw, 52px); font-weight: 400; line-height: 1.1; margin: 14px 0 18px; }
-    .laser-heading p { color: var(--g700); max-width: 670px; }
-    .laser-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-    .laser-card { border: 1px solid var(--g150); border-radius: 14px; padding: 30px; background: #fff; }
-    .laser-card__number { display: block; font: 500 13px var(--num); color: var(--brand-dk); margin-bottom: 42px; }
-    .laser-card h3 { font-size: 21px; line-height: 1.25; margin-bottom: 12px; }
-    .laser-card p { color: var(--g700); font-size: 15px; }
-    .laser-band { background: var(--navy); color: #fff; }
-    .laser-band__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-    .laser-band h2 { font-family: var(--display); font-size: clamp(35px, 4.3vw, 55px); font-weight: 400; margin: 16px 0 20px; }
-    .laser-band p { color: #d6e5ef; }
-    .laser-band .laser-kicker { color: #a4d8f4; }
-    .laser-points { margin: 0; padding: 0; list-style: none; }
-    .laser-points li { border-top: 1px solid rgba(255,255,255,.25); padding: 19px 0; }
-    .laser-points li:last-child { border-bottom: 1px solid rgba(255,255,255,.25); }
-    .laser-points strong { display: block; margin-bottom: 4px; }
-    .laser-points span { color: #d6e5ef; font-size: 15px; }
-    .laser-faq { max-width: 880px; }
-    .laser-faq details { border-top: 1px solid var(--g300); padding: 20px 0; }
-    .laser-faq details:last-child { border-bottom: 1px solid var(--g300); }
-    .laser-faq summary { cursor: pointer; font-weight: 700; padding-right: 25px; }
-    .laser-faq details p { color: var(--g700); padding: 12px 28px 0 0; font-size: 15px; }
-    .laser-final { background: #eaf5fb; text-align: center; }
-    .laser-final .container { max-width: 820px; }
-    .laser-final h2 { font-family: var(--display); font-size: clamp(37px, 4.5vw, 58px); font-weight: 400; margin: 16px 0 18px; }
-    .laser-final p { color: var(--g700); }
-    .laser-final .laser-actions { justify-content: center; }
-    .laser-minifooter { border-top: 1px solid var(--g150); padding: 32px 0; color: var(--g700); font-size: 13px; }
-    .laser-minifooter .container { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
-    .laser-minifooter a { text-decoration: underline; text-underline-offset: 3px; }
-    @media (max-width: 800px) {
-      .laser-hero__grid, .laser-band__grid { grid-template-columns: 1fr; }
-      .laser-hero__image { min-height: 280px; max-height: 440px; }
-      .laser-grid { grid-template-columns: 1fr; }
-      .laser-card__number { margin-bottom: 20px; }
-      .laser-actions .btn { white-space: normal; }
-    }
-    @media (max-width: 600px) {
-      .laser-page .container { padding-inline: 22px; }
-      .laser-hero { padding-block: 44px; }
-      .laser-actions { display: grid; }
-      .laser-actions .btn { justify-content: center; text-align: center; }
-      .laser-hero__image { min-height: 240px; }
-    }
-  </style>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TKGKM6ZJ');</script>
+<!-- End Google Tag Manager -->
+
+<link rel="canonical" href="https://medicservice.it/epilazione-laser/">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Iubenda Cookie Solution (stessa configurazione del sito) -->
+<script type="text/javascript">
+var _iub = _iub || [];
+_iub.csConfiguration = {"askConsentAtCookiePolicyUpdate":true,"countryDetection":true,"emailMarketing":{"theme":"dark"},"enableFadp":true,"enableLgpd":true,"enableUspr":true,"lgpdAppliesGlobally":false,"perPurposeConsent":true,"siteId":305777,"whitelabel":false,"cookiePolicyId":865793,"lang":"it","googleConsentMode":"template","emitGtmEvents":true,"floatingPreferencesButtonDisplay":"bottom-right","floatingPreferencesButtonRound":true,"floatingPreferencesButtonHover":true,"banner":{"acceptButtonDisplay":true,"closeButtonRejects":true,"customizeButtonDisplay":true,"explicitWithdrawal":true,"fontSizeBody":"12px","listPurposes":true,"logo":null,"ownerName":"medicservice.it","position":"float-bottom-right","rejectButtonDisplay":true,"showPurposesToggles":true,"showTotalNumberOfProviders":true}};
+_iub.csLangConfiguration = {"it":{"cookiePolicyId":865793}};
+</script>
+<script type="text/javascript" src="//cs.iubenda.com/sync/305777.js"></script>
+<script type="text/javascript" src="//cdn.iubenda.com/cs/gpp/stub.js"></script>
+<script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
+
+<title>Epilazione laser dal medico — Medic Service Oristano</title>
+<meta name="description" content="Epilazione laser a Oristano in un centro medico: ogni percorso inizia con una visita dermatologica. Pacchetti completi, dalla visita al controllo finale.">
+<meta property="og:title" content="Epilazione laser dal medico — Medic Service Oristano">
+<meta property="og:description" content="Pacchetti completi, dalla visita dermatologica al controllo finale. Piazza Tharros 57, Oristano.">
+<meta property="og:image" content="https://medicservice.it/assets/photos/MS-33.jpg">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@300;400;500&family=DM+Serif+Display:ital@0;1&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+
+<style>
+/* ---- stili specifici della landing (sopra il design system del sito) ---- */
+.lp-nav .nav__links { display: none; }
+.lp-hero { padding: 40px 0 72px; background: linear-gradient(180deg,#fff,#ECF5FC); }
+.lp-hero h1 { color: var(--navy); margin: 18px 0 20px; }
+.lp-hero .actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 30px; }
+.lp-hero .note { margin-top: 16px; font-size: 15px; color: var(--g700); }
+
+/* la scheda della visita dermatologica */
+.eval { background: #fff; border: 1px solid var(--line); border-radius: var(--r-lg); padding: 32px; box-shadow: var(--shadow); }
+.eval h3 { font-family: var(--display); font-weight: 400; font-size: 26px; color: var(--navy); margin-bottom: 20px; }
+.eval dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 12px 18px; font-size: 15px; }
+.eval dt { color: var(--g700); font-weight: 600; }
+.eval dd { margin: 0; font-weight: 500; color: var(--navy); }
+.phototype { display: flex; gap: 6px; margin-top: 8px; }
+.phototype span { width: 22px; height: 22px; border-radius: 50%; display: block; border: 1px solid rgba(14,51,79,.12); }
+.eval .tech { margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--line); font-size: 14px; color: var(--g700); }
+
+/* perché studio medico */
+.why-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 48px; margin-top: 44px; max-width: 900px; }
+.why-grid svg { width: 28px; height: 28px; color: var(--brand); margin-bottom: 16px; }
+.why-grid h3 { font-size: 21px; font-weight: 700; color: var(--navy); margin-bottom: 10px; line-height: 1.25; }
+.why-grid p { color: var(--g700); font-size: 16px; }
+
+/* quiz pacchetti */
+.quiz { margin-top: 40px; background: #fff; border: 1px solid var(--line); border-radius: var(--r-lg); padding: 32px; box-shadow: var(--shadow-sm); max-width: 820px; position: relative; }
+.quiz__bar { display: flex; align-items: center; gap: 16px; margin-bottom: 26px; }
+.quiz__num { font-family: var(--num); font-size: 14px; color: var(--g700); }
+.quiz__num b { color: var(--brand); font-weight: 500; }
+.quiz__title { font-weight: 800; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--navy); }
+.quiz__prog { flex: 1; height: 3px; background: var(--g150); border-radius: 2px; overflow: hidden; }
+.quiz__prog i { display: block; height: 100%; background: var(--brand); transition: width .3s var(--ease); }
+.quiz__step { display: none; }
+.quiz__step.is-on { display: block; animation: qin .3s var(--ease); }
+@keyframes qin { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.quiz__q { font-family: var(--display); font-size: clamp(22px, 2.6vw, 30px); color: var(--navy); margin-bottom: 22px; }
+.ft-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.ft { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; text-align: left; background: #fff; border: 1.5px solid var(--g300); border-radius: var(--r-md); padding: 16px; transition: all .18s var(--ease); font-family: inherit; color: var(--navy); }
+.ft:hover, .opt:hover { border-color: var(--brand); transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+.ft__dot { width: 34px; height: 34px; border-radius: 50%; border: 1px solid rgba(14,51,79,.15); }
+.ft b { font-family: var(--num); font-weight: 500; font-size: 18px; }
+.ft small { font-size: 13px; line-height: 1.4; color: var(--g700); }
+.opt-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.opt { background: #fff; border: 1.5px solid var(--g300); border-radius: var(--r-md); padding: 22px 18px; font-family: inherit; font-weight: 700; font-size: 17px; color: var(--navy); text-align: left; transition: all .18s var(--ease); }
+.quiz__back { margin-top: 22px; background: none; border: 0; padding: 0; font-family: inherit; font-weight: 700; font-size: 14px; color: var(--g700); }
+.quiz__back:hover { color: var(--brand-dk); }
+.res__head .eyebrow { margin-bottom: 10px; }
+.res__name { font-family: var(--display); font-weight: 400; font-size: clamp(30px, 3.6vw, 44px); color: var(--navy); letter-spacing: 0; }
+.res__zones { color: var(--g700); margin-top: 6px; }
+.res__price { display: flex; align-items: baseline; gap: 6px; margin: 22px 0 8px; padding-top: 22px; border-top: 2px solid var(--navy); }
+.res__price span { font-family: var(--num); font-weight: 300; font-size: 48px; line-height: 1; color: var(--navy); }
+.res__price small { font-weight: 600; font-size: 14px; color: var(--g700); white-space: nowrap; }
+.res__price em { font-style: normal; font-family: var(--num); font-size: 14px; color: var(--g700); margin-left: 14px; white-space: nowrap; }
+.res__price { flex-wrap: wrap; }
+.incl { display: flex; flex-wrap: wrap; gap: 10px 28px; margin: 16px 0 6px; padding: 0; list-style: none; font-weight: 600; color: var(--navy); }
+.incl li { display: inline-flex; align-items: center; gap: 8px; font-size: 15px; }
+.incl svg { width: 18px; height: 18px; color: var(--brand); flex: none; }
+.res__note { margin-top: 18px; padding: 14px 16px; background: var(--blue-pale); border-radius: var(--r-sm); font-size: 15px; color: var(--navy); }
+.res__actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px; }
+.pack-note { margin-top: 18px; font-size: 14px; color: var(--g700); max-width: 820px; }
+
+/* percorso (sequenza reale, quindi numerata) */
+.steps { list-style: none; padding: 0; margin: 40px 0 0; counter-reset: s; }
+.steps li { counter-increment: s; display: grid; grid-template-columns: 80px 1fr; gap: 24px; padding: 26px 0; border-top: 1px solid var(--line); }
+.steps li:last-child { border-bottom: 1px solid var(--line); }
+.steps li::before { content: "0" counter(s); font-family: var(--num); font-weight: 300; font-size: 40px; line-height: 1; color: var(--brand); }
+.steps h3 { font-size: 21px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+.steps p { color: var(--g700); max-width: 62ch; }
+
+/* dermatologi */
+.derm-list { list-style: none; padding: 0; margin: 36px 0 0; max-width: 620px; border-top: 2px solid var(--navy); }
+.derm-list li { display: flex; justify-content: space-between; align-items: baseline; gap: 20px; padding: 18px 0; border-bottom: 1px solid rgba(14,51,79,.18); }
+.derm-list a, .derm-list .nm { font-weight: 800; font-size: 19px; color: var(--navy); }
+.derm-list a:hover { color: var(--brand-dk); }
+.derm-list li > span:last-child { font-family: var(--num); font-size: 13px; color: var(--g700); text-align: right; }
+
+/* modulo */
+.lead-sec { background: var(--navy); color: #fff; }
+.lead-sec .h2 { color: #fff; }
+.lead-sec p { color: rgba(255,255,255,.82); }
+.lead-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 56px; align-items: start; }
+.alt { margin-top: 30px; font-size: 16px; }
+.alt a { color: #fff; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.form { background: #fff; color: var(--navy); border-radius: var(--r-lg); padding: 34px; }
+.form label { display: block; font-weight: 700; font-size: 14px; margin: 0 0 6px; }
+.form input[type=text], .form input[type=tel], .form select {
+  width: 100%; padding: 14px; border: 1.5px solid var(--g300); border-radius: var(--r-sm);
+  font: inherit; font-size: 16px; color: var(--navy); background: #fff; margin-bottom: 18px;
+}
+.form input:focus, .form select:focus { outline: 3px solid var(--blue-light); border-color: var(--brand); }
+.form .privacy { font-weight: 400; font-size: 14px; color: var(--g700); display: flex; gap: 10px; align-items: flex-start; margin-bottom: 6px; }
+.form .privacy input { margin-top: 4px; }
+.form .privacy a { color: var(--brand-dk); text-decoration: underline; }
+.form .btn { margin-top: 14px; }
+.form-msg { display: none; padding: 14px; border-radius: var(--r-sm); margin-top: 14px; font-size: 15px; }
+.form-msg.err { display: block; background: #FBE9E7; color: #8A2E1F; }
+.form-done { text-align: center; padding: 30px 0; }
+.form-done svg { width: 40px; height: 40px; color: var(--brand); margin-bottom: 12px; }
+.form-done h3 { font-family: var(--display); font-weight: 400; font-size: 30px; color: var(--navy); margin-bottom: 10px; }
+.form-done p { color: var(--g700); }
+
+@media (max-width: 860px) {
+  .split, .lead-grid, .why-grid { grid-template-columns: 1fr; gap: 32px; }
+  .lp-hero { padding: 24px 0 56px; }
+  .lp-hero .btn { width: 100%; justify-content: center; }
+  .quiz { padding: 22px 18px; }
+  .ft-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .ft { padding: 12px; }
+  .ft small { font-size: 12px; }
+  .opt-grid { grid-template-columns: 1fr; }
+  .quiz__title { display: none; }
+  .res__actions .btn { width: 100%; justify-content: center; }
+  .steps li { grid-template-columns: 56px 1fr; gap: 16px; }
+  .steps li::before { font-size: 30px; }
+  .derm-list li { flex-direction: column; align-items: flex-start; gap: 4px; }
+  .derm-list li > span:last-child { text-align: left; }
+  .form { padding: 24px; }
+}
+</style>
 </head>
-<body class="laser-page">
-  <header class="site-header">
-    <div class="container nav">
-      <a class="nav__logo" href="/" aria-label="Medic Service, torna alla home"><img src="/assets/logo-horizontal.svg" alt="Medic Service"></a>
-      <nav class="nav__links" aria-label="Navigazione principale">
-        <a href="/">Home</a>
-        <a href="/medicina-estetica/">Medicina estetica</a>
-      </nav>
-      <div class="nav__cta"><a class="btn btn--primary" href="tel:0783211136">Chiama 0783 211136</a></div>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TKGKM6ZJ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<!-- header ridotto: su una landing meno uscite = più contatti -->
+<header class="site-header lp-nav">
+  <div class="container nav">
+    <a class="nav__logo" href="/"><img src="/assets/logo-horizontal.svg" alt="Medic Service"></a>
+    <div class="nav__cta">
+      <a class="nav__tel" href="tel:0783211136"><i data-lucide="phone"></i><span class="num">0783 211136</span></a>
+      <a class="btn btn--donna" href="#richiesta">Richiedi informazioni</a>
     </div>
-  </header>
+  </div>
+</header>
 
-  <main>
-    <section class="laser-hero">
-      <div class="container laser-hero__grid">
-        <div class="laser-hero__copy">
-          <span class="laser-kicker">Medic Service · Oristano</span>
-          <h1>Epilazione laser, <em>un percorso su misura.</em></h1>
-          <p class="lead">Meno tempo dedicato a cerette e rasoi. Da Medic Service partiamo dalla tua pelle e dai tuoi obiettivi per proporti un percorso di epilazione con laser DEKA Again Pro.</p>
-          <div class="laser-actions">
-            <a class="btn btn--primary btn--lg" href="tel:0783211136">Chiedi una valutazione</a>
-            <a class="btn btn--outline btn--lg" href="#come-funziona">Scopri come funziona</a>
+<main>
+
+<!-- ===== HERO ===== -->
+<section class="lp-hero">
+  <div class="container">
+    <div class="split" style="gap:48px">
+      <div>
+        <span class="eyebrow">Medicina estetica · Laser</span>
+        <h1 class="h1">Epilazione laser - dal medico.</h1>
+        <p class="lead">A Oristano, nel centro Medic Service i percorsi iniziano con una visita dermatologica, così il laser lavora in modo efficace e sicuro sulla tua pelle.</p>
+        <div class="actions">
+          <a class="btn btn--donna btn--lg" href="#richiesta"><i data-lucide="message-circle"></i> Richiedi informazioni</a>
+          <a class="btn btn--outline btn--lg" href="#pacchetti">Vedi i pacchetti</a>
+        </div>
+        <p class="note">Ti ricontattiamo entro un giorno lavorativo, su WhatsApp o per telefono.</p>
+      </div>
+      <aside class="eval" aria-label="Cosa comprende la visita dermatologica">
+        <h3>La visita dermatologica preventiva</h3>
+        <dl>
+          <dt>Fototipo</dt>
+          <dd>Dal I al VI
+            <div class="phototype" aria-hidden="true">
+              <span style="background:#F6E3D6"></span><span style="background:#EBC9AE"></span>
+              <span style="background:#D6A67F"></span><span style="background:#B07B53"></span>
+              <span style="background:#7C5033"></span><span style="background:#4A2F1E"></span>
+            </div>
+          </dd>
+          <dt>Pelle</dt><dd>Controllo di nei e lesioni con dermatoscopia</dd>
+          <dt>Pelo</dt><dd>Colore, spessore e zone</dd>
+          <dt>Anamnesi</dt><dd>Farmaci e controindicazioni</dd>
+          <dt>Piano</dt><dd>Numero di sedute e parametri del laser</dd>
+        </dl>
+        <p class="tech">Tecnologia: laser Deka Again Pro · Visita con uno dei dermatologi del centro</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PERCHÉ IN UN CENTRO MEDICO ===== -->
+<section class="section--tight">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Perché da noi</span>
+      <h2 class="h2">Un laser è un atto medico. Da noi lo trattiamo come tale.</h2>
+    </div>
+    <div class="why-grid">
+      <div>
+        <i data-lucide="scan-search"></i>
+        <h3>La pelle controllata prima di iniziare</h3>
+        <p>Il dermatologo esamina nei e lesioni nelle zone da trattare, che il laser non deve colpire. Una sicurezza in più, e un controllo della pelle che molti rimandano da anni.</p>
+      </div>
+      <div>
+        <i data-lucide="receipt-text"></i>
+        <h3>Un prezzo chiaro fin dall'inizio</h3>
+        <p>Scegli un pacchetto completo: sai prima cosa comprende e quanto costa, dalla visita all'ultima seduta. Nessun costo che compare dopo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== QUIZ / CONFIGURATORE PACCHETTI ===== -->
+<section class="section bg-tint" id="pacchetti">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Il tuo pacchetto</span>
+      <h2 class="h2">Tre risposte, e ti diciamo cosa aspettarti.</h2>
+      <p>Fototipo, età e zona: in trenta secondi vedi il pacchetto adatto a te, con prezzo e cosa comprende. Il resto lo definiamo insieme in visita.</p>
+    </div>
+
+    <div class="quiz" id="quiz">
+      <div class="quiz__bar"><span class="quiz__num"><b id="q-cur">01</b>/03</span><span class="quiz__title" id="q-title">Il tuo fototipo</span><span class="quiz__prog"><i id="q-prog" style="width:33%"></i></span></div>
+
+      <!-- step 1: fototipo -->
+      <div class="quiz__step is-on" data-step="1">
+        <p class="quiz__q">Come reagisce la tua pelle al sole?</p>
+        <div class="ft-grid">
+          <button type="button" class="ft" data-ft="I"><span class="ft__dot" style="background:#F6E3D6"></span><b>I</b><small>Molto chiara. Si scotta sempre, non si abbronza</small></button>
+          <button type="button" class="ft" data-ft="II"><span class="ft__dot" style="background:#EBC9AE"></span><b>II</b><small>Chiara. Si scotta facilmente, si abbronza poco</small></button>
+          <button type="button" class="ft" data-ft="III"><span class="ft__dot" style="background:#D6A67F"></span><b>III</b><small>Media. A volte si scotta, si abbronza gradualmente</small></button>
+          <button type="button" class="ft" data-ft="IV"><span class="ft__dot" style="background:#B07B53"></span><b>IV</b><small>Olivastra. Si scotta raramente, si abbronza bene</small></button>
+          <button type="button" class="ft" data-ft="V"><span class="ft__dot" style="background:#7C5033"></span><b>V</b><small>Scura. Si scotta molto raramente</small></button>
+          <button type="button" class="ft" data-ft="VI"><span class="ft__dot" style="background:#4A2F1E"></span><b>VI</b><small>Molto scura. Non si scotta mai</small></button>
+        </div>
+      </div>
+
+      <!-- step 2: età -->
+      <div class="quiz__step" data-step="2">
+        <p class="quiz__q">Quanti anni hai?</p>
+        <div class="opt-grid">
+          <button type="button" class="opt" data-age="Meno di 18">Meno di 18</button>
+          <button type="button" class="opt" data-age="18–29">18–29</button>
+          <button type="button" class="opt" data-age="30–44">30–44</button>
+          <button type="button" class="opt" data-age="45 o più">45 o più</button>
+        </div>
+      </div>
+
+      <!-- step 3: zona -->
+      <div class="quiz__step" data-step="3">
+        <p class="quiz__q">Quale zona vuoi trattare?</p>
+        <div class="opt-grid">
+          <button type="button" class="opt" data-pack="viso">Viso</button>
+          <button type="button" class="opt" data-pack="ascelle">Ascelle e inguine</button>
+          <button type="button" class="opt" data-pack="gambe">Gambe complete</button>
+          <button type="button" class="opt" data-pack="schiena">Schiena e spalle</button>
+        </div>
+      </div>
+
+      <!-- risultato -->
+      <div class="quiz__step quiz__result" data-step="4">
+        <div class="res">
+          <div class="res__head">
+            <span class="eyebrow">Il pacchetto per te</span>
+            <h3 class="res__name" id="r-name"></h3>
+            <p class="res__zones" id="r-zones"></p>
           </div>
-          <small class="laser-note">Piazza Tharros 57, Oristano · Il numero di sedute e i risultati variano da persona a persona.</small>
-        </div>
-        <img class="laser-hero__image" src="/assets/photos/MS-33.jpg" alt="Ambienti di Medic Service a Oristano" width="720" height="580" fetchpriority="high">
-      </div>
-    </section>
-
-    <section class="section" id="come-funziona">
-      <div class="container">
-        <div class="laser-heading">
-          <span class="laser-kicker">Il tuo percorso</span>
-          <h2>Tre passi, con indicazioni chiare fin dall'inizio.</h2>
-          <p>Il trattamento viene adattato alla zona, alla pelle e alle caratteristiche del pelo. Durante la valutazione puoi chiarire dubbi, tempi e costi prima di iniziare.</p>
-        </div>
-        <div class="laser-grid">
-          <article class="laser-card"><span class="laser-card__number">01 / Valutazione</span><h3>Partiamo da te</h3><p>Parliamo delle zone che vuoi trattare, delle tue aspettative e degli elementi utili a scegliere il percorso.</p></article>
-          <article class="laser-card"><span class="laser-card__number">02 / Trattamento</span><h3>Una seduta alla volta</h3><p>Il laser viene utilizzato secondo un piano personalizzato. Ti spieghiamo come prepararti e quali attenzioni seguire dopo ogni seduta.</p></article>
-          <article class="laser-card"><span class="laser-card__number">03 / Controllo</span><h3>Seguiamo i progressi</h3><p>La riduzione dei peli è progressiva. Rivalutiamo la risposta nel tempo e programmiamo le sedute successive quando opportuno.</p></article>
+          <div class="res__price"><span id="r-price"></span><small>€ / seduta</small><em id="r-sess"></em></div>
+          <ul class="incl res__incl">
+            <li><i data-lucide="check"></i> Visita dermatologica preventiva</li>
+            <li><i data-lucide="check"></i> Test su una piccola area</li>
+            <li><i data-lucide="check"></i> Tutte le sedute del ciclo</li>
+            <li><i data-lucide="check"></i> Due sedute di ripasso incluse, dopo le prime due</li>
+            <li><i data-lucide="check"></i> Controllo finale</li>
+          </ul>
+          <p class="res__note" id="r-note"></p>
+          <div class="res__actions">
+            <a class="btn btn--donna btn--lg" href="#richiesta" id="r-cta">Richiedi informazioni</a>
+            <button type="button" class="btn btn--outline btn--lg" id="r-restart">Ricomincia</button>
+          </div>
         </div>
       </div>
-    </section>
 
-    <section class="section laser-band">
-      <div class="container laser-band__grid">
-        <div><span class="laser-kicker">La tecnologia</span><h2>DEKA Again Pro, dentro un percorso pensato per te.</h2><p>La tecnologia è uno strumento. Per usarla bene contano soprattutto la valutazione iniziale, i parametri scelti e le indicazioni da seguire tra una seduta e l'altra.</p></div>
-        <ul class="laser-points">
-          <li><strong>Viso e corpo</strong><span>Chiedici quali zone possono essere trattate e come cambia il percorso.</span></li>
-          <li><strong>Indicazioni personalizzate</strong><span>Fototipo, caratteristiche del pelo e condizioni individuali incidono sulla scelta del trattamento.</span></li>
-          <li><strong>Aspettative realistiche</strong><span>Tempi e risultati non sono identici per tutti: li discutiamo durante la valutazione.</span></li>
+      <button type="button" class="quiz__back" id="q-back" hidden>← Indietro</button>
+    </div>
+
+    <p class="pack-note">Il costo del pacchetto è dato dal prezzo a seduta per il numero di sedute, confermato dopo la visita. Le due sedute di ripasso sono comprese. [Possibilità di pagamento in più soluzioni: specificare le condizioni.]</p>
+  </div>
+</section>
+
+<!-- ===== PERCORSO ===== -->
+<section class="section--tight">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Come funziona</span>
+      <h2 class="h2">Il percorso, passo per passo.</h2>
+      <p>Il pelo cresce a cicli e il laser agisce solo su quello in fase di crescita. Per questo servono più sedute, a distanza di qualche settimana.</p>
+    </div>
+    <ol class="steps">
+      <li><div><h3>Visita dermatologica</h3><p>Controllo della pelle e dei nei con dermatoscopia, anamnesi e analisi del pelo. Confermiamo il pacchetto e il numero di sedute.</p></div></li>
+      <li><div><h3>Test su una piccola area</h3><p>Verifichiamo come reagisce la tua pelle prima di trattare l'intera zona.</p></div></li>
+      <li><div><h3>Sedute di trattamento</h3><p>A distanza di [4–8] settimane a seconda della zona. Ogni seduta dura da pochi minuti a circa un'ora.</p></div></li>
+      <li><div><h3>Due sedute di ripasso</h3><p>Dopo le prime due sedute, riprendiamo le zone già trattate dove compaiono ricrescite. Sono comprese nel pacchetto, senza costi aggiuntivi.</p></div></li>
+      <li><div><h3>Controllo finale</h3><p>A fine ciclo valutiamo il risultato insieme e, se serve, programmiamo i richiami.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ===== DERMATOLOGI ===== -->
+<section class="section bg-pale">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Il team</span>
+      <h2 class="h2">I dermatologi che ti visitano.</h2>
+      <p>La visita dermatologica che apre il percorso è eseguita da uno degli specialisti in dermatologia del centro.</p>
+    </div>
+    <ul class="derm-list">
+      <li><a href="/medici/cadeddu/">Dr. Augusto Cadeddu</a><span>Dermatologia · Tricologia</span></li>
+      <li><a href="/medici/melis/">Dr. Daniele Melis</a><span>Dermatologia · Tricologia</span></li>
+      <li><a href="/medici/falco/">Dr. Alessandro Falco</a><span>Dermatologia</span></li>
+      <li><span class="nm">Dr. Paolo Solinas</span><span>Dermatologia</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="section">
+  <div class="container">
+    <div class="sec-head" style="margin-bottom:36px">
+      <span class="eyebrow">Domande frequenti</span>
+      <h2 class="h2">I dubbi più comuni, chiariti.</h2>
+    </div>
+    <div class="faq">
+      <div class="faq-item">
+        <button class="faq-q">Fa male? <i data-lucide="plus"></i></button>
+        <div class="faq-a"><div class="faq-a__inner">La maggior parte delle persone descrive una sensazione di calore o un leggero pizzicore. I laser moderni hanno sistemi di raffreddamento che rendono il trattamento ben tollerabile. La sensibilità varia da zona a zona.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Perché serve una visita dermatologica? <i data-lucide="plus"></i></button>
+        <div class="faq-a"><div class="faq-a__inner">Il laser non va usato sopra nei o lesioni sospette, e alcune condizioni della pelle o alcuni farmaci richiedono attenzione. La visita serve a trattarti in sicurezza, ed è anche un'occasione per un controllo della pelle.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Quante sedute servono? <i data-lucide="plus"></i></button>
+        <div class="faq-a"><div class="faq-a__inner">In genere [6–8], a seconda della zona, del tipo di pelo e di fattori ormonali. Il numero indicato nel pacchetto viene confermato dopo la visita. In più, dopo le prime due sedute, sono comprese due sedute di ripasso per le zone dove compaiono ricrescite.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Funziona su pelle scura o abbronzata? <i data-lucide="plus"></i></button>
+        <div class="faq-a"><div class="faq-a__inner">Dipende dal fototipo e dalla tecnologia. Con Deka Again Pro possiamo trattare praticamente tutti! Sulla pelle abbronzata di recente il trattamento va rimandato: te lo diciamo in visita.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Si può fare in estate? <i data-lucide="plus"></i></button>
+        <div class="faq-a"><div class="faq-a__inner">Si può, con alcune precauzioni: evitare il sole nei giorni prima e dopo la seduta e usare una protezione alta. Valutiamo caso per caso.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">E se dopo la visita il laser non fosse adatto a me? <i data-lucide="plus"></i></button>
+        <div class="faq-a"><div class="faq-a__inner">[Specificare la politica del centro, es.: paghi solo la visita dermatologica e il resto del pacchetto non viene addebitato.]</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== RICHIESTA ===== -->
+<section class="section lead-sec" id="richiesta">
+  <div class="container">
+    <div class="lead-grid">
+      <div>
+        <span class="eyebrow" style="color:var(--blue-light)">Richiedi informazioni</span>
+        <h2 class="h2" style="margin-top:18px">Ti ricontattiamo noi.</h2>
+        <p style="margin-top:18px;font-size:18px">Lasciaci nome e telefono: rispondiamo alle tue domande e, se vuoi, fissiamo la visita dermatologica.</p>
+        <p class="alt">Preferisci parlare subito?<br>
+          Chiama lo <a href="tel:0783211136"><span class="num">0783 211136</span></a> o scrivici su <a href="https://wa.me/39[NUMERO-WHATSAPP]" target="_blank" rel="noopener">WhatsApp</a>.</p>
+        <p class="alt" style="font-size:15px">Medic Service · Piazza Tharros 57, Oristano</p>
+      </div>
+      <div class="form" id="form-box">
+        <!-- Sostituisci [ID-FORMSPREE] con l'ID del modulo creato su formspree.io -->
+        <form id="lead-form" action="https://formspree.io/f/[ID-FORMSPREE]" method="POST" novalidate>
+          <label for="f-nome">Nome e cognome</label>
+          <input id="f-nome" name="nome" type="text" autocomplete="name" required>
+          <label for="f-tel">Telefono</label>
+          <input id="f-tel" name="telefono" type="tel" autocomplete="tel" required>
+          <label for="f-pack">Pacchetto che ti interessa</label>
+          <select id="f-pack" name="pacchetto">
+            <option>Viso</option><option>Ascelle e inguine</option><option>Gambe complete</option>
+            <option>Schiena e spalle</option><option>Non so ancora, vorrei un consiglio</option>
+          </select>
+          <label for="f-contatto">Come preferisci essere contattato?</label>
+          <select id="f-contatto" name="contatto">
+            <option>WhatsApp</option><option>Telefonata</option>
+          </select>
+          <input type="hidden" name="_subject" value="Nuova richiesta: epilazione laser">
+          <input type="hidden" name="quiz" id="f-quiz" value="">
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+          <label class="privacy"><input type="checkbox" name="privacy" value="accettata" required> Ho letto l'<a href="https://www.iubenda.com/privacy-policy/865793" target="_blank" rel="noopener">informativa privacy</a> e acconsento a essere ricontattato.</label>
+          <button type="submit" class="btn btn--donna btn--lg btn--block" id="f-submit">Richiedi informazioni</button>
+          <div class="form-msg" id="f-msg" role="alert"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <img src="/assets/logo-horizontal-white.svg" alt="Medic Service">
+        <p>Centro medico polispecialistico nel cuore di Oristano. Cura chiara, professionale, vicina.</p>
+        <div class="footer__contact">
+          <a href="https://maps.app.goo.gl/DD7feputJqxw9w6r8" target="_blank" rel="noopener"><i data-lucide="map-pin"></i> Piazza Tharros 57, Oristano</a>
+          <a href="tel:0783211136"><i data-lucide="phone"></i> <span class="num">0783 211136</span></a>
+          <a href="mailto:info@medicservice.it"><i data-lucide="mail"></i> info@medicservice.it</a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Specializzazioni</h4>
+        <ul>
+          <li><a href="/#aree">Visite Specialistiche</a></li>
+          <li><a href="/#aree">Diagnostica per Immagini</a></li>
+          <li><a href="/#aree">Chirurgia Day Surgery</a></li>
+          <li><a href="/medicina-estetica/">Medicina Estetica</a></li>
         </ul>
       </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="laser-heading"><span class="laser-kicker">Domande frequenti</span><h2>Prima di iniziare, le risposte essenziali.</h2></div>
-        <div class="laser-faq">
-          <details><summary>Quante sedute servono?</summary><p>Non c'è un numero valido per tutti. Zona, tipo di pelo e risposta individuale influenzano il percorso. Durante la valutazione riceverai una stima personalizzata.</p></details>
-          <details><summary>Si può fare in qualsiasi momento dell'anno?</summary><p>La gestione dell'esposizione solare è importante. Ti daremo indicazioni specifiche prima e dopo le sedute, in base alla tua situazione.</p></details>
-          <details><summary>Quanto costa?</summary><p>Il costo dipende dalle zone da trattare e dal percorso proposto. Chiamaci per organizzare una valutazione e ricevere informazioni sui prezzi.</p></details>
-          <details><summary>È adatto a me?</summary><p>Lo si stabilisce con una valutazione individuale. Segnala eventuali condizioni della pelle, trattamenti in corso e altre informazioni rilevanti quando contatti il centro.</p></details>
-        </div>
+      <div class="footer__col">
+        <h4>Il centro</h4>
+        <ul>
+          <li><a href="/medici/">I medici</a></li>
+          <li><a href="/#struttura">La struttura</a></li>
+        </ul>
       </div>
-    </section>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 Medic Service — Centro Polispecialistico, Oristano</span>
+      <span>Direttore Sanitario: <b>Dottor Augusto Cadeddu</b></span>
+      <span class="num">P.IVA 01019170958</span>
+      <span class="footer__legal">
+        <a href="https://www.iubenda.com/privacy-policy/865793" class="iubenda-white no-brand iubenda-noiframe iubenda-embed" title="Privacy Policy">Privacy Policy</a>
+        ·
+        <a href="https://www.iubenda.com/privacy-policy/865793/cookie-policy" class="iubenda-white no-brand iubenda-noiframe iubenda-embed" title="Cookie Policy">Cookie Policy</a>
+      </span>
+    </div>
+    <p style="margin-top:18px;font-size:12px;color:rgba(255,255,255,.55)">Le informazioni di questa pagina hanno carattere informativo e non sostituiscono la visita medica.</p>
+  </div>
+</footer>
 
-    <section class="section laser-final" id="contatti">
-      <div class="container">
-        <span class="laser-kicker">Inizia da una conversazione</span>
-        <h2>Parliamo della zona che vuoi trattare.</h2>
-        <p>Ti aiutiamo a capire se e come iniziare il tuo percorso di epilazione laser a Oristano.</p>
-        <div class="laser-actions"><a class="btn btn--primary btn--lg" href="tel:0783211136">Chiama 0783 211136</a><a class="btn btn--outline btn--lg" href="mailto:info@medicservice.it?subject=Informazioni%20epilazione%20laser">Scrivici un'email</a></div>
-        <small class="laser-note">Medic Service · Piazza Tharros 57, Oristano</small>
-      </div>
-    </section>
-  </main>
+<script src="https://unpkg.com/lucide@0.408.0/dist/umd/lucide.min.js"></script>
+<script src="/site.js?v=6"></script>
+<script>
+/* Quiz pacchetti */
+(function(){
+  var packs={
+    viso:{name:'Viso',zones:'[Labbro superiore, mento, basette]',price:'50',sess:'[6] sedute indicative'},
+    ascelle:{name:'Ascelle e inguine',zones:'[Ascelle, inguine sgambato]',price:'100',sess:'[6] sedute indicative'},
+    gambe:{name:'Gambe complete',zones:'[Cosce, ginocchia, polpacci]',price:'200',sess:'[8] sedute indicative'},
+    schiena:{name:'Schiena e spalle',zones:'[Schiena, spalle, parte alta delle braccia]',price:'200',sess:'[8] sedute indicative'}
+  };
+  var titles={1:'Il tuo fototipo',2:'La tua età',3:'La zona',4:'Il risultato'};
+  var quiz=document.getElementById('quiz'); if(!quiz) return;
+  var state={ft:null,age:null,pack:null}, step=1;
+  function show(n){
+    step=n;
+    quiz.querySelectorAll('.quiz__step').forEach(function(s){ s.classList.toggle('is-on', +s.dataset.step===n); });
+    document.getElementById('q-cur').textContent=('0'+Math.min(n,3)).slice(-2);
+    document.getElementById('q-title').textContent=titles[n];
+    document.getElementById('q-prog').style.width=(n>=4?100:Math.round(n/3*100))+'%';
+    document.getElementById('q-back').hidden=(n===1||n===4);
+    window.dataLayer=window.dataLayer||[]; window.dataLayer.push({event:'quiz_step',step:n});
+  }
+  quiz.querySelectorAll('.ft').forEach(function(b){ b.addEventListener('click',function(){ state.ft=b.dataset.ft; show(2); }); });
+  quiz.querySelectorAll('[data-age]').forEach(function(b){ b.addEventListener('click',function(){ state.age=b.dataset.age; show(3); }); });
+  quiz.querySelectorAll('[data-pack]').forEach(function(b){ b.addEventListener('click',function(){ state.pack=b.dataset.pack; result(); }); });
+  document.getElementById('q-back').addEventListener('click',function(){ show(Math.max(1,step-1)); });
+  document.getElementById('r-restart').addEventListener('click',function(){ state={ft:null,age:null,pack:null}; show(1); });
+  function result(){
+    var p=packs[state.pack];
+    document.getElementById('r-name').textContent=p.name;
+    document.getElementById('r-zones').textContent=p.zones;
+    document.getElementById('r-price').textContent=p.price;
+    document.getElementById('r-sess').textContent=p.sess;
+    var note;
+    if(state.age==='Meno di 18'){
+      note='Fino ai 18 anni il trattamento richiede il consenso di un genitore, che deve essere presente alla visita dermatologica. Contattaci e ti spieghiamo come fare.';
+    } else if(state.ft==='V'||state.ft==='VI'){
+      note='Fototipo '+state.ft+': con il laser Deka Again Pro trattiamo anche le pelli scure. In visita impostiamo i parametri adatti alla tua pelle.';
+    } else if(state.ft==='I'||state.ft==='II'){
+      note='Fototipo '+state.ft+': pelle chiara, in genere molto adatta al laser. Ricorda di evitare sole e lampade nelle settimane prima della seduta.';
+    } else {
+      note='Fototipo '+state.ft+': in visita verifichiamo pelle e pelo e confermiamo il numero di sedute. Se sei abbronzato di recente, il trattamento va rimandato.';
+    }
+    document.getElementById('r-note').textContent=note;
+    var sel=document.getElementById('f-pack');
+    if(sel){ for(var i=0;i<sel.options.length;i++){ if(sel.options[i].text===p.name){ sel.selectedIndex=i; break; } } }
+    var hid=document.getElementById('f-quiz'); if(hid) hid.value='fototipo '+state.ft+', età '+state.age;
+    window.dataLayer=window.dataLayer||[]; window.dataLayer.push({event:'quiz_result',pacchetto:p.name,fototipo:state.ft,eta:state.age});
+    show(4);
+    if(window.lucide) lucide.createIcons();
+  }
+})();
 
-  <footer class="laser-minifooter"><div class="container"><span>© 2026 Medic Service · P.IVA 01019170958 · Direttore Sanitario: Dottor Augusto Cadeddu</span><span><a href="https://www.iubenda.com/privacy-policy/865793">Privacy Policy</a> · <a href="https://www.iubenda.com/privacy-policy/865793/cookie-policy">Cookie Policy</a></span></div></footer>
+/* Invio modulo + evento Lead.
+   Il Pixel Meta va inserito in Google Tag Manager (GTM-TKGKM6ZJ) con attivazione
+   dopo il consenso Iubenda. Qui la pagina si limita a segnalare il lead:
+   - dataLayer event "lead_epilazione" → da usare come trigger del tag "Lead" in GTM
+   - fbq('track','Lead') se il Pixel è già caricato in pagina */
+(function(){
+  var form=document.getElementById('lead-form'), msg=document.getElementById('f-msg'), btn=document.getElementById('f-submit');
+  if(!form) return;
+  form.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    msg.className='form-msg';
+    if(!form.nome.value.trim() || !form.telefono.value.trim()){
+      msg.className='form-msg err'; msg.textContent='Inserisci nome e telefono per essere ricontattato.'; return;
+    }
+    if(!form.privacy.checked){
+      msg.className='form-msg err'; msg.textContent="Per inviare la richiesta devi accettare l'informativa privacy."; return;
+    }
+    btn.disabled=true; btn.textContent='Invio in corso…';
+    fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}})
+      .then(function(r){
+        if(!r.ok) throw new Error();
+        window.dataLayer=window.dataLayer||[];
+        window.dataLayer.push({event:'lead_epilazione',pacchetto:form.pacchetto.value});
+        if(window.fbq) fbq('track','Lead',{content_name:form.pacchetto.value});
+        document.getElementById('form-box').innerHTML=
+          '<div class="form-done"><i data-lucide="check-circle-2"></i><h3>Richiesta inviata</h3><p>Ti ricontattiamo entro un giorno lavorativo via '+
+          (form.contatto.value==='WhatsApp'?'WhatsApp':'telefono')+'.</p></div>';
+        if(window.lucide) lucide.createIcons();
+      })
+      .catch(function(){
+        btn.disabled=false; btn.textContent='Richiedi informazioni';
+        msg.className='form-msg err'; msg.textContent='La richiesta non è stata inviata. Riprova oppure chiama lo 0783 211136.';
+      });
+  });
+})();
+</script>
 </body>
 </html>
