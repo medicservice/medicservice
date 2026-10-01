@@ -13,7 +13,7 @@ La pagina usa i file già presenti nel sito, non va copiato altro:
 ## Da completare prima della pubblicazione (cerca le parentesi quadre nel file)
 1. `[ID-FORMSPREE]` — creare un modulo su formspree.io (gratuito fino a 50 invii/mese) e inserire l'ID.
    I contatti arrivano via email all'indirizzo registrato su Formspree.
-2. `[NUMERO-WHATSAPP]` — numero WhatsApp del centro, senza spazi (es. 3471234567).
+2. Numero WhatsApp inserito: +39 389 125 5173.
 3. Pacchetti: zone comprese e numero di sedute indicative sono nello script del quiz
    (oggetto `packs`, in fondo al file) ancora tra parentesi quadre. I prezzi a seduta sono già inseriti
    (Viso 50, Ascelle e inguine 100, Gambe complete 200, Schiena e spalle 200).
