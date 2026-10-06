@@ -277,15 +277,15 @@
         "</ul></div>"
       : "";
     var note = d.direct
-      ? "Si apre la sua agenda su MioDottore: scegli giorno e orario."
-      : "Oppure chiedi in accettazione o chiama lo <b>0783 211136</b>.";
+      ? "Si apre la sua agenda: scegli giorno e orario."
+      : "Per prenotare chiedi in accettazione o chiama lo <b>0783 211136</b>.";
     return media +
       '<div class="body">' +
         '<div class="eyebrow">Il nostro team</div>' +
         '<h1 class="name' + (d.name.length > 22 ? " is-long" : "") + '">' + esc(d.name) + "</h1>" +
         '<div class="specs">' + esc(d.specs.join(" · ")) + "</div>" +
         list +
-        bookHtml(d.qr, d.direct ? "Prenota una visita" : "Prenota su MioDottore", note) +
+        bookHtml(d.qr, d.direct ? "Prenota una visita" : "Scopri la sua scheda", note) +
       "</div>";
   }
 
@@ -299,7 +299,7 @@
         '<div class="prest-block"><ul class="prest">' +
           s.items.map(function (p) { return "<li>" + icon("check") + "<span>" + esc(p) + "</span></li>"; }).join("") +
         "</ul></div>" +
-        bookHtml(s.qr, "Prenota questo servizio", "Si apre l'agenda su MioDottore: scegli giorno e orario.") +
+        bookHtml(s.qr, "Prenota questo servizio", "Si apre la pagina di prenotazione: scegli giorno e orario.") +
       "</div>";
   }
 

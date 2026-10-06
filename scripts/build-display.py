@@ -21,11 +21,16 @@ ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "display" / "data.js"
 PHOTOS_JS = ROOT / "doctor-photos.js"
 
-STRUTTURA_URL = "https://www.miodottore.it/strutture/medic-service-oristano"
+SITE = "https://medicservice.it"
+# I QR portano alla scheda medico sul sito, sezione #prenota: il widget MioDottore
+# lì incorporato è legato alla sede di Oristano (anche per i medici con più studi).
+# utm_* permette di contare in Analytics le prenotazioni arrivate dalla sala d'attesa.
+UTM = "?utm_source=sala-attesa&utm_medium=qr"
+GENERAL_URL = SITE + "/medici/" + UTM
 
 # Schermate servizi intercalate tra i medici.
-# "agenda" = slug del medico la cui agenda MioDottore viene usata per il QR;
-# senza "agenda" il QR porta alla pagina della struttura su MioDottore.
+# "agenda" = slug del medico la cui scheda (con widget di prenotazione) apre il QR;
+# in alternativa "page" = percorso di una pagina del sito (es. "/medicina-estetica/").
 SERVICES = [
     {
         "title": "RX e MOC",
@@ -57,6 +62,7 @@ SERVICES = [
         "text": "16 trattamenti per viso, corpo e anti-aging, sempre eseguiti da un medico.",
         "items": ["Filler e biostimolazione", "Tossina botulinica", "Trattamenti corpo"],
         "icon": "sparkles",
+        "page": "/medicina-estetica/",
     },
 ]
 
@@ -83,8 +89,8 @@ def scheda(slug):
     prest = []
     if cura:
         prest = [html.unescape(s).strip() for s in re.findall(r"</i>\s*([^<]+?)\s*</li>", cura.group(1))]
-    links = [u for u in re.findall(r'href="(https://www\.miodottore\.it/[^"]+)"', text) if "/strutture/" not in u]
-    return prest, (links[0] if links else None)
+    has_widget = 'id="prenota"' in text and "zl-url" in text
+    return prest, (SITE + "/medici/" + slug + "/" + UTM + "#prenota" if has_widget else None)
 
 
 def qr_svg(url):
@@ -123,6 +129,7 @@ def main():
     for d in load_medici():
         slug = d["surname"].lower()
         prest, link = scheda(slug)
+        scheda_url = SITE + "/medici/" + slug + "/" + UTM
         if not link:
             missing.append(d["display"])
         agende[slug] = link
@@ -135,20 +142,20 @@ def main():
             "prestazioni": prest,
             "photo": "/assets/photos/" + (file or ("generic_medic_female.png" if female(d["display"]) else "generic_medic_male.png")),
             "hasPhoto": bool(file),
-            "url": link or STRUTTURA_URL,
+            "url": link or scheda_url,
             "direct": bool(link),
-            "qr": qr_svg(link or STRUTTURA_URL),
+            "qr": qr_svg(link or scheda_url),
         })
 
     services = []
     for s in SERVICES:
-        url = agende.get(s.get("agenda")) or STRUTTURA_URL
-        services.append({k: v for k, v in s.items() if k != "agenda"} | {"url": url, "qr": qr_svg(url)})
+        url = agende.get(s.get("agenda")) or SITE + s.get("page", "/medici/") + UTM
+        services.append({k: v for k, v in s.items() if k not in ("agenda", "page")} | {"url": url, "qr": qr_svg(url)})
 
     data = {
         "doctors": doctors,
         "services": services,
-        "general": {"url": STRUTTURA_URL, "qr": qr_svg(STRUTTURA_URL)},
+        "general": {"url": GENERAL_URL, "qr": qr_svg(GENERAL_URL)},
     }
     OUT.parent.mkdir(exist_ok=True)
     OUT.write_text(
@@ -158,7 +165,7 @@ def main():
     )
     print(f"{len(doctors)} medici, {len(services)} servizi -> {OUT.relative_to(ROOT)}")
     if missing:
-        print("Senza agenda MioDottore (QR alla struttura):", ", ".join(missing))
+        print("Senza widget di prenotazione (QR alla sola scheda):", ", ".join(missing))
 
 
 if __name__ == "__main__":
