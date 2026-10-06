@@ -29,6 +29,16 @@ SITE = "https://medicservice.it"
 UTM = "?tv"
 GENERAL_URL = SITE + "/medici/" + UTM
 
+# Sedi con un proprio display: /display/?sede=<chiave>.
+# "escludi" = slug dei medici (cartella in medici/) da non mostrare in quella sede;
+# "indirizzo" = testo a piè di pagina (se assente resta Piazza Tharros 57).
+# Senza ?sede la pagina mostra tutti i medici.
+SEDI = {
+    "canalis": {
+        "escludi": ["cartagabriele"],
+    },
+}
+
 # Schermate servizi intercalate tra i medici.
 # "agenda" = slug del medico la cui scheda (con widget di prenotazione) apre il QR;
 # in alternativa "page" = percorso di una pagina del sito (es. "/medicina-estetica/").
@@ -157,7 +167,13 @@ def main():
         "doctors": doctors,
         "services": services,
         "general": {"url": GENERAL_URL, "qr": qr_svg(GENERAL_URL)},
+        "sedi": SEDI,
     }
+    slugs = {d["slug"] for d in doctors}
+    for nome, sede in SEDI.items():
+        for slug in sede.get("escludi", []):
+            if slug not in slugs:
+                raise SystemExit(f"Sede {nome}: medico '{slug}' non trovato in medici/")
     OUT.parent.mkdir(exist_ok=True)
     OUT.write_text(
         "/* Generato da scripts/build-display.py — non modificare a mano. */\n"

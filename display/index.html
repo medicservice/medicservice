@@ -18,6 +18,7 @@
     ?ogni=4      una schermata servizio ogni N medici (0 = solo medici)
     ?mescola=1   ordine casuale dei medici a ogni giro
     ?da=cadeddu  parte dal medico indicato (utile per controllare una scheda)
+    ?sede=canalis  versione per un'altra sede (medici esclusi definiti in build-display.py)
 
   Dati in data.js, generati con: python3 scripts/build-display.py
   Tasti: ← → per scorrere, spazio per pausa, F per schermo intero.
@@ -215,7 +216,7 @@
 </div>
 
 <div class="foot">
-  <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>Piazza Tharros 57, Oristano</span>
+  <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span id="address">Piazza Tharros 57, Oristano</span></span>
   <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span class="num">0783 211136</span></span>
 </div>
 
@@ -242,6 +243,14 @@
   };
 
   var DATA = window.DISPLAY_DATA;
+
+  // Versione per sede: toglie i medici esclusi e, se indicato, cambia l'indirizzo.
+  var SEDE = (DATA.sedi || {})[params.get("sede")];
+  if (SEDE) {
+    var escludi = SEDE.escludi || [];
+    DATA.doctors = DATA.doctors.filter(function (d) { return escludi.indexOf(d.slug) === -1; });
+    if (SEDE.indirizzo) document.getElementById("address").textContent = SEDE.indirizzo;
+  }
   var stage = document.getElementById("stage");
   var bar = document.getElementById("bar");
 
