@@ -24,8 +24,9 @@ PHOTOS_JS = ROOT / "doctor-photos.js"
 SITE = "https://medicservice.it"
 # I QR portano alla scheda medico sul sito, sezione #prenota: il widget MioDottore
 # lì incorporato è legato alla sede di Oristano (anche per i medici con più studi).
-# utm_* permette di contare in Analytics le prenotazioni arrivate dalla sala d'attesa.
-UTM = "?utm_source=sala-attesa&utm_medium=qr"
+# "?tv" marca in Analytics le visite arrivate dalla sala d'attesa; resta corto
+# apposta: meno caratteri = QR meno fitto, leggibile da più lontano.
+UTM = "?tv"
 GENERAL_URL = SITE + "/medici/" + UTM
 
 # Schermate servizi intercalate tra i medici.
