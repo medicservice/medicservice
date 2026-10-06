@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Medic Service — Display sala d'attesa</title>
+<link rel="icon" href="/assets/monogram.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@400;500&family=DM+Serif+Display&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+<!--
+  Display TV per la sala d'attesa: carosello a schermo intero, un medico alla volta,
+  con QR code alla sua agenda MioDottore. Ogni tanto una schermata servizio.
+
+  Parametri URL (facoltativi):
+    ?t=25        secondi per schermata (default 22)
+    ?ogni=4      una schermata servizio ogni N medici (0 = solo medici)
+    ?mescola=1   ordine casuale dei medici a ogni giro
+    ?da=cadeddu  parte dal medico indicato (utile per controllare una scheda)
+
+  Dati in data.js, generati con: python3 scripts/build-display.py
+  Tasti: ← → per scorrere, spazio per pausa, F per schermo intero.
+-->
+<style>
+  :root {
+    --navy: #0E334F;
+    --brand: #2D99DA;
+    --brand-dk: #1F7FBC;
+    --blue-pale: #C9E2F4;
+    --oak: #C7AA80;
+    --g700: #5C5E62;
+    --g500: #939599;
+    --g150: #E4E5E7;
+    --g075: #F3F4F5;
+    --paper: #FFFFFF;
+    --sans: "Montserrat", system-ui, "Segoe UI", sans-serif;
+    --display: "DM Serif Display", Georgia, serif;
+    --num: "Chivo Mono", ui-monospace, monospace;
+    --fade: 900ms;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; overflow: hidden; }
+  body {
+    background: var(--navy);
+    color: var(--navy);
+    font-family: var(--sans);
+    -webkit-font-smoothing: antialiased;
+    cursor: none;
+  }
+  svg { display: block; }
+
+  /* ---------- stage: tutto scala sull'altezza (16:9) ---------- */
+  .stage { position: fixed; inset: 0; }
+  .slide {
+    position: absolute; inset: 0;
+    display: grid; grid-template-columns: 42% 58%;
+    opacity: 0; transition: opacity var(--fade) ease;
+    background: var(--paper);
+  }
+  .slide.is-on { opacity: 1; }
+
+  /* ---------- colonna immagine ---------- */
+  .media { position: relative; overflow: hidden; background: var(--navy); }
+  .media img {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    object-fit: cover; object-position: 50% 18%;
+    transform: scale(1.04); transition: transform 24s linear;
+  }
+  .slide.is-on .media img { transform: scale(1); }
+  .media::before {
+    content: ""; position: absolute; inset: 0 0 auto 0; height: 22%; z-index: 1;
+    background: linear-gradient(180deg, rgba(14,51,79,.45), rgba(14,51,79,0));
+  }
+  .media__badge {
+    position: absolute; left: 4vh; top: 4.6vh; z-index: 1;
+    color: #fff; font-weight: 800; font-size: 1.7vh; letter-spacing: .22em; text-transform: uppercase;
+  }
+  .media__badge::before {
+    content: ""; display: inline-block; width: 4vh; height: .3vh; background: var(--brand);
+    vertical-align: middle; margin-right: 1.4vh;
+  }
+  /* medico senza foto / servizio: pannello navy con monogramma */
+  .media--mark { display: flex; align-items: center; justify-content: center; }
+  .media--mark .mark-bg {
+    position: absolute; right: -14vh; bottom: -12vh; width: 70vh; opacity: .05;
+  }
+  .media--mark .initials {
+    position: relative; z-index: 1;
+    width: 34vh; height: 34vh; border-radius: 50%;
+    border: .35vh solid rgba(255,255,255,.25);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--display); font-size: 14vh; color: #fff; letter-spacing: .02em;
+  }
+  .media--mark .service-icon {
+    position: relative; z-index: 1;
+    width: 36vh; height: 36vh; border-radius: 50%;
+    background: rgba(45,153,218,.16); border: .35vh solid rgba(45,153,218,.45);
+    display: flex; align-items: center; justify-content: center; color: #fff;
+  }
+  .media--mark .service-icon svg { width: 16vh; height: 16vh; }
+
+  /* ---------- colonna testo ---------- */
+  .body {
+    position: relative;
+    display: flex; flex-direction: column;
+    padding: 13vh 6vh 11vh 7vh;
+  }
+  .eyebrow {
+    font-weight: 800; font-size: 1.9vh; letter-spacing: .22em; text-transform: uppercase; color: var(--brand);
+  }
+  .name {
+    font-family: var(--display); font-weight: 400;
+    font-size: 7.4vh; line-height: 1.04; letter-spacing: -.01em;
+    margin: 1.6vh 0 0;
+  }
+  .name.is-long { font-size: 6.2vh; }
+  .specs {
+    margin-top: 1.6vh; font-size: 3.1vh; font-weight: 700; color: var(--brand-dk); line-height: 1.25;
+  }
+  .lead { margin-top: 2vh; font-size: 2.6vh; line-height: 1.45; color: var(--g700); font-weight: 500; max-width: 80vh; }
+
+  .prest-block { margin-top: 3.6vh; }
+  .prest { margin: 0; padding: 0; list-style: none; }
+  .prest__title {
+    font-size: 1.6vh; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; color: var(--g500);
+    margin-bottom: 1.2vh;
+  }
+  .prest li {
+    display: flex; align-items: flex-start;
+    font-size: 2.55vh; font-weight: 600; line-height: 1.3; color: var(--navy);
+    padding: .95vh 0; border-top: .15vh solid var(--g150);
+  }
+  .prest li:last-child { border-bottom: .15vh solid var(--g150); }
+  .prest li svg { flex: none; width: 2.6vh; height: 2.6vh; color: var(--brand); margin: .15vh 1.5vh 0 0; }
+
+  /* ---------- blocco QR ---------- */
+  .book {
+    margin-top: auto;
+    display: flex; align-items: center;
+    background: var(--g075); border-radius: 2vh;
+    padding: 2.6vh 3.2vh 2.6vh 2.6vh;
+  }
+  .qr {
+    flex: none; width: 27vh; height: 27vh; padding: 1.8vh;
+    background: #fff; border-radius: 1.4vh;
+    box-shadow: 0 1.2vh 3vh -2vh rgba(14,51,79,.45);
+  }
+  .qr svg { width: 100%; height: 100%; fill: var(--navy); }
+  .book__copy { margin-left: 3.6vh; }
+  .book__kicker {
+    display: flex; align-items: center;
+    font-size: 1.8vh; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; color: var(--brand);
+  }
+  .book__kicker svg { width: 2.6vh; height: 2.6vh; margin-right: 1.2vh; }
+  .book__title { font-size: 3.9vh; font-weight: 800; line-height: 1.12; margin-top: 1.2vh; letter-spacing: -.01em; }
+  .book__note { font-size: 2.1vh; color: var(--g700); font-weight: 500; margin-top: 1.4vh; line-height: 1.4; }
+  .book__note b { font-family: var(--num); font-weight: 500; color: var(--navy); white-space: nowrap; }
+
+  /* ---------- cornice fissa: logo, ora, QR generale, avanzamento ---------- */
+  .topbar {
+    position: fixed; z-index: 5; top: 0; right: 0; left: 42%;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 4.4vh 6vh 0 7vh; pointer-events: none;
+  }
+  .topbar img { height: 5vh; width: auto; }
+  .clock { text-align: right; }
+  .clock__time { font-family: var(--num); font-size: 3.6vh; font-weight: 500; line-height: 1; }
+  .clock__date { font-size: 1.6vh; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--g500); margin-top: .8vh; }
+
+  .general {
+    position: fixed; z-index: 5; left: 3vh; bottom: 3.6vh;
+    box-shadow: 0 1.4vh 4vh -2vh rgba(0,0,0,.5);
+    display: flex; align-items: center;
+    background: var(--navy); color: #fff; border-radius: 1.4vh; padding: 1.2vh 1.2vh 1.2vh 2vh;
+  }
+  .general__txt { font-size: 1.5vh; font-weight: 700; line-height: 1.3; margin-right: 1.4vh; }
+  .general__txt span { display: block; font-size: 1.25vh; letter-spacing: .14em; text-transform: uppercase; color: var(--blue-pale); font-weight: 800; }
+  .general .qr-mini { width: 10vh; height: 10vh; padding: .8vh; background: #fff; border-radius: .8vh; }
+  .general .qr-mini svg { width: 100%; height: 100%; fill: var(--navy); }
+
+  .foot {
+    position: fixed; z-index: 5; left: 42%; bottom: 0; right: 0;
+    padding: 0 0 4.2vh 7vh; font-size: 1.8vh; font-weight: 600; color: var(--g500);
+    display: flex; align-items: center;
+  }
+  .foot svg { width: 2vh; height: 2vh; margin-right: .8vh; color: var(--brand); }
+  .foot span { display: inline-flex; align-items: center; margin-right: 3vh; }
+  .foot .num { font-family: var(--num); font-weight: 500; color: var(--navy); }
+
+  .progress { position: fixed; z-index: 6; left: 0; right: 0; bottom: 0; height: .9vh; background: rgba(14,51,79,.12); }
+  .progress__bar {
+    height: 100%; width: 100%; background: var(--brand);
+    transform-origin: 0 50%; transform: scaleX(0);
+  }
+  .paused .progress__bar { background: var(--oak); }
+
+  /* layout stretto (TV in verticale o finestra piccola) */
+  @media (max-aspect-ratio: 1/1) {
+    .slide { grid-template-columns: 1fr; grid-template-rows: 38% 62%; }
+    .topbar { left: 0; top: 38%; padding-top: 3vh; }
+    .foot { left: 0; }
+    .general { left: auto; right: 3vh; bottom: auto; top: 3vh; }
+    .body { padding: 11vh 4vh 9vh; }
+  }
+</style>
+</head>
+<body>
+
+<div class="stage" id="stage"></div>
+
+<div class="topbar">
+  <img src="/assets/logo-horizontal.svg" alt="Medic Service">
+  <div class="clock"><div class="clock__time" id="clockTime">--:--</div><div class="clock__date" id="clockDate"></div></div>
+</div>
+
+<div class="foot">
+  <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>Piazza Tharros 57, Oristano</span>
+  <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span class="num">0783 211136</span></span>
+</div>
+
+<div class="general">
+  <div class="general__txt"><span>Tutte le agende</span>Prenota con<br>qualsiasi medico</div>
+  <div class="qr-mini" id="generalQr"></div>
+</div>
+
+<div class="progress"><div class="progress__bar" id="bar"></div></div>
+
+<script src="data.js"></script>
+<script>
+(function () {
+  "use strict";
+
+  var params = new URLSearchParams(location.search);
+  function num(key, def) { var v = parseFloat(params.get(key)); return isNaN(v) ? def : v; }
+
+  var CONFIG = {
+    seconds: num("t", 22),          // tempo per schermata
+    serviceEvery: num("ogni", 4),   // una schermata servizio ogni N medici (0 = mai)
+    shuffle: params.get("mescola") === "1",
+    reloadAfterHours: 4             // ricarica a fine giro per prendere dati aggiornati
+  };
+
+  var DATA = window.DISPLAY_DATA;
+  var stage = document.getElementById("stage");
+  var bar = document.getElementById("bar");
+
+  var ICONS = {
+    check: '<path d="M20 6 9 17l-5-5"/>',
+    phone: '<rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/>',
+    scan: '<path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M7 12h10"/>',
+    activity: '<path d="M22 12h-4l-3 9L9 3l-3 9H2"/>',
+    heart: '<path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>',
+    sparkles: '<path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/>'
+  };
+  function icon(name) {
+    return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' + (ICONS[name] || ICONS.check) + '</svg>';
+  }
+  function esc(s) {
+    return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; });
+  }
+  function initials(name) {
+    var parts = name.replace(/^(Dr\.ssa|Dr\.|Dott\.ssa|Dott\.|Op\.)\s+/i, "").split(/\s+/);
+    return (parts[0].charAt(0) + parts[parts.length - 1].charAt(0)).toUpperCase();
+  }
+
+  var MARK_BG = '<img class="mark-bg" src="/assets/monogram-white.svg" alt="">';
+
+  function doctorHtml(d) {
+    var media = d.hasPhoto
+      ? '<div class="media"><img src="' + esc(d.photo) + '" alt=""><div class="media__badge">' + esc(d.area) + '</div></div>'
+      : '<div class="media media--mark">' + MARK_BG + '<div class="initials">' + esc(initials(d.name)) + '</div><div class="media__badge">' + esc(d.area) + '</div></div>';
+    var prest = d.prestazioni.slice(0, 4);
+    var list = prest.length
+      ? '<div class="prest-block"><div class="prest__title">Prestazioni</div><ul class="prest">' +
+        prest.map(function (p) { return "<li>" + icon("check") + "<span>" + esc(p) + "</span></li>"; }).join("") +
+        "</ul></div>"
+      : "";
+    var note = d.direct
+      ? "Si apre la sua agenda su MioDottore: scegli giorno e orario."
+      : "Oppure chiedi in accettazione o chiama lo <b>0783 211136</b>.";
+    return media +
+      '<div class="body">' +
+        '<div class="eyebrow">Il nostro team</div>' +
+        '<h1 class="name' + (d.name.length > 22 ? " is-long" : "") + '">' + esc(d.name) + "</h1>" +
+        '<div class="specs">' + esc(d.specs.join(" · ")) + "</div>" +
+        list +
+        bookHtml(d.qr, d.direct ? "Prenota una visita" : "Prenota su MioDottore", note) +
+      "</div>";
+  }
+
+  function serviceHtml(s) {
+    return '<div class="media media--mark">' + MARK_BG +
+        '<div class="service-icon">' + icon(s.icon) + '</div><div class="media__badge">' + esc(s.eyebrow) + "</div></div>" +
+      '<div class="body">' +
+        '<div class="eyebrow">I nostri servizi</div>' +
+        '<h1 class="name' + (s.title.length > 22 ? " is-long" : "") + '">' + esc(s.title) + "</h1>" +
+        '<p class="lead">' + esc(s.text) + "</p>" +
+        '<div class="prest-block"><ul class="prest">' +
+          s.items.map(function (p) { return "<li>" + icon("check") + "<span>" + esc(p) + "</span></li>"; }).join("") +
+        "</ul></div>" +
+        bookHtml(s.qr, "Prenota questo servizio", "Si apre l'agenda su MioDottore: scegli giorno e orario.") +
+      "</div>";
+  }
+
+  function bookHtml(qr, title, note) {
+    return '<div class="book"><div class="qr">' + qr + "</div>" +
+      '<div class="book__copy">' +
+        '<div class="book__kicker">' + icon("phone") + "Inquadra con il telefono</div>" +
+        '<div class="book__title">' + title + "</div>" +
+        '<div class="book__note">' + note + "</div>" +
+      "</div></div>";
+  }
+
+  /* ---------- sequenza ---------- */
+  function shuffled(a) {
+    a = a.slice();
+    for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; }
+    return a;
+  }
+  var serviceCursor = 0;
+  function buildSequence() {
+    var docs = CONFIG.shuffle ? shuffled(DATA.doctors) : DATA.doctors;
+    var seq = [];
+    docs.forEach(function (d, i) {
+      seq.push({ kind: "doctor", item: d });
+      if (CONFIG.serviceEvery > 0 && DATA.services.length && (i + 1) % CONFIG.serviceEvery === 0) {
+        seq.push({ kind: "service", item: DATA.services[serviceCursor++ % DATA.services.length] });
+      }
+    });
+    return seq;
+  }
+
+  var seq = buildSequence();
+  var idx = -1;
+  var current = null;
+  var timer = null;
+  var paused = false;
+  var startedAt = Date.now();
+
+  function preload(entry) {
+    if (entry && entry.kind === "doctor" && entry.item.hasPhoto) { var im = new Image(); im.src = entry.item.photo; }
+  }
+
+  function startBar() {
+    bar.style.transition = "none";
+    bar.style.transform = "scaleX(0)";
+    void bar.offsetWidth;
+    bar.style.transition = "transform " + CONFIG.seconds + "s linear";
+    bar.style.transform = "scaleX(1)";
+  }
+
+  function show(i) {
+    if (i >= seq.length) {
+      // fine giro: eventuale ricarica per dati aggiornati, solo se il sito risponde
+      if ((Date.now() - startedAt) / 36e5 >= CONFIG.reloadAfterHours) {
+        fetch("data.js?v=" + Date.now(), { cache: "no-store" })
+          .then(function (r) { if (r.ok) location.reload(); })
+          .catch(function () {});
+      }
+      seq = buildSequence();
+      i = 0;
+    }
+    if (i < 0) i = seq.length - 1;
+    idx = i;
+    var entry = seq[idx];
+    var el = document.createElement("section");
+    el.className = "slide";
+    el.innerHTML = entry.kind === "doctor" ? doctorHtml(entry.item) : serviceHtml(entry.item);
+    stage.appendChild(el);
+    void el.offsetWidth;
+    el.className = "slide is-on";
+    var old = current;
+    current = el;
+    if (old) setTimeout(function () { if (old.parentNode) old.parentNode.removeChild(old); }, 1000);
+    preload(seq[idx + 1]);
+    schedule();
+  }
+
+  function schedule() {
+    clearTimeout(timer);
+    if (paused) return;
+    startBar();
+    timer = setTimeout(function () { show(idx + 1); }, CONFIG.seconds * 1000);
+  }
+
+  /* ---------- orologio ---------- */
+  var GIORNI = ["domenica", "lunedì", "martedì", "mercoledì", "giovedì", "venerdì", "sabato"];
+  var MESI = ["gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno", "luglio", "agosto", "settembre", "ottobre", "novembre", "dicembre"];
+  function tick() {
+    var n = new Date();
+    document.getElementById("clockTime").textContent = ("0" + n.getHours()).slice(-2) + ":" + ("0" + n.getMinutes()).slice(-2);
+    document.getElementById("clockDate").textContent = GIORNI[n.getDay()] + " " + n.getDate() + " " + MESI[n.getMonth()];
+  }
+
+  /* ---------- comandi (telecomando / tastiera) ---------- */
+  function fullscreen() {
+    var d = document.documentElement;
+    var fn = d.requestFullscreen || d.webkitRequestFullscreen;
+    if (fn && !(document.fullscreenElement || document.webkitFullscreenElement)) fn.call(d);
+  }
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "ArrowRight") show(idx + 1);
+    else if (e.key === "ArrowLeft") show(idx - 1);
+    else if (e.key === " " || e.key === "Enter" || e.key === "MediaPlayPause") {
+      paused = !paused;
+      document.body.classList.toggle("paused", paused);
+      if (paused) { clearTimeout(timer); bar.style.transition = "none"; } else schedule();
+    }
+    else if (e.key === "f" || e.key === "F") fullscreen();
+  });
+  document.addEventListener("click", fullscreen);
+
+  // evita lo spegnimento dello schermo dove supportato
+  function keepAwake() {
+    if (navigator.wakeLock && document.visibilityState === "visible") navigator.wakeLock.request("screen").catch(function () {});
+  }
+  document.addEventListener("visibilitychange", keepAwake);
+
+  document.getElementById("generalQr").innerHTML = DATA.general.qr;
+  tick();
+  setInterval(tick, 10000);
+  keepAwake();
+  var startSlug = params.get("da");
+  var start = 0;
+  seq.forEach(function (e, i) { if (startSlug && e.kind === "doctor" && e.item.slug === startSlug) start = i; });
+  show(start);
+})();
+</script>
+</body>
+</html>
