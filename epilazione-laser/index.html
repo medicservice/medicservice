@@ -22,10 +22,10 @@ _iub.csLangConfiguration = {"it":{"cookiePolicyId":865793}};
 <script type="text/javascript" src="//cdn.iubenda.com/cs/gpp/stub.js"></script>
 <script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
 
-<title>Epilazione laser dal medico — Medic Service Oristano</title>
-<meta name="description" content="Epilazione laser a Oristano in un centro medico: ogni percorso inizia con una visita dermatologica. Pacchetti completi, dalla visita al controllo finale.">
-<meta property="og:title" content="Epilazione laser dal medico — Medic Service Oristano">
-<meta property="og:description" content="Pacchetti completi, dalla visita dermatologica al controllo finale. Piazza Tharros 57, Oristano.">
+<title>Epilazione laser a Oristano: visita, Deka Again PRO e percorso | Medic Service</title>
+<meta name="description" content="Epilazione laser a Oristano: visita dermatologica, laser Deka Again PRO a 755 e 1064 nm per tutti i fototipi, due sedute di ripasso comprese.">
+<meta property="og:title" content="Epilazione laser a Oristano: visita, Deka Again PRO e percorso | Medic Service">
+<meta property="og:description" content="Visita dermatologica e laser Deka Again PRO, con due sedute di ripasso comprese. Piazza Tharros 57, Oristano.">
 <meta property="og:image" content="https://medicservice.it/assets/photos/MS-33.jpg">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -53,6 +53,7 @@ _iub.csLangConfiguration = {"it":{"cookiePolicyId":865793}};
 
 /* perché studio medico */
 .why-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 48px; margin-top: 44px; max-width: 900px; }
+.why-grid--3 { grid-template-columns: repeat(3,1fr); max-width: none; }
 .why-grid svg { width: 28px; height: 28px; color: var(--brand); margin-bottom: 16px; }
 .why-grid h3 { font-size: 21px; font-weight: 700; color: var(--navy); margin-bottom: 10px; line-height: 1.25; }
 .why-grid p { color: var(--g700); font-size: 16px; }
@@ -82,11 +83,12 @@ _iub.csLangConfiguration = {"it":{"cookiePolicyId":865793}};
 .res__head .eyebrow { margin-bottom: 10px; }
 .res__name { font-family: var(--display); font-weight: 400; font-size: clamp(30px, 3.6vw, 44px); color: var(--navy); letter-spacing: 0; }
 .res__zones { color: var(--g700); margin-top: 6px; }
-.res__price { display: flex; align-items: baseline; gap: 6px; margin: 22px 0 8px; padding-top: 22px; border-top: 2px solid var(--navy); }
-.res__price span { font-family: var(--num); font-weight: 300; font-size: 48px; line-height: 1; color: var(--navy); }
-.res__price small { font-weight: 600; font-size: 14px; color: var(--g700); white-space: nowrap; }
-.res__price em { font-style: normal; font-family: var(--num); font-size: 14px; color: var(--g700); margin-left: 14px; white-space: nowrap; }
-.res__price { flex-wrap: wrap; }
+.res__sess { display: flex; align-items: baseline; gap: 6px; margin: 22px 0 8px; padding-top: 22px; border-top: 2px solid var(--navy); }
+.res__sess span { font-family: var(--num); font-weight: 300; font-size: 48px; line-height: 1; color: var(--navy); }
+.res__sess small { font-weight: 600; font-size: 14px; color: var(--g700); white-space: nowrap; }
+.res__sess em { font-style: normal; font-family: var(--num); font-size: 14px; color: var(--g700); margin-left: 14px; white-space: nowrap; }
+.res__sess { flex-wrap: wrap; }
+.res__laser { margin-top: 8px; font-size: 15px; color: var(--navy); }
 .incl { display: flex; flex-wrap: wrap; gap: 10px 28px; margin: 16px 0 6px; padding: 0; list-style: none; font-weight: 600; color: var(--navy); }
 .incl li { display: inline-flex; align-items: center; gap: 8px; font-size: 15px; }
 .incl svg { width: 18px; height: 18px; color: var(--brand); flex: none; }
@@ -175,19 +177,22 @@ _iub.csLangConfiguration = {"it":{"cookiePolicyId":865793}};
   <div class="container">
     <div class="split" style="gap:48px">
       <div>
-        <span class="eyebrow">Medicina estetica · Laser</span>
-        <h1 class="h1">Epilazione laser - dal medico.</h1>
-        <p class="lead">A Oristano, nel centro Medic Service i percorsi iniziano con una visita dermatologica, così il laser lavora in modo efficace e sicuro sulla tua pelle.</p>
+        <span class="eyebrow">Laser Deka Again PRO · Oristano</span>
+        <h1 class="h1">Epilazione laser, a partire dalla visita dermatologica.</h1>
+        <p class="lead">A Oristano, laser Deka Again PRO a due lunghezze d'onda per trattamenti efficaci e confortevoli.</p>
         <div class="actions">
           <a class="btn btn--donna btn--lg" href="#richiesta"><i data-lucide="message-circle"></i> Richiedi informazioni</a>
-          <a class="btn btn--outline btn--lg" href="#pacchetti">Vedi i pacchetti</a>
+          <a class="btn btn--outline btn--lg" href="#pacchetti">Trova il tuo pacchetto</a>
         </div>
         <p class="note">Ti ricontattiamo entro un giorno lavorativo, su WhatsApp o per telefono.</p>
       </div>
-      <aside class="eval" aria-label="Cosa comprende la visita dermatologica">
-        <h3>La visita dermatologica preventiva</h3>
+      <aside class="eval" aria-label="In sintesi">
+        <h3>In sintesi</h3>
         <dl>
-          <dt>Fototipo</dt>
+          <dt>Visita</dt><dd>Controllo di pelle, peli e nei, prima di iniziare</dd>
+          <dt>Test</dt><dd>Prova su una piccola zona</dd>
+          <dt>Laser</dt><dd>Deka Again PRO, 755 e 1064 nm</dd>
+          <dt>Fototipi</dt>
           <dd>Dal I al VI
             <div class="phototype" aria-hidden="true">
               <span style="background:#F6E3D6"></span><span style="background:#EBC9AE"></span>
@@ -195,12 +200,7 @@ _iub.csLangConfiguration = {"it":{"cookiePolicyId":865793}};
               <span style="background:#7C5033"></span><span style="background:#4A2F1E"></span>
             </div>
           </dd>
-          <dt>Pelle</dt><dd>Controllo di nei e lesioni con dermatoscopia</dd>
-          <dt>Pelo</dt><dd>Colore, spessore e zone</dd>
-          <dt>Anamnesi</dt><dd>Farmaci e controindicazioni</dd>
-          <dt>Piano</dt><dd>Numero di sedute e parametri del laser</dd>
         </dl>
-        <p class="tech">Tecnologia: laser Deka Again Pro · Visita con uno dei dermatologi del centro</p>
       </aside>
     </div>
   </div>
@@ -211,18 +211,23 @@ _iub.csLangConfiguration = {"it":{"cookiePolicyId":865793}};
   <div class="container">
     <div class="sec-head">
       <span class="eyebrow">Perché da noi</span>
-      <h2 class="h2">Un laser è un atto medico. Da noi lo trattiamo come tale.</h2>
+      <h2 class="h2">Visita, laser e percorso, nello stesso centro.</h2>
     </div>
-    <div class="why-grid">
+    <div class="why-grid why-grid--3">
       <div>
         <i data-lucide="scan-search"></i>
-        <h3>La pelle controllata prima di iniziare</h3>
-        <p>Il dermatologo esamina nei e lesioni nelle zone da trattare, che il laser non deve colpire. Una sicurezza in più, e un controllo della pelle che molti rimandano da anni.</p>
+        <h3>Prima la visita dermatologica</h3>
+        <p>Un dermatologo del centro controlla pelle e nei con la dermatoscopia e analizza il pelo. In base alla visita si scelgono lunghezza d'onda e parametri.</p>
       </div>
       <div>
-        <i data-lucide="receipt-text"></i>
-        <h3>Un prezzo chiaro fin dall'inizio</h3>
-        <p>Scegli un pacchetto completo: sai prima cosa comprende e quanto costa, dalla visita all'ultima seduta. Nessun costo che compare dopo.</p>
+        <i data-lucide="zap"></i>
+        <h3>Due lunghezze d'onda in un solo laser</h3>
+        <p>Deka Again PRO unisce alessandrite 755 nm, per peli sottili e chiari, e Nd:YAG 1064 nm, per pelli scure. Ha il raffreddamento integrato e la modalità Moveo, pensata per il comfort.</p>
+      </div>
+      <div>
+        <i data-lucide="route"></i>
+        <h3>Un percorso seguito passo per passo</h3>
+        <p>Test su una piccola area, 6 sedute e due ripassi compresi nel pacchetto. Tutto nello stesso centro, dalla visita all'ultima seduta.</p>
       </div>
     </div>
   </div>
@@ -234,7 +239,7 @@ _iub.csLangConfiguration = {"it":{"cookiePolicyId":865793}};
     <div class="sec-head">
       <span class="eyebrow">Il tuo pacchetto</span>
       <h2 class="h2">Tre risposte, e ti diciamo cosa aspettarti.</h2>
-      <p>Fototipo, età e zona: in trenta secondi vedi il pacchetto adatto a te, con prezzo e cosa comprende. Il resto lo definiamo insieme in visita.</p>
+      <p>Fototipo, età e zona: in trenta secondi vedi quale lunghezza d'onda è in genere indicata per la tua pelle, e cosa comprende il pacchetto. Il resto lo definiamo insieme in visita.</p>
     </div>
 
     <div class="quiz" id="quiz">
@@ -283,13 +288,12 @@ _iub.csLangConfiguration = {"it":{"cookiePolicyId":865793}};
             <h3 class="res__name" id="r-name"></h3>
             <p class="res__zones" id="r-zones"></p>
           </div>
-          <div class="res__price"><span id="r-price"></span><small>€ / seduta</small><em id="r-sess"></em></div>
+          <div class="res__sess"><span id="r-sess"></span><small>sedute</small><em>più 2 di ripasso comprese</em></div>
+          <p class="res__laser"><b>Lunghezza d'onda indicata:</b> <span id="r-laser"></span>. Si conferma in visita.</p>
           <ul class="incl res__incl">
-            <li><i data-lucide="check"></i> Visita dermatologica preventiva</li>
-            <li><i data-lucide="check"></i> Test su una piccola area</li>
-            <li><i data-lucide="check"></i> Tutte le sedute del ciclo</li>
+                        <li><i data-lucide="check"></i> Test su una piccola area</li>
+            <li><i data-lucide="check"></i> 6 sedute di trattamento</li>
             <li><i data-lucide="check"></i> Due sedute di ripasso incluse, dopo le prime due</li>
-            <li><i data-lucide="check"></i> Controllo finale</li>
           </ul>
           <p class="res__note" id="r-note"></p>
           <div class="res__actions">
@@ -302,7 +306,7 @@ _iub.csLangConfiguration = {"it":{"cookiePolicyId":865793}};
       <button type="button" class="quiz__back" id="q-back" hidden>← Indietro</button>
     </div>
 
-    <p class="pack-note">Il costo del pacchetto è dato dal prezzo a seduta per il numero di sedute, confermato dopo la visita. Le due sedute di ripasso sono comprese. [Possibilità di pagamento in più soluzioni: specificare le condizioni.]</p>
+    <p class="pack-note">La lunghezza d'onda è indicativa e si conferma dopo la visita dermatologica. Test su una piccola area e due sedute di ripasso sono compresi nel pacchetto. Tutti i dettagli te li diamo quando ti ricontattiamo.</p>
   </div>
 </section>
 
@@ -315,11 +319,10 @@ _iub.csLangConfiguration = {"it":{"cookiePolicyId":865793}};
       <p>Il pelo cresce a cicli e il laser agisce solo su quello in fase di crescita. Per questo servono più sedute, a distanza di qualche settimana.</p>
     </div>
     <ol class="steps">
-      <li><div><h3>Visita dermatologica</h3><p>Controllo della pelle e dei nei con dermatoscopia, anamnesi e analisi del pelo. Confermiamo il pacchetto e il numero di sedute.</p></div></li>
+      <li><div><h3>Visita dermatologica</h3><p>Controllo di pelle e nei con la dermatoscopia, anamnesi e analisi del pelo. Alla fine sai se il laser è indicato per te.</p></div></li>
       <li><div><h3>Test su una piccola area</h3><p>Verifichiamo come reagisce la tua pelle prima di trattare l'intera zona.</p></div></li>
-      <li><div><h3>Sedute di trattamento</h3><p>A distanza di [4–8] settimane a seconda della zona. Ogni seduta dura da pochi minuti a circa un'ora.</p></div></li>
-      <li><div><h3>Due sedute di ripasso</h3><p>Dopo le prime due sedute, riprendiamo le zone già trattate dove compaiono ricrescite. Sono comprese nel pacchetto, senza costi aggiuntivi.</p></div></li>
-      <li><div><h3>Controllo finale</h3><p>A fine ciclo valutiamo il risultato insieme e, se serve, programmiamo i richiami.</p></div></li>
+      <li><div><h3>Sedute di trattamento</h3><p>Con Deka Again PRO, ogni [4–8] settimane a seconda della zona. Ogni seduta dura da pochi minuti a circa un'ora e la pelle viene raffreddata durante il trattamento.</p></div></li>
+      <li><div><h3>Due sedute di ripasso</h3><p>Già durante il ciclo, dopo le prime due sedute, riprendiamo le zone dove compaiono ricrescite. Sono comprese nel pacchetto.</p></div></li>
     </ol>
   </div>
 </section>
@@ -351,27 +354,35 @@ _iub.csLangConfiguration = {"it":{"cookiePolicyId":865793}};
     <div class="faq">
       <div class="faq-item">
         <button class="faq-q">Fa male? <i data-lucide="plus"></i></button>
-        <div class="faq-a"><div class="faq-a__inner">La maggior parte delle persone descrive una sensazione di calore o un leggero pizzicore. I laser moderni hanno sistemi di raffreddamento che rendono il trattamento ben tollerabile. La sensibilità varia da zona a zona.</div></div>
+        <div class="faq-a"><div class="faq-a__inner">La maggior parte delle persone descrive una sensazione di calore o un leggero pizzicore. Deka Again PRO raffredda la pelle durante il trattamento e ha una modalità a passaggi progressivi, Moveo, pensata per il comfort. La sensibilità varia da zona a zona.</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-q">Perché serve una visita dermatologica? <i data-lucide="plus"></i></button>
-        <div class="faq-a"><div class="faq-a__inner">Il laser non va usato sopra nei o lesioni sospette, e alcune condizioni della pelle o alcuni farmaci richiedono attenzione. La visita serve a trattarti in sicurezza, ed è anche un'occasione per un controllo della pelle.</div></div>
+        <div class="faq-a"><div class="faq-a__inner">Il laser non va usato sopra nei o lesioni sospette, e alcune condizioni della pelle o alcuni farmaci richiedono attenzione. La visita serve a impostare il trattamento in sicurezza, ed è anche un'occasione per un controllo della pelle.</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-q">Quante sedute servono? <i data-lucide="plus"></i></button>
-        <div class="faq-a"><div class="faq-a__inner">In genere [6–8], a seconda della zona, del tipo di pelo e di fattori ormonali. Il numero indicato nel pacchetto viene confermato dopo la visita. In più, dopo le prime due sedute, sono comprese due sedute di ripasso per le zone dove compaiono ricrescite.</div></div>
+        <div class="faq-a"><div class="faq-a__inner">Il pacchetto prevede 6 sedute. In più, dopo le prime due, sono comprese due sedute di ripasso per le zone dove compaiono ricrescite. La risposta al laser varia da persona a persona: in visita ti diciamo cosa aspettarti.</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-q">Funziona su pelle scura o abbronzata? <i data-lucide="plus"></i></button>
-        <div class="faq-a"><div class="faq-a__inner">Dipende dal fototipo e dalla tecnologia. Con Deka Again Pro possiamo trattare praticamente tutti! Sulla pelle abbronzata di recente il trattamento va rimandato: te lo diciamo in visita.</div></div>
+        <div class="faq-a"><div class="faq-a__inner">Sulla pelle scura sì: si usa la lunghezza d'onda Nd:YAG a 1064 nm, che raggiunge il pelo più in profondità, con parametri impostati dopo la visita. Sulla pelle abbronzata di recente, invece, il trattamento va rimandato: te lo diciamo in visita.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Funziona su peli biondi, rossi o bianchi? <i data-lucide="plus"></i></button>
+        <div class="faq-a"><div class="faq-a__inner">Sui peli biondi e rossi il laser agisce meno, perché hanno poco pigmento: si usa l'alessandrite a 755 nm, ma il risultato varia da persona a persona. I peli bianchi o grigi non rispondono al laser, perché non hanno pigmento. Lo valutiamo in visita, così sai prima di iniziare se può funzionare per te e, se non è indicato, possiamo guidarti su una delle nostre tecnologie alternative al laser.</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-q">Si può fare in estate? <i data-lucide="plus"></i></button>
-        <div class="faq-a"><div class="faq-a__inner">Si può, con alcune precauzioni: evitare il sole nei giorni prima e dopo la seduta e usare una protezione alta. Valutiamo caso per caso.</div></div>
+        <div class="faq-a"><div class="faq-a__inner">Si può, con alcune precauzioni: evitare il sole nelle [4] settimane prima e nei giorni dopo la seduta e usare una protezione alta. Valutiamo caso per caso.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Come mi preparo alla seduta? <i data-lucide="plus"></i></button>
+        <div class="faq-a"><div class="faq-a__inner">Rasa la zona il giorno prima. Nelle [4] settimane precedenti evita ceretta, pinzetta ed epilatore, che tolgono il pelo dalla radice: il laser ha bisogno della radice per agire. Evita anche sole e lampade abbronzanti.</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-q">E se dopo la visita il laser non fosse adatto a me? <i data-lucide="plus"></i></button>
-        <div class="faq-a"><div class="faq-a__inner">[Specificare la politica del centro, es.: paghi solo la visita dermatologica e il resto del pacchetto non viene addebitato.]</div></div>
+        <div class="faq-a"><div class="faq-a__inner">Te lo diciamo in visita, prima di iniziare, e il percorso non parte. Il dermatologo ti spiega il motivo e, se ci sono, le alternative.</div></div>
       </div>
     </div>
   </div>
@@ -384,7 +395,7 @@ _iub.csLangConfiguration = {"it":{"cookiePolicyId":865793}};
       <div>
         <span class="eyebrow" style="color:var(--blue-light)">Richiedi informazioni</span>
         <h2 class="h2" style="margin-top:18px">Ti ricontattiamo noi.</h2>
-        <p style="margin-top:18px;font-size:18px">Lasciaci nome e telefono: rispondiamo alle tue domande e, se vuoi, fissiamo la visita dermatologica.</p>
+        <p style="margin-top:18px;font-size:18px">Lasciaci nome e telefono: rispondiamo alle tue domande, ti diamo i dettagli del pacchetto e, se vuoi, fissiamo la visita dermatologica.</p>
         <p class="alt">Preferisci parlare subito?<br>
           Chiama lo <a href="tel:0783211136"><span class="num">0783 211136</span></a> o scrivici su <a href="https://wa.me/393891255173" target="_blank" rel="noopener">WhatsApp</a>.</p>
         <p class="alt" style="font-size:15px">Medic Service · Piazza Tharros 57, Oristano</p>
@@ -408,7 +419,7 @@ _iub.csLangConfiguration = {"it":{"cookiePolicyId":865793}};
           <input type="hidden" name="_subject" value="Nuova richiesta: epilazione laser">
           <input type="hidden" name="quiz" id="f-quiz" value="">
           <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
-          <label class="privacy"><input type="checkbox" name="privacy" value="accettata" required> Ho letto l'<a href="https://www.iubenda.com/privacy-policy/865793" target="_blank" rel="noopener">informativa privacy</a> e acconsento a essere ricontattato.</label>
+          <label class="privacy"><input type="checkbox" name="privacy" value="accettata" required> <span>Ho letto l'<a href="https://www.iubenda.com/privacy-policy/865793" target="_blank" rel="noopener">informativa privacy</a> e acconsento a essere ricontattato.</span></label>
           <button type="submit" class="btn btn--donna btn--lg btn--block" id="f-submit">Richiedi informazioni</button>
           <div class="form-msg" id="f-msg" role="alert"></div>
         </form>
@@ -468,11 +479,13 @@ _iub.csLangConfiguration = {"it":{"cookiePolicyId":865793}};
 /* Quiz pacchetti */
 (function(){
   var packs={
-    viso:{name:'Viso',zones:'[Labbro superiore, mento, basette]',price:'50',sess:'[6] sedute indicative'},
-    ascelle:{name:'Ascelle e inguine',zones:'[Ascelle, inguine sgambato]',price:'100',sess:'[6] sedute indicative'},
-    gambe:{name:'Gambe complete',zones:'[Cosce, ginocchia, polpacci]',price:'200',sess:'[8] sedute indicative'},
-    schiena:{name:'Schiena e spalle',zones:'[Schiena, spalle, parte alta delle braccia]',price:'200',sess:'[8] sedute indicative'}
+    viso:{name:'Viso',zones:'[Labbro superiore, mento, basette]',sess:'6'},
+    ascelle:{name:'Ascelle e inguine',zones:'[Ascelle, inguine sgambato]',sess:'6'},
+    gambe:{name:'Gambe complete',zones:'[Cosce, ginocchia, polpacci]',sess:'6'},
+    schiena:{name:'Schiena e spalle',zones:'[Schiena, spalle, parte alta delle braccia]',sess:'6'}
   };
+  /* Lunghezza d'onda indicata per fototipo: da far confermare ai dermatologi */
+  function wl(ft){ if(ft==='I'||ft==='II') return 'alessandrite 755 nm'; if(ft==='V'||ft==='VI') return 'Nd:YAG 1064 nm'; return 'alessandrite 755 nm o Nd:YAG 1064 nm, in base al pelo'; }
   var titles={1:'Il tuo fototipo',2:'La tua età',3:'La zona',4:'Il risultato'};
   var quiz=document.getElementById('quiz'); if(!quiz) return;
   var state={ft:null,age:null,pack:null}, step=1;
@@ -494,27 +507,35 @@ _iub.csLangConfiguration = {"it":{"cookiePolicyId":865793}};
     var p=packs[state.pack];
     document.getElementById('r-name').textContent=p.name;
     document.getElementById('r-zones').textContent=p.zones;
-    document.getElementById('r-price').textContent=p.price;
     document.getElementById('r-sess').textContent=p.sess;
+    document.getElementById('r-laser').textContent=wl(state.ft);
     var note;
     if(state.age==='Meno di 18'){
       note='Fino ai 18 anni il trattamento richiede il consenso di un genitore, che deve essere presente alla visita dermatologica. Contattaci e ti spieghiamo come fare.';
     } else if(state.ft==='V'||state.ft==='VI'){
-      note='Fototipo '+state.ft+': con il laser Deka Again Pro trattiamo anche le pelli scure. In visita impostiamo i parametri adatti alla tua pelle.';
+      note='Pelle scura: anche i fototipi V e VI si possono trattare. I parametri si scelgono in visita, in base alla tua pelle.';
     } else if(state.ft==='I'||state.ft==='II'){
-      note='Fototipo '+state.ft+': pelle chiara, in genere molto adatta al laser. Ricorda di evitare sole e lampade nelle settimane prima della seduta.';
+      note='Pelle chiara: nelle settimane prima della seduta evita sole e lampade abbronzanti, e non usare ceretta, pinzetta o epilatore.';
     } else {
-      note='Fototipo '+state.ft+': in visita verifichiamo pelle e pelo e confermiamo il numero di sedute. Se sei abbronzato di recente, il trattamento va rimandato.';
+      note='Pelle media o olivastra: se di recente hai preso il sole, il trattamento va rimandato. Te lo diciamo in visita.';
     }
     document.getElementById('r-note').textContent=note;
     var sel=document.getElementById('f-pack');
     if(sel){ for(var i=0;i<sel.options.length;i++){ if(sel.options[i].text===p.name){ sel.selectedIndex=i; break; } } }
-    var hid=document.getElementById('f-quiz'); if(hid) hid.value='fototipo '+state.ft+', età '+state.age;
-    window.dataLayer=window.dataLayer||[]; window.dataLayer.push({event:'quiz_result',pacchetto:p.name,fototipo:state.ft,eta:state.age});
+    var hid=document.getElementById('f-quiz'); if(hid) hid.value='fototipo '+state.ft+', età '+state.age+', zona '+p.name+', lunghezza d\'onda '+wl(state.ft);
+    window.dataLayer=window.dataLayer||[]; window.dataLayer.push({event:'quiz_result',pacchetto:p.name,fototipo:state.ft,eta:state.age,lunghezza_onda:wl(state.ft)});
     show(4);
     if(window.lucide) lucide.createIcons();
   }
 })();
+
+/* Clic su telefono e WhatsApp: da usare come trigger in GTM (contatti che non passano dal modulo) */
+document.addEventListener('click',function(e){
+  var a=e.target.closest&&e.target.closest('a[href^="tel:"],a[href*="wa.me/"]'); if(!a) return;
+  var tipo=a.getAttribute('href').indexOf('tel:')===0?'telefono':'whatsapp';
+  var sez=a.closest('header')?'header':a.closest('footer')?'footer':a.closest('section')&&a.closest('section').id||'pagina';
+  window.dataLayer=window.dataLayer||[]; window.dataLayer.push({event:'contatto_click',tipo:tipo,posizione:sez});
+});
 
 /* Invio modulo + evento Lead.
    Il Pixel Meta va inserito in Google Tag Manager (GTM-TKGKM6ZJ) con attivazione
