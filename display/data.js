@@ -902,6 +902,7 @@ window.DISPLAY_DATA = {
  },
  "sedi": {
   "canalis": {
+   "percorso": "displayC",
    "escludi": [
     "cartagabriele"
    ]

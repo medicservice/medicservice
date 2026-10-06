@@ -29,12 +29,13 @@ SITE = "https://medicservice.it"
 UTM = "?tv"
 GENERAL_URL = SITE + "/medici/" + UTM
 
-# Sedi con un proprio display: /display/?sede=<chiave>.
+# Sedi con un proprio display, all'indirizzo /<percorso>/ (pagina generata da display/index.html).
 # "escludi" = slug dei medici (cartella in medici/) da non mostrare in quella sede;
 # "indirizzo" = testo a piè di pagina (se assente resta Piazza Tharros 57).
-# Senza ?sede la pagina mostra tutti i medici.
+# /display/ resta la versione principale (Piazza Tharros) con tutti i medici.
 SEDI = {
     "canalis": {
+        "percorso": "displayC",  # medicservice.it/displayC/ (attenzione: C maiuscola)
         "escludi": ["cartagabriele"],
     },
 }
@@ -181,6 +182,23 @@ def main():
         encoding="utf-8",
     )
     print(f"{len(doctors)} medici, {len(services)} servizi -> {OUT.relative_to(ROOT)}")
+
+    # Una pagina per sede: copia di display/index.html che punta ai dati condivisi.
+    page = (OUT.parent / "index.html").read_text(encoding="utf-8")
+    assert '<script src="data.js"></script>' in page
+    for nome in SEDI:
+        out = ROOT / SEDI[nome]["percorso"] / "index.html"
+        out.parent.mkdir(exist_ok=True)
+        out.write_text(
+            f"<!-- Generato da scripts/build-display.py per la sede '{nome}': modifica display/index.html. -->\n"
+            + page.replace(
+                '<script src="data.js"></script>',
+                f'<script>window.DISPLAY_SEDE = "{nome}";</script>\n<script src="/display/data.js"></script>',
+            ),
+            encoding="utf-8",
+        )
+        n = len(doctors) - len(SEDI[nome].get("escludi", []))
+        print(f"  sede {nome}: {n} medici -> {out.relative_to(ROOT)}")
     if missing:
         print("Senza widget di prenotazione (QR alla sola scheda):", ", ".join(missing))
 
