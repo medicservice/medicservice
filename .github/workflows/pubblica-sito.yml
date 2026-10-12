@@ -1,0 +1,65 @@
+name: Pubblica sito
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  pubblica:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    env:
+      PYTHONDONTWRITEBYTECODE: "1"
+    steps:
+      - name: Scarica il repo
+        uses: actions/checkout@v7
+        with:
+          ref: main
+
+      - name: Prepara Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+
+      - name: Installa qrcode
+        run: pip install qrcode==8.2
+
+      - name: Rigenera le pagine da data/medici.json
+        run: python scripts/build-site.py
+
+      - name: Salva nel repo le pagine rigenerate
+        run: |
+          git add index.html medici visite-specialistiche diagnostica chirurgia doctor-photos.js display/data.js
+          if git diff --cached --quiet; then
+            echo "Pagine già aggiornate, niente da salvare."
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "Rigenera pagine da data/medici.json"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+
+      - name: Configura Pages
+        uses: actions/configure-pages@v6
+
+      - name: Prepara i file del sito
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: .
+
+      - name: Pubblica
+        id: deployment
+        uses: actions/deploy-pages@v5
