@@ -29,6 +29,11 @@ SITE = "https://medicservice.it"
 UTM = "?tv"
 GENERAL_URL = SITE + "/medici/" + UTM
 
+# Esclusi dal display (restano sul sito): medici non mostrati in sala d'attesa
+# e prestazioni che contengono una di queste parole (minuscolo).
+EXCLUDE_DOCTORS = {"cartagabriele"}  # medicina sportiva
+EXCLUDE_PRESTAZIONI = ("sportiv",)
+
 # Schermate servizi intercalate tra i medici.
 # "agenda" = slug del medico la cui scheda (con widget di prenotazione) apre il QR;
 # in alternativa "page" = percorso di una pagina del sito (es. "/medicina-estetica/").
@@ -129,7 +134,10 @@ def main():
     missing = []
     for d in load_medici():
         slug = d["surname"].lower()
+        if slug in EXCLUDE_DOCTORS:
+            continue
         prest, link = scheda(slug)
+        prest = [p for p in prest if not any(w in p.lower() for w in EXCLUDE_PRESTAZIONI)]
         scheda_url = SITE + "/medici/" + slug + "/" + UTM
         if not link:
             missing.append(d["display"])
