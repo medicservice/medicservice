@@ -29,7 +29,7 @@
   };
 
   function isFemaleDoctor(display) {
-    return /^(Dr\.ssa|Op\.)\b/i.test(display || "");
+    return /^(Dr\.ssa|Op\.)(\s|$)/i.test(display || "");
   }
 
   function doctorPhotoSrc(surname, display, prefix) {
