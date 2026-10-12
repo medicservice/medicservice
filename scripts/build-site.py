@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 """Rigenera il sito statico da data/medici.json.
 
+- Completa i campi derivati assenti o null; un valore già scritto resta com'è
+- Ordina gli elenchi per cognome, senza distinguere maiuscole e minuscole
+- Esclude i medici con "nascosto": true e cancella le schede tolte dal JSON
 - Aggiorna i 5 blocchi JSON (home, medici, visite, diagnostica, chirurgia)
-- Rigenera le 48 schede con render_scheda_from_fields (template unico)
+- Rigenera le schede con render_scheda_from_fields (template unico)
 - Rigenera doctor-photos.js
 - Lancia scripts/build-display.py
 
@@ -17,6 +20,7 @@ import os
 import re
 import subprocess
 import sys
+from copy import deepcopy
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -167,7 +171,7 @@ def render_doctor_photos_js(medici: list[dict]) -> str:
         "  };\n"
         "\n"
         "  function isFemaleDoctor(display) {\n"
-        "    return /^(Dr\\.ssa|Op\\.)\\b/i.test(display || \"\");\n"
+        "    return /^(Dr\\.ssa|Op\\.)(\\s|$)/i.test(display || \"\");\n"
         "  }\n"
         "\n"
         "  function doctorPhotoSrc(surname, display, prefix) {\n"
@@ -253,6 +257,355 @@ def _miodottore_anchor(mio: dict) -> str:
         ]
     )
     return f'<a id="zl-url" class="zl-url" {" ".join(attrs)}>Prenota una visita</a>'
+
+
+_TITLE_RE = re.compile(r"^(Dott\.ssa|Dr\.ssa|Dott\.|Dr\.|Op\.)\s+", re.IGNORECASE)
+_REQUIRED_TEXT = ("surname", "display", "slug")
+_REQUIRED_LISTS = ("specs", "cats", "catLabels")
+
+
+def _fail(label: str, message: str) -> None:
+    raise SystemExit(f"{label}: {message}")
+
+
+def _medico_label(doc: dict, index: int | None) -> str:
+    for key in ("slug", "surname"):
+        value = doc.get(key)
+        if isinstance(value, str) and value.strip():
+            name = value.strip()
+            break
+    else:
+        name = ""
+    if index is None:
+        return name or "medico"
+    return f"{name} (#{index + 1})" if name else f"medico #{index + 1}"
+
+
+def _missing(container: dict, key: str) -> bool:
+    return key not in container or container[key] is None
+
+
+def _fill(container: dict, key: str, value) -> None:
+    if _missing(container, key):
+        container[key] = value
+
+
+def _section(doc: dict, key: str, label: str) -> dict:
+    if _missing(doc, key):
+        doc[key] = {}
+    elif not isinstance(doc[key], dict):
+        _fail(label, f"{key} deve essere un oggetto")
+    return doc[key]
+
+
+def _require_content(doc: dict, label: str) -> None:
+    for key in _REQUIRED_TEXT:
+        value = doc.get(key)
+        if not isinstance(value, str) or not value.strip():
+            _fail(label, f"campo obbligatorio '{key}' mancante o vuoto")
+    for key in _REQUIRED_LISTS:
+        value = doc.get(key)
+        if (
+            not isinstance(value, list)
+            or not value
+            or any(not isinstance(item, str) or not item.strip() for item in value)
+        ):
+            _fail(label, f"campo obbligatorio '{key}' deve essere un elenco di testi")
+
+
+_CAT_LABELS = {
+    "visite": "Visite Specialistiche",
+    "diagnostica": "Diagnostica per Immagini",
+    "chirurgia": "Chirurgia Day Surgery",
+    "estetica": "Medicina Estetica",
+}
+
+
+def _validate_identity(doc: dict, label: str) -> None:
+    """slug, surname e coppie cats/catLabels. Si ferma prima di scrivere i file."""
+    surname = doc["surname"]
+    if not re.fullmatch(r"[A-Za-z]+", surname):
+        _fail(
+            label,
+            "surname può contenere solo lettere a-z e A-Z "
+            "(niente spazi, accenti, apostrofi o trattini)",
+        )
+    expected_slug = surname.lower()
+    if doc["slug"] != expected_slug:
+        _fail(
+            label,
+            f"slug '{doc['slug']}' deve essere '{expected_slug}' "
+            "(surname in minuscolo): gli elenchi costruiscono i link con surname.toLowerCase()",
+        )
+    cats = doc["cats"]
+    labels = doc["catLabels"]
+    if len(cats) != len(labels):
+        _fail(
+            label,
+            f"cats e catLabels hanno lunghezze diverse ({len(cats)} e {len(labels)})",
+        )
+    for cat, lab in zip(cats, labels):
+        expected = _CAT_LABELS.get(cat)
+        if expected is None:
+            ammessi = ", ".join(_CAT_LABELS)
+            _fail(label, f"cat '{cat}' non riconosciuta. Valori ammessi: {ammessi}")
+        if lab != expected:
+            _fail(
+                label,
+                f"catLabels non coerente: '{cat}' corrisponde a '{expected}', non a '{lab}'",
+            )
+
+
+def _address_as(display: str) -> str:
+    """Dr. Sergio Cabras -> il Dr. Cabras; Op. Manuela Loi -> l'Op. Loi."""
+    match = _TITLE_RE.match(display)
+    if not match:
+        return display
+    title = match.group(1)
+    short = f"{title} {display.split()[-1]}"
+    folded = title.lower()
+    if folded in ("dr.ssa", "dott.ssa"):
+        return f"la {short}"
+    if folded in ("dr.", "dott."):
+        return f"il {short}"
+    if folded == "op.":
+        return f"l'{short}"
+    return short
+
+
+def _generic_photo(display: str) -> str:
+    # Op. finisce con un punto: un word-boundary lì non scatta, quindi si guarda lo spazio.
+    if re.match(r"^(Dr\.ssa|Op\.)(\s|$)", display or "", re.IGNORECASE):
+        return "generic_medic_female.png"
+    return "generic_medic_male.png"
+
+
+def _default_subtitle(display: str, specs: list[str]) -> str:
+    joined = " · ".join(specs)
+    if display.startswith("Op."):
+        return joined
+    return f"Specialista in {joined}"
+
+
+def _default_stickbar_spec(specs: list[str]) -> str:
+    """Con più specialità non ripete la prima: <b>A</b> · B · C. Con una sola: <b>A</b> · A."""
+    primary = specs[0]
+    rest = specs[1:] if len(specs) > 1 else specs
+    return f"<b>{primary}</b> · {' · '.join(rest)}"
+
+
+def _default_meta_description(display: str, primary: str) -> str:
+    spec = primary.lower() if len(primary) > 3 else primary
+    return (
+        f"{display}, {spec} a Oristano presso Medic Service. "
+        "Scopri specializzazioni e prenota online la tua visita."
+    )
+
+
+def _complete_bio(doc: dict, label: str) -> None:
+    if "bio" not in doc or doc["bio"] is None:
+        return
+    bio = doc["bio"]
+    if isinstance(bio, str):
+        doc["bio"] = [{"text": bio, "marginBottom": 26}]
+        return
+    if not isinstance(bio, list):
+        _fail(label, "bio deve essere un testo o un elenco di paragrafi")
+    if not bio:
+        return
+    needs = False
+    for item in bio:
+        if not isinstance(item, dict) or _missing(item, "marginBottom") or not isinstance(item.get("text"), str):
+            needs = True
+            break
+    if not needs:
+        return
+    paragraphs = []
+    for index, item in enumerate(bio):
+        if isinstance(item, str):
+            text = item
+            margin = None
+        elif isinstance(item, dict):
+            text = item.get("text")
+            margin = item.get("marginBottom")
+        else:
+            _fail(label, "ogni paragrafo della bio deve essere un testo o un oggetto")
+        if not isinstance(text, str) or not text.strip():
+            _fail(label, "ogni paragrafo della bio richiede text")
+        if margin is None:
+            margin = 26 if index == len(bio) - 1 else 16
+        paragraphs.append({"text": text, "marginBottom": margin})
+    doc["bio"] = paragraphs
+
+
+def _complete_string_list(section: dict, key: str, label: str, what: str) -> None:
+    if _missing(section, key):
+        section[key] = []
+        return
+    items = section[key]
+    if not isinstance(items, list) or any(not isinstance(item, str) for item in items):
+        _fail(label, f"{what} deve essere un elenco di testi")
+
+
+def _complete_formazione_items(form: dict, label: str) -> None:
+    if _missing(form, "items"):
+        form["items"] = []
+        return
+    items = form["items"]
+    if not isinstance(items, list):
+        _fail(label, "formazione.items deve essere un elenco")
+    normalized = []
+    changed = False
+    for item in items:
+        if isinstance(item, str):
+            normalized.append({"title": item})
+            changed = True
+            continue
+        if not isinstance(item, dict) or not isinstance(item.get("title"), str) or not item["title"].strip():
+            _fail(label, "ogni voce di formazione richiede title")
+        normalized.append(item)
+    if changed:
+        form["items"] = normalized
+
+
+def _complete_prenota(doc: dict, label: str) -> bool:
+    """True se c'è il widget. prenota assente o null = nessuna prenotazione online."""
+    if "prenota" not in doc or doc["prenota"] is None:
+        return False
+    prenota = doc["prenota"]
+    if not isinstance(prenota, dict):
+        _fail(label, "prenota deve essere un oggetto oppure null")
+    _fill(prenota, "title", "Scegli data e orario.")
+    _fill(
+        prenota,
+        "text",
+        f"Consulta le disponibilità di {doc['display']} e prenota online in pochi passaggi.",
+    )
+    mio = prenota.get("miodottore")
+    if not isinstance(mio, dict):
+        _fail(label, "prenota.miodottore richiede href e doctor")
+    if not isinstance(mio.get("href"), str) or not mio["href"].strip():
+        _fail(label, "prenota.miodottore.href mancante")
+    if not isinstance(mio.get("doctor"), str) or not mio["doctor"].strip():
+        _fail(label, "prenota.miodottore.doctor mancante")
+    if _missing(mio, "anchorHtml"):
+        mio["anchorHtml"] = _miodottore_anchor(mio)
+    return True
+
+
+def _complete_layout(doc: dict, has_prenota: bool) -> None:
+    layout = _section(doc, "layout", doc.get("slug") or "medico")
+    quote = doc.get("quote")
+    has_quote = isinstance(quote, str) and bool(quote.strip())
+    defaults = {
+        "htmlComments": False,
+        "prenotaStyle": has_prenota,
+        "resizeScript": has_prenota,
+        "heroTagsTrailBlank": True,
+        "competenzeTagsTrailBlank": False,
+        "curaTrailBlank": False,
+        "hasQuote": has_quote,
+        "stickObserverComment": False,
+        "resizeExtraBlank": False,
+    }
+    for key, value in defaults.items():
+        _fill(layout, key, value)
+
+
+def complete_medico(doc: dict, index: int | None = None) -> dict:
+    """Completa i campi derivati. Un valore presente (anche stringa vuota) non si tocca.
+
+    Obbligatori: surname, display, slug, specs, cats, catLabels.
+    Contenuto facoltativo: quote, bio, formazione.items, cura.items,
+    competenze.tags, competenze.intro, photoFile, prenota
+    (null = niente widget; altrimenti miodottore.href, doctor, calendarId).
+    """
+    if not isinstance(doc, dict):
+        _fail(f"medico #{(index or 0) + 1}", "atteso un oggetto")
+    doc = deepcopy(doc)
+    label = _medico_label(doc, index)
+    _require_content(doc, label)
+    _validate_identity(doc, label)
+
+    if "quote" in doc and doc["quote"] is not None and not isinstance(doc["quote"], str):
+        _fail(label, "quote deve essere un testo")
+    if "photoFile" in doc and doc["photoFile"] is not None and not isinstance(doc["photoFile"], str):
+        _fail(label, "photoFile deve essere un nome di file")
+
+    _complete_bio(doc, label)
+
+    form = _section(doc, "formazione", label)
+    _fill(form, "title", "Una formazione solida.")
+    _complete_formazione_items(form, label)
+
+    cura = _section(doc, "cura", label)
+    _fill(cura, "title", "Prestazioni e consulenze.")
+    _complete_string_list(cura, "items", label, "cura.items")
+
+    comp = _section(doc, "competenze", label)
+    _fill(comp, "eyebrow", "Patologie trattate")
+    _fill(comp, "title", "Le condizioni che seguo.")
+    _complete_string_list(comp, "tags", label, "competenze.tags")
+
+    specs = doc["specs"]
+    primary = specs[0]
+    display = doc["display"]
+    _fill(doc, "dataSpec", primary)
+    if _missing(doc, "dataSpecLabel") and len(specs) > 1:
+        doc["dataSpecLabel"] = " · ".join(specs)
+    _fill(doc, "heroTags", list(specs))
+    _fill(doc, "subtitle", _default_subtitle(display, specs))
+    _fill(doc, "stickbarSpec", _default_stickbar_spec(specs))
+    _fill(doc, "metaTitle", f"{display} — {primary} a Oristano | Medic Service")
+    _fill(doc, "metaDescription", _default_meta_description(display, primary))
+    _fill(doc, "stylesVersion", "9")
+    _fill(doc, "siteJsVersion", "6")
+    _fill(doc, "photoPlaceholder", "")
+    if _missing(doc, "photoSrc"):
+        photo_file = doc.get("photoFile")
+        if isinstance(photo_file, str) and photo_file.strip():
+            doc["photoSrc"] = "/assets/photos/" + photo_file.strip()
+        else:
+            doc["photoSrc"] = "/assets/photos/" + _generic_photo(display)
+
+    has_prenota = _complete_prenota(doc, label)
+    who = _address_as(display)
+    cta = _section(doc, "ctaBand", label)
+    _fill(cta, "title", "Prenota la tua visita")
+    _fill(cta, "text", f"Prenoti con {who} in meno di un minuto.")
+
+    book = f"Prenota con {who}" if has_prenota else "Chiama ora"
+    _fill(doc, "bookButtonLabel", book)
+    stick = _section(doc, "stickbar", label)
+    if has_prenota:
+        _fill(stick, "href", "#prenota")
+        _fill(stick, "icon", "calendar-check")
+    else:
+        _fill(stick, "href", "tel:0783211136")
+        _fill(stick, "icon", "phone")
+    _fill(stick, "label", doc["bookButtonLabel"])
+    _complete_layout(doc, has_prenota)
+    return doc
+
+
+def complete_medici(medici: list[dict]) -> list[dict]:
+    done = []
+    slugs: set[str] = set()
+    surnames: set[str] = set()
+    for index, doc in enumerate(medici):
+        full = complete_medico(doc, index)
+        if full["slug"] in slugs:
+            raise SystemExit(
+                f"Slug duplicato '{full['slug']}': in data/medici.json compare più di una volta."
+            )
+        if full["surname"] in surnames:
+            raise SystemExit(
+                f"Surname duplicato '{full['surname']}': in data/medici.json compare più di una volta."
+            )
+        slugs.add(full["slug"])
+        surnames.add(full["surname"])
+        done.append(full)
+    return done
 
 
 def render_scheda_from_fields(doc: dict) -> str:
@@ -692,6 +1045,44 @@ def render_scheda(doc: dict) -> str:
     return render_scheda_from_fields(doc)
 
 
+def _is_hidden(doc: dict) -> bool:
+    return doc.get("nascosto") is True
+
+
+def remove_orphan_schede(keep_slugs: set[str]) -> list[str]:
+    """Cancella le schede di medici nascosti o tolti dal JSON.
+
+    Solo le sottocartelle dirette di medici/ che contengono soltanto index.html.
+    medici/index.html non è una cartella e non viene toccato.
+    """
+    root = ROOT / "medici"
+    removed: list[str] = []
+    if not root.is_dir():
+        return removed
+    for path in sorted(root.iterdir(), key=lambda item: item.name.casefold()):
+        if not path.is_dir():
+            continue
+        if path.name in keep_slugs:
+            continue
+        children = list(path.iterdir())
+        only_index = (
+            len(children) == 1
+            and children[0].is_file()
+            and children[0].name == "index.html"
+        )
+        if not only_index:
+            found = ", ".join(sorted(child.name for child in children)) or "(vuota)"
+            print(
+                f"Non elimino medici/{path.name}/: contiene {found}, non soltanto index.html"
+            )
+            continue
+        children[0].unlink()
+        path.rmdir()
+        removed.append(path.name)
+        print(f"Eliminata scheda medici/{path.name}/")
+    return removed
+
+
 def write_schede(medici: list[dict]) -> int:
     for doc in medici:
         if "html" in doc:
@@ -705,20 +1096,28 @@ def write_schede(medici: list[dict]) -> int:
 
 
 def main() -> None:
-    medici = load_medici()
-    rows = roster_payload(medici)
+    # Validazione e completamento prima di qualsiasi scrittura.
+    medici = sorted(complete_medici(load_medici()), key=lambda doc: doc["surname"].casefold())
+    visible = [doc for doc in medici if not _is_hidden(doc)]
+    hidden = len(medici) - len(visible)
+    if hidden:
+        print(f"Nascosti, esclusi da elenchi, foto e display: {hidden}")
+
+    rows = roster_payload(visible)
     payload = format_roster_json(rows)
 
     for path, script_id in ROSTER_TARGETS:
         replace_json_block(path, script_id, payload)
         print(f"JSON aggiornato: {path.relative_to(ROOT)} #{script_id}")
 
-    n = write_schede(medici)
+    n = write_schede(visible)
     print(f"Schede scritte: {n} (solo render_scheda_from_fields)")
 
     photos_path = ROOT / "doctor-photos.js"
-    photos_path.write_text(render_doctor_photos_js(medici), encoding="utf-8")
+    photos_path.write_text(render_doctor_photos_js(visible), encoding="utf-8")
     print(f"Aggiornato {photos_path.relative_to(ROOT)}")
+
+    remove_orphan_schede({doc["slug"] for doc in visible})
 
     display_script = ROOT / "scripts" / "build-display.py"
     print("Eseguo build-display.py…")
