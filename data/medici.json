@@ -1,0 +1,4338 @@
+[
+  {
+    "surname": "Cabras",
+    "display": "Dr. Sergio Cabras",
+    "specs": [
+      "Allergologia",
+      "Diabetologia",
+      "Immunologia"
+    ],
+    "cats": [
+      "visite"
+    ],
+    "catLabels": [
+      "Visite Specialistiche"
+    ],
+    "slug": "cabras",
+    "metaTitle": "Dr. Sergio Cabras — Allergologia a Oristano | Medic Service",
+    "metaDescription": "Dr. Sergio Cabras, allergologia a Oristano presso Medic Service. Scopri specializzazioni e prenota online la tua visita.",
+    "stylesVersion": "9",
+    "siteJsVersion": "6",
+    "photoSrc": "/assets/photos/Cabras.webp",
+    "photoPlaceholder": "",
+    "dataSpec": "Allergologia",
+    "subtitle": "Specialista in Allergologia · Diabetologia · Immunologia",
+    "heroTags": [
+      "Allergologia",
+      "Diabetologia",
+      "Immunologia"
+    ],
+    "stickbarSpec": "<b>Allergologia</b> · Allergologia · Diabetologia · Immunologia",
+    "bio": [
+      {
+        "text": "Il Dr. Sergio Cabras affianca da oltre trent'anni competenze allergologiche e diabetologiche, con un ruolo di responsabilità clinica maturato a Oristano e un'attività di formazione e coordinamento regionale nel settore.",
+        "marginBottom": 26
+      }
+    ],
+    "formazione": {
+      "title": "Una formazione solida.",
+      "items": [
+        {
+          "title": "Allergologia e Immunologia Clinica, Cagliari 1993"
+        }
+      ]
+    },
+    "cura": {
+      "title": "Prestazioni e consulenze.",
+      "items": [
+        "Prick test",
+        "Spirometria con FeNO",
+        "Patch test",
+        "Visita diabetologica"
+      ]
+    },
+    "competenze": {
+      "eyebrow": "Patologie trattate",
+      "title": "Le condizioni che seguo.",
+      "intro": null,
+      "tags": [
+        "Allergie respiratorie",
+        "Allergie alimentari",
+        "Intolleranze",
+        "Diabete"
+      ]
+    },
+    "prenota": {
+      "title": "Scegli data e orario.",
+      "text": "Consulta le disponibilità di Dr. Sergio Cabras e prenota online in pochi passaggi.",
+      "miodottore": {
+        "href": "https://www.miodottore.it/sergio-cabras-2/allergologo-immunologo-diabetologo/oristano",
+        "doctor": "sergio-cabras-2",
+        "calendarId": "624356",
+        "anchorHtml": "<a id=\"zl-url\" class=\"zl-url\" href=\"https://www.miodottore.it/sergio-cabras-2/allergologo-immunologo-diabetologo/oristano\" rel=\"nofollow\" data-zlw-calendar-id=\"624356\" data-zlw-doctor=\"sergio-cabras-2\" data-zlw-type=\"big_with_calendar\" data-zlw-opinion=\"false\" data-zlw-hide-branding=\"true\" data-zlw-saas-only=\"false\" data-zlw-a11y-title=\"Widget di prenotazione visite mediche\">Prenota una visita</a>"
+      }
+    },
+    "ctaBand": {
+      "title": "Prenota la tua visita",
+      "text": "Prenoti con il Dr. Cabras in meno di un minuto."
+    },
+    "stickbar": {
+      "href": "#prenota",
+      "icon": "calendar-check",
+      "label": "Prenota con il Dr. Cabras"
+    },
+    "bookButtonLabel": "Prenota con il Dr. Cabras",
+    "layout": {
+      "htmlComments": false,
+      "prenotaStyle": true,
+      "resizeScript": true,
+      "heroTagsTrailBlank": true,
+      "competenzeTagsTrailBlank": false,
+      "curaTrailBlank": false,
+      "hasQuote": true,
+      "stickObserverComment": false,
+      "resizeExtraBlank": false
+    },
+    "dataSpecLabel": "Allergologia · Diabetologia · Immunologia",
+    "quote": "\"Capire la causa di un'allergia è il primo passo per restituire qualità di vita al paziente.\"",
+    "photoFile": "Cabras.webp"
+  },
+  {
+    "surname": "Cabula",
+    "display": "Dr.ssa Rosanna Cabula",
+    "specs": [
+      "Endocrinologia"
+    ],
+    "cats": [
+      "visite"
+    ],
+    "catLabels": [
+      "Visite Specialistiche"
+    ],
+    "slug": "cabula",
+    "metaTitle": "Dr.ssa Rosanna Cabula — Endocrinologia a Oristano | Medic Service",
+    "metaDescription": "Dr.ssa Rosanna Cabula, endocrinologia a Oristano presso Medic Service. Scopri specializzazioni e prenota online la tua visita.",
+    "stylesVersion": "9",
+    "siteJsVersion": "6",
+    "photoSrc": "/assets/photos/Cabula.webp",
+    "photoPlaceholder": "",
+    "dataSpec": "Endocrinologia",
+    "subtitle": "Specialista in Endocrinologia",
+    "heroTags": [
+      "Endocrinologia"
+    ],
+    "stickbarSpec": "<b>Endocrinologia</b> · Endocrinologia",
+    "bio": [
+      {
+        "text": "La Dr.ssa Rosanna Cabula si occupa dell'intero spettro delle patologie endocrine, dalla tiroide al metabolismo, con un percorso che ha incluso anche attività di ricerca universitaria sulla funzione cardiaca nei pazienti tiroidei.",
+        "marginBottom": 26
+      }
+    ],
+    "formazione": {
+      "title": "Una formazione solida.",
+      "items": [
+        {
+          "title": "Endocrinologia e Metabolismo, Cagliari 1998"
+        },
+        {
+          "title": "Ricerca cardiologia tiroidea"
+        }
+      ]
+    },
+    "cura": {
+      "title": "Prestazioni e consulenze.",
+      "items": [
+        "Ecografia tiroidea e paratiroidea",
+        "Visita diabetologica"
+      ]
+    },
+    "competenze": {
+      "eyebrow": "Patologie trattate",
+      "title": "Le condizioni che seguo.",
+      "intro": null,
+      "tags": [
+        "Patologie tiroidee",
+        "Patologie surrenali",
+        "Patologie ipofisarie",
+        "PCOS"
+      ]
+    },
+    "prenota": {
+      "title": "Scegli data e orario.",
+      "text": "Consulta le disponibilità di Dr.ssa Rosanna Cabula e prenota online in pochi passaggi.",
+      "miodottore": {
+        "href": "https://www.miodottore.it/rosanna-cabula/endocrinologo/cagliari",
+        "doctor": "rosanna-cabula",
+        "calendarId": "1130791",
+        "anchorHtml": "<a id=\"zl-url\" class=\"zl-url\" href=\"https://www.miodottore.it/rosanna-cabula/endocrinologo/cagliari\" rel=\"nofollow\" data-zlw-calendar-id=\"1130791\" data-zlw-doctor=\"rosanna-cabula\" data-zlw-type=\"big_with_calendar\" data-zlw-opinion=\"false\" data-zlw-hide-branding=\"true\" data-zlw-saas-only=\"false\" data-zlw-a11y-title=\"Widget di prenotazione visite mediche\">Prenota una visita</a>"
+      }
+    },
+    "ctaBand": {
+      "title": "Prenota la tua visita",
+      "text": "Prenoti con la Dr.ssa Cabula in meno di un minuto."
+    },
+    "stickbar": {
+      "href": "#prenota",
+      "icon": "calendar-check",
+      "label": "Prenota con la Dr.ssa Cabula"
+    },
+    "bookButtonLabel": "Prenota con la Dr.ssa Cabula",
+    "layout": {
+      "htmlComments": false,
+      "prenotaStyle": true,
+      "resizeScript": true,
+      "heroTagsTrailBlank": true,
+      "competenzeTagsTrailBlank": false,
+      "curaTrailBlank": false,
+      "hasQuote": true,
+      "stickObserverComment": false,
+      "resizeExtraBlank": false
+    },
+    "quote": "\"Il sistema endocrino è silenzioso finché qualcosa si rompe: per questo va ascoltato per tempo.\"",
+    "photoFile": "Cabula.webp"
+  },
+  {
+    "surname": "Caddeo",
+    "display": "Dr.ssa Valentina Caddeo",
+    "specs": [
+      "Pedagogia"
+    ],
+    "cats": [
+      "visite"
+    ],
+    "catLabels": [
+      "Visite Specialistiche"
+    ],
+    "slug": "caddeo",
+    "metaTitle": "Dr.ssa Valentina Caddeo — Pedagogia a Oristano | Medic Service",
+    "metaDescription": "Dr.ssa Valentina Caddeo, pedagogia a Oristano presso Medic Service. Scopri specializzazioni e prenota online la tua visita.",
+    "stylesVersion": "6",
+    "siteJsVersion": "6",
+    "photoSrc": "/assets/photos/generic_medic_female.png",
+    "photoPlaceholder": "",
+    "dataSpec": "Pedagogia",
+    "subtitle": "Specialista in Pedagogia",
+    "heroTags": [
+      "Pedagogia"
+    ],
+    "stickbarSpec": "<b>Pedagogia</b> · Pedagogia",
+    "bio": [
+      {
+        "text": "La Dr.ssa Valentina Caddeo supporta famiglie e bambini in percorsi educativi mirati allo sviluppo, lavorando in stretto collegamento con il servizio di logopedia del centro.",
+        "marginBottom": 26
+      }
+    ],
+    "formazione": {
+      "title": "Una formazione solida.",
+      "items": [
+        {
+          "title": "Pedagogia"
+        }
+      ]
+    },
+    "cura": {
+      "title": "Prestazioni e consulenze.",
+      "items": [
+        "Consulenze pedagogiche"
+      ]
+    },
+    "competenze": {
+      "eyebrow": "Patologie trattate",
+      "title": "Le condizioni che seguo.",
+      "intro": null,
+      "tags": [
+        "Sviluppo educativo e dell'apprendimento in età evolutiva"
+      ]
+    },
+    "prenota": null,
+    "ctaBand": {
+      "title": "Prenota la tua visita",
+      "text": "Prenoti con la Dr.ssa Caddeo in meno di un minuto."
+    },
+    "stickbar": {
+      "href": "tel:0783211136",
+      "icon": "phone",
+      "label": "Chiama ora"
+    },
+    "bookButtonLabel": "Chiama ora",
+    "layout": {
+      "htmlComments": false,
+      "prenotaStyle": false,
+      "resizeScript": false,
+      "heroTagsTrailBlank": true,
+      "competenzeTagsTrailBlank": false,
+      "curaTrailBlank": true,
+      "hasQuote": false,
+      "stickObserverComment": false,
+      "resizeExtraBlank": false
+    }
+  },
+  {
+    "surname": "Cadeddu",
+    "display": "Dr. Augusto Cadeddu",
+    "specs": [
+      "Dermatologia",
+      "Tricologia"
+    ],
+    "cats": [
+      "visite"
+    ],
+    "catLabels": [
+      "Visite Specialistiche"
+    ],
+    "slug": "cadeddu",
+    "metaTitle": "Dr. Augusto Cadeddu — Dermatologia a Oristano | Medic Service",
+    "metaDescription": "Dr. Augusto Cadeddu, dermatologia a Oristano presso Medic Service. Scopri specializzazioni e prenota online la tua visita.",
+    "stylesVersion": "9",
+    "siteJsVersion": "6",
+    "photoSrc": "/assets/photos/Cadeddu.webp",
+    "photoPlaceholder": "",
+    "dataSpec": "Dermatologia",
+    "subtitle": "Specialista in Dermatologia · Tricologia",
+    "heroTags": [
+      "Dermatologia",
+      "Tricologia"
+    ],
+    "stickbarSpec": "<b>Dermatologia</b> · Dermatologia · Tricologia",
+    "bio": [
+      {
+        "text": "Il Dr. Augusto Cadeddu si occupa di dermatologia da quasi cinquant'anni, con un ventaglio di competenze tecnologiche tra i più ampi del settore: dalla dermatoscopia alle più moderne tecniche laser per cute, cicatrici e neoformazioni.",
+        "marginBottom": 26
+      }
+    ],
+    "formazione": {
+      "title": "Una formazione solida.",
+      "items": [
+        {
+          "title": "Dermatologia e Venereologia, Cagliari 1986."
+        }
+      ]
+    },
+    "cura": {
+      "title": "Prestazioni e consulenze.",
+      "items": [
+        "Dermatoscopia",
+        "Laser CO2/Fraxel/QSW/Nd:YAG",
+        "Peeling"
+      ]
+    },
+    "competenze": {
+      "eyebrow": "Patologie trattate",
+      "title": "Le condizioni che seguo.",
+      "intro": null,
+      "tags": [
+        "Nei sospetti",
+        "Acne",
+        "Cicatrici",
+        "Macchie cutanee",
+        "Tatuaggi"
+      ]
+    },
+    "prenota": {
+      "title": "Scegli data e orario.",
+      "text": "Consulta le disponibilità di Dr. Augusto Cadeddu e prenota online in pochi passaggi.",
+      "miodottore": {
+        "href": "https://www.miodottore.it/augusto-cadeddu/dermatologo/oristano",
+        "doctor": "augusto-cadeddu",
+        "calendarId": "517078",
+        "anchorHtml": "<a id=\"zl-url\" class=\"zl-url\" href=\"https://www.miodottore.it/augusto-cadeddu/dermatologo/oristano\" rel=\"nofollow\" data-zlw-calendar-id=\"517078\" data-zlw-doctor=\"augusto-cadeddu\" data-zlw-type=\"big_with_calendar\" data-zlw-opinion=\"false\" data-zlw-hide-branding=\"true\" data-zlw-saas-only=\"false\" data-zlw-a11y-title=\"Widget di prenotazione visite mediche\">Prenota una visita</a>"
+      }
+    },
+    "ctaBand": {
+      "title": "Prenota la tua visita",
+      "text": "Prenoti con il Dr. Cadeddu in meno di un minuto."
+    },
+    "stickbar": {
+      "href": "#prenota",
+      "icon": "calendar-check",
+      "label": "Prenota con il Dr. Cadeddu"
+    },
+    "bookButtonLabel": "Prenota con il Dr. Cadeddu",
+    "layout": {
+      "htmlComments": false,
+      "prenotaStyle": true,
+      "resizeScript": true,
+      "heroTagsTrailBlank": true,
+      "competenzeTagsTrailBlank": false,
+      "curaTrailBlank": false,
+      "hasQuote": true,
+      "stickObserverComment": false,
+      "resizeExtraBlank": false
+    },
+    "dataSpecLabel": "Dermatologia · Tricologia",
+    "quote": "\"La pelle parla: il nostro compito è imparare ad ascoltarla prima che sia lei a doverci avvertire.\"",
+    "photoFile": "Cadeddu.webp"
+  },
+  {
+    "surname": "Canu",
+    "display": "Dr. Mario Canu",
+    "specs": [
+      "Otorinolaringoiatria"
+    ],
+    "cats": [
+      "visite"
+    ],
+    "catLabels": [
+      "Visite Specialistiche"
+    ],
+    "slug": "canu",
+    "metaTitle": "Dr. Mario Canu — Otorinolaringoiatria a Oristano | Medic Service",
+    "metaDescription": "Dr. Mario Canu, otorinolaringoiatria a Oristano presso Medic Service. Scopri specializzazioni e prenota online la tua visita.",
+    "stylesVersion": "9",
+    "siteJsVersion": "6",
+    "photoSrc": "/assets/photos/Canu.webp",
+    "photoPlaceholder": "",
+    "dataSpec": "Otorinolaringoiatria",
+    "subtitle": "Specialista in Otorinolaringoiatria",
+    "heroTags": [
+      "Otorinolaringoiatria"
+    ],
+    "stickbarSpec": "<b>Otorinolaringoiatria</b> · Otorinolaringoiatria",
+    "bio": [
+      {
+        "text": "Il Dr. Mario Canu offre soluzioni mediche e chirurgiche per le patologie otorinolaringoiatriche, con competenze che spaziano dalla terapia clinica alla chirurgia cervicofacciale.",
+        "marginBottom": 26
+      }
+    ],
+    "formazione": {
+      "title": "Una formazione solida.",
+      "items": [
+        {
+          "title": "Otorinolaringoiatria e Chirurgia Cervicofacciale."
+        }
+      ]
+    },
+    "cura": {
+      "title": "Prestazioni e consulenze.",
+      "items": [
+        "Terapia medica",
+        "Chirurgia ORL"
+      ]
+    },
+    "competenze": {
+      "eyebrow": "Patologie trattate",
+      "title": "Le condizioni che seguo.",
+      "intro": null,
+      "tags": [
+        "Patologie di orecchie, naso e gola"
+      ]
+    },
+    "prenota": {
+      "title": "Scegli data e orario.",
+      "text": "Consulta le disponibilità di Dr. Mario Canu e prenota online in pochi passaggi.",
+      "miodottore": {
+        "href": "https://www.miodottore.it/mario-canu-2/otorino/oristano",
+        "doctor": "mario-canu-2",
+        "anchorHtml": "<a id=\"zl-url\" class=\"zl-url\" href=\"https://www.miodottore.it/mario-canu-2/otorino/oristano\" rel=\"nofollow\" data-zlw-doctor=\"mario-canu-2\" data-zlw-type=\"big_with_calendar\" data-zlw-opinion=\"false\" data-zlw-hide-branding=\"true\" data-zlw-saas-only=\"false\" data-zlw-a11y-title=\"Widget di prenotazione visite mediche\">Prenota una visita</a>"
+      }
+    },
+    "ctaBand": {
+      "title": "Prenota la tua visita",
+      "text": "Prenoti con il Dr. Canu in meno di un minuto."
+    },
+    "stickbar": {
+      "href": "#prenota",
+      "icon": "calendar-check",
+      "label": "Prenota con il Dr. Canu"
+    },
+    "bookButtonLabel": "Prenota con il Dr. Canu",
+    "layout": {
+      "htmlComments": false,
+      "prenotaStyle": true,
+      "resizeScript": true,
+      "heroTagsTrailBlank": true,
+      "competenzeTagsTrailBlank": false,
+      "curaTrailBlank": true,
+      "hasQuote": true,
+      "stickObserverComment": false,
+      "resizeExtraBlank": false
+    },
+    "quote": "\"Ogni sintomo ha una storia: ascoltarla è il primo passo per curare.\"",
+    "photoFile": "Canu.webp"
+  },
+  {
+    "surname": "Capitta",
+    "display": "Dr. Gian Marco Capitta",
+    "specs": [
+      "Chiropratica"
+    ],
+    "cats": [
+      "visite"
+    ],
+    "catLabels": [
+      "Visite Specialistiche"
+    ],
+    "slug": "capitta",
+    "metaTitle": "Dr. Gian Marco Capitta — Chiropratica a Oristano | Medic Service",
+    "metaDescription": "Dr. Gian Marco Capitta, chiropratica a Oristano presso Medic Service. Scopri specializzazioni e prenota online la tua visita.",
+    "stylesVersion": "9",
+    "siteJsVersion": "6",
+    "photoSrc": "/assets/photos/generic_medic_male.png",
+    "photoPlaceholder": "",
+    "dataSpec": "Chiropratica",
+    "subtitle": "Specialista in Chiropratica",
+    "heroTags": [
+      "Chiropratica"
+    ],
+    "stickbarSpec": "<b>Chiropratica</b> · Chiropratica",
+    "bio": [
+      {
+        "text": "Il Dr. Gian Marco Capitta lavora sul riequilibrio biomeccanico e posturale della colonna vertebrale, con una formazione chiropratica internazionale e un approccio manuale mirato a ripristinare la corretta mobilità articolare.",
+        "marginBottom": 26
+      }
+    ],
+    "formazione": {
+      "title": "Una formazione solida.",
+      "items": [
+        {
+          "title": "Chiropratica certificata AIC, AEQ, Madrid College of Chiropractic."
+        }
+      ]
+    },
+    "cura": {
+      "title": "Prestazioni e consulenze.",
+      "items": [
+        "Manipolazione vertebrale",
+        "Valutazione posturale"
+      ]
+    },
+    "competenze": {
+      "eyebrow": "Patologie trattate",
+      "title": "Le condizioni che seguo.",
+      "intro": null,
+      "tags": [
+        "Ernia del disco",
+        "Lombalgia",
+        "Sciatalgia",
+        "Scoliosi",
+        "Cefalee"
+      ]
+    },
+    "prenota": null,
+    "ctaBand": {
+      "title": "Prenota la tua visita",
+      "text": "Prenoti con il Dr. Capitta in meno di un minuto."
+    },
+    "stickbar": {
+      "href": "tel:0783211136",
+      "icon": "phone",
+      "label": "Chiama ora"
+    },
+    "bookButtonLabel": "Chiama ora",
+    "layout": {
+      "htmlComments": false,
+      "prenotaStyle": false,
+      "resizeScript": false,
+      "heroTagsTrailBlank": true,
+      "competenzeTagsTrailBlank": false,
+      "curaTrailBlank": true,
+      "hasQuote": true,
+      "stickObserverComment": false,
+      "resizeExtraBlank": false
+    },
+    "quote": "\"La colonna vertebrale racconta la storia di come viviamo: ascoltarla è il primo passo della cura.\""
+  },
+  {
+    "surname": "Carta",
+    "display": "Dr. Bruno Carta",
+    "specs": [
+      "Otorinolaringoiatria"
+    ],
+    "cats": [
+      "visite"
+    ],
+    "catLabels": [
+      "Visite Specialistiche"
+    ],
+    "slug": "carta",
+    "metaTitle": "Dr. Bruno Carta — Otorinolaringoiatria a Oristano | Medic Service",
+    "metaDescription": "Dr. Bruno Carta, otorinolaringoiatria a Oristano presso Medic Service. Scopri specializzazioni e prenota online la tua visita.",
+    "stylesVersion": "9",
+    "siteJsVersion": "6",
+    "photoSrc": "/assets/photos/brunocarta.webp",
+    "photoPlaceholder": "",
+    "dataSpec": "Otorinolaringoiatria",
+    "subtitle": "Specialista in Otorinolaringoiatria",
+    "heroTags": [
+      "Otorinolaringoiatria"
+    ],
+    "stickbarSpec": "<b>Otorinolaringoiatria</b> · Otorinolaringoiatria",
+    "bio": [
+      {
+        "text": "Il Dr. Bruno Carta effettua valutazioni specialistiche per disturbi di udito, equilibrio e respirazione, affrontando con competenza anche le forme più frequenti di cefalea correlata a patologie ORL.",
+        "marginBottom": 26
+      }
+    ],
+    "formazione": {
+      "title": "Una formazione solida.",
+      "items": [
+        {
+          "title": "Otorinolaringoiatria"
+        }
+      ]
+    },
+    "cura": {
+      "title": "Prestazioni e consulenze.",
+      "items": [
+        "Valutazioni specialistiche ORL"
+      ]
+    },
+    "competenze": {
+      "eyebrow": "Patologie trattate",
+      "title": "Le condizioni che seguo.",
+      "intro": null,
+      "tags": [
+        "Disequilibrio",
+        "Vertigini",
+        "Cefalee correlate"
+      ]
+    },
+    "prenota": {
+      "title": "Scegli data e orario.",
+      "text": "Consulta le disponibilità di Dr. Bruno Carta e prenota online in pochi passaggi.",
+      "miodottore": {
+        "href": "https://www.miodottore.it/bruno-roberto-carta/otorino/oristano",
+        "doctor": "bruno-roberto-carta",
+        "anchorHtml": "<a id=\"zl-url\" class=\"zl-url\" href=\"https://www.miodottore.it/bruno-roberto-carta/otorino/oristano\" rel=\"nofollow\" data-zlw-doctor=\"bruno-roberto-carta\" data-zlw-type=\"big_with_calendar\" data-zlw-opinion=\"false\" data-zlw-hide-branding=\"true\" data-zlw-saas-only=\"false\" data-zlw-a11y-title=\"Widget di prenotazione visite mediche\">Prenota una visita</a>"
+      }
+    },
+    "ctaBand": {
+      "title": "Prenota la tua visita",
+      "text": "Prenoti con il Dr. Carta in meno di un minuto."
+    },
+    "stickbar": {
+      "href": "#prenota",
+      "icon": "calendar-check",
+      "label": "Prenota con il Dr. Carta"
+    },
+    "bookButtonLabel": "Prenota con il Dr. Carta",
+    "layout": {
+      "htmlComments": false,
+      "prenotaStyle": true,
+      "resizeScript": true,
+      "heroTagsTrailBlank": true,
+      "competenzeTagsTrailBlank": false,
+      "curaTrailBlank": true,
+      "hasQuote": true,
+      "stickObserverComment": false,
+      "resizeExtraBlank": false
+    },
+    "quote": "\"Molti disturbi dell'equilibrio nascono da un problema curabile, se diagnosticato per tempo.\"",
+    "photoFile": "brunocarta.webp"
+  },
+  {
+    "surname": "CartaGabriele",
+    "display": "Dr. Gabriele Carta",
+    "specs": [
+      "Medicina sportiva"
+    ],
+    "cats": [
+      "visite"
+    ],
+    "catLabels": [
+      "Visite Specialistiche"
+    ],
+    "slug": "cartagabriele",
+    "metaTitle": "Dr. Gabriele Carta — Medicina sportiva a Oristano | Medic Service",
+    "metaDescription": "Dr. Gabriele Carta, medicina sportiva a Oristano presso Medic Service. Scopri specializzazioni e prenota online la tua visita.",
+    "stylesVersion": "9",
+    "siteJsVersion": "6",
+    "photoSrc": "/assets/photos/gabrielecarta.webp",
+    "photoPlaceholder": "",
+    "dataSpec": "Medicina sportiva",
+    "subtitle": "Specialista in Medicina sportiva",
+    "heroTags": [
+      "Medicina sportiva"
+    ],
+    "stickbarSpec": "<b>Medicina sportiva</b> · Medicina sportiva",
+    "bio": [
+      {
+        "text": "Il Dr. Gabriele Carta affianca sportivi agonisti e amatoriali nella valutazione dell'idoneità fisica e nella prevenzione degli infortuni legati alla pratica sportiva.",
+        "marginBottom": 26
+      }
+    ],
+    "formazione": {
+      "title": "Una formazione specialistica.",
+      "items": [
+        {
+          "title": "Medicina dello sport e dell'esercizio fisico"
+        }
+      ]
+    },
+    "cura": {
+      "title": "Prestazioni e consulenze.",
+      "items": [
+        "Valutazione idoneità fisica"
+      ]
+    },
+    "competenze": {
+      "eyebrow": "Aree di competenza",
+      "title": "Specializzazioni e ambiti.",
+      "intro": null,
+      "tags": [
+        "Problematiche muscoloscheletriche da attività sportiva"
+      ]
+    },
+    "prenota": {
+      "title": "Scegli data e orario.",
+      "text": "Consulta le disponibilità di Dr. Gabriele Carta e prenota online in pochi passaggi.",
+      "miodottore": {
+        "href": "https://www.miodottore.it/gabriele-carta-2/medico-dello-sport/oristano",
+        "doctor": "gabriele-carta-2",
+        "calendarId": "1097482",
+        "anchorHtml": "<a id=\"zl-url\" class=\"zl-url\" href=\"https://www.miodottore.it/gabriele-carta-2/medico-dello-sport/oristano\" rel=\"nofollow\" data-zlw-calendar-id=\"1097482\" data-zlw-doctor=\"gabriele-carta-2\" data-zlw-type=\"big_with_calendar\" data-zlw-opinion=\"false\" data-zlw-hide-branding=\"true\" data-zlw-saas-only=\"false\" data-zlw-a11y-title=\"Widget di prenotazione visite mediche\">Prenota una visita</a>"
+      }
+    },
+    "ctaBand": {
+      "title": "Prenota la tua visita",
+      "text": "Prenoti con il Dr. Carta in meno di un minuto."
+    },
+    "stickbar": {
+      "href": "#prenota",
+      "icon": "calendar-check",
+      "label": "Prenota con il Dr. Carta"
+    },
+    "bookButtonLabel": "Prenota con il Dr. Carta",
+    "layout": {
+      "htmlComments": false,
+      "prenotaStyle": true,
+      "resizeScript": true,
+      "heroTagsTrailBlank": true,
+      "competenzeTagsTrailBlank": false,
+      "curaTrailBlank": false,
+      "hasQuote": true,
+      "stickObserverComment": false,
+      "resizeExtraBlank": false
+    },
+    "quote": "\"Medicina per lo sport, sport come medicina.\"",
+    "photoFile": "gabrielecarta.webp"
+  },
+  {
+    "surname": "Casula",
+    "display": "Dr. Paolo Casula",
+    "specs": [
+      "Ematologia"
+    ],
+    "cats": [
+      "visite"
+    ],
+    "catLabels": [
+      "Visite Specialistiche"
+    ],
+    "slug": "casula",
+    "metaTitle": "Dr. Paolo Casula — Ematologia a Oristano | Medic Service",
+    "metaDescription": "Dr. Paolo Casula, ematologia a Oristano presso Medic Service. Scopri specializzazioni e prenota online la tua visita.",
+    "stylesVersion": "9",
+    "siteJsVersion": "6",
+    "photoSrc": "/assets/photos/generic_medic_male.png",
+    "photoPlaceholder": "",
+    "dataSpec": "Ematologia",
+    "subtitle": "Specialista in Ematologia",
+    "heroTags": [
+      "Ematologia"
+    ],
+    "stickbarSpec": "<b>Ematologia</b> · Ematologia",
+    "bio": [
+      {
+        "text": "Il Dr. Paolo Casula porta a Oristano competenze ematologiche maturate in importanti strutture ospedaliere regionali, avendo contribuito ad avviare in città percorsi di cura prima accessibili solo fuori provincia.",
+        "marginBottom": 26
+      }
+    ],
+    "formazione": {
+      "title": "Una formazione solida.",
+      "items": [
+        {
+          "title": "Ematologia, Oncologia, Allergologia"
+        },
+        {
+          "title": "Ex Direttore Ematologia Osp. Oncologico Cagliari"
+        }
+      ]
+    },
+    "cura": {
+      "title": "Prestazioni e consulenze.",
+      "items": [
+        "Visita ematologica",
+        "Relazioni cliniche",
+        "Valutazioni medico-legali"
+      ]
+    },
+    "competenze": {
+      "eyebrow": "Patologie trattate",
+      "title": "Le condizioni che seguo.",
+      "intro": null,
+      "tags": [
+        "Linfomi",
+        "Leucemie",
+        "Mielomi",
+        "Anemie"
+      ]
+    },
+    "prenota": {
+      "title": "Scegli data e orario.",
+      "text": "Consulta le disponibilità di Dr. Paolo Casula e prenota online in pochi passaggi.",
+      "miodottore": {
+        "href": "https://www.miodottore.it/paolo-casula/ematologo/oristano",
+        "doctor": "paolo-casula",
+        "anchorHtml": "<a id=\"zl-url\" class=\"zl-url\" href=\"https://www.miodottore.it/paolo-casula/ematologo/oristano\" rel=\"nofollow\" data-zlw-doctor=\"paolo-casula\" data-zlw-type=\"big_with_calendar\" data-zlw-opinion=\"false\" data-zlw-hide-branding=\"true\" data-zlw-saas-only=\"false\" data-zlw-a11y-title=\"Widget di prenotazione visite mediche\">Prenota una visita</a>"
+      }
+    },
+    "ctaBand": {
+      "title": "Prenota la tua visita",
+      "text": "Prenoti con il Dr. Paolo Casula in meno di un minuto."
+    },
+    "stickbar": {
+      "href": "#prenota",
+      "icon": "calendar-check",
+      "label": "Prenota con il Dr. Casula"
+    },
+    "bookButtonLabel": "Prenota con il Dr. Casula",
+    "layout": {
+      "htmlComments": false,
+      "prenotaStyle": true,
+      "resizeScript": true,
+      "heroTagsTrailBlank": true,
+      "competenzeTagsTrailBlank": false,
+      "curaTrailBlank": false,
+      "hasQuote": true,
+      "stickObserverComment": false,
+      "resizeExtraBlank": false
+    },
+    "quote": "\"Potersi curare vicino a casa cambia la vita di chi affronta una malattia ematologica.\""
+  },
+  {
+    "surname": "Cherchi",
+    "display": "Dr.ssa Federica Cherchi",
+    "specs": [
+      "Geriatria"
+    ],
+    "cats": [
+      "visite"
+    ],
+    "catLabels": [
+      "Visite Specialistiche"
+    ],
+    "slug": "cherchi",
+    "metaTitle": "Dr.ssa Federica Cherchi — Geriatria a Oristano | Medic Service",
+    "metaDescription": "Dr.ssa Federica Cherchi, geriatria a Oristano presso Medic Service. Scopri specializzazioni e prenota online la tua visita.",
+    "stylesVersion": "9",
+    "siteJsVersion": "6",
+    "photoSrc": "/assets/photos/generic_medic_female.png",
+    "photoPlaceholder": "",
+    "dataSpec": "Geriatria",
+    "subtitle": "Specialista in Geriatria",
+    "heroTags": [
+      "Geriatria"
+    ],
+    "stickbarSpec": "<b>Geriatria</b> · Geriatria",
+    "bio": [
+      {
+        "text": "La Dr.ssa Federica Cherchi offre un percorso di valutazione multidimensionale dedicato al benessere della persona anziana, integrando aspetti clinici, cognitivi e funzionali in una presa in carico realmente completa.",
+        "marginBottom": 26
+      }
+    ],
+    "formazione": {
+      "title": "Una formazione solida.",
+      "items": [
+        {
+          "title": "Geriatria"
+        }
+      ]
+    },
+    "cura": {
+      "title": "Prestazioni e consulenze.",
+      "items": [
+        "Consulenza geriatrica",
+        "Valutazione CAF e VMD (test MMSE, GDS, BADL/IADL)"
+      ]
+    },
+    "competenze": {
+      "eyebrow": "Patologie trattate",
+      "title": "Le condizioni che seguo.",
+      "intro": null,
+      "tags": [
+        "Deficit cognitivi",
+        "Rischio caduta",
+        "Malnutrizione"
+      ]
+    },
+    "prenota": {
+      "title": "Scegli data e orario.",
+      "text": "Consulta le disponibilità di Dr.ssa Federica Cherchi e prenota online in pochi passaggi.",
+      "miodottore": {
+        "href": "https://www.miodottore.it/federica-cherchi/geriatra/oristano",
+        "doctor": "federica-cherchi",
+        "calendarId": "1130365",
+        "anchorHtml": "<a id=\"zl-url\" class=\"zl-url\" href=\"https://www.miodottore.it/federica-cherchi/geriatra/oristano\" rel=\"nofollow\" data-zlw-calendar-id=\"1130365\" data-zlw-doctor=\"federica-cherchi\" data-zlw-type=\"big_with_calendar\" data-zlw-opinion=\"false\" data-zlw-hide-branding=\"true\" data-zlw-saas-only=\"false\" data-zlw-a11y-title=\"Widget di prenotazione visite mediche\">Prenota una visita</a>"
+      }
+    },
+    "ctaBand": {
+      "title": "Prenota la tua visita",
+      "text": "Prenoti con la Dr.ssa Cherchi in meno di un minuto."
+    },
+    "stickbar": {
+      "href": "#prenota",
+      "icon": "calendar-check",
+      "label": "Prenota con la Dr.ssa Cherchi"
+    },
+    "bookButtonLabel": "Prenota con la Dr.ssa Cherchi",
+    "layout": {
+      "htmlComments": false,
+      "prenotaStyle": true,
+      "resizeScript": true,
+      "heroTagsTrailBlank": true,
+      "competenzeTagsTrailBlank": false,
+      "curaTrailBlank": false,
+      "hasQuote": true,
+      "stickObserverComment": false,
+      "resizeExtraBlank": false
+    },
+    "quote": "\"Invecchiare bene è possibile, se qualcuno accompagna la persona con attenzione vera.\""
+  },
+  {
+    "surname": "Concas",
+    "display": "Dr. Adriano Concas",
+    "specs": [
+      "Fisioterapia"
+    ],
+    "cats": [
+      "visite"
+    ],
+    "catLabels": [
+      "Visite Specialistiche"
+    ],
+    "slug": "concas",
+    "metaTitle": "Dr. Adriano Concas — Fisioterapia a Oristano | Medic Service",
+    "metaDescription": "Dr. Adriano Concas, fisioterapia a Oristano presso Medic Service. Scopri specializzazioni e prenota online la tua visita.",
+    "stylesVersion": "9",
+    "siteJsVersion": "6",
+    "photoSrc": "/assets/photos/concas.webp",
+    "photoPlaceholder": "Ritratto professionale Dr. Adriano Concas",
+    "dataSpec": "Fisioterapia",
+    "subtitle": "Specialista in Fisioterapia",
+    "heroTags": [
+      "Fisioterapia"
+    ],
+    "stickbarSpec": "<b>Fisioterapia</b> · Fisioterapia",
+    "bio": [
+      {
+        "text": "Il Dr. Adriano Concas adotta un approccio fisioterapico basato sulle evidenze scientifiche, formatosi anche presso un centro di eccellenza medico-sportiva internazionale, con il paziente sempre protagonista attivo del proprio recupero.",
+        "marginBottom": 26
+      }
+    ],
+    "formazione": {
+      "title": "Una formazione solida.",
+      "items": [
+        {
+          "title": "Fisioterapia, Cagliari/Pisa"
+        },
+        {
+          "title": "Esperienza Isokinetic Bologna (FIFA Medical Centre)"
+        }
+      ]
+    },
+    "cura": {
+      "title": "Prestazioni e consulenze.",
+      "items": [
+        "Valutazione funzionale",
+        "Esercizio terapeutico attivo"
+      ]
+    },
+    "competenze": {
+      "eyebrow": "Patologie trattate",
+      "title": "Le condizioni che seguo.",
+      "intro": null,
+      "tags": [
+        "Patologie muscoloscheletriche",
+        "Patologie post-chirurgiche"
+      ]
+    },
+    "prenota": {
+      "title": "Scegli data e orario.",
+      "text": "Consulta le disponibilità di Dr. Adriano Concas e prenota online in pochi passaggi.",
+      "miodottore": {
+        "href": "https://www.miodottore.it/adriano-concas/fisioterapista/oristano",
+        "doctor": "adriano-concas",
+        "anchorHtml": "<a id=\"zl-url\" class=\"zl-url\" href=\"https://www.miodottore.it/adriano-concas/fisioterapista/oristano\" rel=\"nofollow\" data-zlw-doctor=\"adriano-concas\" data-zlw-type=\"big_with_calendar\" data-zlw-opinion=\"false\" data-zlw-hide-branding=\"true\" data-zlw-saas-only=\"false\" data-zlw-a11y-title=\"Widget di prenotazione visite mediche\">Prenota una visita</a>"
+      }
+    },
+    "ctaBand": {
+      "title": "Prenota la tua visita",
+      "text": "Prenoti con il Dr. Concas in meno di un minuto."
+    },
+    "stickbar": {
+      "href": "#prenota",
+      "icon": "calendar-check",
+      "label": "Prenota con il Dr. Concas"
+    },
+    "bookButtonLabel": "Prenota con il Dr. Concas",
+    "layout": {
+      "htmlComments": false,
+      "prenotaStyle": true,
+      "resizeScript": true,
+      "heroTagsTrailBlank": true,
+      "competenzeTagsTrailBlank": false,
+      "curaTrailBlank": false,
+      "hasQuote": true,
+      "stickObserverComment": false,
+      "resizeExtraBlank": false
+    },
+    "quote": "\"Il paziente non deve dipendere da me: deve imparare a fidarsi di nuovo del proprio corpo.\"",
+    "photoFile": "concas.webp"
+  },
+  {
+    "surname": "Corona",
+    "display": "Dr. Paolo Corona",
+    "specs": [
+      "Chirurgia generale"
+    ],
+    "cats": [
+      "chirurgia"
+    ],
+    "catLabels": [
+      "Chirurgia Day Surgery"
+    ],
+    "slug": "corona",
+    "metaTitle": "Dr. Paolo Corona — Chirurgia generale a Oristano | Medic Service",
+    "metaDescription": "Dr. Paolo Corona, chirurgia generale a Oristano presso Medic Service. Scopri specializzazioni e prenota online la tua visita.",
+    "stylesVersion": "9",
+    "siteJsVersion": "6",
+    "photoSrc": "/assets/photos/corona.webp",
+    "photoPlaceholder": "",
+    "dataSpec": "Chirurgia generale",
+    "subtitle": "Specialista in Chirurgia generale",
+    "heroTags": [
+      "Chirurgia generale"
+    ],
+    "stickbarSpec": "<b>Chirurgia generale</b> · Chirurgia generale",
+    "bio": [
+      {
+        "text": "Il Dr. Paolo Corona unisce una solida formazione chirurgica a un'esperienza internazionale maturata in Guatemala, privilegiando oggi un approccio mini-invasivo che riduce il trauma operatorio e accelera il ritorno alla vita quotidiana.",
+        "marginBottom": 26
+      }
+    ],
+    "formazione": {
+      "title": "Una formazione solida.",
+      "items": [
+        {
+          "title": "Chirurgia Apparato Digerente, Cagliari/Sassari 2017"
+        },
+        {
+          "title": "Esperienza in Guatemala"
+        }
+      ]
+    },
+    "cura": {
+      "title": "Prestazioni e consulenze.",
+      "items": [
+        "Chirurgia laparoscopica",
+        "Day Surgery"
+      ]
+    },
+    "competenze": {
+      "eyebrow": "Patologie trattate",
+      "title": "Le condizioni che seguo.",
+      "intro": null,
+      "tags": [
+        "Ernie",
+        "Laparoceli",
+        "Calcolosi della colecisti",
+        "Emorroidi"
+      ]
+    },
+    "prenota": {
+      "title": "Scegli data e orario.",
+      "text": "Consulta le disponibilità di Dr. Paolo Corona e prenota online in pochi passaggi.",
+      "miodottore": {
+        "href": "https://www.miodottore.it/paolo-corona/chirurgo-generale-proctologo-chirurgo/oristano",
+        "doctor": "paolo-corona",
+        "calendarId": "1130789",
+        "anchorHtml": "<a id=\"zl-url\" class=\"zl-url\" href=\"https://www.miodottore.it/paolo-corona/chirurgo-generale-proctologo-chirurgo/oristano\" rel=\"nofollow\" data-zlw-calendar-id=\"1130789\" data-zlw-doctor=\"paolo-corona\" data-zlw-type=\"big_with_calendar\" data-zlw-opinion=\"false\" data-zlw-hide-branding=\"true\" data-zlw-saas-only=\"false\" data-zlw-a11y-title=\"Widget di prenotazione visite mediche\">Prenota una visita</a>"
+      }
+    },
+    "ctaBand": {
+      "title": "Prenota la tua visita",
+      "text": "Prenoti con il Dr. Corona in meno di un minuto."
+    },
+    "stickbar": {
+      "href": "#prenota",
+      "icon": "calendar-check",
+      "label": "Prenota con il Dr. Corona"
+    },
+    "bookButtonLabel": "Prenota con il Dr. Corona",
+    "layout": {
+      "htmlComments": false,
+      "prenotaStyle": true,
+      "resizeScript": true,
+      "heroTagsTrailBlank": true,
+      "competenzeTagsTrailBlank": false,
+      "curaTrailBlank": false,
+      "hasQuote": true,
+      "stickObserverComment": false,
+      "resizeExtraBlank": false
+    },
+    "quote": "\"Una buona chirurgia si misura anche dalla rapidità con cui il paziente torna alla sua vita.\"",
+    "photoFile": "corona.webp"
+  },
+  {
+    "surname": "Diana",
+    "display": "Dr.ssa Francesca Diana",
+    "specs": [
+      "Senologia"
+    ],
+    "cats": [
+      "diagnostica",
+      "visite"
+    ],
+    "catLabels": [
+      "Diagnostica per Immagini",
+      "Visite Specialistiche"
+    ],
+    "slug": "diana",
+    "metaTitle": "Dr.ssa Francesca Diana — Senologia a Oristano | Medic Service",
+    "metaDescription": "Dr.ssa Francesca Diana, senologia a Oristano presso Medic Service. Scopri specializzazioni e prenota online la tua visita.",
+    "stylesVersion": "9",
+    "siteJsVersion": "6",
+    "photoSrc": "/assets/photos/diana.webp",
+    "photoPlaceholder": "",
+    "dataSpec": "Senologia",
+    "subtitle": "Specialista in Senologia",
+    "heroTags": [
+      "Senologia"
+    ],
+    "stickbarSpec": "<b>Senologia</b> · Senologia",
+    "bio": [
+      {
+        "text": "La Dr.ssa Francesca Diana lavora in stretto coordinamento con il servizio di diagnostica per immagini del centro, offrendo un percorso di prevenzione e cura completo per la salute della mammella.",
+        "marginBottom": 26
+      }
+    ],
+    "formazione": {
+      "title": "Una formazione solida.",
+      "items": [
+        {
+          "title": "Senologia"
+        }
+      ]
+    },
+    "cura": {
+      "title": "Prestazioni e consulenze.",
+      "items": [
+        "Visite senologiche",
+        "Diagnostica per immagini"
+      ]
+    },
+    "competenze": {
+      "eyebrow": "Patologie trattate",
+      "title": "Le condizioni che seguo.",
+      "intro": null,
+      "tags": [
+        "Prevenzione senologica",
+        "Patologie della mammella"
+      ]
+    },
+    "prenota": {
+      "title": "Scegli data e orario.",
+      "text": "Consulta le disponibilità di Dr.ssa Francesca Diana e prenota online in pochi passaggi.",
+      "miodottore": {
+        "href": "https://www.miodottore.it/francesca-diana-4/senologo/oristano",
+        "doctor": "francesca-diana-4",
+        "anchorHtml": "<a id=\"zl-url\" class=\"zl-url\" href=\"https://www.miodottore.it/francesca-diana-4/senologo/oristano\" rel=\"nofollow\" data-zlw-doctor=\"francesca-diana-4\" data-zlw-type=\"big_with_calendar\" data-zlw-opinion=\"false\" data-zlw-hide-branding=\"true\" data-zlw-saas-only=\"false\" data-zlw-a11y-title=\"Widget di prenotazione visite mediche\">Prenota una visita</a>"
+      }
+    },
+    "ctaBand": {
+      "title": "Prenota la tua visita",
+      "text": "Prenoti con la Dr.ssa Diana in meno di un minuto."
+    },
+    "stickbar": {
+      "href": "#prenota",
+      "icon": "calendar-check",
+      "label": "Prenota con la Dr.ssa Diana"
+    },
+    "bookButtonLabel": "Prenota con la Dr.ssa Diana",
+    "layout": {
+      "htmlComments": false,
+      "prenotaStyle": true,
+      "resizeScript": true,
+      "heroTagsTrailBlank": true,
+      "competenzeTagsTrailBlank": false,
+      "curaTrailBlank": false,
+      "hasQuote": true,
+      "stickObserverComment": false,
+      "resizeExtraBlank": false
+    },
+    "quote": "\"La prevenzione senologica salva vite: è un appuntamento che non si dovrebbe mai rimandare.\"",
+    "photoFile": "diana.webp"
+  },
+  {
+    "surname": "Fadda",
+    "display": "Dr.ssa Francesca Fadda",
+    "specs": [
+      "Fisiatria"
+    ],
+    "cats": [
+      "visite"
+    ],
+    "catLabels": [
+      "Visite Specialistiche"
+    ],
+    "slug": "fadda",
+    "metaTitle": "Dr.ssa Francesca Fadda — Fisiatria a Oristano | Medic Service",
+    "metaDescription": "Dr.ssa Francesca Fadda, fisiatria a Oristano presso Medic Service. Scopri specializzazioni e prenota online la tua visita.",
+    "stylesVersion": "9",
+    "siteJsVersion": "6",
+    "photoSrc": "/assets/photos/generic_medic_female.png",
+    "photoPlaceholder": "",
+    "dataSpec": "Fisiatria",
+    "subtitle": "Specialista in Fisiatria",
+    "heroTags": [
+      "Fisiatria"
+    ],
+    "stickbarSpec": "<b>Fisiatria</b> · Fisiatria",
+    "bio": [
+      {
+        "text": "La Dr.ssa Francesca Fadda effettua visite e terapie fisiatriche.",
+        "marginBottom": 26
+      }
+    ],
+    "formazione": {
+      "title": "Una formazione solida.",
+      "items": [
+        {
+          "title": "Fisiatria"
+        }
+      ]
+    },
+    "cura": {
+      "title": "Prestazioni e consulenze.",
+      "items": [
+        "Visita di valutazione",
+        "Visita funzionale"
+      ]
+    },
+    "competenze": {
+      "eyebrow": "Patologie trattate",
+      "title": "Le condizioni che seguo.",
+      "intro": null,
+      "tags": [
+        "Disabilità fisiche",
+        "Dolore cronico"
+      ]
+    },
+    "prenota": {
+      "title": "Scegli data e orario.",
+      "text": "Consulta le disponibilità di Dr.ssa Francesca Fadda e prenota online in pochi passaggi.",
+      "miodottore": {
+        "href": "https://www.miodottore.it/francesca-fadda-3/fisiatra/oristano",
+        "doctor": "francesca-fadda-3",
+        "anchorHtml": "<a id=\"zl-url\" class=\"zl-url\" href=\"https://www.miodottore.it/francesca-fadda-3/fisiatra/oristano\" rel=\"nofollow\" data-zlw-doctor=\"francesca-fadda-3\" data-zlw-type=\"big_with_calendar\" data-zlw-opinion=\"false\" data-zlw-hide-branding=\"true\" data-zlw-saas-only=\"false\" data-zlw-a11y-title=\"Widget di prenotazione visite mediche\">Prenota una visita</a>"
+      }
+    },
+    "ctaBand": {
+      "title": "Prenota la tua visita",
+      "text": "Prenoti con la Dr.ssa Fadda in meno di un minuto."
+    },
+    "stickbar": {
+      "href": "#prenota",
+      "icon": "calendar-check",
+      "label": "Prenota con la Dr.ssa Fadda"
+    },
+    "bookButtonLabel": "Prenota con la Dr.ssa Fadda",
+    "layout": {
+      "htmlComments": false,
+      "prenotaStyle": true,
+      "resizeScript": true,
+      "heroTagsTrailBlank": true,
+      "competenzeTagsTrailBlank": false,
+      "curaTrailBlank": false,
+      "hasQuote": true,
+      "stickObserverComment": false,
+      "resizeExtraBlank": false
+    },
+    "quote": "\"Capire come si muove il corpo è il primo passo per aiutarlo a muoversi meglio.\""
+  },
+  {
+    "surname": "Falco",
+    "display": "Dr. Alessandro Falco",
+    "specs": [
+      "Dermatologia"
+    ],
+    "cats": [
+      "visite"
+    ],
+    "catLabels": [
+      "Visite Specialistiche"
+    ],
+    "slug": "falco",
+    "metaTitle": "Dr. Alessandro Falco — Dermatologia a Oristano | Medic Service",
+    "metaDescription": "Dr. Alessandro Falco, dermatologia a Oristano presso Medic Service. Scopri specializzazioni e prenota online la tua visita.",
+    "stylesVersion": "9",
+    "siteJsVersion": "6",
+    "photoSrc": "/assets/photos/generic_medic_male.png",
+    "photoPlaceholder": "",
+    "dataSpec": "Dermatologia",
+    "subtitle": "Specialista in Dermatologia",
+    "heroTags": [
+      "Dermatologia"
+    ],
+    "stickbarSpec": "<b>Dermatologia</b> · Dermatologia",
+    "bio": [
+      {
+        "text": "Il Dr. Alessandro Falco contribuisce all'offerta clinica del reparto di dermatologia, che copre l'intero spettro delle condizioni cutanee, dalla diagnosi clinica al supporto chirurgico ed estetico.",
+        "marginBottom": 26
+      }
+    ],
+    "formazione": {
+      "title": "Una formazione solida.",
+      "items": [
+        {
+          "title": "Dermatologia"
+        }
+      ]
+    },
+    "cura": {
+      "title": "Prestazioni e consulenze.",
+      "items": [
+        "Visite dermatologiche"
+      ]
+    },
+    "competenze": {
+      "eyebrow": "Patologie trattate",
+      "title": "Le condizioni che seguo.",
+      "intro": null,
+      "tags": [
+        "Patologie dermatologiche cliniche",
+        "Patologie chirurgiche",
+        "Patologie estetiche"
+      ]
+    },
+    "prenota": {
+      "title": "Scegli data e orario.",
+      "text": "Consulta le disponibilità di Dr. Alessandro Falco e prenota online in pochi passaggi.",
+      "miodottore": {
+        "href": "https://www.miodottore.it/alessandro-falco-2/dermatologo-tricologo-venereologo/oristano",
+        "doctor": "alessandro-falco-2",
+        "calendarId": "1130314",
+        "anchorHtml": "<a id=\"zl-url\" class=\"zl-url\" href=\"https://www.miodottore.it/alessandro-falco-2/dermatologo-tricologo-venereologo/oristano\" rel=\"nofollow\" data-zlw-calendar-id=\"1130314\" data-zlw-doctor=\"alessandro-falco-2\" data-zlw-type=\"big_with_calendar\" data-zlw-opinion=\"false\" data-zlw-hide-branding=\"true\" data-zlw-saas-only=\"false\" data-zlw-a11y-title=\"Widget di prenotazione visite mediche\">Prenota una visita</a>"
+      }
+    },
+    "ctaBand": {
+      "title": "Prenota la tua visita",
+      "text": "Prenoti con il Dr. Falco in meno di un minuto."
+    },
+    "stickbar": {
+      "href": "#prenota",
+      "icon": "calendar-check",
+      "label": "Prenota con il Dr. Falco"
+    },
+    "bookButtonLabel": "Prenota con il Dr. Falco",
+    "layout": {
+      "htmlComments": false,
+      "prenotaStyle": true,
+      "resizeScript": true,
+      "heroTagsTrailBlank": true,
+      "competenzeTagsTrailBlank": false,
+      "curaTrailBlank": false,
+      "hasQuote": true,
+      "stickObserverComment": false,
+      "resizeExtraBlank": false
+    },
+    "quote": "\"Ascoltare il paziente prima ancora di guardare la pelle: è da lì che parte ogni diagnosi.\""
+  },
+  {
+    "surname": "Fornero",
+    "display": "Dr.ssa Valentina Fornero",
+    "specs": [
+      "Reumatologia"
+    ],
+    "cats": [
+      "visite"
+    ],
+    "catLabels": [
+      "Visite Specialistiche"
+    ],
+    "slug": "fornero",
+    "metaTitle": "Dr.ssa Valentina Fornero — Reumatologia a Oristano | Medic Service",
+    "metaDescription": "Dr.ssa Valentina Fornero, reumatologia a Oristano presso Medic Service. Scopri specializzazioni e prenota online la tua visita.",
+    "stylesVersion": "9",
+    "siteJsVersion": "6",
+    "photoSrc": "/assets/photos/fornero.webp",
+    "photoPlaceholder": "Ritratto professionale Dr.ssa Valentina Fornero",
+    "dataSpec": "Reumatologia",
+    "subtitle": "Specialista in Reumatologia",
+    "heroTags": [
+      "Reumatologia"
+    ],
+    "stickbarSpec": "<b>Reumatologia</b> · Reumatologia",
+    "bio": [
+      {
+        "text": "La Dr.ssa Valentina Fornero fa parte del team di reumatologia del centro, contribuendo alla diagnosi e al trattamento delle patologie reumatiche dei pazienti.",
+        "marginBottom": 26
+      }
+    ],
+    "formazione": {
+      "title": "Una formazione solida.",
+      "items": [
+        {
+          "title": "Reumatologia"
+        }
+      ]
+    },
+    "cura": {
+      "title": "Prestazioni e consulenze.",
+      "items": [
+        "Visite reumatologiche"
+      ]
+    },
+    "competenze": {
+      "eyebrow": "Patologie trattate",
+      "title": "Le condizioni che seguo.",
+      "intro": null,
+      "tags": [
+        "Patologie reumatiche"
+      ]
+    },
+    "prenota": {
+      "title": "Scegli data e orario.",
+      "text": "Consulta le disponibilità di Dr.ssa Valentina Fornero e prenota online in pochi passaggi.",
+      "miodottore": {
+        "href": "https://www.miodottore.it/valentina-fornero/reumatologo/vercelli",
+        "doctor": "valentina-fornero",
+        "calendarId": "1023090",
+        "anchorHtml": "<a id=\"zl-url\" class=\"zl-url\" href=\"https://www.miodottore.it/valentina-fornero/reumatologo/vercelli\" rel=\"nofollow\" data-zlw-calendar-id=\"1023090\" data-zlw-doctor=\"valentina-fornero\" data-zlw-type=\"big_with_calendar\" data-zlw-opinion=\"false\" data-zlw-hide-branding=\"true\" data-zlw-saas-only=\"false\" data-zlw-a11y-title=\"Widget di prenotazione visite mediche\">Prenota una visita</a>"
+      }
+    },
+    "ctaBand": {
+      "title": "Prenota la tua visita",
+      "text": "Prenoti con la Dr.ssa Fornero in meno di un minuto."
+    },
+    "stickbar": {
+      "href": "#prenota",
+      "icon": "calendar-check",
+      "label": "Prenota con la Dr.ssa Fornero"
+    },
+    "bookButtonLabel": "Prenota con la Dr.ssa Fornero",
+    "layout": {
+      "htmlComments": false,
+      "prenotaStyle": true,
+      "resizeScript": true,
+      "heroTagsTrailBlank": true,
+      "competenzeTagsTrailBlank": false,
+      "curaTrailBlank": false,
+      "hasQuote": true,
+      "stickObserverComment": false,
+      "resizeExtraBlank": false
+    },
+    "quote": "\"Ogni paziente reumatico merita un piano di cura su misura, non uno standard uguale per tutti.\"",
+    "photoFile": "fornero.webp"
+  },
+  {
+    "surname": "Franceschi",
+    "display": "Dr. Fabrizio Franceschi",
+    "specs": [
+      "Terapia del dolore"
+    ],
+    "cats": [
+      "visite"
+    ],
+    "catLabels": [
+      "Visite Specialistiche"
+    ],
+    "slug": "franceschi",
+    "metaTitle": "Dr. Fabrizio Franceschi — Terapia del dolore a Oristano | Medic Service",
+    "metaDescription": "Dr. Fabrizio Franceschi, terapia del dolore a Oristano presso Medic Service. Scopri specializzazioni e prenota online la tua visita.",
+    "stylesVersion": "9",
+    "siteJsVersion": "6",
+    "photoSrc": "/assets/photos/generic_medic_male.png",
+    "photoPlaceholder": "",
+    "dataSpec": "Terapia del dolore",
+    "subtitle": "Specialista in Terapia del dolore",
+    "heroTags": [
+      "Terapia del dolore"
+    ],
+    "stickbarSpec": "<b>Terapia del dolore</b> · Terapia del dolore",
+    "bio": [
+      {
+        "text": "Il Dr. Fabrizio Franceschi costruisce percorsi terapeutici mirati al miglioramento della qualità di vita del paziente, affrontando il dolore cronico con un approccio personalizzato e continuativo.",
+        "marginBottom": 26
+      }
+    ],
+    "formazione": {
+      "title": "Una formazione solida.",
+      "items": [
+        {
+          "title": "Terapia del Dolore"
+        }
+      ]
+    },
+    "cura": {
+      "title": "Prestazioni e consulenze.",
+      "items": [
+        "Percorsi terapeutici antalgici"
+      ]
+    },
+    "competenze": {
+      "eyebrow": "Patologie trattate",
+      "title": "Le condizioni che seguo.",
+      "intro": null,
+      "tags": [
+        "Dolore cronico"
+      ]
+    },
+    "prenota": {
+      "title": "Scegli data e orario.",
+      "text": "Consulta le disponibilità di Dr. Fabrizio Franceschi e prenota online in pochi passaggi.",
+      "miodottore": {
+        "href": "https://www.miodottore.it/fabrizio-franceschi/anestesista/oristano",
+        "doctor": "fabrizio-franceschi",
+        "calendarId": "1133551",
+        "anchorHtml": "<a id=\"zl-url\" class=\"zl-url\" href=\"https://www.miodottore.it/fabrizio-franceschi/anestesista/oristano\" rel=\"nofollow\" data-zlw-calendar-id=\"1133551\" data-zlw-doctor=\"fabrizio-franceschi\" data-zlw-type=\"big_with_calendar\" data-zlw-opinion=\"false\" data-zlw-hide-branding=\"true\" data-zlw-saas-only=\"false\" data-zlw-a11y-title=\"Widget di prenotazione visite mediche\">Prenota una visita</a>"
+      }
+    },
+    "ctaBand": {
+      "title": "Prenota la tua visita",
+      "text": "Prenoti con il Dr. Franceschi in meno di un minuto."
+    },
+    "stickbar": {
+      "href": "#prenota",
+      "icon": "calendar-check",
+      "label": "Prenota con il Dr. Franceschi"
+    },
+    "bookButtonLabel": "Prenota con il Dr. Franceschi",
+    "layout": {
+      "htmlComments": false,
+      "prenotaStyle": true,
+      "resizeScript": true,
+      "heroTagsTrailBlank": true,
+      "competenzeTagsTrailBlank": false,
+      "curaTrailBlank": false,
+      "hasQuote": true,
+      "stickObserverComment": false,
+      "resizeExtraBlank": false
+    },
+    "quote": "\"Il dolore cronico toglie energia alla vita: il nostro lavoro è restituirgliela.\""
+  },
+  {
+    "surname": "Humaidan",
+    "display": "Dr. Kais Humaidan",
+    "specs": [
+      "Neurologia",
+      "Elettromiografia"
+    ],
+    "cats": [
+      "visite"
+    ],
+    "catLabels": [
+      "Visite Specialistiche"
+    ],
+    "slug": "humaidan",
+    "metaTitle": "Dr. Kais Humaidan — Neurologia ed Elettromiografia a Oristano | Medic Service",
+    "metaDescription": "Dr. Kais Humaidan, neurologia ed elettromiografia a Oristano presso Medic Service. Scopri specializzazioni e prenota online la tua visita.",
+    "stylesVersion": "9",
+    "siteJsVersion": "6",
+    "photoSrc": "/assets/photos/humaidan.webp",
+    "photoPlaceholder": "Ritratto professionale Dr. Kais Humaidan",
+    "dataSpec": "Neurologia",
+    "subtitle": "Specialista in Neurologia · Elettromiografia",
+    "heroTags": [
+      "Neurologia",
+      "Elettromiografia"
+    ],
+    "stickbarSpec": "<b>Neurologia</b> · Elettromiografia",
+    "bio": [
+      {
+        "text": "Il Dr. Kais Humaidan affianca alla visita neurologica trattamenti specifici con tossina botulinica per finalità non estetiche, sempre a seguito di un'attenta valutazione clinica specialistica.",
+        "marginBottom": 26
+      }
+    ],
+    "formazione": {
+      "title": "Una formazione solida.",
+      "items": [
+        {
+          "title": "Neurologia"
+        }
+      ]
+    },
+    "cura": {
+      "title": "Prestazioni e consulenze.",
+      "items": [
+        "Visita neurologica",
+        "Tossina botulinica non estetica"
+      ]
+    },
+    "competenze": {
+      "eyebrow": "Patologie trattate",
+      "title": "Le condizioni che seguo.",
+      "intro": null,
+      "tags": [
+        "Iperidrosi",
+        "Tremori",
+        "Distonie"
+      ]
+    },
+    "prenota": {
+      "title": "Scegli data e orario.",
+      "text": "Consulta le disponibilità di Dr. Kais Humaidan e prenota online in pochi passaggi.",
+      "miodottore": {
+        "href": "https://www.miodottore.it/kais-humaidan/neurologo/cagliari",
+        "doctor": "kais-humaidan",
+        "calendarId": "1130798",
+        "anchorHtml": "<a id=\"zl-url\" class=\"zl-url\" href=\"https://www.miodottore.it/kais-humaidan/neurologo/cagliari\" rel=\"nofollow\" data-zlw-calendar-id=\"1130798\" data-zlw-doctor=\"kais-humaidan\" data-zlw-type=\"big_with_calendar\" data-zlw-opinion=\"false\" data-zlw-hide-branding=\"true\" data-zlw-saas-only=\"false\" data-zlw-a11y-title=\"Widget di prenotazione visite mediche\">Prenota una visita</a>"
+      }
+    },
+    "ctaBand": {
+      "title": "Prenota la tua visita",
+      "text": "Prenoti con il Dr. Humaidan in meno di un minuto."
+    },
+    "stickbar": {
+      "href": "#prenota",
+      "icon": "calendar-check",
+      "label": "Prenota con il Dr. Humaidan"
+    },
+    "bookButtonLabel": "Prenota con il Dr. Humaidan",
+    "layout": {
+      "htmlComments": false,
+      "prenotaStyle": true,
+      "resizeScript": true,
+      "heroTagsTrailBlank": true,
+      "competenzeTagsTrailBlank": false,
+      "curaTrailBlank": false,
+      "hasQuote": true,
+      "stickObserverComment": false,
+      "resizeExtraBlank": false
+    },
+    "dataSpecLabel": "Neurologia · Elettromiografia",
+    "quote": "\"Ci sono disturbi invisibili agli altri ma molto pesanti da vivere: meritano una soluzione concreta.\"",
+    "photoFile": "humaidan.webp"
+  },
+  {
+    "surname": "Loi",
+    "display": "Op. Manuela Loi",
+    "specs": [
+      "Dermopigmentazione"
+    ],
+    "cats": [
+      "visite"
+    ],
+    "catLabels": [
+      "Visite Specialistiche"
+    ],
+    "slug": "loi",
+    "metaTitle": "Op. Manuela Loi — Dermopigmentazione a Oristano | Medic Service",
+    "metaDescription": "Op. Manuela Loi, dermopigmentazione a Oristano presso Medic Service. Scopri specializzazioni e prenota online la tua visita.",
+    "stylesVersion": "9",
+    "siteJsVersion": "6",
+    "photoSrc": "/assets/photos/generic_medic_female.png",
+    "photoPlaceholder": "",
+    "dataSpec": "Dermopigmentazione",
+    "subtitle": "Dermopigmentazione",
+    "heroTags": [
+      "Dermopigmentazione"
+    ],
+    "stickbarSpec": "<b>Dermopigmentazione</b> · Dermopigmentazione",
+    "bio": [
+      {
+        "text": "L'operatrice Manuela Loi offre trattamenti di dermopigmentazione all'interno dell'area di medicina estetica del centro, con un approccio attento ai dettagli e alle esigenze individuali della persona.",
+        "marginBottom": 26
+      }
+    ],
+    "formazione": {
+      "title": "Una formazione solida.",
+      "items": [
+        {
+          "title": "Dermopigmentazione"
+        }
+      ]
+    },
+    "cura": {
+      "title": "Prestazioni e consulenze.",
+      "items": [
+        "Trucco semipermanente"
+      ]
+    },
+    "competenze": {
+      "eyebrow": "Patologie trattate",
+      "title": "Le condizioni che seguo.",
+      "intro": null,
+      "tags": [
+        "Trattamenti estetici"
+      ]
+    },
+    "prenota": null,
+    "ctaBand": {
+      "title": "Prenota la tua visita",
+      "text": "Prenoti con l'Op. Loi in meno di un minuto."
+    },
+    "stickbar": {
+      "href": "tel:0783211136",
+      "icon": "phone",
+      "label": "Chiama ora"
+    },
+    "bookButtonLabel": "Chiama ora",
+    "layout": {
+      "htmlComments": false,
+      "prenotaStyle": false,
+      "resizeScript": false,
+      "heroTagsTrailBlank": true,
+      "competenzeTagsTrailBlank": false,
+      "curaTrailBlank": false,
+      "hasQuote": true,
+      "stickObserverComment": false,
+      "resizeExtraBlank": false
+    },
+    "quote": "\"Anche un piccolo dettaglio estetico può restituire sicurezza e benessere quotidiano.\""
+  },
+  {
+    "surname": "Maleddu",
+    "display": "Dr.ssa Alessandra Maleddu",
+    "specs": [
+      "Oncologia"
+    ],
+    "cats": [
+      "visite"
+    ],
+    "catLabels": [
+      "Visite Specialistiche"
+    ],
+    "slug": "maleddu",
+    "metaTitle": "Dr.ssa Alessandra Maleddu — Oncologia a Oristano | Medic Service",
+    "metaDescription": "Dr.ssa Alessandra Maleddu, oncologia a Oristano presso Medic Service. Scopri specializzazioni e prenota online la tua visita.",
+    "stylesVersion": "9",
+    "siteJsVersion": "6",
+    "photoSrc": "/assets/photos/maleddu.webp",
+    "photoPlaceholder": "Ritratto professionale Dr.ssa Alessandra Maleddu",
+    "dataSpec": "Oncologia",
+    "subtitle": "Specialista in Oncologia",
+    "heroTags": [
+      "Oncologia"
+    ],
+    "stickbarSpec": "<b>Oncologia</b> · Oncologia",
+    "bio": [
+      {
+        "text": "La Dr.ssa Alessandra Maleddu si inserisce nel percorso di cura oncologica integrata del centro, offrendo consulenze specialistiche in coordinamento con le altre discipline cliniche e diagnostiche.",
+        "marginBottom": 26
+      }
+    ],
+    "formazione": {
+      "title": "Una formazione solida.",
+      "items": [
+        {
+          "title": "Oncologia"
+        }
+      ]
+    },
+    "cura": {
+      "title": "Prestazioni e consulenze.",
+      "items": [
+        "Consulenze oncologiche"
+      ]
+    },
+    "competenze": {
+      "eyebrow": "Patologie trattate",
+      "title": "Le condizioni che seguo.",
+      "intro": null,
+      "tags": [
+        "Percorsi di cura oncologica integrata"
+      ]
+    },
+    "prenota": {
+      "title": "Scegli data e orario.",
+      "text": "Consulta le disponibilità di Dr.ssa Alessandra Maleddu e prenota online in pochi passaggi.",
+      "miodottore": {
+        "href": "https://www.miodottore.it/alessandra-maleddu/oncologo/oristano",
+        "doctor": "alessandra-maleddu",
+        "calendarId": "1130303",
+        "anchorHtml": "<a id=\"zl-url\" class=\"zl-url\" href=\"https://www.miodottore.it/alessandra-maleddu/oncologo/oristano\" rel=\"nofollow\" data-zlw-calendar-id=\"1130303\" data-zlw-doctor=\"alessandra-maleddu\" data-zlw-type=\"big_with_calendar\" data-zlw-opinion=\"false\" data-zlw-hide-branding=\"true\" data-zlw-saas-only=\"false\" data-zlw-a11y-title=\"Widget di prenotazione visite mediche\">Prenota una visita</a>"
+      }
+    },
+    "ctaBand": {
+      "title": "Prenota la tua visita",
+      "text": "Prenoti con la Dr.ssa Maleddu in meno di un minuto."
+    },
+    "stickbar": {
+      "href": "#prenota",
+      "icon": "calendar-check",
+      "label": "Prenota con la Dr.ssa Maleddu"
+    },
+    "bookButtonLabel": "Prenota con la Dr.ssa Maleddu",
+    "layout": {
+      "htmlComments": false,
+      "prenotaStyle": true,
+      "resizeScript": true,
+      "heroTagsTrailBlank": true,
+      "competenzeTagsTrailBlank": true,
+      "curaTrailBlank": true,
+      "hasQuote": true,
+      "stickObserverComment": false,
+      "resizeExtraBlank": false
+    },
+    "quote": "\"In oncologia nessun percorso è davvero solitario: la squadra fa la differenza.\"",
+    "photoFile": "maleddu.webp"
+  },
+  {
+    "surname": "Manconi",
+    "display": "Dr.ssa Anna Rita Manconi",
+    "specs": [
+      "Reumatologia"
+    ],
+    "cats": [
+      "visite"
+    ],
+    "catLabels": [
+      "Visite Specialistiche"
+    ],
+    "slug": "manconi",
+    "metaTitle": "Dr.ssa Anna Rita Manconi — Reumatologia a Oristano | Medic Service",
+    "metaDescription": "Dr.ssa Anna Rita Manconi, reumatologia a Oristano presso Medic Service. Scopri specializzazioni e prenota online la tua visita.",
+    "stylesVersion": "9",
+    "siteJsVersion": "6",
+    "photoSrc": "/assets/photos/generic_medic_female.png",
+    "photoPlaceholder": "",
+    "dataSpec": "Reumatologia",
+    "subtitle": "Specialista in Reumatologia",
+    "heroTags": [
+      "Reumatologia"
+    ],
+    "stickbarSpec": "<b>Reumatologia</b> · Reumatologia",
+    "bio": [
+      {
+        "text": "La Dr.ssa Anna Rita Manconi si dedica alla diagnosi precoce e alla terapia delle patologie reumatiche croniche, un ambito clinico dove intervenire per tempo può cambiare significativamente la qualità di vita del paziente.",
+        "marginBottom": 26
+      }
+    ],
+    "formazione": {
+      "title": "Una formazione solida.",
+      "items": [
+        {
+          "title": "Reumatologia"
+        }
+      ]
+    },
+    "cura": {
+      "title": "Prestazioni e consulenze.",
+      "items": [
+        "Visite reumatologiche"
+      ]
+    },
+    "competenze": {
+      "eyebrow": "Patologie trattate",
+      "title": "Le condizioni che seguo.",
+      "intro": null,
+      "tags": [
+        "Patologie reumatiche",
+        "Patologie infiammatorie croniche"
+      ]
+    },
+    "prenota": {
+      "title": "Scegli data e orario.",
+      "text": "Consulta le disponibilità di Dr.ssa Anna Rita Manconi e prenota online in pochi passaggi.",
+      "miodottore": {
+        "href": "https://www.miodottore.it/anna-rita-manconi/reumatologo/oristano",
+        "doctor": "anna-rita-manconi",
+        "anchorHtml": "<a id=\"zl-url\" class=\"zl-url\" href=\"https://www.miodottore.it/anna-rita-manconi/reumatologo/oristano\" rel=\"nofollow\" data-zlw-doctor=\"anna-rita-manconi\" data-zlw-type=\"big_with_calendar\" data-zlw-opinion=\"false\" data-zlw-hide-branding=\"true\" data-zlw-saas-only=\"false\" data-zlw-a11y-title=\"Widget di prenotazione visite mediche\">Prenota una visita</a>"
+      }
+    },
+    "ctaBand": {
+      "title": "Prenota la tua visita",
+      "text": "Prenoti con la Dr.ssa Manconi in meno di un minuto."
+    },
+    "stickbar": {
+      "href": "#prenota",
+      "icon": "calendar-check",
+      "label": "Prenota con la Dr.ssa Manconi"
+    },
+    "bookButtonLabel": "Prenota con la Dr.ssa Manconi",
+    "layout": {
+      "htmlComments": false,
+      "prenotaStyle": true,
+      "resizeScript": true,
+      "heroTagsTrailBlank": true,
+      "competenzeTagsTrailBlank": true,
+      "curaTrailBlank": true,
+      "hasQuote": true,
+      "stickObserverComment": false,
+      "resizeExtraBlank": false
+    },
+    "quote": "\"Il dolore articolare cronico non va mai sottovalutato: dietro c'è spesso una storia da capire.\""
+  },
+  {
+    "surname": "Mangatia",
+    "display": "Dr. Paolo Mangatia",
+    "specs": [
+      "Cardiologia"
+    ],
+    "cats": [
+      "visite"
+    ],
+    "catLabels": [
+      "Visite Specialistiche"
+    ],
+    "slug": "mangatia",
+    "metaTitle": "Dr. Paolo Mangatia — Cardiologia a Oristano | Medic Service",
+    "metaDescription": "Dr. Paolo Mangatia, cardiologia a Oristano presso Medic Service. Scopri specializzazioni e prenota online la tua visita.",
+    "stylesVersion": "9",
+    "siteJsVersion": "6",
+    "photoSrc": "/assets/photos/generic_medic_male.png",
+    "photoPlaceholder": "",
+    "dataSpec": "Cardiologia",
+    "subtitle": "Specialista in Cardiologia",
+    "heroTags": [
+      "Cardiologia"
+    ],
+    "stickbarSpec": "<b>Cardiologia</b> · Cardiologia",
+    "bio": [
+      {
+        "text": "Il Dr. Paolo Mangatia si dedica alla cardiologia interventistica con un percorso formativo internazionale, dalla fellowship londinese ai laboratori di emodinamica, applicando oggi a Oristano tecniche diagnostiche di ecocardiografia avanzata.",
+        "marginBottom": 26
+      }
+    ],
+    "formazione": {
+      "title": "Una formazione specialistica.",
+      "items": [
+        {
+          "title": "Cardiologia interventistica, Bologna Sant'Orsola"
+        },
+        {
+          "title": "Ecocardiografia, Royal Brompton Hospital, Londra"
+        }
+      ]
+    },
+    "cura": {
+      "title": "Prestazioni e consulenze.",
+      "items": [
+        "Visita cardiologica",
+        "ECG",
+        "Ecocardiogramma"
+      ]
+    },
+    "competenze": {
+      "eyebrow": "Patologie trattate",
+      "title": "Le condizioni che seguo.",
+      "intro": null,
+      "tags": [
+        "Cardiomiopatie",
+        "Scompenso cardiaco",
+        "Cardiopatia ischemica"
+      ]
+    },
+    "prenota": {
+      "title": "Scegli data e orario.",
+      "text": "Consulta le disponibilità di Dr. Paolo Mangatia e prenota online in pochi passaggi.",
+      "miodottore": {
+        "href": "https://www.miodottore.it/paolo-mangatia/cardiologo/assemini",
+        "doctor": "paolo-mangatia",
+        "calendarId": "1095322",
+        "anchorHtml": "<a id=\"zl-url\" class=\"zl-url\" href=\"https://www.miodottore.it/paolo-mangatia/cardiologo/assemini\" rel=\"nofollow\" data-zlw-calendar-id=\"1095322\" data-zlw-doctor=\"paolo-mangatia\" data-zlw-type=\"big_with_calendar\" data-zlw-opinion=\"false\" data-zlw-hide-branding=\"true\" data-zlw-saas-only=\"false\" data-zlw-a11y-title=\"Widget di prenotazione visite mediche\">Prenota una visita</a>"
+      }
+    },
+    "ctaBand": {
+      "title": "Prenota la tua visita",
+      "text": "Prenoti con il Dr. Mangatia in meno di un minuto."
+    },
+    "stickbar": {
+      "href": "#prenota",
+      "icon": "calendar-check",
+      "label": "Prenota con il Dr. Mangatia"
+    },
+    "bookButtonLabel": "Prenota con il Dr. Mangatia",
+    "layout": {
+      "htmlComments": false,
+      "prenotaStyle": true,
+      "resizeScript": true,
+      "heroTagsTrailBlank": false,
+      "competenzeTagsTrailBlank": false,
+      "curaTrailBlank": false,
+      "hasQuote": true,
+      "stickObserverComment": false,
+      "resizeExtraBlank": false
+    },
+    "quote": "\"Ogni esame cardiologico è un'occasione per intervenire prima che il problema diventi urgenza.\""
+  },
+  {
+    "surname": "Melis",
+    "display": "Dr. Daniele Melis",
+    "specs": [
+      "Dermatologia",
+      "Tricologia"
+    ],
+    "cats": [
+      "visite"
+    ],
+    "catLabels": [
+      "Visite Specialistiche"
+    ],
+    "slug": "melis",
+    "metaTitle": "Dr. Daniele Melis — Dermatologia a Oristano | Medic Service",
+    "metaDescription": "Dr. Daniele Melis, dermatologia a Oristano presso Medic Service. Scopri specializzazioni e prenota online la tua visita.",
+    "stylesVersion": "9",
+    "siteJsVersion": "6",
+    "photoSrc": "/assets/photos/melis.webp",
+    "photoPlaceholder": "Ritratto professionale Dr. Daniele Melis",
+    "dataSpec": "Dermatologia",
+    "subtitle": "Specialista in Dermatologia · Tricologia",
+    "heroTags": [
+      "Dermatologia",
+      "Tricologia"
+    ],
+    "stickbarSpec": "<b>Dermatologia</b> · Tricologia",
+    "bio": [
+      {
+        "text": "Il Dr. Daniele Melis si occupa della diagnosi, della prevenzione e del trattamento delle patologie della pelle, dei capelli e delle unghie, accompagnando pazienti di ogni età con un approccio che coniuga rigore scientifico, tecnologie diagnostiche avanzate e una profonda attenzione alla persona.",
+        "marginBottom": 16
+      },
+      {
+        "text": "Ogni percorso nasce dall'ascolto e dalla comprensione delle esigenze del paziente, con l'obiettivo di offrire una medicina personalizzata, fondata sulle migliori evidenze scientifiche e orientata non solo alla cura della malattia, ma anche alla prevenzione e al mantenimento della salute della pelle nel tempo.",
+        "marginBottom": 16
+      },
+      {
+        "text": "Ha maturato particolare esperienza nella prevenzione e nella diagnosi precoce dei tumori cutanei mediante dermatoscopia e videodermatoscopia digitale, nella tricologia, nella dermatologia pediatrica, nella diagnosi e nel trattamento delle malattie sessualmente trasmissibili, nella chirurgia dermatologica e nei trattamenti laser.",
+        "marginBottom": 26
+      }
+    ],
+    "formazione": {
+      "title": "Una formazione solida.",
+      "items": [
+        {
+          "title": "Dermatologia Clinica e Chirurgica, Venereologia"
+        }
+      ]
+    },
+    "cura": {
+      "title": "Prestazioni e consulenze.",
+      "items": [
+        "Dermatoscopia",
+        "Videodermatoscopia",
+        "Laser CO2 e vascolare"
+      ]
+    },
+    "competenze": {
+      "eyebrow": "Patologie trattate",
+      "title": "Le condizioni che seguo.",
+      "intro": null,
+      "tags": [
+        "Dermatologia pediatrica",
+        "Dermatologia allergologica",
+        "MST"
+      ]
+    },
+    "prenota": {
+      "title": "Scegli data e orario.",
+      "text": "Consulta le disponibilità di Dr. Daniele Melis e prenota online in pochi passaggi.",
+      "miodottore": {
+        "href": "https://www.miodottore.it/daniele-melis/dermatologo-venereologo/cagliari",
+        "doctor": "daniele-melis",
+        "calendarId": "855887",
+        "anchorHtml": "<a id=\"zl-url\" class=\"zl-url\" href=\"https://www.miodottore.it/daniele-melis/dermatologo-venereologo/cagliari\" rel=\"nofollow\" data-zlw-calendar-id=\"855887\" data-zlw-doctor=\"daniele-melis\" data-zlw-type=\"big_with_calendar\" data-zlw-opinion=\"false\" data-zlw-hide-branding=\"true\" data-zlw-saas-only=\"false\" data-zlw-a11y-title=\"Widget di prenotazione visite mediche\">Prenota una visita</a>"
+      }
+    },
+    "ctaBand": {
+      "title": "Prenota la tua visita",
+      "text": "Prenoti con il Dr. Melis in meno di un minuto."
+    },
+    "stickbar": {
+      "href": "#prenota",
+      "icon": "calendar-check",
+      "label": "Prenota con il Dr. Melis"
+    },
+    "bookButtonLabel": "Prenota con il Dr. Melis",
+    "layout": {
+      "htmlComments": false,
+      "prenotaStyle": true,
+      "resizeScript": true,
+      "heroTagsTrailBlank": true,
+      "competenzeTagsTrailBlank": true,
+      "curaTrailBlank": true,
+      "hasQuote": true,
+      "stickObserverComment": false,
+      "resizeExtraBlank": false
+    },
+    "dataSpecLabel": "Dermatologia · Tricologia",
+    "quote": "\"Credo che la migliore cura inizi sempre dall'ascolto. La pelle racconta molto di noi: comprenderla significa prendersi cura della persona nella sua globalità non soltanto della malattia.\"",
+    "photoFile": "melis.webp"
+  },
+  {
+    "surname": "Mirai",
+    "display": "Dr.ssa Sara Mirai",
+    "specs": [
+      "Nutrizione"
+    ],
+    "cats": [
+      "visite"
+    ],
+    "catLabels": [
+      "Visite Specialistiche"
+    ],
+    "slug": "mirai",
+    "metaTitle": "Dr.ssa Sara Mirai — Nutrizione a Oristano | Medic Service",
+    "metaDescription": "Dr.ssa Sara Mirai, nutrizione a Oristano presso Medic Service. Scopri specializzazioni e prenota online la tua visita.",
+    "stylesVersion": "9",
+    "siteJsVersion": "6",
+    "photoSrc": "/assets/photos/mirai.webp",
+    "photoPlaceholder": "Ritratto professionale Dr.ssa Sara Mirai",
+    "dataSpec": "Nutrizione",
+    "subtitle": "Specialista in Nutrizione",
+    "heroTags": [
+      "Nutrizione"
+    ],
+    "stickbarSpec": "<b>Nutrizione</b>",
+    "bio": [
+      {
+        "text": "La Dr.ssa Sara Mirai costruisce piani alimentari su misura per ogni fascia d'età, integrando strumenti di valutazione della composizione corporea per un percorso nutrizionale davvero personalizzato.",
+        "marginBottom": 26
+      }
+    ],
+    "formazione": {
+      "title": "Una formazione solida.",
+      "items": [
+        {
+          "title": "Biologia nutrizionista"
+        }
+      ]
+    },
+    "cura": {
+      "title": "Prestazioni e consulenze.",
+      "items": [
+        "Piani dietetici",
+        "Protocolli chetogenici",
+        "Impedenziometria"
+      ]
+    },
+    "competenze": {
+      "eyebrow": "Patologie trattate",
+      "title": "Le condizioni che seguo.",
+      "intro": null,
+      "tags": [
+        "Sovrappeso",
+        "Esigenze nutrizionali per età"
+      ]
+    },
+    "prenota": {
+      "title": "Scegli data e orario.",
+      "text": "Consulta le disponibilità di Dr.ssa Sara Mirai e prenota online in pochi passaggi.",
+      "miodottore": {
+        "href": "https://www.miodottore.it/sara-mirai/nutrizionista/oristano",
+        "doctor": "sara-mirai",
+        "calendarId": "1014484",
+        "anchorHtml": "<a id=\"zl-url\" class=\"zl-url\" href=\"https://www.miodottore.it/sara-mirai/nutrizionista/oristano\" rel=\"nofollow\" data-zlw-calendar-id=\"1014484\" data-zlw-doctor=\"sara-mirai\" data-zlw-type=\"big_with_calendar\" data-zlw-opinion=\"false\" data-zlw-hide-branding=\"true\" data-zlw-saas-only=\"false\" data-zlw-a11y-title=\"Widget di prenotazione visite mediche\">Prenota una visita</a>"
+      }
+    },
+    "ctaBand": {
+      "title": "Prenota la tua visita",
+      "text": "Prenoti con la Dr.ssa Mirai in meno di un minuto."
+    },
+    "stickbar": {
+      "href": "#prenota",
+      "icon": "calendar-check",
+      "label": "Prenota con la Dr.ssa Mirai"
+    },
+    "bookButtonLabel": "Prenota con la Dr.ssa Mirai",
+    "layout": {
+      "htmlComments": false,
+      "prenotaStyle": true,
+      "resizeScript": true,
+      "heroTagsTrailBlank": true,
+      "competenzeTagsTrailBlank": true,
+      "curaTrailBlank": true,
+      "hasQuote": true,
+      "stickObserverComment": false,
+      "resizeExtraBlank": false
+    },
+    "quote": "\"Non esiste una dieta giusta per tutti: esiste quella giusta per te.\"",
+    "photoFile": "mirai.webp"
+  },
+  {
+    "surname": "Monni",
+    "display": "Dr. Nicola Monni",
+    "specs": [
+      "Chirurgia plastica",
+      "Medicina estetica"
+    ],
+    "cats": [
+      "estetica"
+    ],
+    "catLabels": [
+      "Medicina Estetica"
+    ],
+    "slug": "monni",
+    "metaTitle": "Dr. Nicola Monni — Chirurgia plastica e Medicina estetica a Oristano | Medic Service",
+    "metaDescription": "Dr. Nicola Monni, chirurgia plastica e medicina estetica a Oristano presso Medic Service. Scopri specializzazioni e prenota online la tua visita.",
+    "stylesVersion": "9",
+    "siteJsVersion": "6",
+    "photoSrc": "/assets/photos/monni.webp",
+    "photoPlaceholder": "Ritratto professionale Dr. Nicola Monni",
+    "dataSpec": "Chirurgia plastica",
+    "subtitle": "Specialista in Chirurgia plastica · Medicina estetica",
+    "heroTags": [
+      "Chirurgia plastica",
+      "Medicina estetica"
+    ],
+    "stickbarSpec": "<b>Chirurgia plastica</b> · Medicina estetica",
+    "bio": [
+      {
+        "text": "Il Dr. Nicola Monni porta a Oristano oltre vent'anni di esperienza internazionale in chirurgia plastica, formatasi tra Sassari, Francia, Repubblica Ceca e Argentina, con un approccio che integra precisione tecnica e armonia estetica.",
+        "marginBottom": 26
+      }
+    ],
+    "formazione": {
+      "title": "Un percorso internazionale.",
+      "items": [
+        {
+          "title": "Chirurgia Plastica e Ricostruttiva, Sassari 2004"
+        },
+        {
+          "title": "Esperienze a Lione, Brno, Buenos Aires"
+        }
+      ]
+    },
+    "cura": {
+      "title": "Prestazioni e consulenze.",
+      "items": [
+        "Blefaroplastica",
+        "Lifting",
+        "Liposuzione",
+        "Mastoplastica",
+        "Filler"
+      ]
+    },
+    "competenze": {
+      "eyebrow": "Aree di competenza",
+      "title": "Specializzazioni e ambiti.",
+      "intro": null,
+      "tags": [
+        "Inestetismi viso/corpo",
+        "Invecchiamento cutaneo"
+      ]
+    },
+    "prenota": {
+      "title": "Scegli data e orario.",
+      "text": "Consulta le disponibilità di Dr. Nicola Monni e prenota online in pochi passaggi.",
+      "miodottore": {
+        "href": "https://www.miodottore.it/nicola-monni/chirurgo-plastico-medico-estetico/cagliari",
+        "doctor": "nicola-monni",
+        "calendarId": "1130286",
+        "anchorHtml": "<a id=\"zl-url\" class=\"zl-url\" href=\"https://www.miodottore.it/nicola-monni/chirurgo-plastico-medico-estetico/cagliari\" rel=\"nofollow\" data-zlw-calendar-id=\"1130286\" data-zlw-doctor=\"nicola-monni\" data-zlw-type=\"big_with_calendar\" data-zlw-opinion=\"false\" data-zlw-hide-branding=\"true\" data-zlw-saas-only=\"false\" data-zlw-a11y-title=\"Widget di prenotazione visite mediche\">Prenota una visita</a>"
+      }
+    },
+    "ctaBand": {
+      "title": "Prenota la tua visita",
+      "text": "Prenoti con il Dr. Monni in meno di un minuto."
+    },
+    "stickbar": {
+      "href": "#prenota",
+      "icon": "calendar-check",
+      "label": "Prenota con il Dr. Monni"
+    },
+    "bookButtonLabel": "Prenota con il Dr. Monni",
+    "layout": {
+      "htmlComments": false,
+      "prenotaStyle": true,
+      "resizeScript": true,
+      "heroTagsTrailBlank": false,
+      "competenzeTagsTrailBlank": false,
+      "curaTrailBlank": false,
+      "hasQuote": true,
+      "stickObserverComment": false,
+      "resizeExtraBlank": false
+    },
+    "dataSpecLabel": "Chirurgia plastica · Medicina estetica",
+    "quote": "\"Il miglior risultato è quello che nessuno nota, perché sembra semplicemente la versione più autentica di te.\"",
+    "photoFile": "monni.webp"
+  },
+  {
+    "surname": "Mura",
+    "display": "Dr. Pierpaolo Mura",
+    "specs": [
+      "Ortopedia",
+      "Traumatologia"
+    ],
+    "cats": [
+      "visite"
+    ],
+    "catLabels": [
+      "Visite Specialistiche"
+    ],
+    "slug": "mura",
+    "metaTitle": "Dr. Pierpaolo Mura — Ortopedia a Oristano | Medic Service",
+    "metaDescription": "Dr. Pierpaolo Mura, ortopedia a Oristano presso Medic Service. Scopri specializzazioni e prenota online la tua visita.",
+    "stylesVersion": "9",
+    "siteJsVersion": "6",
+    "photoSrc": "/assets/photos/generic_medic_male.png",
+    "photoPlaceholder": "",
+    "dataSpec": "Ortopedia",
+    "subtitle": "Specialista in Ortopedia · Traumatologia",
+    "heroTags": [
+      "Ortopedia",
+      "Traumatologia"
+    ],
+    "stickbarSpec": "<b>Ortopedia</b> · Ortopedia · Traumatologia",
+    "bio": [
+      {
+        "text": "Il Dr. Pierpaolo Mura combina competenze ortopediche e radiologiche nel trattamento delle patologie vertebrali, un approccio integrato che gli consente una pianificazione chirurgica particolarmente precisa.",
+        "marginBottom": 26
+      }
+    ],
+    "formazione": {
+      "title": "Un percorso integrato.",
+      "items": [
+        {
+          "title": "Ortopedia, Traumatologia e Radiologia Diagnostica"
+        }
+      ]
+    },
+    "cura": {
+      "title": "Prestazioni e consulenze.",
+      "items": [
+        "Trattamento chirurgico vertebrale"
+      ]
+    },
+    "competenze": {
+      "eyebrow": "Aree di competenza",
+      "title": "Specializzazioni e ambiti.",
+      "intro": null,
+      "tags": [
+        "Scoliosi",
+        "Deformità",
+        "Patologie degenerative del rachide"
+      ]
+    },
+    "prenota": {
+      "title": "Scegli data e orario.",
+      "text": "Consulta le disponibilità di Dr. Pierpaolo Mura e prenota online in pochi passaggi.",
+      "miodottore": {
+        "href": "https://www.miodottore.it/pier-paolo-mura/ortopedico-chirurgo-vertebrale/oristano",
+        "doctor": "pier-paolo-mura",
+        "calendarId": "1135860",
+        "anchorHtml": "<a id=\"zl-url\" class=\"zl-url\" href=\"https://www.miodottore.it/pier-paolo-mura/ortopedico-chirurgo-vertebrale/oristano\" rel=\"nofollow\" data-zlw-calendar-id=\"1135860\" data-zlw-doctor=\"pier-paolo-mura\" data-zlw-type=\"big_with_calendar\" data-zlw-opinion=\"false\" data-zlw-hide-branding=\"true\" data-zlw-saas-only=\"false\" data-zlw-a11y-title=\"Widget di prenotazione visite mediche\">Prenota una visita</a>"
+      }
+    },
+    "ctaBand": {
+      "title": "Prenota la tua visita",
+      "text": "Prenoti con il Dr. Mura in meno di un minuto."
+    },
+    "stickbar": {
+      "href": "#prenota",
+      "icon": "calendar-check",
+      "label": "Prenota con il Dr. Mura"
+    },
+    "bookButtonLabel": "Prenota con il Dr. Mura",
+    "layout": {
+      "htmlComments": false,
+      "prenotaStyle": true,
+      "resizeScript": true,
+      "heroTagsTrailBlank": true,
+      "competenzeTagsTrailBlank": false,
+      "curaTrailBlank": false,
+      "hasQuote": true,
+      "stickObserverComment": false,
+      "resizeExtraBlank": false
+    },
+    "dataSpecLabel": "Ortopedia · Traumatologia",
+    "quote": "\"La colonna vertebrale richiede uno sguardo che unisca clinica e immagine, mai uno dei due da solo.\""
+  },
+  {
+    "surname": "Murru",
+    "display": "Dr. Luca Murru",
+    "specs": [
+      "Oculistica"
+    ],
+    "cats": [
+      "visite"
+    ],
+    "catLabels": [
+      "Visite Specialistiche"
+    ],
+    "slug": "murru",
+    "metaTitle": "Dr. Luca Murru — Oculistica a Oristano | Medic Service",
+    "metaDescription": "Dr. Luca Murru, oculistica a Oristano presso Medic Service. Scopri specializzazioni e prenota online la tua visita.",
+    "stylesVersion": "9",
+    "siteJsVersion": "6",
+    "photoSrc": "/assets/photos/generic_medic_male.png",
+    "photoPlaceholder": "",
+    "dataSpec": "Oculistica",
+    "subtitle": "Specialista in Oculistica",
+    "heroTags": [
+      "Oculistica"
+    ],
+    "stickbarSpec": "<b>Oculistica</b> · Oculistica",
+    "bio": [
+      {
+        "text": "Il Dr. Luca Murru coniuga un approccio aggiornato alle nuove tecnologie diagnostiche con un'attenzione personalizzata al paziente, formatosi in oftalmologia presso l'Università di Cagliari.",
+        "marginBottom": 26
+      }
+    ],
+    "formazione": {
+      "title": "Una formazione universitaria.",
+      "items": [
+        {
+          "title": "Oftalmologia, Cagliari"
+        },
+        {
+          "title": "Medico chirurgo dal 2020"
+        }
+      ]
+    },
+    "cura": {
+      "title": "Prestazioni e consulenze.",
+      "items": [
+        "Tonometria",
+        "Topografia corneale",
+        "Campo visivo",
+        "Pachimetria"
+      ]
+    },
+    "competenze": {
+      "eyebrow": "Aree di competenza",
+      "title": "Specializzazioni e ambiti.",
+      "intro": null,
+      "tags": [
+        "Vizi di refrazione",
+        "Cataratta",
+        "Glaucoma",
+        "Cheratocono"
+      ]
+    },
+    "prenota": {
+      "title": "Scegli data e orario.",
+      "text": "Consulta le disponibilità di Dr. Luca Murru e prenota online in pochi passaggi.",
+      "miodottore": {
+        "href": "https://www.miodottore.it/luca-murru/oculista/oristano",
+        "doctor": "luca-murru",
+        "calendarId": "1130799",
+        "anchorHtml": "<a id=\"zl-url\" class=\"zl-url\" href=\"https://www.miodottore.it/luca-murru/oculista/oristano\" rel=\"nofollow\" data-zlw-calendar-id=\"1130799\" data-zlw-doctor=\"luca-murru\" data-zlw-type=\"big_with_calendar\" data-zlw-opinion=\"false\" data-zlw-hide-branding=\"true\" data-zlw-saas-only=\"false\" data-zlw-a11y-title=\"Widget di prenotazione visite mediche\">Prenota una visita</a>"
+      }
+    },
+    "ctaBand": {
+      "title": "Prenota la tua visita",
+      "text": "Prenoti con il Dr. Murru in meno di un minuto."
+    },
+    "stickbar": {
+      "href": "#prenota",
+      "icon": "calendar-check",
+      "label": "Prenota con il Dr. Murru"
+    },
+    "bookButtonLabel": "Prenota con il Dr. Murru",
+    "layout": {
+      "htmlComments": false,
+      "prenotaStyle": true,
+      "resizeScript": true,
+      "heroTagsTrailBlank": true,
+      "competenzeTagsTrailBlank": false,
+      "curaTrailBlank": false,
+      "hasQuote": true,
+      "stickObserverComment": false,
+      "resizeExtraBlank": false
+    },
+    "quote": "\"La vista è il senso che diamo più per scontato, finché non ce ne prendiamo davvero cura.\""
+  },
+  {
+    "surname": "Onali",
+    "display": "Dr. Sebastiano Onali",
+    "specs": [
+      "Gastroenterologia"
+    ],
+    "cats": [
+      "visite"
+    ],
+    "catLabels": [
+      "Visite Specialistiche"
+    ],
+    "slug": "onali",
+    "metaTitle": "Dr. Sebastiano Onali — Gastroenterologia a Oristano | Medic Service",
+    "metaDescription": "Dr. Sebastiano Onali, gastroenterologia a Oristano presso Medic Service. Scopri specializzazioni e prenota online la tua visita.",
+    "stylesVersion": "9",
+    "siteJsVersion": "6",
+    "photoSrc": "/assets/photos/onali.webp",
+    "photoPlaceholder": "",
+    "dataSpec": "Gastroenterologia",
+    "subtitle": "Specialista in Gastroenterologia",
+    "heroTags": [
+      "Gastroenterologia"
+    ],
+    "stickbarSpec": "<b>Gastroenterologia</b> · Gastroenterologia",
+    "bio": [
+      {
+        "text": "Il Dr. Sebastiano Onali è specialista in Gastroenterologia ed Endoscopia Digestiva, formatosi presso il Policlinico Universitario Agostino Gemelli di Roma. Costantemente aggiornato sulle più recenti evidenze scientifiche, unisce competenza clinica avanzata e capacità di ascolto: il suo obiettivo è accompagnare ogni paziente in un percorso di salute chiaro e sereno, ponendo la relazione medico-paziente al centro dell'attività clinica e ricercando la soluzione terapeutica più adatta alle specifiche esigenze di ciascuno.",
+        "marginBottom": 26
+      }
+    ],
+    "formazione": {
+      "title": "Una formazione specialistica.",
+      "items": [
+        {
+          "title": "Gastroenterologia ed Endoscopia Digestiva, Policlinico Gemelli Roma"
+        }
+      ]
+    },
+    "cura": {
+      "title": "Prestazioni e consulenze.",
+      "items": [
+        "Visita gastroenterologica",
+        "Esami endoscopici"
+      ]
+    },
+    "competenze": {
+      "eyebrow": "Patologie trattate",
+      "title": "Le condizioni che seguo.",
+      "intro": null,
+      "tags": [
+        "Patologie dell'esofago",
+        "Patologie dello stomaco",
+        "Patologie dell'intestino"
+      ]
+    },
+    "prenota": {
+      "title": "Scegli data e orario.",
+      "text": "Consulta le disponibilità di Dr. Sebastiano Onali e prenota online in pochi passaggi.",
+      "miodottore": {
+        "href": "https://www.miodottore.it/sebastiano-onali/gastroenterologo/torino",
+        "doctor": "sebastiano-onali",
+        "anchorHtml": "<a id=\"zl-url\" class=\"zl-url\" href=\"https://www.miodottore.it/sebastiano-onali/gastroenterologo/torino\" rel=\"nofollow\" data-zlw-doctor=\"sebastiano-onali\" data-zlw-type=\"big_with_calendar\" data-zlw-opinion=\"false\" data-zlw-hide-branding=\"true\" data-zlw-saas-only=\"false\" data-zlw-a11y-title=\"Widget di prenotazione visite mediche\">Prenota una visita</a>"
+      }
+    },
+    "ctaBand": {
+      "title": "Prenota la tua visita",
+      "text": "Prenoti con il Dr. Onali in meno di un minuto."
+    },
+    "stickbar": {
+      "href": "#prenota",
+      "icon": "calendar-check",
+      "label": "Prenota con il Dr. Onali"
+    },
+    "bookButtonLabel": "Prenota con il Dr. Onali",
+    "layout": {
+      "htmlComments": false,
+      "prenotaStyle": true,
+      "resizeScript": true,
+      "heroTagsTrailBlank": true,
+      "competenzeTagsTrailBlank": false,
+      "curaTrailBlank": false,
+      "hasQuote": true,
+      "stickObserverComment": false,
+      "resizeExtraBlank": false
+    },
+    "quote": "\"La gastroenterologia richiede competenza, ma soprattutto la capacità di ascoltare davvero il paziente.\"",
+    "photoFile": "onali.webp"
+  },
+  {
+    "surname": "Orofino",
+    "display": "Dr. Gianni Orofino",
+    "specs": [
+      "Neurologia",
+      "Elettromiografia"
+    ],
+    "cats": [
+      "visite"
+    ],
+    "catLabels": [
+      "Visite Specialistiche"
+    ],
+    "slug": "orofino",
+    "metaTitle": "Dr. Gianni Orofino — Neurologia ed Elettromiografia a Oristano | Medic Service",
+    "metaDescription": "Dr. Gianni Orofino, neurologia ed elettromiografia a Oristano presso Medic Service. Scopri specializzazioni e prenota online la tua visita.",
+    "stylesVersion": "9",
+    "siteJsVersion": "6",
+    "photoSrc": "/assets/photos/generic_medic_male.png",
+    "photoPlaceholder": "",
+    "dataSpec": "Neurologia",
+    "subtitle": "Specialista in Neurologia · Elettromiografia",
+    "heroTags": [
+      "Neurologia",
+      "Elettromiografia"
+    ],
+    "stickbarSpec": "<b>Neurologia</b> · Elettromiografia",
+    "bio": [
+      {
+        "text": "Il Dr. Gianni Orofino effettua valutazioni neurologiche e test psicometrici, accompagnando il paziente in un percorso diagnostico che spazia dai disturbi del sonno e dell'umore alle difficoltà di memoria e del movimento.",
+        "marginBottom": 26
+      }
+    ],
+    "formazione": {
+      "title": "Una formazione specialistica.",
+      "items": [
+        {
+          "title": "Neurologia"
+        },
+        {
+          "title": "Neurofisiologia"
+        },
+        {
+          "title": "Neuroscienze"
+        },
+        {
+          "title": "Neuroriabilitazione"
+        }
+      ]
+    },
+    "cura": {
+      "title": "Prestazioni e consulenze.",
+      "items": [
+        "Prima visita e visita di controllo",
+        "Visita neurologica domiciliare su richiesta"
+      ]
+    },
+    "competenze": {
+      "eyebrow": "Patologie trattate",
+      "title": "Le condizioni che seguo.",
+      "intro": null,
+      "tags": [
+        "Disturbi del sonno",
+        "Disturbi dell'umore",
+        "Disturbi della memoria",
+        "Disturbi dell'attenzione"
+      ]
+    },
+    "prenota": {
+      "title": "Scegli data e orario.",
+      "text": "Consulta le disponibilità di Dr. Gianni Orofino e prenota online in pochi passaggi.",
+      "miodottore": {
+        "href": "https://www.miodottore.it/gianni-orofino/neurologo/oristano",
+        "doctor": "gianni-orofino",
+        "anchorHtml": "<a id=\"zl-url\" class=\"zl-url\" href=\"https://www.miodottore.it/gianni-orofino/neurologo/oristano\" rel=\"nofollow\" data-zlw-doctor=\"gianni-orofino\" data-zlw-type=\"big_with_calendar\" data-zlw-opinion=\"false\" data-zlw-hide-branding=\"true\" data-zlw-saas-only=\"false\" data-zlw-a11y-title=\"Widget di prenotazione visite mediche\">Prenota una visita</a>"
+      }
+    },
+    "ctaBand": {
+      "title": "Prenota la tua visita",
+      "text": "Prenoti con il Dr. Orofino in meno di un minuto."
+    },
+    "stickbar": {
+      "href": "#prenota",
+      "icon": "calendar-check",
+      "label": "Prenota con il Dr. Orofino"
+    },
+    "bookButtonLabel": "Prenota con il Dr. Orofino",
+    "layout": {
+      "htmlComments": false,
+      "prenotaStyle": true,
+      "resizeScript": true,
+      "heroTagsTrailBlank": false,
+      "competenzeTagsTrailBlank": false,
+      "curaTrailBlank": false,
+      "hasQuote": true,
+      "stickObserverComment": false,
+      "resizeExtraBlank": false
+    },
+    "dataSpecLabel": "Neurologia · Elettromiografia",
+    "quote": "\"Dietro un sintomo neurologico c'è sempre una persona da ascoltare con pazienza.\""
+  },
+  {
+    "surname": "Oppo",
+    "display": "Dr. Giuseppe Oppo",
+    "specs": [
+      "Pneumologia"
+    ],
+    "cats": [
+      "visite"
+    ],
+    "catLabels": [
+      "Visite Specialistiche"
+    ],
+    "slug": "oppo",
+    "metaTitle": "Dr. Giuseppe Oppo — Pneumologia a Oristano | Medic Service",
+    "metaDescription": "Dr. Giuseppe Oppo, pneumologia a Oristano presso Medic Service. Scopri specializzazioni e prenota online la tua visita.",
+    "stylesVersion": "9",
+    "siteJsVersion": "6",
+    "photoSrc": "/assets/photos/oppo.webp",
+    "photoPlaceholder": "",
+    "dataSpec": "Pneumologia",
+    "subtitle": "Specialista in Pneumologia",
+    "heroTags": [
+      "Pneumologia"
+    ],
+    "stickbarSpec": "<b>Pneumologia</b> · Pneumologia",
+    "bio": [
+      {
+        "text": "Il Dr. Giuseppe Oppo segue pazienti con patologie respiratorie attraverso valutazioni specialistiche mirate, offrendo un percorso diagnostico chiaro per la gestione delle problematiche polmonari.",
+        "marginBottom": 26
+      }
+    ],
+    "formazione": {
+      "title": "Una formazione solida.",
+      "items": [
+        {
+          "title": "Pneumologia"
+        }
+      ]
+    },
+    "cura": {
+      "title": "Prestazioni e consulenze.",
+      "items": [
+        "Visite pneumologiche"
+      ]
+    },
+    "competenze": {
+      "eyebrow": "Aree di competenza",
+      "title": "Specializzazioni e ambiti.",
+      "intro": null,
+      "tags": [
+        "Patologie dell'apparato respiratorio"
+      ]
+    },
+    "prenota": {
+      "title": "Scegli data e orario.",
+      "text": "Consulta le disponibilità di Dr. Giuseppe Oppo e prenota online in pochi passaggi.",
+      "miodottore": {
+        "href": "https://www.miodottore.it/giuseppe-oppo/pneumologo/oristano",
+        "doctor": "giuseppe-oppo",
+        "calendarId": "1043818",
+        "anchorHtml": "<a id=\"zl-url\" class=\"zl-url\" href=\"https://www.miodottore.it/giuseppe-oppo/pneumologo/oristano\" rel=\"nofollow\" data-zlw-calendar-id=\"1043818\" data-zlw-doctor=\"giuseppe-oppo\" data-zlw-type=\"big_with_calendar\" data-zlw-opinion=\"false\" data-zlw-hide-branding=\"true\" data-zlw-saas-only=\"false\" data-zlw-a11y-title=\"Widget di prenotazione visite mediche\">Prenota una visita</a>"
+      }
+    },
+    "ctaBand": {
+      "title": "Prenota la tua visita",
+      "text": "Prenoti con il Dr. Oppo in meno di un minuto."
+    },
+    "stickbar": {
+      "href": "#prenota",
+      "icon": "calendar-check",
+      "label": "Prenota con il Dr. Oppo"
+    },
+    "bookButtonLabel": "Prenota con il Dr. Oppo",
+    "layout": {
+      "htmlComments": false,
+      "prenotaStyle": true,
+      "resizeScript": true,
+      "heroTagsTrailBlank": true,
+      "competenzeTagsTrailBlank": false,
+      "curaTrailBlank": true,
+      "hasQuote": true,
+      "stickObserverComment": false,
+      "resizeExtraBlank": false
+    },
+    "quote": "\"Respirare bene è la base di tutto: vale la pena prendersene cura davvero.\"",
+    "photoFile": "oppo.webp"
+  },
+  {
+    "surname": "Paderi",
+    "display": "Dr.ssa Valentina Paderi",
+    "specs": [
+      "Chirurgia plastica",
+      "Medicina estetica"
+    ],
+    "cats": [
+      "estetica"
+    ],
+    "catLabels": [
+      "Medicina Estetica"
+    ],
+    "slug": "paderi",
+    "metaTitle": "Dr.ssa Valentina Paderi — Chirurgia plastica e Medicina estetica a Oristano | Medic Service",
+    "metaDescription": "Dr.ssa Valentina Paderi, chirurgia plastica e medicina estetica a Oristano presso Medic Service. Scopri specializzazioni e prenota online la tua visita.",
+    "stylesVersion": "9",
+    "siteJsVersion": "6",
+    "photoSrc": "/assets/photos/paderi.webp",
+    "photoPlaceholder": "",
+    "dataSpec": "Chirurgia plastica",
+    "subtitle": "Specialista in Chirurgia plastica · Medicina estetica",
+    "heroTags": [
+      "Chirurgia plastica",
+      "Medicina estetica"
+    ],
+    "stickbarSpec": "<b>Chirurgia plastica</b> · Medicina estetica",
+    "bio": [
+      {
+        "text": "La Dr.ssa Valentina Paderi dedica la propria attività alla medicina estetica dal 2017, con un percorso di aggiornamento costante in Italia e all'estero e un approccio che personalizza ogni trattamento in base a età, genere e unicità del paziente.",
+        "marginBottom": 26
+      }
+    ],
+    "formazione": {
+      "title": "Un percorso consolidato.",
+      "items": [
+        {
+          "title": "Chirurgia Plastica Estetica e Ricostruttiva, attiva dal 2017"
+        }
+      ]
+    },
+    "cura": {
+      "title": "Prestazioni e consulenze.",
+      "items": [
+        "Filler",
+        "Tossina botulinica",
+        "Biorivitalizzazione",
+        "Acido polilattico"
+      ]
+    },
+    "competenze": {
+      "eyebrow": "Aree di competenza",
+      "title": "Specializzazioni e ambiti.",
+      "intro": null,
+      "tags": [
+        "Rilassamento cutaneo",
+        "Asimmetrie",
+        "Neoformazioni cutanee"
+      ]
+    },
+    "prenota": {
+      "title": "Scegli data e orario.",
+      "text": "Consulta le disponibilità di Dr.ssa Valentina Paderi e prenota online in pochi passaggi.",
+      "miodottore": {
+        "href": "https://www.miodottore.it/valentina-paderi/medico-estetico-chirurgo-plastico-chirurgo-estetico/oristano",
+        "doctor": "valentina-paderi",
+        "anchorHtml": "<a id=\"zl-url\" class=\"zl-url\" href=\"https://www.miodottore.it/valentina-paderi/medico-estetico-chirurgo-plastico-chirurgo-estetico/oristano\" rel=\"nofollow\" data-zlw-doctor=\"valentina-paderi\" data-zlw-type=\"big_with_calendar\" data-zlw-opinion=\"false\" data-zlw-hide-branding=\"true\" data-zlw-saas-only=\"false\" data-zlw-a11y-title=\"Widget di prenotazione visite mediche\">Prenota una visita</a>"
+      }
+    },
+    "ctaBand": {
+      "title": "Prenota la tua visita",
+      "text": "Prenoti con la Dr.ssa Paderi in meno di un minuto."
+    },
+    "stickbar": {
+      "href": "#prenota",
+      "icon": "calendar-check",
+      "label": "Prenota con la Dr.ssa Paderi"
+    },
+    "bookButtonLabel": "Prenota con la Dr.ssa Paderi",
+    "layout": {
+      "htmlComments": false,
+      "prenotaStyle": true,
+      "resizeScript": true,
+      "heroTagsTrailBlank": false,
+      "competenzeTagsTrailBlank": false,
+      "curaTrailBlank": false,
+      "hasQuote": true,
+      "stickObserverComment": false,
+      "resizeExtraBlank": false
+    },
+    "dataSpecLabel": "Chirurgia plastica · Medicina estetica",
+    "quote": "\"Il mio obiettivo non è cambiare un volto, ma valorizzare la bellezza che già gli appartiene.\"",
+    "photoFile": "paderi.webp"
+  },
+  {
+    "surname": "Paschina",
+    "display": "Dr. Carlo Paschina",
+    "specs": [
+      "Medicina legale"
+    ],
+    "cats": [
+      "visite"
+    ],
+    "catLabels": [
+      "Visite Specialistiche"
+    ],
+    "slug": "paschina",
+    "metaTitle": "Dr. Carlo Paschina — Medicina legale a Oristano | Medic Service",
+    "metaDescription": "Dr. Carlo Paschina, medicina legale a Oristano presso Medic Service. Scopri specializzazioni e prenota online la tua visita.",
+    "stylesVersion": "9",
+    "siteJsVersion": "6",
+    "photoSrc": "/assets/photos/generic_medic_male.png",
+    "photoPlaceholder": "",
+    "dataSpec": "Medicina legale",
+    "subtitle": "Specialista in Medicina legale",
+    "heroTags": [
+      "Medicina legale"
+    ],
+    "stickbarSpec": "<b>Medicina legale</b> · Medicina legale",
+    "bio": [
+      {
+        "text": "Il Dr. Carlo Paschina supporta i pazienti nelle pratiche che richiedono una valutazione medico-legale, offrendo competenza clinica e chiarezza in percorsi spesso complessi dal punto di vista burocratico.",
+        "marginBottom": 26
+      }
+    ],
+    "formazione": {
+      "title": "Una formazione specialistica.",
+      "items": [
+        {
+          "title": "Medicina Legale"
+        }
+      ]
+    },
+    "cura": {
+      "title": "Prestazioni e consulenze.",
+      "items": [
+        "Relazioni cliniche e medico-legali",
+        "Accompagnamento in commissione"
+      ]
+    },
+    "competenze": {
+      "eyebrow": "Aree di competenza",
+      "title": "Specializzazioni e ambiti.",
+      "intro": "Elenco indicativo in attesa di approvazione definitiva.",
+      "tags": [
+        "Medicina legale"
+      ]
+    },
+    "prenota": null,
+    "ctaBand": {
+      "title": "Prenota la tua visita",
+      "text": "Prenoti con il Dr. Paschina in meno di un minuto."
+    },
+    "stickbar": {
+      "href": "tel:0783211136",
+      "icon": "phone",
+      "label": "Chiama ora"
+    },
+    "bookButtonLabel": "Chiama ora",
+    "layout": {
+      "htmlComments": false,
+      "prenotaStyle": false,
+      "resizeScript": false,
+      "heroTagsTrailBlank": true,
+      "competenzeTagsTrailBlank": true,
+      "curaTrailBlank": false,
+      "hasQuote": true,
+      "stickObserverComment": false,
+      "resizeExtraBlank": false
+    },
+    "quote": "\"Dietro ogni pratica medico-legale c'è una persona che ha bisogno di essere capita, non solo valutata.\""
+  },
+  {
+    "surname": "Pibi",
+    "display": "Dr. Pierluigi Pibi",
+    "specs": [
+      "Andrologia",
+      "Urologia"
+    ],
+    "cats": [
+      "visite"
+    ],
+    "catLabels": [
+      "Visite Specialistiche"
+    ],
+    "slug": "pibi",
+    "metaTitle": "Dr. Pierluigi Pibi — Andrologia a Oristano | Medic Service",
+    "metaDescription": "Dr. Pierluigi Pibi, andrologia a Oristano presso Medic Service. Scopri specializzazioni e prenota online la tua visita.",
+    "stylesVersion": "9",
+    "siteJsVersion": "6",
+    "photoSrc": "/assets/photos/pibi.webp",
+    "photoPlaceholder": "",
+    "dataSpec": "Andrologia",
+    "subtitle": "Specialista in Andrologia · Urologia",
+    "heroTags": [
+      "Andrologia",
+      "Urologia"
+    ],
+    "stickbarSpec": "<b>Andrologia</b> · Andrologia · Urologia",
+    "bio": [
+      {
+        "text": "Il Dr. Pierluigi Pibi porta a Oristano oltre trent'anni di esperienza in urologia e andrologia, maturata sia in ambito ospedaliero che territoriale, con un ruolo attivo anche nelle società scientifiche di settore.",
+        "marginBottom": 26
+      }
+    ],
+    "formazione": {
+      "title": "Un percorso consolidato.",
+      "items": [
+        {
+          "title": "Urologia, Sassari 1984"
+        },
+        {
+          "title": "Resp. Centro Riabilitazione Pavimento Pelvico dal 2019"
+        }
+      ]
+    },
+    "cura": {
+      "title": "Prestazioni e consulenze.",
+      "items": [
+        "Uroflussometria",
+        "Circoncisione",
+        "Frenuloplastica",
+        "FMS"
+      ]
+    },
+    "competenze": {
+      "eyebrow": "Aree di competenza",
+      "title": "Specializzazioni e ambiti.",
+      "intro": null,
+      "tags": [
+        "Disfunzione erettile",
+        "Eiaculazione precoce",
+        "Varicocele",
+        "Infertilità"
+      ]
+    },
+    "prenota": {
+      "title": "Scegli data e orario.",
+      "text": "Consulta le disponibilità di Dr. Pierluigi Pibi e prenota online in pochi passaggi.",
+      "miodottore": {
+        "href": "https://www.miodottore.it/pierluigi-pibi/urologo-andrologo/oristano",
+        "doctor": "pierluigi-pibi",
+        "anchorHtml": "<a id=\"zl-url\" class=\"zl-url\" href=\"https://www.miodottore.it/pierluigi-pibi/urologo-andrologo/oristano\" rel=\"nofollow\" data-zlw-doctor=\"pierluigi-pibi\" data-zlw-type=\"big_with_calendar\" data-zlw-opinion=\"false\" data-zlw-hide-branding=\"true\" data-zlw-saas-only=\"false\" data-zlw-a11y-title=\"Widget di prenotazione visite mediche\">Prenota una visita</a>"
+      }
+    },
+    "ctaBand": {
+      "title": "Prenota la tua visita",
+      "text": "Prenoti con il Dr. Pibi in meno di un minuto."
+    },
+    "stickbar": {
+      "href": "#prenota",
+      "icon": "calendar-check",
+      "label": "Prenota con il Dr. Pibi"
+    },
+    "bookButtonLabel": "Prenota con il Dr. Pibi",
+    "layout": {
+      "htmlComments": false,
+      "prenotaStyle": true,
+      "resizeScript": true,
+      "heroTagsTrailBlank": true,
+      "competenzeTagsTrailBlank": false,
+      "curaTrailBlank": false,
+      "hasQuote": true,
+      "stickObserverComment": false,
+      "resizeExtraBlank": false
+    },
+    "dataSpecLabel": "Andrologia · Urologia",
+    "quote": "\"La salute urologica e sessuale maschile merita la stessa naturalezza di ogni altra visita medica.\"",
+    "photoFile": "pibi.webp"
+  },
+  {
+    "surname": "Picciau",
+    "display": "Dr. Maurizio Picciau",
+    "specs": [
+      "Radiologia"
+    ],
+    "cats": [
+      "diagnostica"
+    ],
+    "catLabels": [
+      "Diagnostica per Immagini"
+    ],
+    "slug": "picciau",
+    "metaTitle": "Dr. Maurizio Picciau — Radiologia a Oristano | Medic Service",
+    "metaDescription": "Dr. Maurizio Picciau, radiologia a Oristano presso Medic Service. Scopri specializzazioni e prenota online la tua visita.",
+    "stylesVersion": "9",
+    "siteJsVersion": "6",
+    "photoSrc": "/assets/photos/picciau.webp",
+    "photoPlaceholder": "",
+    "dataSpec": "Radiologia",
+    "subtitle": "Specialista in Radiologia",
+    "heroTags": [
+      "Radiologia"
+    ],
+    "stickbarSpec": "<b>Radiologia</b> · Radiologia",
+    "bio": [
+      {
+        "text": "Il Dr. Maurizio Picciau coordina l'area di diagnostica per immagini del centro, un asset clinico centrale nella nuova sede, fondamentale per la diagnosi tempestiva di un'ampia gamma di condizioni.",
+        "marginBottom": 26
+      }
+    ],
+    "formazione": {
+      "title": "Una formazione specialistica.",
+      "items": [
+        {
+          "title": "Radiologia"
+        }
+      ]
+    },
+    "cura": {
+      "title": "Prestazioni e consulenze.",
+      "items": [
+        "Ecografia",
+        "Radiologia tradizionale",
+        "Radiologia odontoiatrica",
+        "MOC/DEXA"
+      ]
+    },
+    "competenze": {
+      "eyebrow": "Aree di competenza",
+      "title": "Specializzazioni e ambiti.",
+      "intro": null,
+      "tags": [
+        "Diagnostica per immagini multidisciplinare"
+      ]
+    },
+    "prenota": {
+      "title": "Scegli data e orario.",
+      "text": "Consulta le disponibilità di Dr. Maurizio Picciau e prenota online in pochi passaggi.",
+      "miodottore": {
+        "href": "https://www.miodottore.it/maurizio-picciau/radiologo-radiologo-diagnostico/oristano",
+        "doctor": "maurizio-picciau",
+        "anchorHtml": "<a id=\"zl-url\" class=\"zl-url\" href=\"https://www.miodottore.it/maurizio-picciau/radiologo-radiologo-diagnostico/oristano\" rel=\"nofollow\" data-zlw-doctor=\"maurizio-picciau\" data-zlw-type=\"big_with_calendar\" data-zlw-opinion=\"false\" data-zlw-hide-branding=\"true\" data-zlw-saas-only=\"false\" data-zlw-a11y-title=\"Widget di prenotazione visite mediche\">Prenota una visita</a>"
+      }
+    },
+    "ctaBand": {
+      "title": "Prenota la tua visita",
+      "text": "Prenoti con il Dr. Picciau in meno di un minuto."
+    },
+    "stickbar": {
+      "href": "#prenota",
+      "icon": "calendar-check",
+      "label": "Prenota con il Dr. Picciau"
+    },
+    "bookButtonLabel": "Prenota con il Dr. Picciau",
+    "layout": {
+      "htmlComments": false,
+      "prenotaStyle": true,
+      "resizeScript": true,
+      "heroTagsTrailBlank": true,
+      "competenzeTagsTrailBlank": false,
+      "curaTrailBlank": false,
+      "hasQuote": true,
+      "stickObserverComment": false,
+      "resizeExtraBlank": false
+    },
+    "quote": "\"Un'immagine può raccontare in pochi secondi ciò che altrimenti richiederebbe mesi di dubbi.\"",
+    "photoFile": "picciau.webp"
+  },
+  {
+    "surname": "Pilloni",
+    "display": "Dr.ssa Monica Pilloni",
+    "specs": [
+      "Ginecologia"
+    ],
+    "cats": [
+      "visite"
+    ],
+    "catLabels": [
+      "Visite Specialistiche"
+    ],
+    "slug": "pilloni",
+    "metaTitle": "Dr.ssa Monica Pilloni — Ginecologia a Oristano | Medic Service",
+    "metaDescription": "Dr.ssa Monica Pilloni, ginecologia a Oristano presso Medic Service. Scopri specializzazioni e prenota online la tua visita.",
+    "stylesVersion": "9",
+    "siteJsVersion": "6",
+    "photoSrc": "/assets/photos/generic_medic_female.png",
+    "photoPlaceholder": "",
+    "dataSpec": "Ginecologia",
+    "subtitle": "Specialista in Ginecologia",
+    "heroTags": [
+      "Ginecologia"
+    ],
+    "stickbarSpec": "<b>Ginecologia</b> · Ginecologia",
+    "bio": [
+      {
+        "text": "La Dr.ssa Monica Pilloni integra competenze ospedaliere universitarie e trattamenti innovativi per il benessere femminile, con un'esperienza specifica anche nella gestione clinica della menopausa.",
+        "marginBottom": 26
+      }
+    ],
+    "formazione": {
+      "title": "Un percorso universitario.",
+      "items": [
+        {
+          "title": "Ginecologia, Azienda Ospedaliero-Universitaria Cagliari"
+        },
+        {
+          "title": "Ambulatorio menopausa"
+        }
+      ]
+    },
+    "cura": {
+      "title": "Prestazioni e consulenze.",
+      "items": [
+        "Visita ginecologica",
+        "Pap test",
+        "Colposcopia",
+        "Vagy Combi",
+        "Ozono terapia"
+      ]
+    },
+    "competenze": {
+      "eyebrow": "Aree di competenza",
+      "title": "Specializzazioni e ambiti.",
+      "intro": null,
+      "tags": [
+        "Atrofia vaginale",
+        "Incontinenza",
+        "Infezioni ricorrenti"
+      ]
+    },
+    "prenota": {
+      "title": "Scegli data e orario.",
+      "text": "Consulta le disponibilità di Dr.ssa Monica Pilloni e prenota online in pochi passaggi.",
+      "miodottore": {
+        "href": "https://www.miodottore.it/monica-pilloni/ginecologo/oristano",
+        "doctor": "monica-pilloni",
+        "calendarId": "444266",
+        "anchorHtml": "<a id=\"zl-url\" class=\"zl-url\" href=\"https://www.miodottore.it/monica-pilloni/ginecologo/oristano\" rel=\"nofollow\" data-zlw-calendar-id=\"444266\" data-zlw-doctor=\"monica-pilloni\" data-zlw-type=\"big_with_calendar\" data-zlw-opinion=\"false\" data-zlw-hide-branding=\"true\" data-zlw-saas-only=\"false\" data-zlw-a11y-title=\"Widget di prenotazione visite mediche\">Prenota una visita</a>"
+      }
+    },
+    "ctaBand": {
+      "title": "Prenota la tua visita",
+      "text": "Prenoti con la Dr.ssa Pilloni in meno di un minuto."
+    },
+    "stickbar": {
+      "href": "#prenota",
+      "icon": "calendar-check",
+      "label": "Prenota con la Dr.ssa Pilloni"
+    },
+    "bookButtonLabel": "Prenota con la Dr.ssa Pilloni",
+    "layout": {
+      "htmlComments": false,
+      "prenotaStyle": true,
+      "resizeScript": true,
+      "heroTagsTrailBlank": true,
+      "competenzeTagsTrailBlank": false,
+      "curaTrailBlank": false,
+      "hasQuote": true,
+      "stickObserverComment": false,
+      "resizeExtraBlank": false
+    },
+    "quote": "\"La salute della donna cambia nel tempo: la nostra cura deve saper cambiare con lei.\""
+  },
+  {
+    "surname": "Pintor",
+    "display": "Dr.ssa Valentina Pintor",
+    "specs": [
+      "Logopedia"
+    ],
+    "cats": [
+      "visite"
+    ],
+    "catLabels": [
+      "Visite Specialistiche"
+    ],
+    "slug": "pintor",
+    "metaTitle": "Dr.ssa Valentina Pintor — Logopedia a Oristano | Medic Service",
+    "metaDescription": "Dr.ssa Valentina Pintor, logopedia a Oristano presso Medic Service. Scopri specializzazioni e prenota online la tua visita.",
+    "stylesVersion": "9",
+    "siteJsVersion": "6",
+    "photoSrc": "/assets/photos/pintor.webp",
+    "photoPlaceholder": "",
+    "dataSpec": "Logopedia",
+    "subtitle": "Specialista in Logopedia",
+    "heroTags": [
+      "Logopedia"
+    ],
+    "stickbarSpec": "<b>Logopedia</b> · Logopedia",
+    "bio": [
+      {
+        "text": "La Dr.ssa Valentina Pintor costruisce percorsi terapeutici personalizzati a partire da una valutazione approfondita, accompagnando bambini e adulti nel superamento di disturbi del linguaggio e della comunicazione.",
+        "marginBottom": 26
+      }
+    ],
+    "formazione": {
+      "title": "Una formazione specialistica.",
+      "items": [
+        {
+          "title": "Logopedia"
+        }
+      ]
+    },
+    "cura": {
+      "title": "Prestazioni e consulenze.",
+      "items": [
+        "Valutazione logopedica, sedute da 45 minuti"
+      ]
+    },
+    "competenze": {
+      "eyebrow": "Aree di competenza",
+      "title": "Specializzazioni e ambiti.",
+      "intro": null,
+      "tags": [
+        "Ritardo e disturbi del linguaggio",
+        "DSA",
+        "Balbuzie",
+        "Afasia",
+        "Disfonie"
+      ]
+    },
+    "prenota": {
+      "title": "Scegli data e orario.",
+      "text": "Consulta le disponibilità di Dr.ssa Valentina Pintor e prenota online in pochi passaggi.",
+      "miodottore": {
+        "href": "https://www.miodottore.it/valentina-pintor/logopedista/oristano",
+        "doctor": "valentina-pintor",
+        "anchorHtml": "<a id=\"zl-url\" class=\"zl-url\" href=\"https://www.miodottore.it/valentina-pintor/logopedista/oristano\" rel=\"nofollow\" data-zlw-doctor=\"valentina-pintor\" data-zlw-type=\"big_with_calendar\" data-zlw-opinion=\"false\" data-zlw-hide-branding=\"true\" data-zlw-saas-only=\"false\" data-zlw-a11y-title=\"Widget di prenotazione visite mediche\">Prenota una visita</a>"
+      }
+    },
+    "ctaBand": {
+      "title": "Prenota la tua visita",
+      "text": "Prenoti con la Dr.ssa Pintor in meno di un minuto."
+    },
+    "stickbar": {
+      "href": "#prenota",
+      "icon": "calendar-check",
+      "label": "Prenota con la Dr.ssa Pintor"
+    },
+    "bookButtonLabel": "Prenota con la Dr.ssa Pintor",
+    "layout": {
+      "htmlComments": false,
+      "prenotaStyle": true,
+      "resizeScript": true,
+      "heroTagsTrailBlank": true,
+      "competenzeTagsTrailBlank": false,
+      "curaTrailBlank": true,
+      "hasQuote": true,
+      "stickObserverComment": false,
+      "resizeExtraBlank": false
+    },
+    "quote": "\"Ogni comunicazione inizia dall'ascolto.\"",
+    "photoFile": "pintor.webp"
+  },
+  {
+    "surname": "Piras",
+    "display": "Dr. Valentino Piras",
+    "specs": [
+      "Oculistica"
+    ],
+    "cats": [
+      "visite"
+    ],
+    "catLabels": [
+      "Visite Specialistiche"
+    ],
+    "slug": "piras",
+    "metaTitle": "Dr. Valentino Piras — Oculistica a Oristano | Medic Service",
+    "metaDescription": "Dr. Valentino Piras, oculistica a Oristano presso Medic Service. Scopri specializzazioni e prenota online la tua visita.",
+    "stylesVersion": "9",
+    "siteJsVersion": "6",
+    "photoSrc": "/assets/photos/generic_medic_male.png",
+    "photoPlaceholder": "",
+    "dataSpec": "Oculistica",
+    "subtitle": "Specialista in Oculistica",
+    "heroTags": [
+      "Oculistica"
+    ],
+    "stickbarSpec": "<b>Oculistica</b> · Oculistica",
+    "bio": [
+      {
+        "text": "Il Dr. Valentino Piras garantisce un percorso di cura attento e personalizzato, con oltre venticinque anni di esperienza nella diagnosi e nel trattamento delle principali patologie oculari.",
+        "marginBottom": 26
+      }
+    ],
+    "formazione": {
+      "title": "Una formazione specialistica.",
+      "items": [
+        {
+          "title": "Oftalmologia, oltre 25 anni di esperienza."
+        }
+      ]
+    },
+    "cura": {
+      "title": "Prestazioni e consulenze.",
+      "items": [
+        "Visita oculistica con tecnologie diagnostiche avanzate"
+      ]
+    },
+    "competenze": {
+      "eyebrow": "Aree di competenza",
+      "title": "Specializzazioni e ambiti.",
+      "intro": null,
+      "tags": [
+        "Glaucoma",
+        "Cataratta",
+        "Malattie retiniche"
+      ]
+    },
+    "prenota": {
+      "title": "Scegli data e orario.",
+      "text": "Consulta le disponibilità di Dr. Valentino Piras e prenota online in pochi passaggi.",
+      "miodottore": {
+        "href": "https://www.miodottore.it/valentino-piras/oculista/oristano",
+        "doctor": "valentino-piras",
+        "calendarId": "1114843",
+        "anchorHtml": "<a id=\"zl-url\" class=\"zl-url\" href=\"https://www.miodottore.it/valentino-piras/oculista/oristano\" rel=\"nofollow\" data-zlw-calendar-id=\"1114843\" data-zlw-doctor=\"valentino-piras\" data-zlw-type=\"big_with_calendar\" data-zlw-opinion=\"false\" data-zlw-hide-branding=\"true\" data-zlw-saas-only=\"false\" data-zlw-a11y-title=\"Widget di prenotazione visite mediche\">Prenota una visita</a>"
+      }
+    },
+    "ctaBand": {
+      "title": "Prenota la tua visita",
+      "text": "Prenoti con il Dr. Piras in meno di un minuto."
+    },
+    "stickbar": {
+      "href": "#prenota",
+      "icon": "calendar-check",
+      "label": "Prenota con il Dr. Piras"
+    },
+    "bookButtonLabel": "Prenota con il Dr. Piras",
+    "layout": {
+      "htmlComments": false,
+      "prenotaStyle": true,
+      "resizeScript": true,
+      "heroTagsTrailBlank": true,
+      "competenzeTagsTrailBlank": false,
+      "curaTrailBlank": true,
+      "hasQuote": true,
+      "stickObserverComment": false,
+      "resizeExtraBlank": false
+    },
+    "quote": "\"L'esperienza in oculistica insegna a riconoscere i segnali prima che diventino problemi.\""
+  },
+  {
+    "surname": "Pitzalis",
+    "display": "Dr. Gianfranco Pitzalis",
+    "specs": [
+      "Psichiatria"
+    ],
+    "cats": [
+      "visite"
+    ],
+    "catLabels": [
+      "Visite Specialistiche"
+    ],
+    "slug": "pitzalis",
+    "metaTitle": "Dr. Gianfranco Pitzalis — Psichiatria a Oristano | Medic Service",
+    "metaDescription": "Dr. Gianfranco Pitzalis, psichiatria a Oristano presso Medic Service. Scopri specializzazioni e prenota online la tua visita.",
+    "stylesVersion": "9",
+    "siteJsVersion": "6",
+    "photoSrc": "/assets/photos/pitzalis.webp",
+    "photoPlaceholder": "",
+    "dataSpec": "Psichiatria",
+    "subtitle": "Specialista in Psichiatria",
+    "heroTags": [
+      "Psichiatria"
+    ],
+    "stickbarSpec": "<b>Psichiatria</b> · Psichiatria",
+    "bio": [
+      {
+        "text": "Il Dr. Gianfranco Pitzalis offre un ascolto attento e riservato nella gestione delle condizioni psichiatriche, con un approccio clinico che mette al centro la dignità e la fiducia del paziente.",
+        "marginBottom": 26
+      }
+    ],
+    "formazione": {
+      "title": "Una formazione specialistica.",
+      "items": [
+        {
+          "title": "Psichiatria"
+        }
+      ]
+    },
+    "cura": {
+      "title": "Prestazioni e consulenze.",
+      "items": [
+        "Consulenze psichiatriche"
+      ]
+    },
+    "competenze": {
+      "eyebrow": "Aree di competenza",
+      "title": "Specializzazioni e ambiti.",
+      "intro": null,
+      "tags": [
+        "Disturbi dell'umore",
+        "Ansia"
+      ]
+    },
+    "prenota": {
+      "title": "Scegli data e orario.",
+      "text": "Consulta le disponibilità di Dr. Gianfranco Pitzalis e prenota online in pochi passaggi.",
+      "miodottore": {
+        "href": "https://www.miodottore.it/gianfranco-pitzalis/psichiatra/oristano",
+        "doctor": "gianfranco-pitzalis",
+        "anchorHtml": "<a id=\"zl-url\" class=\"zl-url\" href=\"https://www.miodottore.it/gianfranco-pitzalis/psichiatra/oristano\" rel=\"nofollow\" data-zlw-doctor=\"gianfranco-pitzalis\" data-zlw-type=\"big_with_calendar\" data-zlw-opinion=\"false\" data-zlw-hide-branding=\"true\" data-zlw-saas-only=\"false\" data-zlw-a11y-title=\"Widget di prenotazione visite mediche\">Prenota una visita</a>"
+      }
+    },
+    "ctaBand": {
+      "title": "Prenota la tua visita",
+      "text": "Prenoti con il Dr. Pitzalis in meno di un minuto."
+    },
+    "stickbar": {
+      "href": "#prenota",
+      "icon": "calendar-check",
+      "label": "Prenota con il Dr. Pitzalis"
+    },
+    "bookButtonLabel": "Prenota con il Dr. Pitzalis",
+    "layout": {
+      "htmlComments": false,
+      "prenotaStyle": true,
+      "resizeScript": true,
+      "heroTagsTrailBlank": true,
+      "competenzeTagsTrailBlank": false,
+      "curaTrailBlank": true,
+      "hasQuote": true,
+      "stickObserverComment": false,
+      "resizeExtraBlank": false
+    },
+    "quote": "\"Chiedere aiuto per la propria mente richiede coraggio: meritano sempre rispetto e ascolto.\"",
+    "photoFile": "pitzalis.webp"
+  },
+  {
+    "surname": "Polizzi",
+    "display": "Dr. Leonardo Polizzi",
+    "specs": [
+      "Neurochirurgia"
+    ],
+    "cats": [
+      "visite"
+    ],
+    "catLabels": [
+      "Visite Specialistiche"
+    ],
+    "slug": "polizzi",
+    "metaTitle": "Dr. Leonardo Polizzi — Neurochirurgia a Oristano | Medic Service",
+    "metaDescription": "Dr. Leonardo Polizzi, neurochirurgia a Oristano presso Medic Service. Scopri specializzazioni e prenota online la tua visita.",
+    "stylesVersion": "9",
+    "siteJsVersion": "6",
+    "photoSrc": "/assets/photos/generic_medic_male.png",
+    "photoPlaceholder": "",
+    "dataSpec": "Neurochirurgia",
+    "subtitle": "Specialista in Neurochirurgia",
+    "heroTags": [
+      "Neurochirurgia"
+    ],
+    "stickbarSpec": "<b>Neurochirurgia</b> · Neurochirurgia",
+    "bio": [
+      {
+        "text": "Il Dr. Leonardo Polizzi applica tecniche chirurgiche mininvasive maturate in oltre venticinque anni di attività neurochirurgica, riducendo il trauma operatorio sulla colonna vertebrale e i tempi di recupero del paziente.",
+        "marginBottom": 26
+      }
+    ],
+    "formazione": {
+      "title": "Una formazione specialistica.",
+      "items": [
+        {
+          "title": "Neurochirurgia"
+        },
+        {
+          "title": "Oltre 25 anni, Azienda Ospedaliera G. Brotzu"
+        }
+      ]
+    },
+    "cura": {
+      "title": "Prestazioni e consulenze.",
+      "items": [
+        "Laser per ernie lombari/cervicali",
+        "Stabilizzazioni percutanee"
+      ]
+    },
+    "competenze": {
+      "eyebrow": "Aree di competenza",
+      "title": "Specializzazioni e ambiti.",
+      "intro": null,
+      "tags": [
+        "Ernia del disco",
+        "Stenosi spinale",
+        "Fratture vertebrali"
+      ]
+    },
+    "prenota": {
+      "title": "Scegli data e orario.",
+      "text": "Consulta le disponibilità di Dr. Leonardo Polizzi e prenota online in pochi passaggi.",
+      "miodottore": {
+        "href": "https://www.miodottore.it/leonardo-polizzi/neurochirurgo/oristano",
+        "doctor": "leonardo-polizzi",
+        "calendarId": "1130800",
+        "anchorHtml": "<a id=\"zl-url\" class=\"zl-url\" href=\"https://www.miodottore.it/leonardo-polizzi/neurochirurgo/oristano\" rel=\"nofollow\" data-zlw-calendar-id=\"1130800\" data-zlw-doctor=\"leonardo-polizzi\" data-zlw-type=\"big_with_calendar\" data-zlw-opinion=\"false\" data-zlw-hide-branding=\"true\" data-zlw-saas-only=\"false\" data-zlw-a11y-title=\"Widget di prenotazione visite mediche\">Prenota una visita</a>"
+      }
+    },
+    "ctaBand": {
+      "title": "Prenota la tua visita",
+      "text": "Prenoti con il Dr. Polizzi in meno di un minuto."
+    },
+    "stickbar": {
+      "href": "#prenota",
+      "icon": "calendar-check",
+      "label": "Prenota con il Dr. Polizzi"
+    },
+    "bookButtonLabel": "Prenota con il Dr. Polizzi",
+    "layout": {
+      "htmlComments": false,
+      "prenotaStyle": true,
+      "resizeScript": true,
+      "heroTagsTrailBlank": true,
+      "competenzeTagsTrailBlank": false,
+      "curaTrailBlank": false,
+      "hasQuote": true,
+      "stickObserverComment": false,
+      "resizeExtraBlank": false
+    },
+    "quote": "\"La chirurgia della colonna oggi può essere meno invasiva di quanto si pensi: è questo che cerco di offrire.\""
+  },
+  {
+    "surname": "Putzu",
+    "display": "Dr. Giovanni Antioco Putzu",
+    "specs": [
+      "Neurologia",
+      "Elettromiografia"
+    ],
+    "cats": [
+      "visite"
+    ],
+    "catLabels": [
+      "Visite Specialistiche"
+    ],
+    "slug": "putzu",
+    "metaTitle": "Dr. Giovanni Antioco Putzu — Neurologia a Oristano | Medic Service",
+    "metaDescription": "Dr. Giovanni Antioco Putzu, neurologia ed elettromiografia a Oristano presso Medic Service. Scopri specializzazioni e prenota online la tua visita.",
+    "stylesVersion": "9",
+    "siteJsVersion": "6",
+    "photoSrc": "/assets/photos/generic_medic_male.png",
+    "photoPlaceholder": "",
+    "dataSpec": "Neurologia",
+    "subtitle": "Specialista in Neurologia · Elettromiografia",
+    "heroTags": [
+      "Neurologia",
+      "Elettromiografia"
+    ],
+    "stickbarSpec": "<b>Neurologia</b> · Elettromiografia",
+    "bio": [
+      {
+        "text": "Il Dr. Giovanni Antioco Putzu esegue esami elettromiografici per lo studio della conduzione nervosa e dell'attività muscolare, un passaggio diagnostico spesso decisivo nei percorsi di cura neurologica e ortopedica.",
+        "marginBottom": 26
+      }
+    ],
+    "formazione": {
+      "title": "Una formazione specialistica.",
+      "items": [
+        {
+          "title": "Neurologia"
+        }
+      ]
+    },
+    "cura": {
+      "title": "Prestazioni e consulenze.",
+      "items": [
+        "Elettromiografia (EMG)",
+        "Visita Neurologica"
+      ]
+    },
+    "competenze": {
+      "eyebrow": "Aree di competenza",
+      "title": "Specializzazioni e ambiti.",
+      "intro": null,
+      "tags": [
+        "Sindromi compressive",
+        "Neuropatie periferiche",
+        "Miopatie"
+      ]
+    },
+    "prenota": {
+      "title": "Scegli data e orario.",
+      "text": "Consulta le disponibilità di Dr. Giovanni Antioco Putzu e prenota online in pochi passaggi.",
+      "miodottore": {
+        "href": "https://www.miodottore.it/giovanni-antioco-putzu/neurologo-neuropsichiatra-infantile/oristano",
+        "doctor": "giovanni-antioco-putzu",
+        "calendarId": "1130795",
+        "anchorHtml": "<a id=\"zl-url\" class=\"zl-url\" href=\"https://www.miodottore.it/giovanni-antioco-putzu/neurologo-neuropsichiatra-infantile/oristano\" rel=\"nofollow\" data-zlw-calendar-id=\"1130795\" data-zlw-doctor=\"giovanni-antioco-putzu\" data-zlw-type=\"big_with_calendar\" data-zlw-opinion=\"false\" data-zlw-hide-branding=\"true\" data-zlw-saas-only=\"false\" data-zlw-a11y-title=\"Widget di prenotazione visite mediche\">Prenota una visita</a>"
+      }
+    },
+    "ctaBand": {
+      "title": "Prenota la tua visita",
+      "text": "Prenoti con il Dr. Putzu in meno di un minuto."
+    },
+    "stickbar": {
+      "href": "#prenota",
+      "icon": "calendar-check",
+      "label": "Prenota con il Dr. Putzu"
+    },
+    "bookButtonLabel": "Prenota con il Dr. Putzu",
+    "layout": {
+      "htmlComments": false,
+      "prenotaStyle": true,
+      "resizeScript": true,
+      "heroTagsTrailBlank": true,
+      "competenzeTagsTrailBlank": false,
+      "curaTrailBlank": false,
+      "hasQuote": true,
+      "stickObserverComment": false,
+      "resizeExtraBlank": false
+    },
+    "dataSpecLabel": "Neurologia · Elettromiografia",
+    "quote": "\"Un esame di pochi minuti può chiarire mesi di dubbi diagnostici.\""
+  },
+  {
+    "surname": "Rocca",
+    "display": "Dr. Alessio Rocca",
+    "specs": [
+      "Ginecologia"
+    ],
+    "cats": [
+      "visite"
+    ],
+    "catLabels": [
+      "Visite Specialistiche"
+    ],
+    "slug": "rocca",
+    "metaTitle": "Dr. Alessio Rocca — Ginecologia a Oristano | Medic Service",
+    "metaDescription": "Dr. Alessio Rocca, ginecologia a Oristano presso Medic Service. Scopri specializzazioni e prenota online la tua visita.",
+    "stylesVersion": "9",
+    "siteJsVersion": "6",
+    "photoSrc": "/assets/photos/generic_medic_male.png",
+    "photoPlaceholder": "",
+    "dataSpec": "Ginecologia",
+    "subtitle": "Specialista in Ginecologia",
+    "heroTags": [
+      "Ginecologia"
+    ],
+    "stickbarSpec": "<b>Ginecologia</b> · Ginecologia",
+    "bio": [
+      {
+        "text": "Il Dr. Alessio Rocca fa parte del team di ginecologia del centro, dedicandosi alla prevenzione, alla diagnosi e al trattamento delle patologie dell'apparato riproduttivo femminile.",
+        "marginBottom": 26
+      }
+    ],
+    "formazione": {
+      "title": "Una formazione specialistica.",
+      "items": [
+        {
+          "title": "Ginecologia"
+        }
+      ]
+    },
+    "cura": {
+      "title": "Prestazioni e consulenze.",
+      "items": [
+        "Visite ginecologiche"
+      ]
+    },
+    "competenze": {
+      "eyebrow": "Aree di competenza",
+      "title": "Specializzazioni e ambiti.",
+      "intro": null,
+      "tags": [
+        "Patologie dell'apparato riproduttivo femminile",
+        "Diagnosi delle precancerose cervicali, vaginali e vulvari"
+      ]
+    },
+    "prenota": {
+      "title": "Scegli data e orario.",
+      "text": "Consulta le disponibilità di Dr. Alessio Rocca e prenota online in pochi passaggi.",
+      "miodottore": {
+        "href": "https://www.miodottore.it/alessio-rocca-2/ginecologo/oristano",
+        "doctor": "alessio-rocca-2",
+        "anchorHtml": "<a id=\"zl-url\" class=\"zl-url\" href=\"https://www.miodottore.it/alessio-rocca-2/ginecologo/oristano\" rel=\"nofollow\" data-zlw-doctor=\"alessio-rocca-2\" data-zlw-type=\"big_with_calendar\" data-zlw-opinion=\"false\" data-zlw-hide-branding=\"true\" data-zlw-saas-only=\"false\" data-zlw-a11y-title=\"Widget di prenotazione visite mediche\">Prenota una visita</a>"
+      }
+    },
+    "ctaBand": {
+      "title": "Prenota la tua visita",
+      "text": "Prenoti con il Dr. Rocca in meno di un minuto."
+    },
+    "stickbar": {
+      "href": "#prenota",
+      "icon": "calendar-check",
+      "label": "Prenota con il Dr. Rocca"
+    },
+    "bookButtonLabel": "Prenota con il Dr. Rocca",
+    "layout": {
+      "htmlComments": false,
+      "prenotaStyle": true,
+      "resizeScript": true,
+      "heroTagsTrailBlank": true,
+      "competenzeTagsTrailBlank": false,
+      "curaTrailBlank": true,
+      "hasQuote": true,
+      "stickObserverComment": false,
+      "resizeExtraBlank": false
+    },
+    "quote": "\"La prevenzione in ginecologia è un gesto d'amore verso se stesse.\""
+  },
+  {
+    "surname": "Russo",
+    "display": "Dr. Michele Russo",
+    "specs": [
+      "Fisiatria"
+    ],
+    "cats": [
+      "visite"
+    ],
+    "catLabels": [
+      "Visite Specialistiche"
+    ],
+    "slug": "russo",
+    "metaTitle": "Dr. Michele Russo — Fisiatria a Oristano | Medic Service",
+    "metaDescription": "Dr. Michele Russo, fisiatria a Oristano presso Medic Service. Scopri specializzazioni e prenota online la tua visita.",
+    "stylesVersion": "9",
+    "siteJsVersion": "6",
+    "photoSrc": "/assets/photos/generic_medic_male.png",
+    "photoPlaceholder": "",
+    "dataSpec": "Fisiatria",
+    "subtitle": "Specialista in Fisiatria",
+    "heroTags": [
+      "Fisiatria"
+    ],
+    "stickbarSpec": "<b>Fisiatria</b> · Fisiatria",
+    "bio": [
+      {
+        "text": "Il Dr. Michele Russo accompagna i pazienti in percorsi di riabilitazione personalizzati, con un'attenzione specifica sia alle patologie degenerative articolari (acute e croniche) sia agli esiti di problematiche neurologiche.",
+        "marginBottom": 26
+      }
+    ],
+    "formazione": {
+      "title": "Una formazione specialistica.",
+      "items": [
+        {
+          "title": "Fisiatria, Cagliari 1985"
+        }
+      ]
+    },
+    "cura": {
+      "title": "Prestazioni e consulenze.",
+      "items": [
+        "Visita fisiatrica",
+        "Artrocentesi",
+        "Terapia infiltrativa"
+      ]
+    },
+    "competenze": {
+      "eyebrow": "Aree di competenza",
+      "title": "Specializzazioni e ambiti.",
+      "intro": null,
+      "tags": [
+        "Patologie degenerative articolari e neurologiche"
+      ]
+    },
+    "prenota": {
+      "title": "Scegli data e orario.",
+      "text": "Consulta le disponibilità di Dr. Michele Russo e prenota online in pochi passaggi.",
+      "miodottore": {
+        "href": "https://www.miodottore.it/michele-russo-9/fisiatra/oristano",
+        "doctor": "michele-russo-9",
+        "anchorHtml": "<a id=\"zl-url\" class=\"zl-url\" href=\"https://www.miodottore.it/michele-russo-9/fisiatra/oristano\" rel=\"nofollow\" data-zlw-doctor=\"michele-russo-9\" data-zlw-type=\"big_with_calendar\" data-zlw-opinion=\"false\" data-zlw-hide-branding=\"true\" data-zlw-saas-only=\"false\" data-zlw-a11y-title=\"Widget di prenotazione visite mediche\">Prenota una visita</a>"
+      }
+    },
+    "ctaBand": {
+      "title": "Prenota la tua visita",
+      "text": "Prenoti con il Dr. Russo in meno di un minuto."
+    },
+    "stickbar": {
+      "href": "#prenota",
+      "icon": "calendar-check",
+      "label": "Prenota con il Dr. Russo"
+    },
+    "bookButtonLabel": "Prenota con il Dr. Russo",
+    "layout": {
+      "htmlComments": false,
+      "prenotaStyle": true,
+      "resizeScript": true,
+      "heroTagsTrailBlank": true,
+      "competenzeTagsTrailBlank": false,
+      "curaTrailBlank": false,
+      "hasQuote": true,
+      "stickObserverComment": false,
+      "resizeExtraBlank": false
+    },
+    "quote": "\"Il recupero funzionale è l'obiettivo da raggiungere con un percorso condiviso: si costruisce insieme passo dopo passo.\""
+  },
+  {
+    "surname": "Salfi",
+    "display": "Dr. Raffaele Salfi",
+    "specs": [
+      "Flebologia",
+      "Proctologia"
+    ],
+    "cats": [
+      "visite"
+    ],
+    "catLabels": [
+      "Visite Specialistiche"
+    ],
+    "slug": "salfi",
+    "metaTitle": "Dr. Raffaele Salfi — Flebologia a Oristano | Medic Service",
+    "metaDescription": "Dr. Raffaele Salfi, flebologia e proctologia a Oristano presso Medic Service. Scopri specializzazioni e prenota online la tua visita.",
+    "stylesVersion": "9",
+    "siteJsVersion": "6",
+    "photoSrc": "/assets/photos/salfi.webp",
+    "photoPlaceholder": "",
+    "dataSpec": "Flebologia",
+    "subtitle": "Specialista in Flebologia · Proctologia",
+    "heroTags": [
+      "Flebologia",
+      "Proctologia"
+    ],
+    "stickbarSpec": "<b>Flebologia</b> · Proctologia",
+    "bio": [
+      {
+        "text": "Il Dr. Raffaele Salfi ha costruito una carriera dedicata alla coloproctologia e alla flebologia, sviluppando metodiche cliniche proprie — dalla stadiazione del cancro del retto alla tecnica laser HeLP — oggi applicate nella pratica quotidiana.",
+        "marginBottom": 26
+      }
+    ],
+    "formazione": {
+      "title": "Una formazione specialistica.",
+      "items": [
+        {
+          "title": "Chirurgia Generale e Oncologica, Napoli",
+          "text": "Ideatore della tecnica laser HeLP (2008)."
+        }
+      ]
+    },
+    "cura": {
+      "title": "Prestazioni e consulenze.",
+      "items": [
+        "Ecocolordoppler",
+        "Scleroterapia",
+        "Mesoterapia",
+        "Laser capillari"
+      ]
+    },
+    "competenze": {
+      "eyebrow": "Patologie trattate",
+      "title": "Le condizioni che seguo.",
+      "intro": null,
+      "tags": [
+        "Vene varicose",
+        "Emorroidi",
+        "Ragadi",
+        "Fistole anali"
+      ]
+    },
+    "prenota": {
+      "title": "Scegli data e orario.",
+      "text": "Consulta le disponibilità di Dr. Raffaele Salfi e prenota online in pochi passaggi.",
+      "miodottore": {
+        "href": "https://www.miodottore.it/raffaele-salfi/chirurgo-generale-angiologo/assemini",
+        "doctor": "raffaele-salfi",
+        "calendarId": "855888",
+        "anchorHtml": "<a id=\"zl-url\" class=\"zl-url\" href=\"https://www.miodottore.it/raffaele-salfi/chirurgo-generale-angiologo/assemini\" rel=\"nofollow\" data-zlw-calendar-id=\"855888\" data-zlw-doctor=\"raffaele-salfi\" data-zlw-type=\"big_with_calendar\" data-zlw-opinion=\"false\" data-zlw-hide-branding=\"true\" data-zlw-saas-only=\"false\" data-zlw-a11y-title=\"Widget di prenotazione visite mediche\">Prenota una visita</a>"
+      }
+    },
+    "ctaBand": {
+      "title": "Prenota la tua visita",
+      "text": "Prenoti con il Dr. Salfi in meno di un minuto."
+    },
+    "stickbar": {
+      "href": "#prenota",
+      "icon": "calendar-check",
+      "label": "Prenota con il Dr. Salfi"
+    },
+    "bookButtonLabel": "Prenota con il Dr. Salfi",
+    "layout": {
+      "htmlComments": false,
+      "prenotaStyle": true,
+      "resizeScript": true,
+      "heroTagsTrailBlank": true,
+      "competenzeTagsTrailBlank": false,
+      "curaTrailBlank": false,
+      "hasQuote": true,
+      "stickObserverComment": false,
+      "resizeExtraBlank": false
+    },
+    "dataSpecLabel": "Flebologia · Proctologia",
+    "quote": "\"La chirurgia mini-invasiva non è solo tecnica: è restituire al paziente i suoi giorni più in fretta.\"",
+    "photoFile": "salfi.webp"
+  },
+  {
+    "surname": "Sanna",
+    "display": "Dr. Guido Sanna",
+    "specs": [
+      "Gastroenterologia"
+    ],
+    "cats": [
+      "visite"
+    ],
+    "catLabels": [
+      "Visite Specialistiche"
+    ],
+    "slug": "sanna",
+    "metaTitle": "Dr. Guido Sanna — Gastroenterologia a Oristano | Medic Service",
+    "metaDescription": "Dr. Guido Sanna, gastroenterologia a Oristano presso Medic Service. Scopri specializzazioni e prenota online la tua visita.",
+    "stylesVersion": "9",
+    "siteJsVersion": "6",
+    "photoSrc": "/assets/photos/generic_medic_male.png",
+    "photoPlaceholder": "",
+    "dataSpec": "Gastroenterologia",
+    "subtitle": "Specialista in Gastroenterologia",
+    "heroTags": [
+      "Gastroenterologia"
+    ],
+    "stickbarSpec": "<b>Gastroenterologia</b> · Gastroenterologia",
+    "bio": [
+      {
+        "text": "Il Dr. Guido Sanna offre un approccio multidisciplinare maturato in oltre trent'anni di attività clinica e di ricerca, con un'esperienza che gli consente di affrontare anche i quadri gastroenterologici più complessi.",
+        "marginBottom": 26
+      }
+    ],
+    "formazione": {
+      "title": "Una formazione specialistica.",
+      "items": [
+        {
+          "title": "Gastroenterologia ed Endoscopia Digestiva, Cagliari"
+        }
+      ]
+    },
+    "cura": {
+      "title": "Prestazioni e consulenze.",
+      "items": [
+        "Visita gastroenterologica",
+        "Endoscopia digestiva"
+      ]
+    },
+    "competenze": {
+      "eyebrow": "Aree di competenza",
+      "title": "Specializzazioni e ambiti.",
+      "intro": null,
+      "tags": [
+        "Patologie dell'apparato digerente, fegato e pancreas"
+      ]
+    },
+    "prenota": {
+      "title": "Scegli data e orario.",
+      "text": "Consulta le disponibilità di Dr. Guido Sanna e prenota online in pochi passaggi.",
+      "miodottore": {
+        "href": "https://www.miodottore.it/guido-sanna-3/gastroenterologo/oristano",
+        "doctor": "guido-sanna-3",
+        "anchorHtml": "<a id=\"zl-url\" class=\"zl-url\" href=\"https://www.miodottore.it/guido-sanna-3/gastroenterologo/oristano\" rel=\"nofollow\" data-zlw-doctor=\"guido-sanna-3\" data-zlw-type=\"big_with_calendar\" data-zlw-opinion=\"false\" data-zlw-hide-branding=\"true\" data-zlw-saas-only=\"false\" data-zlw-a11y-title=\"Widget di prenotazione visite mediche\">Prenota una visita</a>"
+      }
+    },
+    "ctaBand": {
+      "title": "Prenota la tua visita",
+      "text": "Prenoti con il Dr. Sanna in meno di un minuto."
+    },
+    "stickbar": {
+      "href": "#prenota",
+      "icon": "calendar-check",
+      "label": "Prenota con il Dr. Sanna"
+    },
+    "bookButtonLabel": "Prenota con il Dr. Sanna",
+    "layout": {
+      "htmlComments": false,
+      "prenotaStyle": true,
+      "resizeScript": true,
+      "heroTagsTrailBlank": true,
+      "competenzeTagsTrailBlank": false,
+      "curaTrailBlank": false,
+      "hasQuote": true,
+      "stickObserverComment": false,
+      "resizeExtraBlank": false
+    },
+    "quote": "\"L'esperienza si misura nella capacità di riconoscere ciò che altri potrebbero non notare.\""
+  },
+  {
+    "surname": "Serpi",
+    "display": "Dr. Vladimiro Serpi",
+    "specs": [
+      "Oculistica"
+    ],
+    "cats": [
+      "visite"
+    ],
+    "catLabels": [
+      "Visite Specialistiche"
+    ],
+    "slug": "serpi",
+    "metaTitle": "Dr. Vladimiro Serpi — Oculistica a Oristano | Medic Service",
+    "metaDescription": "Dr. Vladimiro Serpi, oculistica a Oristano presso Medic Service. Scopri specializzazioni e prenota online la tua visita.",
+    "stylesVersion": "9",
+    "siteJsVersion": "6",
+    "photoSrc": "/assets/photos/generic_medic_male.png",
+    "photoPlaceholder": "",
+    "dataSpec": "Oculistica",
+    "subtitle": "Specialista in Oculistica",
+    "heroTags": [
+      "Oculistica"
+    ],
+    "stickbarSpec": "<b>Oculistica</b> · Oculistica",
+    "bio": [
+      {
+        "text": "Il Dr. Vladimiro Serpi combina rigore scientifico e attenzione al paziente in ogni fase del percorso di cura oculistica, dalla diagnosi al trattamento delle patologie più frequenti.",
+        "marginBottom": 26
+      }
+    ],
+    "formazione": {
+      "title": "Una formazione specialistica.",
+      "items": [
+        {
+          "title": "Oftalmologia"
+        }
+      ]
+    },
+    "cura": {
+      "title": "Prestazioni e consulenze.",
+      "items": [
+        "Diagnosi e trattamento oculistico"
+      ]
+    },
+    "competenze": {
+      "eyebrow": "Aree di competenza",
+      "title": "Specializzazioni e ambiti.",
+      "intro": null,
+      "tags": [
+        "Principali patologie oculari"
+      ]
+    },
+    "prenota": {
+      "title": "Scegli data e orario.",
+      "text": "Consulta le disponibilità di Dr. Vladimiro Serpi e prenota online in pochi passaggi.",
+      "miodottore": {
+        "href": "https://www.miodottore.it/vladimiro-serpi/oculista/oristano",
+        "doctor": "vladimiro-serpi",
+        "anchorHtml": "<a id=\"zl-url\" class=\"zl-url\" href=\"https://www.miodottore.it/vladimiro-serpi/oculista/oristano\" rel=\"nofollow\" data-zlw-doctor=\"vladimiro-serpi\" data-zlw-type=\"big_with_calendar\" data-zlw-opinion=\"false\" data-zlw-hide-branding=\"true\" data-zlw-saas-only=\"false\" data-zlw-a11y-title=\"Widget di prenotazione visite mediche\">Prenota una visita</a>"
+      }
+    },
+    "ctaBand": {
+      "title": "Prenota la tua visita",
+      "text": "Prenoti con il Dr. Serpi in meno di un minuto."
+    },
+    "stickbar": {
+      "href": "#prenota",
+      "icon": "calendar-check",
+      "label": "Prenota con il Dr. Serpi"
+    },
+    "bookButtonLabel": "Prenota con il Dr. Serpi",
+    "layout": {
+      "htmlComments": false,
+      "prenotaStyle": true,
+      "resizeScript": true,
+      "heroTagsTrailBlank": true,
+      "competenzeTagsTrailBlank": false,
+      "curaTrailBlank": true,
+      "hasQuote": true,
+      "stickObserverComment": false,
+      "resizeExtraBlank": false
+    },
+    "quote": "\"Un percorso di cura trasparente è il primo passo per il benessere visivo duraturo.\""
+  },
+  {
+    "surname": "Spiga",
+    "display": "Dr. Mauro Spiga",
+    "specs": [
+      "Ortopedia"
+    ],
+    "cats": [
+      "visite"
+    ],
+    "catLabels": [
+      "Visite Specialistiche"
+    ],
+    "slug": "spiga",
+    "metaTitle": "Dr. Mauro Spiga — Ortopedia a Oristano | Medic Service",
+    "metaDescription": "Dr. Mauro Spiga, ortopedia a Oristano presso Medic Service. Scopri specializzazioni e prenota online la tua visita.",
+    "stylesVersion": "9",
+    "siteJsVersion": "6",
+    "photoSrc": "/assets/photos/spiga.webp",
+    "photoPlaceholder": "",
+    "dataSpec": "Ortopedia",
+    "subtitle": "Specialista in Ortopedia",
+    "heroTags": [
+      "Ortopedia"
+    ],
+    "stickbarSpec": "<b>Ortopedia</b> · Ortopedia",
+    "bio": [
+      {
+        "text": "Il Dr. Mauro Spiga affronta sia le patologie croniche degenerative sia i traumi acuti dell'apparato locomotore, con un'esperienza maturata presso la Clinica Ortopedica Universitaria di Sassari.",
+        "marginBottom": 26
+      }
+    ],
+    "formazione": {
+      "title": "Una formazione specialistica.",
+      "items": [
+        {
+          "title": "Ortopedia e Traumatologia, Clinica Universitaria di Sassari"
+        }
+      ]
+    },
+    "cura": {
+      "title": "Prestazioni e consulenze.",
+      "items": [
+        "Valutazione ortopedica conservativa o chirurgica"
+      ]
+    },
+    "competenze": {
+      "eyebrow": "Aree di competenza",
+      "title": "Specializzazioni e ambiti.",
+      "intro": null,
+      "tags": [
+        "Artrosi",
+        "Traumi sportivi",
+        "Problemi articolari"
+      ]
+    },
+    "prenota": {
+      "title": "Scegli data e orario.",
+      "text": "Consulta le disponibilità di Dr. Mauro Spiga e prenota online in pochi passaggi.",
+      "miodottore": {
+        "href": "https://www.miodottore.it/mauro-spiga-2/ortopedico/oristano",
+        "doctor": "mauro-spiga-2",
+        "anchorHtml": "<a id=\"zl-url\" class=\"zl-url\" href=\"https://www.miodottore.it/mauro-spiga-2/ortopedico/oristano\" rel=\"nofollow\" data-zlw-doctor=\"mauro-spiga-2\" data-zlw-type=\"big_with_calendar\" data-zlw-opinion=\"false\" data-zlw-hide-branding=\"true\" data-zlw-saas-only=\"false\" data-zlw-a11y-title=\"Widget di prenotazione visite mediche\">Prenota una visita</a>"
+      }
+    },
+    "ctaBand": {
+      "title": "Prenota la tua visita",
+      "text": "Prenoti con il Dr. Spiga in meno di un minuto."
+    },
+    "stickbar": {
+      "href": "#prenota",
+      "icon": "calendar-check",
+      "label": "Prenota con il Dr. Spiga"
+    },
+    "bookButtonLabel": "Prenota con il Dr. Spiga",
+    "layout": {
+      "htmlComments": false,
+      "prenotaStyle": true,
+      "resizeScript": true,
+      "heroTagsTrailBlank": true,
+      "competenzeTagsTrailBlank": false,
+      "curaTrailBlank": true,
+      "hasQuote": true,
+      "stickObserverComment": false,
+      "resizeExtraBlank": false
+    },
+    "quote": "\"Il corpo ci parla attraverso il dolore: ascoltarlo presto evita complicazioni future.\"",
+    "photoFile": "spiga.webp"
+  },
+  {
+    "surname": "Trincas",
+    "display": "Dr. Efisio Trincas",
+    "specs": [
+      "Gastroenterologia"
+    ],
+    "cats": [
+      "visite"
+    ],
+    "catLabels": [
+      "Visite Specialistiche"
+    ],
+    "slug": "trincas",
+    "metaTitle": "Dr. Efisio Trincas — Gastroenterologia a Oristano | Medic Service",
+    "metaDescription": "Dr. Efisio Trincas, gastroenterologia a Oristano presso Medic Service. Scopri specializzazioni e prenota online la tua visita.",
+    "stylesVersion": "9",
+    "siteJsVersion": "6",
+    "photoSrc": "/assets/photos/Trincas.webp",
+    "photoPlaceholder": "",
+    "dataSpec": "Gastroenterologia",
+    "subtitle": "Specialista in Gastroenterologia",
+    "heroTags": [
+      "Gastroenterologia"
+    ],
+    "stickbarSpec": "<b>Gastroenterologia</b> · Gastroenterologia",
+    "bio": [
+      {
+        "text": "Il Dr. Efisio Trincas è noto per un approccio umano ed empatico nella gestione del paziente gastroenterologico, capace di tradurre un percorso diagnostico complesso in un'esperienza di cura serena.",
+        "marginBottom": 26
+      }
+    ],
+    "formazione": {
+      "title": "Una formazione specialistica.",
+      "items": [
+        {
+          "title": "Gastroenterologia ed Endoscopia Digestiva"
+        }
+      ]
+    },
+    "cura": {
+      "title": "Prestazioni e consulenze.",
+      "items": [
+        "Visita gastroenterologica",
+        "Approfondimenti endoscopici"
+      ]
+    },
+    "competenze": {
+      "eyebrow": "Aree di competenza",
+      "title": "Specializzazioni e ambiti.",
+      "intro": null,
+      "tags": [
+        "Reflusso",
+        "Dispepsia",
+        "Alterazioni dell'alvo"
+      ]
+    },
+    "prenota": {
+      "title": "Scegli data e orario.",
+      "text": "Consulta le disponibilità di Dr. Efisio Trincas e prenota online in pochi passaggi.",
+      "miodottore": {
+        "href": "https://www.miodottore.it/efisio-trincas/internista-medico-di-base/oristano",
+        "doctor": "efisio-trincas",
+        "anchorHtml": "<a id=\"zl-url\" class=\"zl-url\" href=\"https://www.miodottore.it/efisio-trincas/internista-medico-di-base/oristano\" rel=\"nofollow\" data-zlw-doctor=\"efisio-trincas\" data-zlw-type=\"big_with_calendar\" data-zlw-opinion=\"false\" data-zlw-hide-branding=\"true\" data-zlw-saas-only=\"false\" data-zlw-a11y-title=\"Widget di prenotazione visite mediche\">Prenota una visita</a>"
+      }
+    },
+    "ctaBand": {
+      "title": "Prenota la tua visita",
+      "text": "Prenoti con il Dr. Trincas in meno di un minuto."
+    },
+    "stickbar": {
+      "href": "#prenota",
+      "icon": "calendar-check",
+      "label": "Prenota con il Dr. Trincas"
+    },
+    "bookButtonLabel": "Prenota con il Dr. Trincas",
+    "layout": {
+      "htmlComments": false,
+      "prenotaStyle": true,
+      "resizeScript": true,
+      "heroTagsTrailBlank": true,
+      "competenzeTagsTrailBlank": false,
+      "curaTrailBlank": false,
+      "hasQuote": true,
+      "stickObserverComment": false,
+      "resizeExtraBlank": false
+    },
+    "quote": "\"Un paziente sereno è già a metà del percorso di cura.\"",
+    "photoFile": "Trincas.webp"
+  },
+  {
+    "surname": "Usai",
+    "display": "Dr. Nicola Usai",
+    "specs": [
+      "Cardiologia"
+    ],
+    "cats": [
+      "visite"
+    ],
+    "catLabels": [
+      "Visite Specialistiche"
+    ],
+    "slug": "usai",
+    "metaTitle": "Dr. Nicola Usai — Cardiologo a Oristano | Medic Service",
+    "metaDescription": "Dr. Nicola Usai, cardiologo a Oristano presso Medic Service. Percorso, prestazioni, orari di ricevimento. Prenota online la tua visita cardiologica.",
+    "stylesVersion": "9",
+    "siteJsVersion": "6",
+    "photoSrc": "/assets/photos/usai.webp",
+    "photoPlaceholder": "",
+    "dataSpec": "Cardiologia",
+    "subtitle": "Medico chirurgo · Specialista in Cardiologia",
+    "heroTags": [
+      "Ecocardiografia",
+      "Ipertensione",
+      "Cardiologia dello sport",
+      "Idoneità sportiva"
+    ],
+    "stickbarSpec": "<b>Cardiologia</b> · Ecocardiografia · Ipertensione · Idoneità sportiva",
+    "bio": [
+      {
+        "text": "Il Dr. Usai riceve a Oristano e segue pazienti di ogni età, dalla prevenzione al controllo delle patologie croniche.",
+        "marginBottom": 26
+      }
+    ],
+    "formazione": {
+      "title": "Una formazione solida.",
+      "items": [
+        {
+          "title": "Laurea in Medicina e Chirurgia",
+          "text": "Università degli Studi di Cagliari, con lode."
+        },
+        {
+          "title": "Specializzazione in Cardiologia",
+          "text": "Perfezionamento in ecocardiografia e diagnostica per immagini del cuore."
+        },
+        {
+          "title": "Oltre 15 anni di esperienza clinica",
+          "text": "Attività ambulatoriale e ospedaliera in Sardegna, con focus su prevenzione e ipertensione."
+        }
+      ]
+    },
+    "cura": {
+      "title": "Prestazioni e prevenzione.",
+      "items": [
+        "Visita cardiologica completa",
+        "Elettrocardiogramma (ECG)",
+        "Ecocardiogramma color-doppler",
+        "Holter pressorio 24h",
+        "Holter ECG dinamico",
+        "Test da sforzo",
+        "Certificato idoneità sportiva",
+        "Gestione dell'ipertensione"
+      ]
+    },
+    "competenze": {
+      "eyebrow": "Patologie trattate",
+      "title": "Le condizioni che seguo.",
+      "intro": "Dalla prevenzione alla gestione delle patologie croniche, accompagno il paziente in un percorso chiaro e su misura.",
+      "tags": [
+        "Ipertensione arteriosa",
+        "Aritmie e fibrillazione atriale",
+        "Scompenso cardiaco",
+        "Cardiopatia ischemica",
+        "Valvulopatie",
+        "Dislipidemie (colesterolo)",
+        "Soffi cardiaci",
+        "Sincope e palpitazioni"
+      ]
+    },
+    "prenota": {
+      "title": "Scegli data e orario.",
+      "text": "Consulta le disponibilità di Dr. Nicola Usai e prenota online in pochi passaggi.",
+      "miodottore": {
+        "href": "https://www.miodottore.it/nicola-usai/cardiologo/oristano",
+        "doctor": "nicola-usai",
+        "anchorHtml": "<a id=\"zl-url\" class=\"zl-url\" href=\"https://www.miodottore.it/nicola-usai/cardiologo/oristano\" rel=\"nofollow\" data-zlw-doctor=\"nicola-usai\" data-zlw-type=\"big_with_calendar\" data-zlw-opinion=\"false\" data-zlw-hide-branding=\"true\" data-zlw-saas-only=\"false\" data-zlw-a11y-title=\"Widget di prenotazione visite mediche\">Prenota una visita</a>"
+      }
+    },
+    "ctaBand": {
+      "title": "Pronto a prenderti cura del tuo cuore?",
+      "text": "Prenoti la visita con il Dr. Usai in meno di un minuto."
+    },
+    "stickbar": {
+      "href": "#prenota",
+      "icon": "calendar-check",
+      "label": "Prenota con il Dr. Usai"
+    },
+    "bookButtonLabel": "Prenota con il Dr. Usai",
+    "layout": {
+      "htmlComments": true,
+      "prenotaStyle": true,
+      "resizeScript": true,
+      "heroTagsTrailBlank": false,
+      "competenzeTagsTrailBlank": false,
+      "curaTrailBlank": false,
+      "hasQuote": true,
+      "stickObserverComment": true,
+      "resizeExtraBlank": true,
+      "drawerCommentLabel": "MOBILE DRAWER"
+    },
+    "quote": "\"Il cuore non aspetta: la prevenzione resta il gesto più semplice ed efficace che si possa fare per se stessi.\"",
+    "photoFile": "usai.webp"
+  }
+]
