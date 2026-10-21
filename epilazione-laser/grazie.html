@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<link rel="canonical" href="https://medicservice.it/epilazione-laser/grazie.html">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Grazie — Medic Service</title>
+<link rel="icon" href="/assets/monogram.svg">
+<meta name="description" content="Abbiamo ricevuto la tua richiesta di informazioni sulla valutazione dermatologica per epilazione laser.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@300;400;500&family=DM+Serif+Display:ital@0;1&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css?v=9">
+<style>
+  :root {
+    --lp-ink: #071824;
+    --lp-ink-2: #0B2436;
+    --lp-line: rgba(255,255,255,.12);
+    --lp-muted: rgba(255,255,255,.72);
+  }
+
+  body.lp-thanks {
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    background:
+      radial-gradient(900px 420px at 100% 0%, rgba(45,153,218,.16), transparent 60%),
+      linear-gradient(180deg, var(--lp-ink) 0%, var(--lp-ink-2) 100%);
+    color: #fff;
+  }
+
+  .lp-header {
+    position: relative;
+    z-index: 20;
+    padding: 22px 0;
+  }
+  .lp-header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .lp-header__logo img {
+    height: 34px;
+    width: auto;
+    display: block;
+    filter: brightness(0) invert(1);
+  }
+  .lp-header__tel {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: .01em;
+  }
+  .lp-header__tel svg { width: 18px; height: 18px; color: var(--brand); }
+  .lp-header__tel:hover { color: var(--blue-light); }
+
+  .lp-thanks__main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 48px 0 80px;
+  }
+  .lp-thanks__card {
+    max-width: 560px;
+  }
+  .lp-thanks__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--blue-light);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+  .lp-thanks__eyebrow .num {
+    font-family: var(--num);
+    font-weight: 400;
+    color: var(--grey);
+  }
+  .lp-thanks h1 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(28px, 3.6vw, 42px);
+    line-height: 1.08;
+    letter-spacing: -.01em;
+    color: #fff;
+    margin: 0 0 18px;
+  }
+  .lp-thanks p {
+    margin: 0 0 28px;
+    font-size: 17.5px;
+    line-height: 1.7;
+    color: var(--lp-muted);
+    max-width: 48ch;
+  }
+  .lp-thanks .btn--primary {
+    background: var(--brand);
+    border-color: var(--brand);
+  }
+  .lp-thanks .btn--primary:hover {
+    background: var(--brand-dk);
+    border-color: var(--brand-dk);
+  }
+
+  .lp-footer {
+    border-top: 1px solid var(--lp-line);
+    padding: 28px 0 40px;
+    background: transparent;
+    color: rgba(255,255,255,.55);
+    font-size: 14px;
+  }
+  .lp-footer a { color: rgba(255,255,255,.75); }
+  .lp-footer a:hover { color: #fff; }
+  .lp-footer__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 12px 24px;
+  }
+
+  @media (max-width: 560px) {
+    .container { padding-inline: 32px; }
+  }
+</style>
+</head>
+<body class="lp-thanks" data-screen-label="Grazie">
+<header class="lp-header">
+  <div class="container lp-header__inner">
+    <a class="lp-header__logo" href="/" aria-label="Medic Service — Home">
+      <img src="/assets/logo-horizontal.svg" alt="Medic Service">
+    </a>
+    <a class="lp-header__tel" href="tel:0783211136">
+      <i data-lucide="phone"></i>
+      <span class="num">0783 211136</span>
+    </a>
+  </div>
+</header>
+
+<main class="lp-thanks__main">
+  <div class="container">
+    <div class="lp-thanks__card">
+      <div class="lp-thanks__eyebrow"><span class="num">OK</span> Richiesta inviata</div>
+      <h1>Grazie, abbiamo ricevuto la tua richiesta</h1>
+      <p>Ti ricontattiamo entro un giorno lavorativo con il canale che hai scelto. Per urgenze chiama direttamente il centralino.</p>
+      <a class="btn btn--primary btn--lg" href="/"><i data-lucide="arrow-left"></i> Torna al sito</a>
+    </div>
+  </div>
+</main>
+
+<footer class="lp-footer">
+  <div class="container lp-footer__inner">
+    <span>© <span class="num" id="lpYear"></span> Medic Service</span>
+    <a href="/">Home</a>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+  if (window.lucide) lucide.createIcons();
+  document.getElementById("lpYear").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
