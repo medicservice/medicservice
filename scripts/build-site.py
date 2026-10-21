@@ -895,6 +895,7 @@ _iub.csLangConfiguration = {{"it":{{"cookiePolicyId":865793}}}};
 
 
 <title>{doc.get("metaTitle") or display}</title>
+<link rel="icon" href="/assets/monogram.svg">
 <meta name="description" content="{doc.get("metaDescription") or ""}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
