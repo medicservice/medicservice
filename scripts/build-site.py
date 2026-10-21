@@ -171,7 +171,7 @@ def render_doctor_photos_js(medici: list[dict]) -> str:
         "  };\n"
         "\n"
         "  function isFemaleDoctor(display) {\n"
-        "    return /^(Dr\\.ssa|Op\\.)(\\s|$)/i.test(display || \"\");\n"
+        "    return /^(Dr\\.ssa|Dott\\.ssa|Op\\.)(\\s|$)/i.test(display || \"\");\n"
         "  }\n"
         "\n"
         "  function doctorPhotoSrc(surname, display, prefix) {\n"
@@ -375,7 +375,7 @@ def _address_as(display: str) -> str:
 
 def _generic_photo(display: str) -> str:
     # Op. finisce con un punto: un word-boundary lì non scatta, quindi si guarda lo spazio.
-    if re.match(r"^(Dr\.ssa|Op\.)(\s|$)", display or "", re.IGNORECASE):
+    if re.match(r"^(Dr\.ssa|Dott\.ssa|Op\.)(\s|$)", display or "", re.IGNORECASE):
         return "generic_medic_female.png"
     return "generic_medic_male.png"
 
@@ -608,6 +608,123 @@ def complete_medici(medici: list[dict]) -> list[dict]:
     return done
 
 
+def _has_text_items(items) -> bool:
+    """True se c'è almeno una voce non vuota."""
+    if not isinstance(items, list):
+        return False
+    for item in items:
+        if isinstance(item, str):
+            if item.strip():
+                return True
+            continue
+        if isinstance(item, dict):
+            title = item.get("title")
+            if isinstance(title, str) and title.strip():
+                return True
+            continue
+        if item:
+            return True
+    return False
+
+
+def _formazione_section(form: dict, num: str, comments: bool) -> str:
+    banner = "<!-- ===== DETTAGLIO ===== -->\n" if comments else ""
+    note = "        <!-- Percorso formativo -->\n" if comments else ""
+    items = _formazione_html(form.get("items") or [])
+    return f"""{banner}<section class="section--tight">
+  <div class="container">
+    <div class="doc-cols" style="grid-template-columns:1fr;max-width:780px">
+      <div>
+{note}        <div class="reveal">
+          <span class="eyebrow"><span class="num">{num}</span> Percorso formativo</span>
+          <h2 class="h2" style="color:var(--navy);margin:16px 0 30px">{form["title"]}</h2>
+          <ul class="bullets">
+{items}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>"""
+
+
+def _cura_section(cura: dict, num: str, trail_blank: bool, comments: bool) -> str:
+    banner = "<!-- ===== COSA CURO (full-width grigio) ===== -->\n" if comments else ""
+    note = "        <!-- Cosa curo -->\n" if comments else ""
+    items = _cura_html(cura.get("items") or [], trail_blank)
+    return f"""{banner}<section class="section--tight" style="background:var(--g075)">
+  <div class="container">
+    <div class="doc-cols" style="grid-template-columns:1fr;max-width:780px">
+      <div>
+{note}        <div class="reveal">
+          <span class="eyebrow"><span class="num">{num}</span> Cosa curo</span>
+          <h2 class="h2" style="color:var(--navy);margin:16px 0 30px">{cura["title"]}</h2>
+          <ul class="cura-list">
+{items}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>"""
+
+
+def _competenze_section(
+    comp: dict, num: str, intro_html: str, tags_html: str, comments: bool
+) -> str:
+    banner = "<!-- ===== PATOLOGIE + NOTA ===== -->\n" if comments else ""
+    note = "        <!-- Patologie trattate -->\n" if comments else ""
+    # Con i commenti HTML c'è una riga vuota prima della chiusura della colonna.
+    gap = "\n" if comments else ""
+    return f"""{banner}<section class="section--tight">
+  <div class="container">
+    <div class="doc-cols" style="grid-template-columns:1fr;max-width:780px">
+      <div>
+{note}        <div class="reveal">
+          <span class="eyebrow"><span class="num">{num}</span> {comp["eyebrow"]}</span>
+          <h2 class="h2" style="color:var(--navy);margin:16px 0 18px">{comp["title"]}</h2>{intro_html}
+          <div class="doc-tags">
+{tags_html}
+          </div>
+        </div>
+{gap}      </div>
+    </div>
+  </div>
+</section>"""
+
+
+def _detail_sections(
+    form: dict,
+    cura: dict,
+    comp: dict,
+    intro_html: str,
+    tags_html: str,
+    cura_trail: bool,
+    comments: bool,
+) -> tuple[str, str]:
+    """Solo le sezioni con voci, numerate 01, 02, 03 senza salti.
+
+    Il secondo valore è il numero della sezione Prenota, il successivo.
+    """
+    blocks: list[str] = []
+    number = 1
+
+    def num() -> str:
+        nonlocal number
+        value = f"{number:02d}"
+        number += 1
+        return value
+
+    if _has_text_items(form.get("items")):
+        blocks.append(_formazione_section(form, num(), comments))
+    if _has_text_items(cura.get("items")):
+        blocks.append(_cura_section(cura, num(), cura_trail, comments))
+    if _has_text_items(comp.get("tags")):
+        blocks.append(_competenze_section(comp, num(), intro_html, tags_html, comments))
+    html = ("\n\n".join(blocks) + "\n") if blocks else ""
+    return html, f"{number:02d}"
+
+
 def render_scheda_from_fields(doc: dict) -> str:
     """Template unico: gestisce tutte le varianti tramite campi in medici.json."""
     slug = doc["slug"]
@@ -665,9 +782,7 @@ def render_scheda_from_fields(doc: dict) -> str:
         )
         cta_actions = (
             '      <a class="btn btn--primary btn--lg" href="tel:0783211136">'
-            '<i data-lucide="phone"></i> Chiama ora</a>\n'
-            '      <a class="btn btn--ghost-light btn--lg" href="tel:0783211136">'
-            '<i data-lucide="phone"></i> <span class="num">0783 211136</span></a>'
+            '<i data-lucide="phone"></i> Chiama ora</a>'
         )
         mobile_book = (
             '<a class="mobilebar__book" href="tel:0783211136">'
@@ -704,16 +819,19 @@ def render_scheda_from_fields(doc: dict) -> str:
     bios = _bio_html(doc.get("bio") or [])
     bio_block = f"\n        {bios}" if bios else ""
 
+    form_section, prenota_num = _detail_sections(
+        form, cura, comp, intro_html, s3_tags, cura_trail, comments
+    )
+
     prenota_section = ""
     if has_prenota:
         anchor = _miodottore_anchor(prenota["miodottore"])
-        prenota_section = f"""
-<!-- ===== PRENOTA (MioDottore calendar) ===== -->
+        prenota_section = f"""<!-- ===== PRENOTA (MioDottore calendar) ===== -->
 <section class="section--tight" id="prenota" style="background:var(--g075)">
   <div class="container">
     <div class="prenota-wrap">
       <div class="prenota-copy">
-        <span class="eyebrow"><span class="num">04</span> Prenota</span>
+        <span class="eyebrow"><span class="num">{prenota_num}</span> Prenota</span>
         <h2 class="h2" style="color:var(--navy);margin:16px 0 24px">{prenota["title"]}</h2>
         <p class="muted" style="max-width:360px">{prenota["text"]}</p>
       </div>
@@ -725,6 +843,8 @@ def render_scheda_from_fields(doc: dict) -> str:
   </div>
 </section>
 """
+        if form_section:
+            prenota_section = "\n" + prenota_section
 
     style_block = ""
     if layout.get("prenotaStyle") or has_prenota:
@@ -739,61 +859,6 @@ def render_scheda_from_fields(doc: dict) -> str:
         after_noscript = "\n\n<!-- ===== HEADER ===== -->\n"
         after_header = "\n<!-- ===== STICKY BAR MEDICO (appare dopo la prima sezione) ===== -->\n"
         after_stick = "\n<!-- ===== DOCTOR HERO ===== -->\n"
-        form_section = f"""<!-- ===== DETTAGLIO ===== -->
-<section class="section--tight">
-  <div class="container">
-    <div class="doc-cols" style="grid-template-columns:1fr;max-width:780px">
-      <div>
-        <!-- Percorso formativo -->
-        <div class="reveal">
-          <span class="eyebrow"><span class="num">01</span> Percorso formativo</span>
-          <h2 class="h2" style="color:var(--navy);margin:16px 0 30px">{form["title"]}</h2>
-          <ul class="bullets">
-{_formazione_html(form.get("items") or [])}
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== COSA CURO (full-width grigio) ===== -->
-<section class="section--tight" style="background:var(--g075)">
-  <div class="container">
-    <div class="doc-cols" style="grid-template-columns:1fr;max-width:780px">
-      <div>
-        <!-- Cosa curo -->
-        <div class="reveal">
-          <span class="eyebrow"><span class="num">02</span> Cosa curo</span>
-          <h2 class="h2" style="color:var(--navy);margin:16px 0 30px">{cura["title"]}</h2>
-          <ul class="cura-list">
-{_cura_html(cura.get("items") or [], cura_trail)}
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== PATOLOGIE + NOTA ===== -->
-<section class="section--tight">
-  <div class="container">
-    <div class="doc-cols" style="grid-template-columns:1fr;max-width:780px">
-      <div>
-        <!-- Patologie trattate -->
-        <div class="reveal">
-          <span class="eyebrow"><span class="num">03</span> {comp["eyebrow"]}</span>
-          <h2 class="h2" style="color:var(--navy);margin:16px 0 18px">{comp["title"]}</h2>{intro_html}
-          <div class="doc-tags">
-{s3_tags}
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</section>
-"""
         cta_comment = "\n<!-- ===== CTA BAND ===== -->\n"
         footer_comment = "\n<!-- ===== FOOTER ===== -->\n"
         mobile_comment = "\n<!-- ===== MOBILE STICKY BAR ===== -->\n"
@@ -803,58 +868,13 @@ def render_scheda_from_fields(doc: dict) -> str:
         after_noscript = "\n\n"
         after_header = "\n"
         after_stick = "\n"
-        form_section = f"""<section class="section--tight">
-  <div class="container">
-    <div class="doc-cols" style="grid-template-columns:1fr;max-width:780px">
-      <div>
-        <div class="reveal">
-          <span class="eyebrow"><span class="num">01</span> Percorso formativo</span>
-          <h2 class="h2" style="color:var(--navy);margin:16px 0 30px">{form["title"]}</h2>
-          <ul class="bullets">
-{_formazione_html(form.get("items") or [])}
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section--tight" style="background:var(--g075)">
-  <div class="container">
-    <div class="doc-cols" style="grid-template-columns:1fr;max-width:780px">
-      <div>
-        <div class="reveal">
-          <span class="eyebrow"><span class="num">02</span> Cosa curo</span>
-          <h2 class="h2" style="color:var(--navy);margin:16px 0 30px">{cura["title"]}</h2>
-          <ul class="cura-list">
-{_cura_html(cura.get("items") or [], cura_trail)}
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section--tight">
-  <div class="container">
-    <div class="doc-cols" style="grid-template-columns:1fr;max-width:780px">
-      <div>
-        <div class="reveal">
-          <span class="eyebrow"><span class="num">03</span> {comp["eyebrow"]}</span>
-          <h2 class="h2" style="color:var(--navy);margin:16px 0 18px">{comp["title"]}</h2>{intro_html}
-          <div class="doc-tags">
-{s3_tags}
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-"""
         cta_comment = "\n"
         footer_comment = "\n"
         mobile_comment = "\n"
         drawer_comment = "\n"
+
+    if not form_section and not prenota_section:
+        cta_comment = cta_comment.lstrip("\n")
 
     resize = ""
     if has_prenota and (layout.get("resizeScript", True)):
