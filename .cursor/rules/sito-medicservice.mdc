@@ -1,0 +1,29 @@
+---
+description: Regole del sito medicservice.it (HTML statico generato in parte da data/medici.json)
+globs:
+alwaysApply: true
+---
+
+# Sito Medic Service — regole per l'agente
+
+## Com'è fatto
+- Sito HTML statico, senza build, pubblicato su GitHub Pages dalla GitHub Action `.github/workflows/pubblica-sito.yml`: a ogni push su `main` esegue `scripts/build-site.py`, salva le pagine rigenerate e pubblica (online in 1-2 minuti). Il repository è PUBBLICO.
+- `data/medici.json` è l'unica fonte dei dati dei medici. Lo modifica lo staff dal backoffice (commit "Backoffice: ..." direttamente su `main`).
+- `scripts/build-site.py` genera da `data/medici.json`:
+  - le schede `medici/<slug>/index.html`;
+  - i blocchi JSON degli elenchi in `index.html` (#home-medici-data), `medici/index.html` (#medici-data), `visite-specialistiche/index.html`, `diagnostica/index.html`, `chirurgia/index.html` (#roster);
+  - `doctor-photos.js`;
+  - `display/data.js` (tramite `scripts/build-display.py`).
+- I campi "derivati" (titoli SEO, sottotitolo, pulsanti, foto…) se mancano li calcola `build-site.py`; se sono presenti nel JSON vengono usati così come sono.
+
+## Regole
+1. Non modificare a mano i file generati: `medici/<slug>/index.html`, i blocchi JSON degli elenchi, `doctor-photos.js`, `display/data.js`. La struttura delle schede si cambia nel template di `scripts/build-site.py`; i contenuti in `data/medici.json`.
+2. Non modificare `data/medici.json` se non te lo chiedo esplicitamente: è gestito dal backoffice. Se serve, mantieni il formato (indentazione 2, caratteri non ASCII non escapati, newline finale, come `JSON.stringify(dati, null, 2) + "\n"`) e l'ordine delle chiavi.
+3. Header, footer e menu NON sono condivisi: sono copiati in ogni pagina. Una modifica che riguarda tutte le pagine (head, header, footer, menu, script comuni) va fatta in tutte le pagine E nel template di `scripts/build-site.py`.
+4. Dopo ogni modifica a dati o template esegui `python3 scripts/build-site.py` e controlla `git diff --stat`: devono cambiare solo i file attesi. Se cambia altro, fermati e spiegamelo.
+5. Non eseguire `scripts/generate-schede.py`: è obsoleto e sovrascriverebbe le schede generate da `build-site.py`.
+6. Regole dei dati (le controlla anche `build-site.py`, che si ferma con un errore): `surname`, `display`, `slug`, `specs`, `cats`, `catLabels` obbligatori e non vuoti; `slug` = `surname` in minuscolo; `surname` solo lettere a-z/A-Z, senza spazi, accenti, apostrofi o trattini (gli elenchi costruiscono i link con `surname.toLowerCase()`); slug e surname unici; `cats` e `catLabels` coerenti (visite = Visite Specialistiche, diagnostica = Diagnostica per Immagini, chirurgia = Chirurgia Day Surgery, estetica = Medicina Estetica).
+7. Foto in `assets/photos/`: quelle caricate dal backoffice sono WebP 776×1200 (`{slug}-{AAAAMMGG-HHMM}.webp`); ci sono anche foto più vecchie in JPG, PNG e WebP. Non cancellare né rinominare foto esistenti: le usano anche le landing (`epilazione-laser/` usa ad esempio `Cadeddu.webp`, `melis.webp`, `solinas.webp`, `MS-36.jpg`, `generic_medic_male.png`, `again-pro-plus-*.jpg`).
+8. Landing per le sponsorizzate (es. `epilazione-laser/`): sono autonome dal sito, con `<meta name="robots" content="noindex, nofollow">`, GTM e Iubenda come nelle altre pagine. Non inviare dati sanitari a GTM o Meta (né negli eventi né negli indirizzi delle pagine). `epilazione-laser/` linka le schede `/medici/cadeddu/`, `/medici/falco/`, `/medici/melis/`: se uno di questi medici viene nascosto o tolto, quei link vanno aggiornati a mano.
+9. Il repository è pubblico, anche i branch: non aggiungere chiavi, token, password, note interne, materiali di lavoro, zip o foto di persone usate per prove.
+10. Lavora su un branch, mai direttamente su `main`, e non fare commit se non te lo chiedo. Non toccare cartelle di lavoro non tracciate da git.
