@@ -6,6 +6,7 @@
 - Esclude i medici con "nascosto": true e cancella le schede tolte dal JSON
 - Aggiorna i 5 blocchi JSON (home, medici, visite, diagnostica, chirurgia)
 - Rigenera le schede con render_scheda_from_fields (template unico)
+- Scrive i rimandi medici/<slug-precedente>/ per gli slugPrecedenti dei medici visibili
 - Rigenera doctor-photos.js
 - Lancia scripts/build-display.py
 
@@ -15,11 +16,13 @@ Uso:
 
 from __future__ import annotations
 
+import html
 import json
 import os
 import re
 import subprocess
 import sys
+import unicodedata
 from copy import deepcopy
 from pathlib import Path
 
@@ -356,13 +359,41 @@ def _validate_identity(doc: dict, label: str) -> None:
             )
 
 
-def _address_as(display: str) -> str:
-    """Dr. Sergio Cabras -> il Dr. Cabras; Op. Manuela Loi -> l'Op. Loi."""
+def _solo_lettere(testo: str) -> str:
+    """Minuscolo, senza accenti, solo a-z. D'Angelo e De Rosa diventano dangelo e derosa."""
+    scomposto = unicodedata.normalize("NFD", testo)
+    senza_accenti = "".join(c for c in scomposto if unicodedata.category(c) != "Mn")
+    return "".join(c for c in senza_accenti.lower() if "a" <= c <= "z")
+
+
+def _cognome_leggibile(display: str, surname: str) -> str:
+    """Cognome come compare nel nome: l'ultima parola, o le ultime due, tre…
+
+    Si prova dal più corto e si tiene il primo gruppo di parole che, senza
+    accenti e apostrofi, coincide con surname. Il titolo non entra mai nel
+    confronto. Se niente coincide (CartaGabriele) resta l'ultima parola.
+    """
+    match = _TITLE_RE.match(display)
+    nome = display[match.end():] if match else display
+    parole = nome.split()
+    if not parole:
+        pezzi = display.split()
+        return pezzi[-1] if pezzi else display
+    atteso = surname.lower()
+    for n in range(1, len(parole) + 1):
+        candidato = " ".join(parole[-n:])
+        if _solo_lettere(candidato) == atteso:
+            return candidato
+    return parole[-1]
+
+
+def _address_as(display: str, surname: str) -> str:
+    """Dr. Sergio Cabras -> il Dr. Cabras; Dr. Marco De Rosa -> il Dr. De Rosa."""
     match = _TITLE_RE.match(display)
     if not match:
         return display
     title = match.group(1)
-    short = f"{title} {display.split()[-1]}"
+    short = f"{title} {_cognome_leggibile(display, surname)}"
     folded = title.lower()
     if folded in ("dr.ssa", "dott.ssa"):
         return f"la {short}"
@@ -569,7 +600,7 @@ def complete_medico(doc: dict, index: int | None = None) -> dict:
             doc["photoSrc"] = "/assets/photos/" + _generic_photo(display)
 
     has_prenota = _complete_prenota(doc, label)
-    who = _address_as(display)
+    who = _address_as(display, doc["surname"])
     cta = _section(doc, "ctaBand", label)
     _fill(cta, "title", "Prenota la tua visita")
     _fill(cta, "text", f"Prenoti con {who} in meno di un minuto.")
@@ -605,7 +636,47 @@ def complete_medici(medici: list[dict]) -> list[dict]:
         slugs.add(full["slug"])
         surnames.add(full["surname"])
         done.append(full)
+    _validate_slug_precedenti(done)
     return done
+
+
+def _validate_slug_precedenti(medici: list[dict]) -> None:
+    """slugPrecedenti, prima di scrivere qualsiasi file.
+
+    Se il campo c'è deve essere un elenco: ogni voce solo a-z minuscolo,
+    diversa dallo slug di qualunque medico attuale (anche nascosto) e non
+    ripetuta, né nello stesso medico né in un altro.
+    """
+    attuali = {doc["slug"] for doc in medici}
+    visti: dict[str, str] = {}
+    for doc in medici:
+        if "slugPrecedenti" not in doc:
+            continue
+        precedenti = doc["slugPrecedenti"]
+        label = doc["slug"]
+        if not isinstance(precedenti, list):
+            _fail(label, "slugPrecedenti deve essere un elenco")
+        for voce in precedenti:
+            if not isinstance(voce, str) or re.fullmatch(r"[a-z]+", voce) is None:
+                _fail(
+                    label,
+                    f"slugPrecedenti contiene {voce!r}: "
+                    "ogni voce può contenere solo lettere minuscole a-z",
+                )
+            if voce in attuali:
+                _fail(
+                    label,
+                    f"slugPrecedenti '{voce}' coincide con lo slug di un medico attuale "
+                    "(visibile o nascosto)",
+                )
+            altro = visti.get(voce)
+            if altro is not None:
+                if altro == label:
+                    _fail(label, f"slugPrecedenti ripete '{voce}'")
+                raise SystemExit(
+                    f"slugPrecedenti '{voce}' compare in più medici ({altro} e {label})."
+                )
+            visti[voce] = label
 
 
 def _has_text_items(items) -> bool:
@@ -1075,6 +1146,8 @@ def remove_orphan_schede(keep_slugs: set[str]) -> list[str]:
 
     Solo le sottocartelle dirette di medici/ che contengono soltanto index.html.
     medici/index.html non è una cartella e non viene toccato.
+    keep_slugs include gli slug visibili e gli slugPrecedenti dei medici visibili:
+    i rimandi restano, le cartelle dei medici nascosti no.
     """
     root = ROOT / "medici"
     removed: list[str] = []
@@ -1102,6 +1175,40 @@ def remove_orphan_schede(keep_slugs: set[str]) -> list[str]:
         removed.append(path.name)
         print(f"Eliminata scheda medici/{path.name}/")
     return removed
+
+
+def render_rimando(doc: dict, slug: str) -> str:
+    """Pagina minima dal vecchio indirizzo. Nessun GTM e nessuna Iubenda."""
+    nome = html.escape(doc["display"])
+    destinazione = f"/medici/{slug}/"
+    return f"""<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{nome} · Medic Service</title>
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://medicservice.it{destinazione}">
+<meta http-equiv="refresh" content="0; url={destinazione}">
+<script>location.replace("{destinazione}" + location.search + location.hash);</script>
+</head>
+<body>
+<p>La scheda di {nome} è stata spostata: <a href="{destinazione}">vai alla nuova pagina</a>.</p>
+</body>
+</html>
+"""
+
+
+def write_rimandi(medici: list[dict]) -> int:
+    """Per ogni medico visibile, una cartella per ogni slugPrecedenti."""
+    n = 0
+    for doc in medici:
+        for vecchio in doc.get("slugPrecedenti") or []:
+            path = ROOT / "medici" / vecchio / "index.html"
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text(render_rimando(doc, doc["slug"]), encoding="utf-8")
+            n += 1
+    return n
 
 
 def write_schede(medici: list[dict]) -> int:
@@ -1134,11 +1241,17 @@ def main() -> None:
     n = write_schede(visible)
     print(f"Schede scritte: {n} (solo render_scheda_from_fields)")
 
+    n_rimandi = write_rimandi(visible)
+    print(f"Rimandi scritti: {n_rimandi}")
+
     photos_path = ROOT / "doctor-photos.js"
     photos_path.write_text(render_doctor_photos_js(visible), encoding="utf-8")
     print(f"Aggiornato {photos_path.relative_to(ROOT)}")
 
-    remove_orphan_schede({doc["slug"] for doc in visible})
+    keep_slugs = {doc["slug"] for doc in visible}
+    for doc in visible:
+        keep_slugs.update(doc.get("slugPrecedenti") or [])
+    remove_orphan_schede(keep_slugs)
 
     display_script = ROOT / "scripts" / "build-display.py"
     print("Eseguo build-display.py…")

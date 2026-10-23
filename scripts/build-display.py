@@ -124,7 +124,8 @@ def qr_svg(url):
 
 
 def female(display):
-    return bool(re.match(r"(Dr\.ssa|Op\.)", display or ""))
+    # Come _generic_photo in build-site.py: Dr.ssa, Dott.ssa, Op.
+    return bool(re.match(r"^(Dr\.ssa|Dott\.ssa|Op\.)(\s|$)", display or "", re.IGNORECASE))
 
 
 def main():
