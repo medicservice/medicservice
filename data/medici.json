@@ -62,29 +62,18 @@
       ]
     },
     "prenota": {
-      "title": "Scegli data e orario.",
-      "text": "Consulta le disponibilità di Dr. Sergio Cabras e prenota online in pochi passaggi.",
       "miodottore": {
-        "href": "https://www.miodottore.it/sergio-cabras-2/allergologo-immunologo-diabetologo/oristano",
+        "href": "https://www.miodottore.it/profilo/sergio-cabras-2",
         "doctor": "sergio-cabras-2",
-        "calendarId": "624356",
-        "anchorHtml": "<a id=\"zl-url\" class=\"zl-url\" href=\"https://www.miodottore.it/sergio-cabras-2/allergologo-immunologo-diabetologo/oristano\" rel=\"nofollow\" data-zlw-calendar-id=\"624356\" data-zlw-doctor=\"sergio-cabras-2\" data-zlw-type=\"big_with_calendar\" data-zlw-opinion=\"false\" data-zlw-hide-branding=\"true\" data-zlw-saas-only=\"false\" data-zlw-a11y-title=\"Widget di prenotazione visite mediche\">Prenota una visita</a>"
+        "calendarId": "624356"
       }
     },
     "ctaBand": {
       "title": "Prenota la tua visita",
       "text": "Prenoti con il Dr. Cabras in meno di un minuto."
     },
-    "stickbar": {
-      "href": "#prenota",
-      "icon": "calendar-check",
-      "label": "Prenota con il Dr. Cabras"
-    },
-    "bookButtonLabel": "Prenota con il Dr. Cabras",
     "layout": {
       "htmlComments": false,
-      "prenotaStyle": true,
-      "resizeScript": true,
       "heroTagsTrailBlank": true,
       "competenzeTagsTrailBlank": false,
       "curaTrailBlank": false,
