@@ -316,29 +316,17 @@
       ]
     },
     "prenota": {
-      "title": "Scegli data e orario.",
-      "text": "Consulta le disponibilità di Dr. Augusto Cadeddu e prenota online in pochi passaggi.",
       "miodottore": {
         "href": "https://www.miodottore.it/augusto-cadeddu/dermatologo/oristano",
-        "doctor": "augusto-cadeddu",
-        "calendarId": "517078",
-        "anchorHtml": "<a id=\"zl-url\" class=\"zl-url\" href=\"https://www.miodottore.it/augusto-cadeddu/dermatologo/oristano\" rel=\"nofollow\" data-zlw-calendar-id=\"517078\" data-zlw-doctor=\"augusto-cadeddu\" data-zlw-type=\"big_with_calendar\" data-zlw-opinion=\"false\" data-zlw-hide-branding=\"true\" data-zlw-saas-only=\"false\" data-zlw-a11y-title=\"Widget di prenotazione visite mediche\">Prenota una visita</a>"
+        "doctor": "augusto-cadeddu"
       }
     },
     "ctaBand": {
       "title": "Prenota la tua visita",
       "text": "Prenoti con il Dr. Cadeddu in meno di un minuto."
     },
-    "stickbar": {
-      "href": "#prenota",
-      "icon": "calendar-check",
-      "label": "Prenota con il Dr. Cadeddu"
-    },
-    "bookButtonLabel": "Prenota con il Dr. Cadeddu",
     "layout": {
       "htmlComments": false,
-      "prenotaStyle": true,
-      "resizeScript": true,
       "heroTagsTrailBlank": true,
       "competenzeTagsTrailBlank": false,
       "curaTrailBlank": false,
