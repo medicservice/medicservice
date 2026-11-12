@@ -517,10 +517,18 @@ window.DISPLAY_DATA = {
    ],
    "area": "Medicina Estetica",
    "prestazioni": [
-    "Filler",
+    "Visita di valutazione di medicina estetica (70 €)",
+    "Filler labbra",
+    "Rinofiller",
+    "Filler delle occhiaie (solco lacrimale)",
+    "Biorivitalizzazione (Profhilo, Restylane Vital)",
+    "Acido polilattico (Sculptra)",
     "Tossina botulinica",
-    "Biorivitalizzazione",
-    "Acido polilattico"
+    "Peeling PRX-T33",
+    "Peeling al retinolo",
+    "PRP, plasma ricco di piastrine",
+    "Ialuronidasi",
+    "Trattamento dell'iperidrosi (sudorazione eccessiva)"
    ],
    "photo": "/assets/photos/paderi.webp",
    "hasPhoto": true,
