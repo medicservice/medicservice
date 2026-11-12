@@ -2708,6 +2708,9 @@
       {
         "text": "La Dr.ssa Valentina Paderi dedica la propria attività alla medicina estetica dal 2017, con un percorso di aggiornamento costante in Italia e all'estero e un approccio che personalizza ogni trattamento in base a età, genere e unicità del paziente.",
         "marginBottom": 26
+      },
+      {
+        "text": "Ogni percorso parte da una visita di valutazione: la dottoressa esamina viso e pelle, ascolta cosa desideri e ti propone il trattamento adatto, con sedute, tempi e costi. Non si prenota direttamente il filler o la biorivitalizzazione, ma prima la visita."
       }
     ],
     "formazione": {
@@ -2721,20 +2724,31 @@
     "cura": {
       "title": "Prestazioni e consulenze.",
       "items": [
-        "Filler",
+        "Visita di valutazione di medicina estetica (70 €)",
+        "Filler labbra",
+        "Rinofiller",
+        "Filler delle occhiaie (solco lacrimale)",
+        "Biorivitalizzazione (Profhilo, Restylane Vital)",
+        "Acido polilattico (Sculptra)",
         "Tossina botulinica",
-        "Biorivitalizzazione",
-        "Acido polilattico"
+        "Peeling PRX-T33",
+        "Peeling al retinolo",
+        "PRP, plasma ricco di piastrine",
+        "Ialuronidasi",
+        "Trattamento dell'iperidrosi (sudorazione eccessiva)"
       ]
     },
     "competenze": {
       "eyebrow": "Aree di competenza",
       "title": "Specializzazioni e ambiti.",
-      "intro": null,
       "tags": [
         "Rilassamento cutaneo",
         "Asimmetrie",
-        "Neoformazioni cutanee"
+        "Neoformazioni cutanee",
+        "Volume delle labbra",
+        "Occhiaie e solco lacrimale",
+        "Rughe di espressione",
+        "Sudorazione eccessiva"
       ]
     },
     "prenota": {
