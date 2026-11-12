@@ -793,8 +793,7 @@ window.DISPLAY_DATA = {
    ],
    "area": "Visite Specialistiche",
    "prestazioni": [
-    "Visita gastroenterologica",
-    "Approfondimenti endoscopici"
+    "Visita gastroenterologica"
    ],
    "photo": "/assets/photos/Trincas.webp",
    "hasPhoto": true,
