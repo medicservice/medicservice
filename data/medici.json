@@ -4148,14 +4148,12 @@
     "cura": {
       "title": "Prestazioni e consulenze.",
       "items": [
-        "Visita gastroenterologica",
-        "Approfondimenti endoscopici"
+        "Visita gastroenterologica"
       ]
     },
     "competenze": {
       "eyebrow": "Aree di competenza",
       "title": "Specializzazioni e ambiti.",
-      "intro": null,
       "tags": [
         "Reflusso",
         "Dispepsia",
