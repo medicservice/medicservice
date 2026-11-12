@@ -82,8 +82,11 @@ window.DISPLAY_DATA = {
    ],
    "area": "Visite Specialistiche",
    "prestazioni": [
-    "Terapia medica",
-    "Chirurgia ORL"
+    "Visita otorinolaringoiatrica",
+    "Esame audiometrico",
+    "Impedenzometria (timpanometria)",
+    "Rinofibrolaringoscopia",
+    "Videoendoscopia delle vie aeree e digestive superiori"
    ],
    "photo": "/assets/photos/Canu.webp",
    "hasPhoto": true,
