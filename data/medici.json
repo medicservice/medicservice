@@ -2601,8 +2601,11 @@
     "stickbarSpec": "<b>Pneumologia</b> · Pneumologia",
     "bio": [
       {
-        "text": "Il Dr. Giuseppe Oppo segue pazienti con patologie respiratorie attraverso valutazioni specialistiche mirate, offrendo un percorso diagnostico chiaro per la gestione delle problematiche polmonari.",
+        "text": "Il Dr. Giuseppe Oppo si occupa delle malattie dei polmoni e delle vie respiratorie: asma, broncopneumopatia cronica ostruttiva (BPCO), tosse che non passa, fiato corto. In struttura esegue la spirometria e gli esami per le apnee del sonno: la polisonnografia, la saturimetria notturna e la regolazione della CPAP per chi già la usa o deve iniziare.",
         "marginBottom": 26
+      },
+      {
+        "text": "Per la spirometria porta l'elenco dei farmaci che usi per il respiro: il medico ti dirà se sospenderne qualcuno prima dell'esame."
       }
     ],
     "formazione": {
@@ -2616,15 +2619,23 @@
     "cura": {
       "title": "Prestazioni e consulenze.",
       "items": [
-        "Visite pneumologiche"
+        "Visita pneumologica",
+        "Spirometria con test di reversibilità",
+        "Polisonnografia per le apnee notturne",
+        "Saturimetria notturna",
+        "Titolazione della CPAP"
       ]
     },
     "competenze": {
       "eyebrow": "Aree di competenza",
       "title": "Specializzazioni e ambiti.",
-      "intro": null,
       "tags": [
-        "Patologie dell'apparato respiratorio"
+        "Asma",
+        "BPCO",
+        "Apnee ostruttive del sonno (OSAS)",
+        "Russamento",
+        "Tosse cronica",
+        "Fiato corto (dispnea)"
       ]
     },
     "prenota": {
