@@ -2490,8 +2490,7 @@
     "surname": "Orofino",
     "display": "Dr. Gianni Orofino",
     "specs": [
-      "Neurologia",
-      "Elettromiografia"
+      "Neurologia"
     ],
     "cats": [
       "visite"
@@ -2500,19 +2499,10 @@
       "Visite Specialistiche"
     ],
     "slug": "orofino",
-    "metaTitle": "Dr. Gianni Orofino — Neurologia ed Elettromiografia a Oristano | Medic Service",
-    "metaDescription": "Dr. Gianni Orofino, neurologia ed elettromiografia a Oristano presso Medic Service. Scopri specializzazioni e prenota online la tua visita.",
     "stylesVersion": "9",
     "siteJsVersion": "6",
     "photoSrc": "/assets/photos/generic_medic_male.png",
     "photoPlaceholder": "",
-    "dataSpec": "Neurologia",
-    "subtitle": "Specialista in Neurologia · Elettromiografia",
-    "heroTags": [
-      "Neurologia",
-      "Elettromiografia"
-    ],
-    "stickbarSpec": "<b>Neurologia</b> · Elettromiografia",
     "bio": [
       {
         "text": "Il Dr. Gianni Orofino effettua valutazioni neurologiche e test psicometrici, accompagnando il paziente in un percorso diagnostico che spazia dai disturbi del sonno e dell'umore alle difficoltà di memoria e del movimento.",
@@ -2539,14 +2529,12 @@
     "cura": {
       "title": "Prestazioni e consulenze.",
       "items": [
-        "Prima visita e visita di controllo",
-        "Visita neurologica domiciliare su richiesta"
+        "Prima visita e visita di controllo"
       ]
     },
     "competenze": {
       "eyebrow": "Patologie trattate",
       "title": "Le condizioni che seguo.",
-      "intro": null,
       "tags": [
         "Disturbi del sonno",
         "Disturbi dell'umore",
@@ -2584,7 +2572,6 @@
       "stickObserverComment": false,
       "resizeExtraBlank": false
     },
-    "dataSpecLabel": "Neurologia · Elettromiografia",
     "quote": "\"Dietro un sintomo neurologico c'è sempre una persona da ascoltare con pazienza.\""
   },
   {
