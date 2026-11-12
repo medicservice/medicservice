@@ -3079,6 +3079,9 @@
       {
         "text": "La Dr.ssa Monica Pilloni integra competenze ospedaliere universitarie e trattamenti innovativi per il benessere femminile, con un'esperienza specifica anche nella gestione clinica della menopausa.",
         "marginBottom": 26
+      },
+      {
+        "text": "In struttura la dottoressa segue la donna in tutte le età: visita con ecografia nello stesso appuntamento, prevenzione con pap test e HPV, inserimento della spirale, gravidanza e menopausa. Per l'atrofia vaginale e i disturbi della menopausa propone anche il laser MonnaLisa Touch."
       }
     ],
     "formazione": {
@@ -3096,8 +3099,15 @@
       "title": "Prestazioni e consulenze.",
       "items": [
         "Visita ginecologica",
-        "Pap test",
+        "Visita ginecologica con ecografia",
+        "Ecografia ginecologica",
+        "Pap test e test HPV",
+        "Tampone vaginale",
+        "Inserimento della spirale",
+        "Visita in gravidanza",
         "Colposcopia",
+        "Ambulatorio della menopausa",
+        "Laser MonnaLisa Touch per atrofia vaginale e disturbi della menopausa",
         "Vagy Combi",
         "Ozono terapia"
       ]
@@ -3105,11 +3115,13 @@
     "competenze": {
       "eyebrow": "Aree di competenza",
       "title": "Specializzazioni e ambiti.",
-      "intro": null,
       "tags": [
         "Atrofia vaginale",
         "Incontinenza",
-        "Infezioni ricorrenti"
+        "Infezioni ricorrenti",
+        "Disturbi della menopausa",
+        "Controlli in gravidanza",
+        "Prevenzione del tumore del collo dell'utero"
       ]
     },
     "prenota": {
