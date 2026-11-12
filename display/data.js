@@ -477,7 +477,11 @@ window.DISPLAY_DATA = {
    ],
    "area": "Visite Specialistiche",
    "prestazioni": [
-    "Visite pneumologiche"
+    "Visita pneumologica",
+    "Spirometria con test di reversibilità",
+    "Polisonnografia per le apnee notturne",
+    "Saturimetria notturna",
+    "Titolazione della CPAP"
    ],
    "photo": "/assets/photos/oppo.webp",
    "hasPhoto": true,
