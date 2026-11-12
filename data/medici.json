@@ -2441,14 +2441,12 @@
     "cura": {
       "title": "Prestazioni e consulenze.",
       "items": [
-        "Visita gastroenterologica",
-        "Esami endoscopici"
+        "Visita gastroenterologica"
       ]
     },
     "competenze": {
       "eyebrow": "Patologie trattate",
       "title": "Le condizioni che seguo.",
-      "intro": null,
       "tags": [
         "Patologie dell'esofago",
         "Patologie dello stomaco",
