@@ -745,8 +745,7 @@ window.DISPLAY_DATA = {
    ],
    "area": "Visite Specialistiche",
    "prestazioni": [
-    "Visita gastroenterologica",
-    "Endoscopia digestiva"
+    "Visita gastroenterologica"
    ],
    "photo": "/assets/photos/generic_medic_male.png",
    "hasPhoto": false,
