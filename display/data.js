@@ -461,8 +461,7 @@ window.DISPLAY_DATA = {
    ],
    "area": "Visite Specialistiche",
    "prestazioni": [
-    "Visita gastroenterologica",
-    "Esami endoscopici"
+    "Visita gastroenterologica"
    ],
    "photo": "/assets/photos/onali.webp",
    "hasPhoto": true,
@@ -812,7 +811,6 @@ window.DISPLAY_DATA = {
     "Visita cardiologica completa",
     "Elettrocardiogramma (ECG)",
     "Ecocardiogramma color-doppler",
-    "Holter pressorio 24h",
     "Holter ECG dinamico",
     "Test da sforzo",
     "Gestione dell'ipertensione"
