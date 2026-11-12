@@ -601,8 +601,15 @@ window.DISPLAY_DATA = {
    "area": "Visite Specialistiche",
    "prestazioni": [
     "Visita ginecologica",
-    "Pap test",
+    "Visita ginecologica con ecografia",
+    "Ecografia ginecologica",
+    "Pap test e test HPV",
+    "Tampone vaginale",
+    "Inserimento della spirale",
+    "Visita in gravidanza",
     "Colposcopia",
+    "Ambulatorio della menopausa",
+    "Laser MonnaLisa Touch per atrofia vaginale e disturbi della menopausa",
     "Vagy Combi",
     "Ozono terapia"
    ],
