@@ -489,13 +489,11 @@ window.DISPLAY_DATA = {
    "slug": "orofino",
    "name": "Dr. Gianni Orofino",
    "specs": [
-    "Neurologia",
-    "Elettromiografia"
+    "Neurologia"
    ],
    "area": "Visite Specialistiche",
    "prestazioni": [
-    "Prima visita e visita di controllo",
-    "Visita neurologica domiciliare su richiesta"
+    "Prima visita e visita di controllo"
    ],
    "photo": "/assets/photos/generic_medic_male.png",
    "hasPhoto": false,
