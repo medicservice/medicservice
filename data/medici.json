@@ -365,8 +365,11 @@
     "stickbarSpec": "<b>Otorinolaringoiatria</b> · Otorinolaringoiatria",
     "bio": [
       {
-        "text": "Il Dr. Mario Canu offre soluzioni mediche e chirurgiche per le patologie otorinolaringoiatriche, con competenze che spaziano dalla terapia clinica alla chirurgia cervicofacciale.",
+        "text": "Il Dr. Mario Canu è specialista in Otorinolaringoiatria e Chirurgia cervico-facciale. In struttura, oltre alla visita, esegue gli esami ORL più richiesti dai medici di base e dai pediatri: l'esame dell'udito, l'impedenzometria e l'endoscopia di naso, gola e laringe con videocamera.",
         "marginBottom": 26
+      },
+      {
+        "text": "L'impedenzometria (o timpanometria) controlla timpano e orecchio medio. Non è la bioimpedenziometria della nutrizione."
       }
     ],
     "formazione": {
@@ -380,14 +383,16 @@
     "cura": {
       "title": "Prestazioni e consulenze.",
       "items": [
-        "Terapia medica",
-        "Chirurgia ORL"
+        "Visita otorinolaringoiatrica",
+        "Esame audiometrico",
+        "Impedenzometria (timpanometria)",
+        "Rinofibrolaringoscopia",
+        "Videoendoscopia delle vie aeree e digestive superiori"
       ]
     },
     "competenze": {
       "eyebrow": "Patologie trattate",
       "title": "Le condizioni che seguo.",
-      "intro": null,
       "tags": [
         "Patologie di orecchie, naso e gola"
       ]
